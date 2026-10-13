@@ -1,0 +1,251 @@
+{
+  "engine": {
+    "gaps": {
+      "synthetic": {
+        "motion_pct": 97.06,
+        "linear_pct": 96.55,
+        "hold_pct": 95.0,
+        "object_frames": 12613,
+        "seeds": 10,
+        "cameras": [
+          "pan/4",
+          "walk/3",
+          "walk/4"
+        ],
+        "by_camera": {
+          "pan/4": {
+            "motion_pct": 95.99,
+            "linear_pct": 95.99,
+            "hold_pct": 95.91
+          },
+          "walk/3": {
+            "motion_pct": 98.02,
+            "linear_pct": 97.59,
+            "hold_pct": 96.55
+          },
+          "walk/4": {
+            "motion_pct": 96.61,
+            "linear_pct": 95.78,
+            "hold_pct": 93.02
+          }
+        },
+        "criterion": "object-frames whose visible box is covered at least 99% by the blur, gap method in the name",
+        "oracle": "the retries and the second looks are simulated from the truth (a retry returns the real box, a verification always confirms): this is the share of object-frames covered with perfect recovery, a ceiling, not recall of the whole pipeline. State it with the figure."
+      }
+    },
+    "standard_vs_maximum": {
+      "coverage_pct": 85.71,
+      "speedup": 5.09,
+      "coverage": {
+        "n": 7,
+        "hits": 6,
+        "ci95_pct": [
+          48.7,
+          97.4
+        ]
+      },
+      "faces": 22,
+      "faces_blurred_by_maximum": 7,
+      "faces_blurred_by_standard": 9,
+      "faces_blurred_by_both": 6,
+      "analysis_seconds": {
+        "standard": 98.0,
+        "maximum": 498.5
+      },
+      "speedup_what": "analysis time of Maximum over Standard, the face detector alone: what Maximum costs, not an advantage of Standard",
+      "truth_sha256": {
+        "bench/truth/faces/video.json": "23bf337563ac72859e1de0b006a8ae732854670f6267c6f385791c42a879e942"
+      },
+      "source": "bench/results/faces-video.json",
+      "scope": "face detector only, two public clips, 52 frames labelled by hand",
+      "hardware": {
+        "cpu": "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz",
+        "cores": 4,
+        "ram_gb": 3.3,
+        "os": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+        "python": "3.10.13",
+        "opencv": "5.0.0"
+      },
+      "date": "2026-10-03"
+    },
+    "speed": {
+      "s_per_video_s_1080p": 5.57,
+      "analyze_s_per_video_s": 4.21,
+      "render_s_per_video_s": 1.37,
+      "runs_s_per_video_s": [
+        5.58,
+        5.57
+      ],
+      "settings": "faces and plates, Standard, default margins; analyze + render, one process",
+      "video_seconds": 10.78,
+      "frames": 323,
+      "resolution": "1920x1080",
+      "items": 0,
+      "blurred_frames_pct": 0.0,
+      "hardware": {
+        "cpu": "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz",
+        "cores": 4,
+        "ram_gb": 3.3,
+        "os": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+        "python": "3.10.13"
+      },
+      "clip": "faces/video/hongkong.webm (1920x1080, Wikimedia Commons, bench/SOURCES.csv)"
+    },
+    "memory": {
+      "peak_mb_1080p": 235,
+      "runs_mb": [
+        234,
+        236
+      ],
+      "what": "peak resident set of the process right after the analysis, models loaded",
+      "hardware": {
+        "cpu": "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz",
+        "cores": 4,
+        "ram_gb": 3.3,
+        "os": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+        "python": "3.10.13"
+      }
+    },
+    "rerender": {
+      "speedup": 4.11,
+      "rerender_s_per_video_s": 1.36,
+      "what": "(analyze + render) over a second render after set_blur on one item; no detector runs in it",
+      "blurred_frames_pct": 0.0,
+      "hardware": {
+        "cpu": "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz",
+        "cores": 4,
+        "ram_gb": 3.3,
+        "os": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+        "python": "3.10.13"
+      }
+    },
+    "speed_busy": {
+      "s_per_video_s_720p": 4.49,
+      "analyze_s_per_video_s": 3.59,
+      "render_s_per_video_s": 0.89,
+      "runs_s_per_video_s": [
+        4.48,
+        4.5
+      ],
+      "settings": "faces and plates, Standard, default margins; analyze + render, one process",
+      "video_seconds": 44.0,
+      "frames": 1056,
+      "resolution": "1280x720",
+      "items": 35,
+      "blurred_frames_pct": 93.8,
+      "hardware": {
+        "cpu": "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz",
+        "cores": 4,
+        "ram_gb": 3.3,
+        "os": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+        "python": "3.10.13"
+      },
+      "clip": "faces/video/preciados.ogv (1280x720, Wikimedia Commons, bench/SOURCES.csv)"
+    },
+    "memory_busy": {
+      "peak_mb_720p": 288,
+      "runs_mb": [
+        237,
+        338
+      ],
+      "what": "peak resident set of the process right after the analysis, models loaded",
+      "hardware": {
+        "cpu": "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz",
+        "cores": 4,
+        "ram_gb": 3.3,
+        "os": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+        "python": "3.10.13"
+      }
+    },
+    "rerender_busy": {
+      "speedup": 4.94,
+      "rerender_s_per_video_s": 0.91,
+      "what": "(analyze + render) over a second render after set_blur on one item; no detector runs in it",
+      "blurred_frames_pct": 93.8,
+      "hardware": {
+        "cpu": "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz",
+        "cores": 4,
+        "ram_gb": 3.3,
+        "os": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+        "python": "3.10.13"
+      }
+    },
+    "photo_speed": {
+      "set": "plates/streets (Wikimedia Commons street photos, bench/SOURCES.csv)",
+      "photos": 60,
+      "resolution_px": {
+        "median": [
+          1920,
+          1340
+        ],
+        "smallest_width": 1600,
+        "largest_width": 1920
+      },
+      "analyze_ms_per_photo": 1862.4,
+      "analyze_ms_per_photo_median": 1824.9,
+      "analyze_and_write_ms_per_photo": 1948.9,
+      "analyze_and_write_ms_per_photo_median": 1915.9,
+      "settings": "faces and plates together, Standard, through the public API (analyze, then render)",
+      "hardware": {
+        "cpu": "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz",
+        "cores": 4,
+        "ram_gb": 3.3,
+        "os": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+        "python": "3.10.13"
+      }
+    },
+    "stop": {
+      "latency_s": {
+        "median": 0.04,
+        "max": 0.18
+      },
+      "latency_median_s": 0.04,
+      "latency_max_s": 0.18,
+      "by_phase_max_s": {
+        "analyze": 0.18,
+        "render": 0.05
+      },
+      "stops": 20,
+      "requirement_s": 2.0,
+      "met": true,
+      "what": "seconds from CancelToken.cancel(), called from another thread at an arbitrary moment, to Cancelled being raised, on the 1080p clip, in one process; the requirement holds on a free machine",
+      "hardware": {
+        "cpu": "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz",
+        "cores": 4,
+        "ram_gb": 3.3,
+        "os": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+        "python": "3.10.13"
+      }
+    }
+  },
+  "_publication": {
+    "engine.standard_vs_maximum.coverage_pct": {
+      "publishable": false,
+      "why": "6 of the 7 faces that Maximum blurred, in one street clip with 22 labelled faces: a handful of cases (95 % interval 48.7-97.4), inside the noise; the same sample cannot say whether Maximum finds more faces than Standard (9 against 7, and Maximum itself gave 8 and 7 faces in two runs of the same code). bench/truth/faces/README.md."
+    },
+    "engine.standard_vs_maximum.coverage": {
+      "publishable": false,
+      "why": "6 of the 7 faces that Maximum blurred, in one street clip with 22 labelled faces: a handful of cases (95 % interval 48.7-97.4), inside the noise; the same sample cannot say whether Maximum finds more faces than Standard (9 against 7, and Maximum itself gave 8 and 7 faces in two runs of the same code). bench/truth/faces/README.md."
+    },
+    "engine.rerender": {
+      "publishable": false,
+      "why": "measured on a clip with 0 items and 0.0 % of its frames blurred: no decision was changed and the second render has no blur to redo; the figure of the clip with a blurred box in most frames is engine.rerender_busy"
+    }
+  },
+  "repo": {
+    "tests": {
+      "count": 1235,
+      "what": "test cases that `unittest discover -s tests -t .` finds (a class that skips as a whole still counts each of its cases); a run reports fewer when this machine skips some"
+    }
+  },
+  "hardware": {
+    "cpu": "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz",
+    "cores": 4,
+    "ram_gb": 3.3,
+    "os": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "python": "3.10.13"
+  },
+  "run": {
+    "date": "2026-10-03"
+  }
+}

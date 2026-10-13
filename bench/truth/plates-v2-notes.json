@@ -1,0 +1,91 @@
+{
+ "blind-008.jpg": {
+  "0": "flat grey fill, already blurred/covered"
+ },
+ "blind-019.jpg": {
+  "0": "already covered (flat grey)",
+  "1": "already covered (flat grey)",
+  "2": "already covered (flat grey)"
+ },
+ "blind-020.jpg": {
+  "4": "approx"
+ },
+ "blind-028.jpg": {
+  "5": "cut by image edge"
+ },
+ "blind-036.jpg": {
+  "4": "tiny",
+  "5": "tiny",
+  "6": "tiny",
+  "7": "tiny"
+ },
+ "blind-038.jpg": {
+  "1": "edge-on plate holder, cannot tell",
+  "2": "edge-on, cannot tell"
+ },
+ "blind-046.jpg": {
+  "0": "Iran plate",
+  "1": "Iran plate"
+ },
+ "blind-050.jpg": {
+  "2": "cut by image edge"
+ },
+ "blind-052.jpg": {
+  "6": "half hidden by wheel/leg",
+  "9": "plate reflected in windscreen"
+ },
+ "blind-054.jpg": {
+  "1": "cut by image edge"
+ },
+ "blind-056.jpg": {
+  "0": "motion blur",
+  "1": "motion blurred",
+  "4": "motion blur"
+ },
+ "blind-064.jpg": {
+  "0": "very dark, plate-like panel",
+  "1": "cut by image edge"
+ },
+ "blind-068.jpg": {
+  "0": "blank/overexposed plate, no characters visible"
+ },
+ "blind-071.jpg": {
+  "0": "already covered (white box)",
+  "1": "already covered (black)",
+  "2": "scooter plate at angle"
+ },
+ "blind-073.jpg": {
+  "0": "blank/overexposed plate, no characters visible"
+ },
+ "blind-079.jpg": {
+  "1": "right end hidden by banner",
+  "2": "very dark",
+  "3": "very dark"
+ },
+ "blind-085.jpg": {
+  "5": "cut by image edge",
+  "6": "mostly hidden by rider",
+  "7": "dark, cannot tell"
+ },
+ "blind-087.jpg": {
+  "1": "partly behind fence",
+  "3": "partly hidden"
+ },
+ "blind-092.jpg": {
+  "1": "partly hidden",
+  "2": "tilted plate on motorbike"
+ },
+ "blind-096.jpg": {
+  "2": "yellow plate, partly hidden"
+ },
+ "blind-101.jpg": {
+  "0": "plate shows no characters",
+  "2": "plate shows no characters"
+ },
+ "blind-103.jpg": {
+  "1": "dark"
+ },
+ "blind-106.jpg": {
+  "0": "partly hidden"
+ }
+}

@@ -1,0 +1,45 @@
+# The two shorter PDF manuals (scripts/docs.py pdf --manual user|developer). Edit the lists here; nothing else needs to change.
+#
+# pages:                    pages of mkdocs.yml's navigation, written as in the navigation; they print in navigation order
+# appendices:               printed after the pages, under the heading "Appendices"
+# part:                     {page: heading}, lists a page under another heading of the contents
+# strip_code:               true leaves the Python examples out (what they printed stays)
+# other:                    what a link to a page of the other manual says, e.g. "(in the Developer reference, Options)"
+# left_out:                 pages in neither manual. Every page of the navigation must be in exactly one list, or the print stops.
+manuals:
+  user:
+    label: user manual
+    cover: User manual
+    other: Developer reference
+    strip_code: true
+    part:
+      reference/studio.md: Using the Studio
+    pages:
+      - index.md
+      - getting-started.md
+      - tutorials/first-video.md
+      - concepts/how-it-works.md
+      - concepts/privacy.md
+      - reference/studio.md
+      - accuracy.md
+      - faq.md
+      - licence-and-credits.md
+  developer:
+    label: developer reference
+    cover: Developer reference
+    other: User manual
+    pages:
+      - tutorials/photos-in-python.md
+      - how-to/video-review-in-code.md
+      - how-to/progress-and-errors.md
+      - how-to/ai-assistants.md
+      - reference/index.md
+      - reference/command-line.md
+      - reference/functions.md
+      - reference/anonymizer.md
+      - reference/options.md
+      - reference/data-types.md
+      - reference/errors.md
+      - reference/files-written.md
+    appendices: []
+left_out: []

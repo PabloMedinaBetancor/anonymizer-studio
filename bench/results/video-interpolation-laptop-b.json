@@ -1,0 +1,678 @@
+{
+ "what": "VK4: share of the heavy box left uncovered by the blur interpolated between two heavy key frames",
+ "min_score": 0.52,
+ "p95_limit": 0.01,
+ "min_cases": 30,
+ "min_pair_rate": 0.5,
+ "spacings": {
+  "4": {
+   "n": 283,
+   "seconds": {
+    "min": 0.133,
+    "max": 0.167
+   },
+   "tracked_pairs": 303,
+   "pair_rate": 0.728,
+   "unmatched_heavy_boxes": 120,
+   "mean": 0.0,
+   "p50": 0.0,
+   "p95": 0.0,
+   "p99": 0.0,
+   "max": 0.0086,
+   "over_10pct": 0.0,
+   "over_50pct": 0.0,
+   "by_distance": {
+    "2": {
+     "n": 283,
+     "p95": 0.0
+    }
+   },
+   "by_clip": {
+    "hkmarch": {
+     "n": 74,
+     "p95": 0.0,
+     "p99": 0.0023,
+     "max": 0.0086,
+     "over_10pct": 0.0,
+     "over_50pct": 0.0
+    },
+    "tamale": {
+     "n": 23,
+     "p95": 0.0,
+     "p99": 0.0,
+     "max": 0.0,
+     "over_10pct": 0.0,
+     "over_50pct": 0.0
+    },
+    "tbilisi": {
+     "n": 70,
+     "p95": 0.0,
+     "p99": 0.0,
+     "max": 0.0,
+     "over_10pct": 0.0,
+     "over_50pct": 0.0
+    },
+    "teacher": {
+     "n": 27,
+     "p95": 0.0,
+     "p99": 0.0,
+     "max": 0.0,
+     "over_10pct": 0.0,
+     "over_50pct": 0.0
+    },
+    "vote": {
+     "n": 89,
+     "p95": 0.0,
+     "p99": 0.0,
+     "max": 0.0,
+     "over_10pct": 0.0,
+     "over_50pct": 0.0
+    }
+   },
+   "holds": true
+  },
+  "6": {
+   "n": 516,
+   "seconds": {
+    "min": 0.2,
+    "max": 0.25
+   },
+   "tracked_pairs": 277,
+   "pair_rate": 0.666,
+   "unmatched_heavy_boxes": 325,
+   "mean": 0.002,
+   "p50": 0.0,
+   "p95": 0.0,
+   "p99": 0.0095,
+   "max": 0.2808,
+   "over_10pct": 0.0078,
+   "over_50pct": 0.0,
+   "by_distance": {
+    "2": {
+     "n": 516,
+     "p95": 0.0
+    }
+   },
+   "by_clip": {
+    "hkmarch": {
+     "n": 129,
+     "p95": 0.0,
+     "p99": 0.1495,
+     "max": 0.2808,
+     "over_10pct": 0.0155,
+     "over_50pct": 0.0
+    },
+    "tamale": {
+     "n": 41,
+     "p95": 0.0,
+     "p99": 0.0064,
+     "max": 0.0106,
+     "over_10pct": 0.0,
+     "over_50pct": 0.0
+    },
+    "tbilisi": {
+     "n": 142,
+     "p95": 0.0,
+     "p99": 0.0,
+     "max": 0.0,
+     "over_10pct": 0.0,
+     "over_50pct": 0.0
+    },
+    "teacher": {
+     "n": 55,
+     "p95": 0.0,
+     "p99": 0.0,
+     "max": 0.0,
+     "over_10pct": 0.0,
+     "over_50pct": 0.0
+    },
+    "vote": {
+     "n": 149,
+     "p95": 0.0,
+     "p99": 0.1268,
+     "max": 0.2448,
+     "over_10pct": 0.0134,
+     "over_50pct": 0.0
+    }
+   },
+   "holds": true
+  },
+  "8": {
+   "n": 719,
+   "seconds": {
+    "min": 0.267,
+    "max": 0.334
+   },
+   "tracked_pairs": 256,
+   "pair_rate": 0.615,
+   "unmatched_heavy_boxes": 592,
+   "mean": 0.003,
+   "p50": 0.0,
+   "p95": 0.0,
+   "p99": 0.0811,
+   "max": 0.3943,
+   "over_10pct": 0.0097,
+   "over_50pct": 0.0,
+   "by_distance": {
+    "2": {
+     "n": 481,
+     "p95": 0.0
+    },
+    "4": {
+     "n": 238,
+     "p95": 0.0
+    }
+   },
+   "by_clip": {
+    "hkmarch": {
+     "n": 180,
+     "p95": 0.0192,
+     "p99": 0.2986,
+     "max": 0.3943,
+     "over_10pct": 0.0333,
+     "over_50pct": 0.0
+    },
+    "tamale": {
+     "n": 59,
+     "p95": 0.0,
+     "p99": 0.0023,
+     "max": 0.0055,
+     "over_10pct": 0.0,
+     "over_50pct": 0.0
+    },
+    "tbilisi": {
+     "n": 209,
+     "p95": 0.0,
+     "p99": 0.0,
+     "max": 0.1981,
+     "over_10pct": 0.0048,
+     "over_50pct": 0.0
+    },
+    "teacher": {
+     "n": 80,
+     "p95": 0.0,
+     "p99": 0.0,
+     "max": 0.0,
+     "over_10pct": 0.0,
+     "over_50pct": 0.0
+    },
+    "vote": {
+     "n": 191,
+     "p95": 0.0,
+     "p99": 0.0568,
+     "max": 0.0837,
+     "over_10pct": 0.0,
+     "over_50pct": 0.0
+    }
+   },
+   "holds": true
+  },
+  "12": {
+   "n": 745,
+   "seconds": {
+    "min": 0.4,
+    "max": 0.5
+   },
+   "tracked_pairs": 201,
+   "pair_rate": 0.483,
+   "unmatched_heavy_boxes": 1013,
+   "mean": 0.0066,
+   "p50": 0.0,
+   "p95": 0.0,
+   "p99": 0.2359,
+   "max": 0.648,
+   "over_10pct": 0.0174,
+   "over_50pct": 0.0027,
+   "by_distance": {
+    "2": {
+     "n": 188,
+     "p95": 0.0
+    },
+    "4": {
+     "n": 372,
+     "p95": 0.0026
+    },
+    "6": {
+     "n": 185,
+     "p95": 0.0
+    }
+   },
+   "by_clip": {
+    "hkmarch": {
+     "n": 219,
+     "p95": 0.0753,
+     "p99": 0.3217,
+     "max": 0.648,
+     "over_10pct": 0.0411,
+     "over_50pct": 0.0091
+    },
+    "tamale": {
+     "n": 71,
+     "p95": 0.0143,
+     "p99": 0.1317,
+     "max": 0.3218,
+     "over_10pct": 0.0141,
+     "over_50pct": 0.0
+    },
+    "tbilisi": {
+     "n": 245,
+     "p95": 0.0,
+     "p99": 0.0331,
+     "max": 0.4533,
+     "over_10pct": 0.0082,
+     "over_50pct": 0.0
+    },
+    "teacher": {
+     "n": 107,
+     "p95": 0.0,
+     "p99": 0.0,
+     "max": 0.0,
+     "over_10pct": 0.0,
+     "over_50pct": 0.0
+    },
+    "vote": {
+     "n": 103,
+     "p95": 0.0,
+     "p99": 0.088,
+     "max": 0.1657,
+     "over_10pct": 0.0097,
+     "over_50pct": 0.0
+    }
+   },
+   "holds": false
+  },
+  "16": {
+   "n": 893,
+   "seconds": {
+    "min": 0.533,
+    "max": 0.667
+   },
+   "tracked_pairs": 199,
+   "pair_rate": 0.478,
+   "unmatched_heavy_boxes": 1265,
+   "mean": 0.0081,
+   "p50": 0.0,
+   "p95": 0.0098,
+   "p99": 0.2619,
+   "max": 0.5849,
+   "over_10pct": 0.0246,
+   "over_50pct": 0.0022,
+   "by_distance": {
+    "2": {
+     "n": 184,
+     "p95": 0.0
+    },
+    "4": {
+     "n": 352,
+     "p95": 0.0072
+    },
+    "6": {
+     "n": 180,
+     "p95": 0.0497
+    },
+    "8": {
+     "n": 177,
+     "p95": 0.1405
+    }
+   },
+   "by_clip": {
+    "hkmarch": {
+     "n": 238,
+     "p95": 0.1157,
+     "p99": 0.3536,
+     "max": 0.4273,
+     "over_10pct": 0.0546,
+     "over_50pct": 0.0
+    },
+    "tamale": {
+     "n": 74,
+     "p95": 0.0172,
+     "p99": 0.0882,
+     "max": 0.1761,
+     "over_10pct": 0.0135,
+     "over_50pct": 0.0
+    },
+    "tbilisi": {
+     "n": 288,
+     "p95": 0.0,
+     "p99": 0.0,
+     "max": 0.0168,
+     "over_10pct": 0.0,
+     "over_50pct": 0.0
+    },
+    "teacher": {
+     "n": 137,
+     "p95": 0.0,
+     "p99": 0.0,
+     "max": 0.015,
+     "over_10pct": 0.0,
+     "over_50pct": 0.0
+    },
+    "vote": {
+     "n": 156,
+     "p95": 0.0888,
+     "p99": 0.5256,
+     "max": 0.5849,
+     "over_10pct": 0.0513,
+     "over_50pct": 0.0128
+    }
+   },
+   "holds": false
+  },
+  "24": {
+   "n": 794,
+   "seconds": {
+    "min": 0.8,
+    "max": 1.001
+   },
+   "tracked_pairs": 156,
+   "pair_rate": 0.375,
+   "unmatched_heavy_boxes": 1779,
+   "mean": 0.0141,
+   "p50": 0.0,
+   "p95": 0.0692,
+   "p99": 0.3337,
+   "max": 1.0,
+   "over_10pct": 0.0378,
+   "over_50pct": 0.005,
+   "by_distance": {
+    "2": {
+     "n": 137,
+     "p95": 0.0
+    },
+    "4": {
+     "n": 136,
+     "p95": 0.0093
+    },
+    "6": {
+     "n": 132,
+     "p95": 0.0105
+    },
+    "8": {
+     "n": 260,
+     "p95": 0.1018
+    },
+    "12": {
+     "n": 129,
+     "p95": 0.1726
+    }
+   },
+   "by_clip": {
+    "hkmarch": {
+     "n": 207,
+     "p95": 0.2154,
+     "p99": 0.5995,
+     "max": 1.0,
+     "over_10pct": 0.1208,
+     "over_50pct": 0.0193
+    },
+    "tamale": {
+     "n": 86,
+     "p95": 0.0086,
+     "p99": 0.0804,
+     "max": 0.15,
+     "over_10pct": 0.0116,
+     "over_50pct": 0.0
+    },
+    "tbilisi": {
+     "n": 203,
+     "p95": 0.0,
+     "p99": 0.0708,
+     "max": 0.0808,
+     "over_10pct": 0.0,
+     "over_50pct": 0.0
+    },
+    "teacher": {
+     "n": 154,
+     "p95": 0.0,
+     "p99": 0.0,
+     "max": 0.0,
+     "over_10pct": 0.0,
+     "over_50pct": 0.0
+    },
+    "vote": {
+     "n": 144,
+     "p95": 0.0232,
+     "p99": 0.2702,
+     "max": 0.4115,
+     "over_10pct": 0.0278,
+     "over_50pct": 0.0
+    }
+   },
+   "holds": false
+  },
+  "32": {
+   "n": 680,
+   "seconds": {
+    "min": 1.067,
+    "max": 1.335
+   },
+   "tracked_pairs": 114,
+   "pair_rate": 0.274,
+   "unmatched_heavy_boxes": 2338,
+   "mean": 0.0363,
+   "p50": 0.0,
+   "p95": 0.208,
+   "p99": 1.0,
+   "max": 1.0,
+   "over_10pct": 0.0838,
+   "over_50pct": 0.025,
+   "by_distance": {
+    "2": {
+     "n": 106,
+     "p95": 0.0
+    },
+    "4": {
+     "n": 106,
+     "p95": 0.0546
+    },
+    "6": {
+     "n": 97,
+     "p95": 0.2193
+    },
+    "8": {
+     "n": 188,
+     "p95": 0.225
+    },
+    "12": {
+     "n": 92,
+     "p95": 0.3466
+    },
+    "16": {
+     "n": 91,
+     "p95": 0.3444
+    }
+   },
+   "by_clip": {
+    "hkmarch": {
+     "n": 186,
+     "p95": 0.3385,
+     "p99": 1.0,
+     "max": 1.0,
+     "over_10pct": 0.1774,
+     "over_50pct": 0.0376
+    },
+    "tamale": {
+     "n": 98,
+     "p95": 0.0605,
+     "p99": 0.2013,
+     "max": 0.2181,
+     "over_10pct": 0.0408,
+     "over_50pct": 0.0
+    },
+    "tbilisi": {
+     "n": 177,
+     "p95": 0.5325,
+     "p99": 1.0,
+     "max": 1.0,
+     "over_10pct": 0.096,
+     "over_50pct": 0.0565
+    },
+    "teacher": {
+     "n": 180,
+     "p95": 0.0,
+     "p99": 0.0,
+     "max": 0.203,
+     "over_10pct": 0.0056,
+     "over_50pct": 0.0
+    },
+    "vote": {
+     "n": 39,
+     "p95": 0.0943,
+     "p99": 0.2626,
+     "max": 0.3044,
+     "over_10pct": 0.0513,
+     "over_50pct": 0.0
+    }
+   },
+   "holds": false
+  },
+  "48": {
+   "n": 605,
+   "seconds": {
+    "min": 1.6,
+    "max": 2.002
+   },
+   "tracked_pairs": 85,
+   "pair_rate": 0.204,
+   "unmatched_heavy_boxes": 2797,
+   "mean": 0.0901,
+   "p50": 0.0,
+   "p95": 0.5982,
+   "p99": 1.0,
+   "max": 1.0,
+   "over_10pct": 0.2033,
+   "over_50pct": 0.0645,
+   "by_distance": {
+    "2": {
+     "n": 79,
+     "p95": 0.0173
+    },
+    "4": {
+     "n": 80,
+     "p95": 0.1267
+    },
+    "6": {
+     "n": 77,
+     "p95": 0.2473
+    },
+    "8": {
+     "n": 78,
+     "p95": 0.512
+    },
+    "12": {
+     "n": 78,
+     "p95": 0.7827
+    },
+    "16": {
+     "n": 145,
+     "p95": 0.6701
+    },
+    "24": {
+     "n": 68,
+     "p95": 0.7167
+    }
+   },
+   "by_clip": {
+    "hkmarch": {
+     "n": 148,
+     "p95": 1.0,
+     "p99": 1.0,
+     "max": 1.0,
+     "over_10pct": 0.5068,
+     "over_50pct": 0.1824
+    },
+    "tamale": {
+     "n": 82,
+     "p95": 0.1713,
+     "p99": 0.2529,
+     "max": 0.3762,
+     "over_10pct": 0.1098,
+     "over_50pct": 0.0
+    },
+    "tbilisi": {
+     "n": 175,
+     "p95": 0.5336,
+     "p99": 0.8455,
+     "max": 0.8799,
+     "over_10pct": 0.2171,
+     "over_50pct": 0.0686
+    },
+    "teacher": {
+     "n": 200,
+     "p95": 0.0,
+     "p99": 0.0006,
+     "max": 0.1164,
+     "over_10pct": 0.005,
+     "over_50pct": 0.0
+    }
+   },
+   "holds": false
+  }
+ },
+ "period_proposal": 8,
+ "period_proposal_seconds": {
+  "hkmarch": 0.334,
+  "tamale": 0.267,
+  "tbilisi": 0.267,
+  "teacher": 0.267,
+  "vote": 0.32
+ },
+ "claim_made": true,
+ "claim": "A key frame every 8 frames (0.267-0.334 s by clip frame rate) holds pooled over 5 clips: p95 0.0 %, p99 8.1 %, max 39.4 %, 1.0 % of the cases more than 10 % uncovered, 0.0 % more than 50 %. Clips that alone are over the 1 % limit: hkmarch 1.9 %.",
+ "clip_rates": {
+  "hkmarch": {
+   "fps": 23.976023976023978,
+   "source": "clip file"
+  },
+  "tamale": {
+   "fps": 30.0,
+   "source": "clip file"
+  },
+  "tbilisi": {
+   "fps": 30.0,
+   "source": "clip file"
+  },
+  "teacher": {
+   "fps": 30.0,
+   "source": "clip file"
+  },
+  "vote": {
+   "fps": 25.0,
+   "source": "clip file"
+  }
+ },
+ "margins_used": {
+  "second": [
+   0.125,
+   0.152
+  ]
+ },
+ "box_second_margin": {
+  "n": 50,
+  "percentile": 90,
+  "x": 0.125,
+  "y": 0.152,
+  "median": [
+   0.042,
+   0.04
+  ]
+ },
+ "heavy_per_second_proposal": {
+  "value": 6,
+  "rule": "at most 0.5 s of heavy work per second of video",
+  "zone_ms": 78.4
+ },
+ "machine": {
+  "host": "laptop-b",
+  "cpu": "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz",
+  "logical_cpus": 4,
+  "load_1min": 2.6
+ },
+ "heavy_model": {
+  "name": "retinaface-r34",
+  "sha256": "bd0263dc2a465d32859555cb1741f2d98991eb0053696e8ee33fec583d30e630"
+ },
+ "windows": 26,
+ "caveat": "The reference is the heavy model itself (not a labelled truth), 8 clips: results are per clip as well as pooled, and the pooled interval is not a bootstrap by clip. If no spacing holds, the margins are widened and the claim is not made (VK4)."
+}

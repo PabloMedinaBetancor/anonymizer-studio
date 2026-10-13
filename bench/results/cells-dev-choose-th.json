@@ -1,0 +1,30 @@
+{
+ "target_side": 192,
+ "rows": [
+  {
+   "target_side": 192,
+   "gain_per_1000": 29.7,
+   "mcnemar_p": 0.0,
+   "extra_false_hidden_photos_per_100": 1.82,
+   "ms_per_photo": 504.9,
+   "allowed": true
+  },
+  {
+   "target_side": 256,
+   "gain_per_1000": 25.3,
+   "mcnemar_p": 0.0,
+   "extra_false_hidden_photos_per_100": 1.82,
+   "ms_per_photo": 667.6,
+   "allowed": true
+  },
+  {
+   "target_side": 320,
+   "gain_per_1000": 28.0,
+   "mcnemar_p": 0.0,
+   "extra_false_hidden_photos_per_100": 1.82,
+   "ms_per_photo": 848.3,
+   "allowed": true
+  }
+ ],
+ "rule": "largest paired gain, extra false hidden <= 2 per 100"
+}

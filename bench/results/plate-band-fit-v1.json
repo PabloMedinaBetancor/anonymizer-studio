@@ -1,0 +1,251 @@
+{
+ "max_width": 250.0,
+ "plates_fitted": {
+  "eu_all_scales": 204,
+  "street_readable": 9
+ },
+ "percentiles": [
+  {
+   "p": 0,
+   "edges": [
+    -0.227,
+    1.299,
+    0.403,
+    1.25
+   ],
+   "plates_hidden_by_the_band_alone": 213,
+   "of": 213,
+   "area_share": 1.292
+  },
+  {
+   "p": 1,
+   "edges": [
+    0.124,
+    1.199,
+    0.418,
+    1.165
+   ],
+   "plates_hidden_by_the_band_alone": 207,
+   "of": 213,
+   "area_share": 0.804
+  },
+  {
+   "p": 2,
+   "edges": [
+    0.128,
+    0.951,
+    0.43,
+    1.04
+   ],
+   "plates_hidden_by_the_band_alone": 203,
+   "of": 213,
+   "area_share": 0.503
+  },
+  {
+   "p": 3,
+   "edges": [
+    0.137,
+    0.904,
+    0.432,
+    0.941
+   ],
+   "plates_hidden_by_the_band_alone": 196,
+   "of": 213,
+   "area_share": 0.391
+  },
+  {
+   "p": 5,
+   "edges": [
+    0.152,
+    0.866,
+    0.438,
+    0.927
+   ],
+   "plates_hidden_by_the_band_alone": 183,
+   "of": 213,
+   "area_share": 0.349
+  },
+  {
+   "p": 8,
+   "edges": [
+    0.185,
+    0.827,
+    0.442,
+    0.872
+   ],
+   "plates_hidden_by_the_band_alone": 167,
+   "of": 213,
+   "area_share": 0.276
+  },
+  {
+   "p": 10,
+   "edges": [
+    0.2,
+    0.817,
+    0.444,
+    0.858
+   ],
+   "plates_hidden_by_the_band_alone": 158,
+   "of": 213,
+   "area_share": 0.256
+  }
+ ],
+ "edges_checked": [
+  0.13,
+  0.97,
+  0.43,
+  1.04
+ ],
+ "rule": {
+  "EU 100 %": [
+   {
+    "inside": null,
+    "plates": 108,
+    "text_only": 106,
+    "text_and_bands": 106,
+    "small_vehicles": 68,
+    "banded": 68
+   },
+   {
+    "inside": 0.6,
+    "plates": 108,
+    "text_only": 106,
+    "text_and_bands": 106,
+    "small_vehicles": 68,
+    "banded": 57
+   },
+   {
+    "inside": 0.7,
+    "plates": 108,
+    "text_only": 106,
+    "text_and_bands": 106,
+    "small_vehicles": 68,
+    "banded": 57
+   },
+   {
+    "inside": 0.8,
+    "plates": 108,
+    "text_only": 106,
+    "text_and_bands": 106,
+    "small_vehicles": 68,
+    "banded": 59
+   },
+   {
+    "inside": 0.9,
+    "plates": 108,
+    "text_only": 106,
+    "text_and_bands": 106,
+    "small_vehicles": 68,
+    "banded": 62
+   },
+   {
+    "inside": 1.0,
+    "plates": 108,
+    "text_only": 106,
+    "text_and_bands": 106,
+    "small_vehicles": 68,
+    "banded": 64
+   }
+  ],
+  "EU 50 %": [
+   {
+    "inside": null,
+    "plates": 108,
+    "text_only": 107,
+    "text_and_bands": 107,
+    "small_vehicles": 123,
+    "banded": 123
+   },
+   {
+    "inside": 0.6,
+    "plates": 108,
+    "text_only": 107,
+    "text_and_bands": 107,
+    "small_vehicles": 123,
+    "banded": 21
+   },
+   {
+    "inside": 0.7,
+    "plates": 108,
+    "text_only": 107,
+    "text_and_bands": 107,
+    "small_vehicles": 123,
+    "banded": 22
+   },
+   {
+    "inside": 0.8,
+    "plates": 108,
+    "text_only": 107,
+    "text_and_bands": 107,
+    "small_vehicles": 123,
+    "banded": 26
+   },
+   {
+    "inside": 0.9,
+    "plates": 108,
+    "text_only": 107,
+    "text_and_bands": 107,
+    "small_vehicles": 123,
+    "banded": 32
+   },
+   {
+    "inside": 1.0,
+    "plates": 108,
+    "text_only": 107,
+    "text_and_bands": 107,
+    "small_vehicles": 123,
+    "banded": 34
+   }
+  ],
+  "EU 30 %": [
+   {
+    "inside": null,
+    "plates": 108,
+    "text_only": 94,
+    "text_and_bands": 108,
+    "small_vehicles": 112,
+    "banded": 112
+   },
+   {
+    "inside": 0.6,
+    "plates": 108,
+    "text_only": 94,
+    "text_and_bands": 106,
+    "small_vehicles": 112,
+    "banded": 28
+   },
+   {
+    "inside": 0.7,
+    "plates": 108,
+    "text_only": 94,
+    "text_and_bands": 106,
+    "small_vehicles": 112,
+    "banded": 32
+   },
+   {
+    "inside": 0.8,
+    "plates": 108,
+    "text_only": 94,
+    "text_and_bands": 107,
+    "small_vehicles": 112,
+    "banded": 38
+   },
+   {
+    "inside": 0.9,
+    "plates": 108,
+    "text_only": 94,
+    "text_and_bands": 108,
+    "small_vehicles": 112,
+    "banded": 46
+   },
+   {
+    "inside": 1.0,
+    "plates": 108,
+    "text_only": 94,
+    "text_and_bands": 108,
+    "small_vehicles": 112,
+    "banded": 53
+   }
+  ]
+ }
+}

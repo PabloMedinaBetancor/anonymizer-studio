@@ -1,0 +1,407 @@
+{
+ "report": {
+  "images": 15,
+  "iou": 0.3,
+  "agree": 30,
+  "uncertain": 11,
+  "only_a": 5,
+  "only_v": 1,
+  "ignored_a": 25,
+  "ignored_v": 7,
+  "author_precision": 0.8571,
+  "author_coverage": 0.9677,
+  "by_size": {
+   "<24": {
+    "agree": 0,
+    "uncertain": 0,
+    "only_a": 3,
+    "only_v": 0,
+    "ignored_a": 8,
+    "ignored_v": 0,
+    "author_precision": 0.0,
+    "author_coverage": null
+   },
+   "24-48": {
+    "agree": 3,
+    "uncertain": 0,
+    "only_a": 2,
+    "only_v": 0,
+    "ignored_a": 5,
+    "ignored_v": 0,
+    "author_precision": 0.6,
+    "author_coverage": 1.0
+   },
+   ">48": {
+    "agree": 27,
+    "uncertain": 11,
+    "only_a": 0,
+    "only_v": 1,
+    "ignored_a": 12,
+    "ignored_v": 7,
+    "author_precision": 1.0,
+    "author_coverage": 0.9643
+   }
+  },
+  "discrepancies": [
+   {
+    "kind": "only_in_verifier",
+    "rank": 1,
+    "image": "People-Travelling-on-a-bus.jpg",
+    "box_author": null,
+    "box_verifier": [
+     800,
+     1085,
+     912,
+     1170
+    ],
+    "iou": 0.0,
+    "size": 112,
+    "ignore_author": null,
+    "ignore_verifier": false
+   },
+   {
+    "kind": "only_in_author",
+    "rank": 1,
+    "image": "Jordan-Petra-Native-people-in-front-of-the-monument-Pharaoh-s-Treasury.jpg",
+    "box_author": [
+     1025,
+     697,
+     1053,
+     729
+    ],
+    "box_verifier": null,
+    "iou": 0.0,
+    "size": 32,
+    "ignore_author": false,
+    "ignore_verifier": null
+   },
+   {
+    "kind": "only_in_author",
+    "rank": 1,
+    "image": "Woman-holding-dog-in-living-room-AM-79400-1.jpg",
+    "box_author": [
+     558,
+     122,
+     580,
+     150
+    ],
+    "box_verifier": null,
+    "iou": 0.0,
+    "size": 28,
+    "ignore_author": false,
+    "ignore_verifier": null
+   },
+   {
+    "kind": "only_in_author",
+    "rank": 1,
+    "image": "Woman-holding-dog-in-living-room-AM-79400-1.jpg",
+    "box_author": [
+     459,
+     176,
+     477,
+     197
+    ],
+    "box_verifier": null,
+    "iou": 0.0,
+    "size": 21,
+    "ignore_author": false,
+    "ignore_verifier": null
+   },
+   {
+    "kind": "only_in_author",
+    "rank": 1,
+    "image": "Woman-holding-dog-in-living-room-AM-79400-1.jpg",
+    "box_author": [
+     329,
+     223,
+     339,
+     239
+    ],
+    "box_verifier": null,
+    "iou": 0.0,
+    "size": 16,
+    "ignore_author": false,
+    "ignore_verifier": null
+   },
+   {
+    "kind": "only_in_author",
+    "rank": 1,
+    "image": "Woman-holding-dog-in-living-room-AM-79400-1.jpg",
+    "box_author": [
+     316,
+     232,
+     328,
+     247
+    ],
+    "box_verifier": null,
+    "iou": 0.0,
+    "size": 15,
+    "ignore_author": false,
+    "ignore_verifier": null
+   },
+   {
+    "kind": "ignore_differs",
+    "rank": 2,
+    "image": "Man-taking-backlit-selfie-Unsplash.jpg",
+    "box_author": [
+     980,
+     520,
+     1170,
+     740
+    ],
+    "box_verifier": [
+     995,
+     562,
+     1160,
+     720
+    ],
+    "iou": 0.624,
+    "size": 220,
+    "ignore_author": false,
+    "ignore_verifier": true
+   },
+   {
+    "kind": "ignore_differs",
+    "rank": 2,
+    "image": "Arthur-Avenue-41---terrace-of-Noya-Cafe.jpg",
+    "box_author": [
+     1770,
+     120,
+     1867,
+     235
+    ],
+    "box_verifier": [
+     1775,
+     100,
+     1875,
+     220
+    ],
+    "iou": 0.659,
+    "size": 115,
+    "ignore_author": false,
+    "ignore_verifier": true
+   },
+   {
+    "kind": "ignore_differs",
+    "rank": 2,
+    "image": "Plaza-del-Duque-de-la-Victoria---Seville---Citysightseeing-Seville-144.jpg",
+    "box_author": [
+     1109,
+     624,
+     1190,
+     729
+    ],
+    "box_verifier": [
+     1065,
+     630,
+     1195,
+     715
+    ],
+    "iou": 0.543,
+    "size": 105,
+    "ignore_author": false,
+    "ignore_verifier": true
+   },
+   {
+    "kind": "ignore_differs",
+    "rank": 2,
+    "image": "People-Travelling-on-a-bus.jpg",
+    "box_author": [
+     810,
+     1229,
+     871,
+     1333
+    ],
+    "box_verifier": [
+     745,
+     1225,
+     865,
+     1325
+    ],
+    "iou": 0.404,
+    "size": 104,
+    "ignore_author": false,
+    "ignore_verifier": true
+   },
+   {
+    "kind": "poor_overlap",
+    "rank": 4,
+    "image": "18.Hot8.Storm.SFLF.WDC.7jul06-188138953.jpg",
+    "box_author": [
+     989,
+     180,
+     1416,
+     806
+    ],
+    "box_verifier": [
+     1000,
+     340,
+     1560,
+     960
+    ],
+    "iou": 0.461,
+    "size": 626,
+    "ignore_author": false,
+    "ignore_verifier": false
+   },
+   {
+    "kind": "poor_overlap",
+    "rank": 4,
+    "image": "View-of-the-crowd--WomensMarch--WomensMarch2018--SenecaFalls--NY-38908.jpg",
+    "box_author": [
+     1490,
+     1502,
+     1691,
+     1831
+    ],
+    "box_verifier": [
+     1490,
+     1600,
+     1600,
+     1810
+    ],
+    "iou": 0.349,
+    "size": 329,
+    "ignore_author": false,
+    "ignore_verifier": false
+   },
+   {
+    "kind": "poor_overlap",
+    "rank": 4,
+    "image": "WM-Conference-2016.-18.jpg",
+    "box_author": [
+     368,
+     586,
+     575,
+     856
+    ],
+    "box_verifier": [
+     405,
+     650,
+     562,
+     805
+    ],
+    "iou": 0.435,
+    "size": 270,
+    "ignore_author": false,
+    "ignore_verifier": false
+   },
+   {
+    "kind": "poor_overlap",
+    "rank": 4,
+    "image": "Woman-holding-dog-in-living-room-AM-79400-2.jpg",
+    "box_author": [
+     251,
+     222,
+     298,
+     284
+    ],
+    "box_verifier": [
+     233,
+     205,
+     302,
+     278
+    ],
+    "iou": 0.495,
+    "size": 62,
+    "ignore_author": false,
+    "ignore_verifier": false
+   }
+  ],
+  "sensitivity": {
+   "0.25": {
+    "author_precision": 0.8571,
+    "author_coverage": 0.9677
+   },
+   "0.5": {
+    "author_precision": 0.7222,
+    "author_coverage": 0.8387
+   }
+  },
+  "misses_in_sample": 12,
+  "misses_confirmed_by_verifier": 4
+ },
+ "review": {
+  "about": "Visual review (crops, one by one) of the boxes that the author and the blind verifier (a blind verifier, 15 photos, no detector) did not pair; 03/10/2026. verdict: author_missed = a real face the author did not label (added to set-a by bench/truth_check_faces.py --merge); verifier_missed = a real face only the author labelled; framed_portrait = a face in a picture frame, ambiguous (kept as the author labelled it, see R6).",
+  "items": [
+   {
+    "image": "set-a/People-Travelling-on-a-bus.jpg",
+    "only_in": "verifier",
+    "box": [
+     800,
+     1085,
+     912,
+     1170
+    ],
+    "verdict": "author_missed",
+    "note": "man in profile behind the bus window, clear face"
+   },
+   {
+    "image": "set-a/Jordan-Petra-Native-people-in-front-of-the-monument-Pharaoh-s-Treasury.jpg",
+    "only_in": "author",
+    "box": [
+     1025,
+     697,
+     1053,
+     729
+    ],
+    "verdict": "verifier_missed",
+    "note": "small real face of a rider in a keffiyeh"
+   },
+   {
+    "image": "set-a/Woman-holding-dog-in-living-room-AM-79400-1.jpg",
+    "only_in": "author",
+    "box": [
+     558,
+     122,
+     580,
+     150
+    ],
+    "verdict": "framed_portrait",
+    "note": "oval portrait on the wall"
+   },
+   {
+    "image": "set-a/Woman-holding-dog-in-living-room-AM-79400-1.jpg",
+    "only_in": "author",
+    "box": [
+     459,
+     176,
+     477,
+     197
+    ],
+    "verdict": "framed_portrait",
+    "note": "oval portrait on the wall"
+   },
+   {
+    "image": "set-a/Woman-holding-dog-in-living-room-AM-79400-1.jpg",
+    "only_in": "author",
+    "box": [
+     329,
+     223,
+     339,
+     239
+    ],
+    "verdict": "framed_portrait",
+    "note": "face inside a framed photograph"
+   },
+   {
+    "image": "set-a/Woman-holding-dog-in-living-room-AM-79400-1.jpg",
+    "only_in": "author",
+    "box": [
+     316,
+     232,
+     328,
+     247
+    ],
+    "verdict": "framed_portrait",
+    "note": "face inside a framed photograph"
+   }
+  ]
+ },
+ "reviewed_counts": {
+  "author_missed": 1,
+  "verifier_missed": 1,
+  "framed_portrait": 4
+ },
+ "merged_into_set_a": 0
+}

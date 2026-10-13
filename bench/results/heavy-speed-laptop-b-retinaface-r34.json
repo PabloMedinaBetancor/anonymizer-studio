@@ -1,0 +1,43 @@
+{
+ "what": "speed and memory of one heavy face detector on zones and tiles",
+ "date": "2026-10-03T14:23:08",
+ "model": {
+  "name": "retinaface-r34",
+  "version": "yakhyo-v0.0.1",
+  "sha256": "bd0263dc2a465d32859555cb1741f2d98991eb0053696e8ee33fec583d30e630"
+ },
+ "machine": {
+  "host": "laptop-b",
+  "cpu": "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz",
+  "logical_cpus": 4,
+  "load_1min": 2.06
+ },
+ "load_1min_at_end": 2.59,
+ "threads": 3,
+ "python": "3.10.13",
+ "photos": 12,
+ "zone_side_px": 256.0,
+ "first_call_ms_includes_session_open": 1025.4,
+ "zone": {
+  "n": 87,
+  "wall_ms_median": 116.9,
+  "wall_ms_p95": 133.5,
+  "wall_ms_max": 148.1,
+  "cpu_ms_median": 350.8
+ },
+ "tile_640": {
+  "n": 24,
+  "wall_ms_median": 752.8,
+  "wall_ms_p95": 764.6,
+  "wall_ms_max": 793.6,
+  "cpu_ms_median": 2257.0
+ },
+ "peak_rss_mb": 575.1,
+ "caveat": "design measurement: zones are the 8 best first-pass faces of each photo, not the suspect zones of the engine; the median is of calls after the first; quote it only with its machine and load",
+ "_publication": {
+  "speed": {
+   "publishable": false,
+   "why": "design measurement; the published speeds come from the pilot cells on a reserved laptop"
+  }
+ }
+}

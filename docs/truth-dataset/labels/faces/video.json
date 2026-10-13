@@ -1,0 +1,497 @@
+{
+ "licence": "CC BY-SA: clips from Wikimedia Commons, author and licence in bench/SOURCES.csv",
+ "clips": {
+  "preciados": {
+   "file": "preciados.ogv",
+   "width": 1280,
+   "height": 720,
+   "frames": {
+    "18": {
+     "boxes": []
+    },
+    "56": {
+     "boxes": []
+    },
+    "94": {
+     "boxes": [
+      {
+       "box": [
+        1050,
+        393,
+        1085,
+        432
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      },
+      {
+       "box": [
+        1197,
+        413,
+        1226,
+        447
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      },
+      {
+       "box": [
+        942,
+        408,
+        962,
+        436
+       ],
+       "kind": "face",
+       "ignore": true,
+       "note": "back_of_head"
+      },
+      {
+       "box": [
+        1117,
+        436,
+        1136,
+        460
+       ],
+       "kind": "face",
+       "ignore": true,
+       "note": "profile_in_shadow"
+      }
+     ]
+    },
+    "132": {
+     "boxes": [
+      {
+       "box": [
+        860,
+        404,
+        886,
+        434
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      },
+      {
+       "box": [
+        1113,
+        420,
+        1139,
+        450
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      }
+     ]
+    },
+    "169": {
+     "boxes": [
+      {
+       "box": [
+        1008,
+        426,
+        1034,
+        450
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      },
+      {
+       "box": [
+        1052,
+        412,
+        1076,
+        446
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      }
+     ]
+    },
+    "207": {
+     "boxes": [
+      {
+       "box": [
+        977,
+        427,
+        1003,
+        455
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      },
+      {
+       "box": [
+        953,
+        438,
+        975,
+        453
+       ],
+       "kind": "face",
+       "ignore": true,
+       "note": "back_of_head"
+      },
+      {
+       "box": [
+        1003,
+        432,
+        1023,
+        448
+       ],
+       "kind": "face",
+       "ignore": true,
+       "note": "blurred"
+      }
+     ]
+    },
+    "245": {
+     "boxes": [
+      {
+       "box": [
+        1168,
+        462,
+        1200,
+        503
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      },
+      {
+       "box": [
+        1202,
+        457,
+        1224,
+        497
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      }
+     ]
+    },
+    "282": {
+     "boxes": [
+      {
+       "box": [
+        824,
+        442,
+        850,
+        484
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      },
+      {
+       "box": [
+        810,
+        449,
+        825,
+        468
+       ],
+       "kind": "face",
+       "ignore": true,
+       "note": "partly_hidden"
+      }
+     ]
+    },
+    "320": {
+     "boxes": [
+      {
+       "box": [
+        450,
+        452,
+        483,
+        490
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      }
+     ]
+    },
+    "358": {
+     "boxes": [
+      {
+       "box": [
+        771,
+        447,
+        796,
+        472
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      }
+     ]
+    },
+    "396": {
+     "boxes": [
+      {
+       "box": [
+        723,
+        450,
+        746,
+        477
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      }
+     ]
+    },
+    "433": {
+     "boxes": [
+      {
+       "box": [
+        637,
+        442,
+        664,
+        470
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      }
+     ]
+    },
+    "471": {
+     "boxes": [
+      {
+       "box": [
+        479,
+        450,
+        508,
+        477
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      }
+     ]
+    },
+    "509": {
+     "boxes": [
+      {
+       "box": [
+        262,
+        458,
+        292,
+        489
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      },
+      {
+       "box": [
+        975,
+        452,
+        997,
+        473
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      }
+     ]
+    },
+    "546": {
+     "boxes": []
+    },
+    "584": {
+     "boxes": []
+    },
+    "622": {
+     "boxes": []
+    },
+    "660": {
+     "boxes": []
+    },
+    "697": {
+     "boxes": []
+    },
+    "735": {
+     "boxes": []
+    },
+    "773": {
+     "boxes": []
+    },
+    "810": {
+     "boxes": []
+    },
+    "848": {
+     "boxes": []
+    },
+    "886": {
+     "boxes": [
+      {
+       "box": [
+        1229,
+        422,
+        1258,
+        452
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      },
+      {
+       "box": [
+        1158,
+        447,
+        1183,
+        477
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      },
+      {
+       "box": [
+        1187,
+        472,
+        1210,
+        498
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      }
+     ]
+    },
+    "924": {
+     "boxes": [
+      {
+       "box": [
+        892,
+        435,
+        925,
+        468
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      },
+      {
+       "box": [
+        858,
+        464,
+        884,
+        489
+       ],
+       "kind": "face",
+       "ignore": false,
+       "note": ""
+      },
+      {
+       "box": [
+        850,
+        489,
+        884,
+        518
+       ],
+       "kind": "face",
+       "ignore": true,
+       "note": "child_face_unclear"
+      }
+     ]
+    },
+    "961": {
+     "boxes": []
+    },
+    "999": {
+     "boxes": []
+    },
+    "1037": {
+     "boxes": []
+    }
+   }
+  },
+  "hongkong": {
+   "file": "hongkong.webm",
+   "width": 1920,
+   "height": 1080,
+   "frames": {
+    "6": {
+     "boxes": []
+    },
+    "20": {
+     "boxes": []
+    },
+    "33": {
+     "boxes": []
+    },
+    "47": {
+     "boxes": []
+    },
+    "60": {
+     "boxes": []
+    },
+    "74": {
+     "boxes": []
+    },
+    "87": {
+     "boxes": []
+    },
+    "100": {
+     "boxes": []
+    },
+    "114": {
+     "boxes": []
+    },
+    "127": {
+     "boxes": []
+    },
+    "141": {
+     "boxes": []
+    },
+    "154": {
+     "boxes": []
+    },
+    "168": {
+     "boxes": []
+    },
+    "181": {
+     "boxes": []
+    },
+    "195": {
+     "boxes": []
+    },
+    "208": {
+     "boxes": []
+    },
+    "222": {
+     "boxes": []
+    },
+    "235": {
+     "boxes": []
+    },
+    "248": {
+     "boxes": []
+    },
+    "262": {
+     "boxes": []
+    },
+    "275": {
+     "boxes": []
+    },
+    "289": {
+     "boxes": []
+    },
+    "302": {
+     "boxes": []
+    },
+    "316": {
+     "boxes": []
+    }
+   }
+  }
+ }
+}

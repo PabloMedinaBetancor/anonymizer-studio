@@ -1,0 +1,142 @@
+{
+ "hardware": {
+  "cpu": "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz",
+  "cores": 4,
+  "ram_mb": 3348,
+  "os": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "python": "3.10.13",
+  "onnxruntime": "1.23.2",
+  "opencv": "5.0.0"
+ },
+ "limit": null,
+ "plates.photo.eu.recall_full_pct": 99.07,
+ "plates.photo.eu.recall_full_count": "107/108",
+ "plates.photo.eu.recall_full_asp_criterion_pct": 99.07,
+ "plates.photo.eu.recall_full_blur_or_check_pct": 100.0,
+ "plates.photo.eu.recall_full_n": 108,
+ "plates.photo.eu.recall_full_ci95_pct": [
+  94.9,
+  99.8
+ ],
+ "plates.photo.hidden_default_full_pct": 100.0,
+ "plates.photo.hidden_default_full_count": "108/108",
+ "plates.photo.hidden_default_full_n": 108,
+ "plates.photo.hidden_default_full_ci95_pct": [
+  96.6,
+  100.0
+ ],
+ "plates.speed.ms_per_photo": 266.2,
+ "plates.speed.ms_per_photo_median": 210.0,
+ "plates.photo.eu.recall_half_pct": 95.37,
+ "plates.photo.eu.recall_half_count": "103/108",
+ "plates.photo.eu.recall_half_asp_criterion_pct": 95.37,
+ "plates.photo.eu.recall_half_blur_or_check_pct": 100.0,
+ "plates.photo.eu.recall_half_n": 108,
+ "plates.photo.eu.recall_half_ci95_pct": [
+  89.6,
+  98.0
+ ],
+ "plates.photo.hidden_default_half_pct": 100.0,
+ "plates.photo.hidden_default_half_count": "108/108",
+ "plates.photo.hidden_default_half_n": 108,
+ "plates.photo.hidden_default_half_ci95_pct": [
+  96.6,
+  100.0
+ ],
+ "plates.photo.eu.recall_30_pct": 91.67,
+ "plates.photo.eu.recall_30_count": "99/108",
+ "plates.photo.eu.recall_30_asp_criterion_pct": 91.67,
+ "plates.photo.eu.recall_30_blur_or_check_pct": 100.0,
+ "plates.photo.eu.recall_30_n": 108,
+ "plates.photo.eu.recall_30_ci95_pct": [
+  84.9,
+  95.6
+ ],
+ "plates.photo.hidden_default_30_pct": 100.0,
+ "plates.photo.hidden_default_30_count": "108/108",
+ "plates.photo.hidden_default_30_n": 108,
+ "plates.photo.hidden_default_30_ci95_pct": [
+  96.6,
+  100.0
+ ],
+ "plates.photo.false_blur_per_100": 5.0,
+ "plates.photo.false_check_per_100": 18.33,
+ "plates.photo.false_blur": {
+  "per_100": 5.0,
+  "events": 3,
+  "photos_affected": 2,
+  "n": 60,
+  "ci95_photos_pct": [
+   0.9,
+   11.4
+  ]
+ },
+ "plates.photo.false_check": {
+  "per_100": 18.33,
+  "events": 11,
+  "photos_affected": 11,
+  "n": 60,
+  "ci95_photos_pct": [
+   10.6,
+   29.9
+  ]
+ },
+ "plates.photo.false_hidden_default": {
+  "per_100": 23.33,
+  "events": 14,
+  "photos_affected": 12,
+  "n": 60,
+  "ci95_photos_pct": [
+   11.8,
+   31.8
+  ]
+ },
+ "plates.photo.streets.photos": 60,
+ "plates.photo.streets.plates": 16,
+ "plates.photo.streets.recall_blur_pct": 81.25,
+ "plates.photo.streets.recall_blur_n": 16,
+ "plates.photo.streets.recall_blur_ci95_pct": [
+  57.0,
+  93.4
+ ],
+ "plates.photo.eu.what": "plates annotated by OpenALPR (not by us) in 108 photos; the photos are AGPL and stay local",
+ "plates.photo.streets.caveat": "16 readable plates in 60 Commons photos, truth by two labellers whose boxes agreed on a minority of plates (bench/results/truth-check-plates.json): the interval is wide and the truth is the union of both",
+ "_publication": {
+  "plates.photo.streets.recall_blur_pct": {
+   "publishable": false,
+   "why": "16 readable plates in 60 photos, truth from two labellers who agreed on a minority of the plates (bench/results/truth-check-plates.json): not a figure to quote; the openalpr-eu figures are the ones with a defensible truth"
+  },
+  "plates.photo.streets.recall_blur_n": {
+   "publishable": false,
+   "why": "16 readable plates in 60 photos, truth from two labellers who agreed on a minority of the plates (bench/results/truth-check-plates.json): not a figure to quote; the openalpr-eu figures are the ones with a defensible truth"
+  },
+  "plates.photo.streets.recall_blur_ci95_pct": {
+   "publishable": false,
+   "why": "16 readable plates in 60 photos, truth from two labellers who agreed on a minority of the plates (bench/results/truth-check-plates.json): not a figure to quote; the openalpr-eu figures are the ones with a defensible truth"
+  }
+ },
+ "truth_sha256": {
+  "bench/truth/plates/openalpr-eu.json": "552fbe2d8faaff31e02db9394ac4274f9872c7a9a67e76f574d86b66c188c798",
+  "bench/truth/plates/streets.json": "2c2c866db87db7852a9f24544968ed003f71d30c1e5733c10e65126d6c316ce9",
+  "bench/truth/plates/streets-author.json": "0396b3d8f3c0de8598aba2249eaa1207f83bf1a81c57e97b8c91f0a27f3aded8",
+  "bench/truth/plates/streets-verifier.json": "5fe16b8947f8ca359d48a1cdb2d52e4b1d220351cfa158bdfd61ab86ac795c81"
+ },
+ "run": {
+  "date": "2026-10-03"
+ },
+ "plates.model_failures": 0,
+ "plates.timings_s": {
+  "plate_full": 20.32,
+  "plate_tiles": 40.29,
+  "vehicles": 32.42,
+  "plates_in_vehicles": 27.51,
+  "retry_plate": 24.8
+ },
+ "plates.calls": {
+  "plate_full": 384,
+  "plate_tiles": 762,
+  "vehicles": 384,
+  "plates_in_vehicles": 488,
+  "retry_plate": 457
+ }
+}

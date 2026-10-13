@@ -1,0 +1,460 @@
+{
+ "images": 30,
+ "iou": 0.3,
+ "agree": 10,
+ "uncertain": 2,
+ "only_a": 8,
+ "only_b": 7,
+ "ignored_a": 9,
+ "ignored_b": 4,
+ "concordance": 0.4,
+ "discrepancies": [
+  {
+   "kind": "only_in_b",
+   "rank": 1,
+   "image": "street_005.jpg",
+   "box_a": null,
+   "box_b": [
+    558,
+    998,
+    638,
+    1021
+   ],
+   "iou": 0.0,
+   "area": 1840,
+   "flags_a": null,
+   "flags_b": {
+    "readable": true,
+    "ignore": false
+   }
+  },
+  {
+   "kind": "only_in_b",
+   "rank": 1,
+   "image": "street_032.jpg",
+   "box_a": null,
+   "box_b": [
+    1178,
+    808,
+    1200,
+    882
+   ],
+   "iou": 0.0,
+   "area": 1628,
+   "flags_a": null,
+   "flags_b": {
+    "readable": false,
+    "ignore": false
+   }
+  },
+  {
+   "kind": "only_in_a",
+   "rank": 1,
+   "image": "street_005.jpg",
+   "box_a": [
+    458,
+    1203,
+    503,
+    1221
+   ],
+   "box_b": null,
+   "iou": 0.0,
+   "area": 810,
+   "flags_a": {
+    "readable": false,
+    "ignore": false
+   },
+   "flags_b": null
+  },
+  {
+   "kind": "only_in_b",
+   "rank": 1,
+   "image": "street_027.jpg",
+   "box_a": null,
+   "box_b": [
+    740,
+    842,
+    766,
+    872
+   ],
+   "iou": 0.0,
+   "area": 780,
+   "flags_a": null,
+   "flags_b": {
+    "readable": false,
+    "ignore": false
+   }
+  },
+  {
+   "kind": "only_in_b",
+   "rank": 1,
+   "image": "street_027.jpg",
+   "box_a": null,
+   "box_b": [
+    274,
+    694,
+    306,
+    716
+   ],
+   "iou": 0.0,
+   "area": 704,
+   "flags_a": null,
+   "flags_b": {
+    "readable": false,
+    "ignore": false
+   }
+  },
+  {
+   "kind": "only_in_a",
+   "rank": 1,
+   "image": "street_060.jpg",
+   "box_a": [
+    1000,
+    935,
+    1041,
+    952
+   ],
+   "box_b": null,
+   "iou": 0.0,
+   "area": 697,
+   "flags_a": {
+    "readable": true,
+    "ignore": false
+   },
+   "flags_b": null
+  },
+  {
+   "kind": "only_in_b",
+   "rank": 1,
+   "image": "street_027.jpg",
+   "box_a": null,
+   "box_b": [
+    121,
+    785,
+    146,
+    812
+   ],
+   "iou": 0.0,
+   "area": 675,
+   "flags_a": null,
+   "flags_b": {
+    "readable": false,
+    "ignore": false
+   }
+  },
+  {
+   "kind": "only_in_b",
+   "rank": 1,
+   "image": "street_027.jpg",
+   "box_a": null,
+   "box_b": [
+    216,
+    706,
+    244,
+    730
+   ],
+   "iou": 0.0,
+   "area": 672,
+   "flags_a": null,
+   "flags_b": {
+    "readable": false,
+    "ignore": false
+   }
+  },
+  {
+   "kind": "only_in_a",
+   "rank": 1,
+   "image": "street_060.jpg",
+   "box_a": [
+    594,
+    799,
+    640,
+    812
+   ],
+   "box_b": null,
+   "iou": 0.0,
+   "area": 598,
+   "flags_a": {
+    "readable": true,
+    "ignore": false
+   },
+   "flags_b": null
+  },
+  {
+   "kind": "only_in_a",
+   "rank": 1,
+   "image": "street_060.jpg",
+   "box_a": [
+    1083,
+    801,
+    1122,
+    816
+   ],
+   "box_b": null,
+   "iou": 0.0,
+   "area": 585,
+   "flags_a": {
+    "readable": true,
+    "ignore": false
+   },
+   "flags_b": null
+  },
+  {
+   "kind": "only_in_a",
+   "rank": 1,
+   "image": "street_060.jpg",
+   "box_a": [
+    1473,
+    797,
+    1510,
+    812
+   ],
+   "box_b": null,
+   "iou": 0.0,
+   "area": 555,
+   "flags_a": {
+    "readable": true,
+    "ignore": false
+   },
+   "flags_b": null
+  },
+  {
+   "kind": "only_in_a",
+   "rank": 1,
+   "image": "street_005.jpg",
+   "box_a": [
+    420,
+    1203,
+    452,
+    1220
+   ],
+   "box_b": null,
+   "iou": 0.0,
+   "area": 544,
+   "flags_a": {
+    "readable": false,
+    "ignore": false
+   },
+   "flags_b": null
+  },
+  {
+   "kind": "only_in_a",
+   "rank": 1,
+   "image": "street_060.jpg",
+   "box_a": [
+    757,
+    798,
+    794,
+    810
+   ],
+   "box_b": null,
+   "iou": 0.0,
+   "area": 444,
+   "flags_a": {
+    "readable": false,
+    "ignore": false
+   },
+   "flags_b": null
+  },
+  {
+   "kind": "only_in_b",
+   "rank": 1,
+   "image": "street_027.jpg",
+   "box_a": null,
+   "box_b": [
+    851,
+    729,
+    871,
+    750
+   ],
+   "iou": 0.0,
+   "area": 420,
+   "flags_a": null,
+   "flags_b": {
+    "readable": false,
+    "ignore": false
+   }
+  },
+  {
+   "kind": "only_in_a",
+   "rank": 1,
+   "image": "street_060.jpg",
+   "box_a": [
+    353,
+    796,
+    382,
+    806
+   ],
+   "box_b": null,
+   "iou": 0.0,
+   "area": 290,
+   "flags_a": {
+    "readable": false,
+    "ignore": false
+   },
+   "flags_b": null
+  },
+  {
+   "kind": "ignore_differs",
+   "rank": 2,
+   "image": "street_049.jpg",
+   "box_a": [
+    1626,
+    262,
+    1648,
+    335
+   ],
+   "box_b": [
+    1626,
+    258,
+    1646,
+    336
+   ],
+   "iou": 0.856,
+   "area": 1606,
+   "flags_a": {
+    "readable": false,
+    "ignore": true
+   },
+   "flags_b": {
+    "readable": false,
+    "ignore": false
+   }
+  },
+  {
+   "kind": "ignore_differs",
+   "rank": 2,
+   "image": "street_060.jpg",
+   "box_a": [
+    911,
+    798,
+    944,
+    810
+   ],
+   "box_b": [
+    911,
+    799,
+    958,
+    813
+   ],
+   "iou": 0.525,
+   "area": 396,
+   "flags_a": {
+    "readable": false,
+    "ignore": false
+   },
+   "flags_b": {
+    "readable": false,
+    "ignore": true
+   }
+  },
+  {
+   "kind": "poor_overlap",
+   "rank": 4,
+   "image": "street_046.jpg",
+   "box_a": [
+    1017,
+    762,
+    1081,
+    800
+   ],
+   "box_b": [
+    1024,
+    770,
+    1071,
+    795
+   ],
+   "iou": 0.483,
+   "area": 2432,
+   "flags_a": {
+    "readable": true,
+    "ignore": false
+   },
+   "flags_b": {
+    "readable": true,
+    "ignore": false
+   }
+  },
+  {
+   "kind": "poor_overlap",
+   "rank": 4,
+   "image": "street_032.jpg",
+   "box_a": [
+    884,
+    1244,
+    906,
+    1292
+   ],
+   "box_b": [
+    872,
+    1238,
+    908,
+    1302
+   ],
+   "iou": 0.458,
+   "area": 1056,
+   "flags_a": {
+    "readable": false,
+    "ignore": false
+   },
+   "flags_b": {
+    "readable": false,
+    "ignore": false
+   }
+  },
+  {
+   "kind": "poor_overlap",
+   "rank": 4,
+   "image": "street_034.jpg",
+   "box_a": [
+    538,
+    1182,
+    592,
+    1197
+   ],
+   "box_b": [
+    535,
+    1180,
+    618,
+    1198
+   ],
+   "iou": 0.542,
+   "area": 810,
+   "flags_a": {
+    "readable": true,
+    "ignore": false
+   },
+   "flags_b": {
+    "readable": true,
+    "ignore": false
+   }
+  },
+  {
+   "kind": "poor_overlap",
+   "rank": 4,
+   "image": "street_031.jpg",
+   "box_a": [
+    1221,
+    665,
+    1240,
+    681
+   ],
+   "box_b": [
+    1218,
+    662,
+    1247,
+    681
+   ],
+   "iou": 0.552,
+   "area": 304,
+   "flags_a": {
+    "readable": false,
+    "ignore": false
+   },
+   "flags_b": {
+    "readable": false,
+    "ignore": false
+   }
+  }
+ ]
+}

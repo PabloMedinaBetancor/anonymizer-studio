@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+/.env.local
+/models/*.onnx
+/bench/data/
+/out/
+*.partial
+/.suite-logs/
+/build/
+*.egg-info/
+/site/
+/work/
+/.venv/
+.ruff_cache/
+.pytest_cache/

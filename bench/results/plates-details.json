@@ -1,0 +1,624 @@
+{
+ "openalpr-eu": [
+  {
+   "image": "eu4.jpg",
+   "scale": 1.0,
+   "box": [
+    104.0,
+    210.0,
+    609.0,
+    326.0
+   ],
+   "crop": "plates/crops/eu-1-eu4.jpg",
+   "zones": [
+    [
+     "check",
+     "plate.reason.off_vehicle",
+     [
+      105.9,
+      200.3,
+      612.3,
+      329.6
+     ],
+     0.9,
+     0.9
+    ]
+   ]
+  },
+  {
+   "image": "eu4.jpg",
+   "scale": 0.5,
+   "box": [
+    52.0,
+    105.0,
+    304.5,
+    163.0
+   ],
+   "crop": "plates/crops/eu-0.5-eu4.jpg",
+   "zones": [
+    [
+     "check",
+     "plate.reason.off_vehicle",
+     [
+      52.1,
+      100.0,
+      306.9,
+      165.0
+     ],
+     0.89,
+     0.89
+    ]
+   ]
+  },
+  {
+   "image": "test_021.jpg",
+   "scale": 0.5,
+   "box": [
+    76.5,
+    117.0,
+    142.5,
+    132.0
+   ],
+   "crop": "plates/crops/eu-0.5-test_021.jpg",
+   "zones": [
+    [
+     "check",
+     "plate.reason.off_vehicle",
+     [
+      77.4,
+      115.0,
+      142.8,
+      135.7
+     ],
+     0.9,
+     0.9
+    ]
+   ]
+  },
+  {
+   "image": "test_028.jpg",
+   "scale": 0.5,
+   "box": [
+    82.5,
+    79.0,
+    146.5,
+    93.5
+   ],
+   "crop": "plates/crops/eu-0.5-test_028.jpg",
+   "zones": [
+    [
+     "check",
+     "plate.reason.off_vehicle",
+     [
+      82.7,
+      78.3,
+      147.2,
+      94.2
+     ],
+     0.88,
+     0.88
+    ]
+   ]
+  },
+  {
+   "image": "test_059.jpg",
+   "scale": 0.5,
+   "box": [
+    81.0,
+    77.5,
+    131.0,
+    89.0
+   ],
+   "crop": "plates/crops/eu-0.5-test_059.jpg",
+   "zones": [
+    [
+     "check",
+     "plate.reason.off_vehicle",
+     [
+      81.0,
+      77.2,
+      130.7,
+      90.6
+     ],
+     0.89,
+     0.89
+    ]
+   ]
+  },
+  {
+   "image": "test_088.jpg",
+   "scale": 0.5,
+   "box": [
+    90.5,
+    142.5,
+    152.5,
+    156.5
+   ],
+   "crop": "plates/crops/eu-0.5-test_088.jpg",
+   "zones": [
+    [
+     "check",
+     "plate.reason.off_vehicle",
+     [
+      90.6,
+      141.4,
+      153.9,
+      157.6
+     ],
+     0.91,
+     0.91
+    ]
+   ]
+  },
+  {
+   "image": "eu4.jpg",
+   "scale": 0.3,
+   "box": [
+    31.2,
+    63.0,
+    182.7,
+    97.8
+   ],
+   "crop": "plates/crops/eu-0.3-eu4.jpg",
+   "zones": [
+    [
+     "check",
+     "plate.reason.off_vehicle",
+     [
+      31.4,
+      59.6,
+      185.0,
+      98.8
+     ],
+     0.89,
+     0.89
+    ]
+   ]
+  },
+  {
+   "image": "test_021.jpg",
+   "scale": 0.3,
+   "box": [
+    45.9,
+    70.2,
+    85.5,
+    79.2
+   ],
+   "crop": "plates/crops/eu-0.3-test_021.jpg",
+   "zones": [
+    [
+     "check",
+     "plate.reason.off_vehicle",
+     [
+      46.6,
+      69.2,
+      85.6,
+      80.5
+     ],
+     0.87,
+     0.87
+    ]
+   ]
+  },
+  {
+   "image": "test_023.jpg",
+   "scale": 0.3,
+   "box": [
+    51.3,
+    86.7,
+    84.6,
+    94.2
+   ],
+   "crop": "plates/crops/eu-0.3-test_023.jpg",
+   "zones": [
+    [
+     "check",
+     "plate.reason.off_vehicle",
+     [
+      51.6,
+      86.1,
+      85.3,
+      94.5
+     ],
+     0.9,
+     0.9
+    ]
+   ]
+  },
+  {
+   "image": "test_028.jpg",
+   "scale": 0.3,
+   "box": [
+    49.5,
+    47.4,
+    87.89999999999999,
+    56.1
+   ],
+   "crop": "plates/crops/eu-0.3-test_028.jpg",
+   "zones": [
+    [
+     "check",
+     "plate.reason.off_vehicle",
+     [
+      49.8,
+      47.0,
+      88.3,
+      56.6
+     ],
+     0.87,
+     0.87
+    ]
+   ]
+  },
+  {
+   "image": "test_042.jpg",
+   "scale": 0.3,
+   "box": [
+    69.89999999999999,
+    39.0,
+    100.8,
+    45.9
+   ],
+   "crop": "plates/crops/eu-0.3-test_042.jpg",
+   "zones": [
+    [
+     "check",
+     "plate.reason.unconfirmed",
+     [
+      69.9,
+      38.9,
+      100.9,
+      47.7
+     ],
+     0.89,
+     0.26
+    ]
+   ]
+  },
+  {
+   "image": "test_059.jpg",
+   "scale": 0.3,
+   "box": [
+    48.6,
+    46.5,
+    78.6,
+    53.4
+   ],
+   "crop": "plates/crops/eu-0.3-test_059.jpg",
+   "zones": [
+    [
+     "check",
+     "plate.reason.off_vehicle",
+     [
+      48.4,
+      46.6,
+      78.2,
+      54.1
+     ],
+     0.89,
+     0.9
+    ]
+   ]
+  },
+  {
+   "image": "test_060.jpg",
+   "scale": 0.3,
+   "box": [
+    76.2,
+    32.699999999999996,
+    102.6,
+    38.699999999999996
+   ],
+   "crop": "plates/crops/eu-0.3-test_060.jpg",
+   "zones": [
+    [
+     "check",
+     "plate.reason.off_vehicle",
+     [
+      76.2,
+      31.4,
+      102.6,
+      41.1
+     ],
+     0.9,
+     0.85
+    ]
+   ]
+  },
+  {
+   "image": "test_066.jpg",
+   "scale": 0.3,
+   "box": [
+    40.5,
+    49.199999999999996,
+    74.39999999999999,
+    57.0
+   ],
+   "crop": "plates/crops/eu-0.3-test_066.jpg",
+   "zones": [
+    [
+     "check",
+     "plate.reason.off_vehicle",
+     [
+      40.3,
+      47.8,
+      75.3,
+      57.2
+     ],
+     0.86,
+     0.86
+    ]
+   ]
+  },
+  {
+   "image": "test_092.jpg",
+   "scale": 0.3,
+   "box": [
+    52.199999999999996,
+    76.2,
+    94.5,
+    85.8
+   ],
+   "crop": "plates/crops/eu-0.3-test_092.jpg",
+   "zones": [
+    [
+     "check",
+     "plate.reason.off_vehicle",
+     [
+      51.9,
+      75.5,
+      94.1,
+      85.5
+     ],
+     0.9,
+     0.9
+    ]
+   ]
+  }
+ ],
+ "streets": [
+  {
+   "image": "street_003.jpg",
+   "kind": "false_check",
+   "box": [
+    1013.7,
+    526.2,
+    1065.8,
+    547.9
+   ],
+   "score": 0.36,
+   "verify": 0.0,
+   "reason": "plate.reason.unconfirmed",
+   "on_vehicle": true,
+   "crop": "plates/crops/streets-false_check-street_003-1013.jpg"
+  },
+  {
+   "image": "street_005.jpg",
+   "kind": "false_check",
+   "box": [
+    940.3,
+    1363.5,
+    964.8,
+    1380.3
+   ],
+   "score": 0.69,
+   "verify": 0.0,
+   "reason": "plate.reason.unconfirmed",
+   "on_vehicle": true,
+   "crop": "plates/crops/streets-false_check-street_005-940.jpg"
+  },
+  {
+   "image": "street_005.jpg",
+   "kind": "missed_plate",
+   "box": [
+    558.0,
+    998.0,
+    638.0,
+    1021.0
+   ],
+   "crop": "plates/crops/streets-miss-street_005-558.jpg"
+  },
+  {
+   "image": "street_006.jpg",
+   "kind": "false_check",
+   "box": [
+    1000.9,
+    275.0,
+    1049.5,
+    314.0
+   ],
+   "score": 0.67,
+   "verify": 0.0,
+   "reason": "plate.reason.unconfirmed",
+   "on_vehicle": true,
+   "crop": "plates/crops/streets-false_check-street_006-1000.jpg"
+  },
+  {
+   "image": "street_026.jpg",
+   "kind": "false_check",
+   "box": [
+    1277.6,
+    794.4,
+    1288.5,
+    798.6
+   ],
+   "score": 0.79,
+   "verify": 0.0,
+   "reason": "plate.reason.unconfirmed",
+   "on_vehicle": true,
+   "crop": "plates/crops/streets-false_check-street_026-1277.jpg"
+  },
+  {
+   "image": "street_027.jpg",
+   "kind": "false_check",
+   "box": [
+    524.3,
+    901.2,
+    569.4,
+    936.1
+   ],
+   "score": 0.48,
+   "verify": 0.0,
+   "reason": "plate.reason.unconfirmed",
+   "on_vehicle": true,
+   "crop": "plates/crops/streets-false_check-street_027-524.jpg"
+  },
+  {
+   "image": "street_030.jpg",
+   "kind": "false_check",
+   "box": [
+    670.0,
+    446.7,
+    695.9,
+    462.9
+   ],
+   "score": 0.82,
+   "verify": 0.0,
+   "reason": "plate.reason.unconfirmed",
+   "on_vehicle": true,
+   "crop": "plates/crops/streets-false_check-street_030-669.jpg"
+  },
+  {
+   "image": "street_032.jpg",
+   "kind": "false_check",
+   "box": [
+    83.2,
+    523.2,
+    227.5,
+    616.6
+   ],
+   "score": 0.33,
+   "verify": 0.0,
+   "reason": "plate.reason.unconfirmed",
+   "on_vehicle": true,
+   "crop": "plates/crops/streets-false_check-street_032-83.jpg"
+  },
+  {
+   "image": "street_034.jpg",
+   "kind": "false_check",
+   "box": [
+    380.8,
+    1134.1,
+    386.5,
+    1137.2
+   ],
+   "score": 0.37,
+   "verify": 0.36,
+   "reason": "plate.reason.unconfirmed",
+   "on_vehicle": true,
+   "crop": "plates/crops/streets-false_check-street_034-380.jpg"
+  },
+  {
+   "image": "street_036.jpg",
+   "kind": "false_check",
+   "box": [
+    1281.5,
+    579.7,
+    1304.6,
+    592.6
+   ],
+   "score": 0.39,
+   "verify": 0.26,
+   "reason": "plate.reason.unconfirmed",
+   "on_vehicle": true,
+   "crop": "plates/crops/streets-false_check-street_036-1281.jpg"
+  },
+  {
+   "image": "street_046.jpg",
+   "kind": "false_blur",
+   "box": [
+    675.3,
+    855.7,
+    742.4,
+    896.0
+   ],
+   "score": 0.81,
+   "verify": 0.8,
+   "reason": "plate.reason.on_vehicle_verified",
+   "on_vehicle": true,
+   "crop": "plates/crops/streets-false_blur-street_046-675.jpg"
+  },
+  {
+   "image": "street_046.jpg",
+   "kind": "false_check",
+   "box": [
+    1285.1,
+    507.5,
+    1557.7,
+    578.0
+   ],
+   "score": 0.32,
+   "verify": 0.0,
+   "reason": "plate.reason.unconfirmed",
+   "on_vehicle": true,
+   "crop": "plates/crops/streets-false_check-street_046-1285.jpg"
+  },
+  {
+   "image": "street_046.jpg",
+   "kind": "missed_plate",
+   "box": [
+    1017.0,
+    762.0,
+    1081.0,
+    800.0
+   ],
+   "crop": "plates/crops/streets-miss-street_046-1017.jpg"
+  },
+  {
+   "image": "street_055.jpg",
+   "kind": "false_blur",
+   "box": [
+    868.1,
+    702.9,
+    915.8,
+    738.1
+   ],
+   "score": 0.56,
+   "verify": 0.9,
+   "reason": "plate.reason.on_vehicle_verified",
+   "on_vehicle": true,
+   "crop": "plates/crops/streets-false_blur-street_055-868.jpg"
+  },
+  {
+   "image": "street_055.jpg",
+   "kind": "false_blur",
+   "box": [
+    1191.5,
+    796.7,
+    1368.6,
+    849.8
+   ],
+   "score": 0.48,
+   "verify": 0.69,
+   "reason": "plate.reason.on_vehicle_verified",
+   "on_vehicle": true,
+   "crop": "plates/crops/streets-false_blur-street_055-1191.jpg"
+  },
+  {
+   "image": "street_055.jpg",
+   "kind": "missed_plate",
+   "box": [
+    1643.0,
+    815.0,
+    1725.0,
+    906.0
+   ],
+   "crop": "plates/crops/streets-miss-street_055-1643.jpg"
+  },
+  {
+   "image": "street_059.jpg",
+   "kind": "false_check",
+   "box": [
+    819.1,
+    106.5,
+    1133.5,
+    264.5
+   ],
+   "score": 0.84,
+   "verify": 0.85,
+   "reason": "plate.reason.off_vehicle",
+   "on_vehicle": false,
+   "crop": "plates/crops/streets-false_check-street_059-819.jpg"
+  }
+ ]
+}

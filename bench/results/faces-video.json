@@ -1,0 +1,585 @@
+{
+  "faces_video": {
+    "standard": {
+      "preciados": {
+        "labelled_frames": 28,
+        "faces": 22,
+        "ignored_boxes": 6,
+        "ignored_boxes_blurred": 0,
+        "recall_blur_pct": 40.91,
+        "recall_blur_or_check_pct": 40.91,
+        "recall_blur_loose_pct": 77.27,
+        "recall_blur_or_check_loose_pct": 77.27,
+        "recall_blur_interval_pct": [
+          23.3,
+          61.3
+        ],
+        "recall_blur_loose_interval_pct": [
+          56.6,
+          89.9
+        ],
+        "faces_hit_blur": 9,
+        "faces_hit_blur_loose": 17,
+        "by_size": {
+          "<24": {
+            "faces": 1,
+            "blur": 1,
+            "blur_or_check": 1
+          },
+          "24-48": {
+            "faces": 21,
+            "blur": 8,
+            "blur_or_check": 8
+          },
+          ">48": {
+            "faces": 0,
+            "blur": 0,
+            "blur_or_check": 0
+          }
+        },
+        "misses": [
+          {
+            "frame": 94,
+            "box": [
+              1050,
+              393,
+              1085,
+              432
+            ],
+            "share": 0.52,
+            "check_share": 0.56
+          },
+          {
+            "frame": 94,
+            "box": [
+              1197,
+              413,
+              1226,
+              447
+            ],
+            "share": 0.61,
+            "check_share": 0.61
+          },
+          {
+            "frame": 132,
+            "box": [
+              860,
+              404,
+              886,
+              434
+            ],
+            "share": 0.69,
+            "check_share": 0.69
+          },
+          {
+            "frame": 132,
+            "box": [
+              1113,
+              420,
+              1139,
+              450
+            ],
+            "share": 0.54,
+            "check_share": 0.54
+          },
+          {
+            "frame": 169,
+            "box": [
+              1008,
+              426,
+              1034,
+              450
+            ],
+            "share": 0.38,
+            "check_share": 0.38
+          },
+          {
+            "frame": 245,
+            "box": [
+              1202,
+              457,
+              1224,
+              497
+            ],
+            "share": 0.0,
+            "check_share": 0.0
+          },
+          {
+            "frame": 320,
+            "box": [
+              450,
+              452,
+              483,
+              490
+            ],
+            "share": 0.0,
+            "check_share": 0.0
+          },
+          {
+            "frame": 358,
+            "box": [
+              771,
+              447,
+              796,
+              472
+            ],
+            "share": 0.66,
+            "check_share": 0.66
+          },
+          {
+            "frame": 886,
+            "box": [
+              1229,
+              422,
+              1258,
+              452
+            ],
+            "share": 0.28,
+            "check_share": 0.38
+          },
+          {
+            "frame": 886,
+            "box": [
+              1158,
+              447,
+              1183,
+              477
+            ],
+            "share": 0.65,
+            "check_share": 0.65
+          },
+          {
+            "frame": 886,
+            "box": [
+              1187,
+              472,
+              1210,
+              498
+            ],
+            "share": 0.52,
+            "check_share": 0.52
+          },
+          {
+            "frame": 924,
+            "box": [
+              892,
+              435,
+              925,
+              468
+            ],
+            "share": 0.36,
+            "check_share": 0.36
+          },
+          {
+            "frame": 924,
+            "box": [
+              858,
+              464,
+              884,
+              489
+            ],
+            "share": 0.78,
+            "check_share": 0.78
+          }
+        ],
+        "tracks": 125,
+        "tracks_blur": 23,
+        "tracks_check": 12,
+        "frames_in_clip": 1056,
+        "frames_with_a_blur": 990,
+        "analysis_seconds": 77.8,
+        "ms_per_frame": 73.7,
+        "seconds_by_step": {
+          "read": 4.85,
+          "motion": 12.27,
+          "face_general": 28.07,
+          "face_tiles": 18.02,
+          "face_retry": 9.69
+        },
+        "unchecked_frames": 0
+      },
+      "hongkong": {
+        "labelled_frames": 24,
+        "faces": 0,
+        "ignored_boxes": 0,
+        "ignored_boxes_blurred": 0,
+        "recall_blur_pct": null,
+        "recall_blur_or_check_pct": null,
+        "recall_blur_loose_pct": null,
+        "recall_blur_or_check_loose_pct": null,
+        "recall_blur_interval_pct": [
+          null,
+          null
+        ],
+        "recall_blur_loose_interval_pct": [
+          null,
+          null
+        ],
+        "faces_hit_blur": 0,
+        "faces_hit_blur_loose": 0,
+        "by_size": {
+          "<24": {
+            "faces": 0,
+            "blur": 0,
+            "blur_or_check": 0
+          },
+          "24-48": {
+            "faces": 0,
+            "blur": 0,
+            "blur_or_check": 0
+          },
+          ">48": {
+            "faces": 0,
+            "blur": 0,
+            "blur_or_check": 0
+          }
+        },
+        "misses": [],
+        "tracks": 2,
+        "tracks_blur": 0,
+        "tracks_check": 0,
+        "frames_in_clip": 323,
+        "frames_with_a_blur": 0,
+        "analysis_seconds": 20.2,
+        "ms_per_frame": 62.5,
+        "seconds_by_step": {
+          "read": 2.48,
+          "motion": 3.78,
+          "face_general": 7.8,
+          "face_tiles": 5.51,
+          "face_retry": 0.04
+        },
+        "unchecked_frames": 0
+      }
+    },
+    "maximum": {
+      "preciados": {
+        "labelled_frames": 28,
+        "faces": 22,
+        "ignored_boxes": 6,
+        "ignored_boxes_blurred": 1,
+        "recall_blur_pct": 31.82,
+        "recall_blur_or_check_pct": 31.82,
+        "recall_blur_loose_pct": 68.18,
+        "recall_blur_or_check_loose_pct": 77.27,
+        "recall_blur_interval_pct": [
+          16.4,
+          52.7
+        ],
+        "recall_blur_loose_interval_pct": [
+          47.3,
+          83.6
+        ],
+        "faces_hit_blur": 7,
+        "faces_hit_blur_loose": 15,
+        "by_size": {
+          "<24": {
+            "faces": 1,
+            "blur": 1,
+            "blur_or_check": 1
+          },
+          "24-48": {
+            "faces": 21,
+            "blur": 6,
+            "blur_or_check": 6
+          },
+          ">48": {
+            "faces": 0,
+            "blur": 0,
+            "blur_or_check": 0
+          }
+        },
+        "misses": [
+          {
+            "frame": 94,
+            "box": [
+              1050,
+              393,
+              1085,
+              432
+            ],
+            "share": 0.69,
+            "check_share": 0.69
+          },
+          {
+            "frame": 94,
+            "box": [
+              1197,
+              413,
+              1226,
+              447
+            ],
+            "share": 0.51,
+            "check_share": 0.51
+          },
+          {
+            "frame": 132,
+            "box": [
+              860,
+              404,
+              886,
+              434
+            ],
+            "share": 0.69,
+            "check_share": 0.69
+          },
+          {
+            "frame": 132,
+            "box": [
+              1113,
+              420,
+              1139,
+              450
+            ],
+            "share": 0.62,
+            "check_share": 0.62
+          },
+          {
+            "frame": 169,
+            "box": [
+              1008,
+              426,
+              1034,
+              450
+            ],
+            "share": 0.0,
+            "check_share": 0.0
+          },
+          {
+            "frame": 207,
+            "box": [
+              977,
+              427,
+              1003,
+              455
+            ],
+            "share": 0.79,
+            "check_share": 0.79
+          },
+          {
+            "frame": 320,
+            "box": [
+              450,
+              452,
+              483,
+              490
+            ],
+            "share": 0.0,
+            "check_share": 0.0
+          },
+          {
+            "frame": 358,
+            "box": [
+              771,
+              447,
+              796,
+              472
+            ],
+            "share": 0.69,
+            "check_share": 0.69
+          },
+          {
+            "frame": 396,
+            "box": [
+              723,
+              450,
+              746,
+              477
+            ],
+            "share": 0.74,
+            "check_share": 0.74
+          },
+          {
+            "frame": 433,
+            "box": [
+              637,
+              442,
+              664,
+              470
+            ],
+            "share": 0.8,
+            "check_share": 0.8
+          },
+          {
+            "frame": 886,
+            "box": [
+              1229,
+              422,
+              1258,
+              452
+            ],
+            "share": 0.16,
+            "check_share": 0.16
+          },
+          {
+            "frame": 886,
+            "box": [
+              1158,
+              447,
+              1183,
+              477
+            ],
+            "share": 0.03,
+            "check_share": 0.62
+          },
+          {
+            "frame": 886,
+            "box": [
+              1187,
+              472,
+              1210,
+              498
+            ],
+            "share": 0.44,
+            "check_share": 0.44
+          },
+          {
+            "frame": 924,
+            "box": [
+              892,
+              435,
+              925,
+              468
+            ],
+            "share": 0.34,
+            "check_share": 0.47
+          },
+          {
+            "frame": 924,
+            "box": [
+              858,
+              464,
+              884,
+              489
+            ],
+            "share": 0.05,
+            "check_share": 0.8
+          }
+        ],
+        "tracks": 162,
+        "tracks_blur": 25,
+        "tracks_check": 10,
+        "frames_in_clip": 1056,
+        "frames_with_a_blur": 1056,
+        "analysis_seconds": 363.8,
+        "ms_per_frame": 344.5,
+        "seconds_by_step": {
+          "read": 5.36,
+          "motion": 12.34,
+          "face_general": 87.85,
+          "face_tiles": 236.01,
+          "face_retry": 13.94
+        },
+        "unchecked_frames": 0
+      },
+      "hongkong": {
+        "labelled_frames": 24,
+        "faces": 0,
+        "ignored_boxes": 0,
+        "ignored_boxes_blurred": 0,
+        "recall_blur_pct": null,
+        "recall_blur_or_check_pct": null,
+        "recall_blur_loose_pct": null,
+        "recall_blur_or_check_loose_pct": null,
+        "recall_blur_interval_pct": [
+          null,
+          null
+        ],
+        "recall_blur_loose_interval_pct": [
+          null,
+          null
+        ],
+        "faces_hit_blur": 0,
+        "faces_hit_blur_loose": 0,
+        "by_size": {
+          "<24": {
+            "faces": 0,
+            "blur": 0,
+            "blur_or_check": 0
+          },
+          "24-48": {
+            "faces": 0,
+            "blur": 0,
+            "blur_or_check": 0
+          },
+          ">48": {
+            "faces": 0,
+            "blur": 0,
+            "blur_or_check": 0
+          }
+        },
+        "misses": [],
+        "tracks": 3,
+        "tracks_blur": 0,
+        "tracks_check": 0,
+        "frames_in_clip": 323,
+        "frames_with_a_blur": 0,
+        "analysis_seconds": 134.7,
+        "ms_per_frame": 417.0,
+        "seconds_by_step": {
+          "read": 2.58,
+          "motion": 3.94,
+          "face_general": 30.34,
+          "face_tiles": 96.48,
+          "face_retry": 0.12
+        },
+        "unchecked_frames": 0
+      }
+    }
+  },
+  "data": {
+    "covered_share": 0.8,
+    "loose_share": 0.5,
+    "truth": "bench/truth/faces/video.json"
+  },
+  "truth_sha256": {
+    "bench/truth/faces/video.json": "23bf337563ac72859e1de0b006a8ae732854670f6267c6f385791c42a879e942"
+  },
+  "hardware": {
+    "cpu": "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz",
+    "cores": 4,
+    "ram_gb": 3.3,
+    "os": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "python": "3.10.13",
+    "opencv": "5.0.0"
+  },
+  "run": {
+    "date": "2026-10-03"
+  },
+  "faces": {
+    "video": {
+      "frame_recall_standard_pct": 40.91,
+      "frame_recall_standard": {
+        "n": 22,
+        "hits": 9,
+        "ci95_pct": [
+          23.3,
+          61.3
+        ]
+      },
+      "frame_recall_standard_blur_or_check_pct": 40.91,
+      "labelled_faces_standard": 22,
+      "frame_recall_maximum_pct": 31.82,
+      "frame_recall_maximum": {
+        "n": 22,
+        "hits": 7,
+        "ci95_pct": [
+          16.4,
+          52.7
+        ]
+      },
+      "frame_recall_maximum_blur_or_check_pct": 31.82,
+      "labelled_faces_maximum": 22
+    }
+  },
+  "_publication": {
+    "faces.video": {
+      "publishable": false,
+      "why": "22 faces of one street clip, labelled by one reviewer with no second pass (95 % interval 23-61), nearly all of them profiles in deep shadow at 25-45 px: it says nothing about faces that look at the camera, and Standard against Maximum is inside the noise (Maximum blurred 8 and then 7 of the 22 faces in two runs of the same code). bench/truth/faces/README.md, section Video (F4)."
+    },
+    "faces_video": {
+      "publishable": false,
+      "why": "22 faces of one street clip, labelled by one reviewer with no second pass (95 % interval 23-61), nearly all of them profiles in deep shadow at 25-45 px: it says nothing about faces that look at the camera, and Standard against Maximum is inside the noise (Maximum blurred 8 and then 7 of the 22 faces in two runs of the same code). bench/truth/faces/README.md, section Video (F4)."
+    }
+  }
+}

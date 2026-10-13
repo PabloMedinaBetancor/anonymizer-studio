@@ -1,0 +1,170 @@
+{
+  "faces": {
+    "photo": {
+      "recall_blur_pct": 77.71,
+      "recall_blur": {
+        "n": 1162,
+        "hits": 903,
+        "ci95_pct": [
+          75.2,
+          80.0
+        ]
+      },
+      "recall_blur_or_check_pct": 95.09,
+      "recall_blur_or_check": {
+        "n": 1162,
+        "hits": 1105,
+        "ci95_pct": [
+          93.7,
+          96.2
+        ]
+      },
+      "recall_blur_ellipse_pct": 75.9,
+      "recall_blur_ellipse": {
+        "n": 1162,
+        "hits": 882,
+        "ci95_pct": [
+          73.4,
+          78.3
+        ]
+      },
+      "false_blur_photos_without_people": 71,
+      "false_blur_per_100": 0.0,
+      "false_blur": {
+        "per_100": 0.0,
+        "events": 0,
+        "photos_affected": 0,
+        "n": 71,
+        "ci95_photos_pct": [
+          0.0,
+          5.1
+        ],
+        "rule_of_three_upper_pct": 4.2
+      },
+      "false_blur_in_set_a": {
+        "per_100": 0.0,
+        "events": 0,
+        "photos_affected": 0,
+        "n": 57,
+        "ci95_photos_pct": [
+          0.0,
+          6.3
+        ],
+        "rule_of_three_upper_pct": 5.3
+      },
+      "false_blur_per_100_in_set_a": 0.0,
+      "hidden_default_pct": 95.09,
+      "hidden_default": {
+        "n": 1162,
+        "hits": 1105,
+        "ci95_pct": [
+          93.7,
+          96.2
+        ]
+      },
+      "hidden_default_ellipse_pct": 92.0,
+      "hidden_default_ellipse": {
+        "n": 1162,
+        "hits": 1069,
+        "ci95_pct": [
+          90.3,
+          93.4
+        ]
+      },
+      "false_hidden_default": {
+        "per_100": 7.04,
+        "events": 5,
+        "photos_affected": 1,
+        "n": 71,
+        "ci95_photos_pct": [
+          0.2,
+          7.6
+        ]
+      },
+      "false_hidden_default_in_set_a": {
+        "per_100": 8.77,
+        "events": 5,
+        "photos_affected": 5,
+        "n": 57,
+        "ci95_photos_pct": [
+          3.8,
+          18.9
+        ]
+      },
+      "faces_total": 1162,
+      "ignored_total": 1157,
+      "ignored_blurred": 200,
+      "by_size": {
+        "lt24": {
+          "faces": 304,
+          "recall_blur_pct": 64.8,
+          "recall_blur_or_check_pct": 92.76
+        },
+        "24_48": {
+          "faces": 490,
+          "recall_blur_pct": 79.8,
+          "recall_blur_or_check_pct": 94.49
+        },
+        "gt48": {
+          "faces": 368,
+          "recall_blur_pct": 85.6,
+          "recall_blur_or_check_pct": 97.83
+        }
+      }
+    },
+    "speed": {
+      "ms_per_photo": 788.3,
+      "ms_per_photo_median": 694.4,
+      "photos": 128,
+      "seconds_by_step": {
+        "face_general": 21.48,
+        "face_tiles": 61.58,
+        "face_retry": 17.26
+      },
+      "calls_by_step": {
+        "face_general": 128,
+        "face_tiles": 1667,
+        "face_retry": 1854
+      }
+    }
+  },
+  "data": {
+    "photos_with_faces": 57,
+    "photos_without_people": 71,
+    "size_classes_px": {
+      "lt24": [
+        0,
+        24
+      ],
+      "24_48": [
+        24,
+        48
+      ],
+      "gt48": [
+        48,
+        null
+      ]
+    },
+    "covered_share": 0.95
+  },
+  "caveat": "the truth starts from YuNet proposals at a low threshold, so faces it cannot find at all are missing from the count (an optimistic bound); the faces of one photo are not independent, so the 95 % interval is narrower than the real uncertainty; checked blind on 15 photos (bench/results/truth-check-faces.json)",
+  "truth_sha256": {
+    "bench/truth/faces/set-a.json": "9978b507aaa40870e9076fe8922a07f7472fd4c8c175e0d7f028bf226ef207ca",
+    "bench/truth/faces/set-b.json": "0bf3fa0e0162d13bdf815488d2cbf5f3c743cc799f8617e33d61164bb49efdc7"
+  },
+  "hardware": {
+    "cpu": "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz",
+    "cores": 4,
+    "ram_gb": 3.3,
+    "os": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "python": "3.10.13",
+    "opencv": "5.0.0"
+  },
+  "run": {
+    "date": "2026-10-03",
+    "plan": {
+      "general_side": 1600,
+      "tile_side": 640
+    }
+  }
+}

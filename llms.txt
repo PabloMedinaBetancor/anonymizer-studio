@@ -1,0 +1,42 @@
+# Anonymizer Studio
+
+> Offline blurring of faces and licence plates in photos and video, as a Python API and a local web application. It finds faces and plates with detection models that run on your own machine, blurs them tightly and softly, lists what it is not sure about so that a person can decide, and writes a privacy report of what was found and done. It does not say what it missed.
+
+Read `AGENTS.md` first when you write code that calls Anonymizer Studio: it has a whole script for each common task, a table of the fields, the mistakes a model makes in the order it makes them, and what never to do. Version 2.2.0. Python 3.10 or newer; tried on Linux. The code is private and the detection models are fetched once with `scripts/fetch_models.py`; nothing else opens a network connection.
+
+## For assistants
+
+- [AGENTS.md](AGENTS.md): rules for AI coding assistants: a script for each common task, the fields at a glance, pitfalls, what never to do.
+- [Work with AI assistants](docs/how-to/ai-assistants.md): the files to give an assistant, the mistakes and how they show, and a checklist to review its code.
+- [llms-full.txt](llms-full.txt): every page of the documentation as one plain file.
+
+## API reference
+
+- [Reference overview](docs/reference/index.md): what is public, the pages, which error to catch, and the notes on threads.
+- [Functions and constants](docs/reference/functions.md): `anonymize_image`, `anonymize_video`, `compare_video`, `media_info`, `frame_jpeg`, `thumbnail_jpeg`, `load_analysis`, `event_json` and the extension constants.
+- [Anonymizer and Analysis](docs/reference/anonymizer.md): the class that loads the detectors once (`analyze`, `render`, `estimate`), and what `analyze` found, with `set_blur`, `add_area`, `preview`, `boxes` and `save`.
+- [Options and CancelToken](docs/reference/options.md): every setting, its valid values, its default, and when it is read.
+- [Data types and events](docs/reference/data-types.md): `Item`, `Report`, `ReportRow`, `Result`, `BoxInfo`, `MediaInfo`, `Estimate`, and what `on_event` receives.
+- [Errors and codes](docs/reference/errors.md): each error class, its `code` and when it is raised, and every reason, warning and error key with its English sentence.
+- [Files written](docs/reference/files-written.md): the output, the saved analysis, the report as CSV and JSON, field by field.
+- [Command line](docs/reference/command-line.md): the Studio's start command, the model scripts and the environment variables.
+
+## Guides
+
+- [Getting started](docs/getting-started.md): install from a checkout, fetch the models, offline use, and a first photo in the Studio.
+- [Photos in Python](docs/tutorials/photos-in-python.md): one photo, then a folder of photos with a CSV row for each file.
+- [Review a video in code](docs/how-to/video-review-in-code.md): analyse, decide, add an area, render, save and reload, and the comparison video.
+- [Progress, cancel and errors](docs/how-to/progress-and-errors.md): the events, a cancel from another thread, and the errors of one file or of a whole run.
+- [How it works](docs/concepts/how-it-works.md): what is found, the detection levels, the doubtful items, the blur and the report.
+- [Privacy](docs/concepts/privacy.md): what leaves the computer, and what is promised about the files and what is not.
+- [Accuracy and limits](docs/accuracy.md): the measured results with their conditions, and what the product does not do.
+- [FAQ and troubleshooting](docs/faq.md): the first questions, and symptom, cause and fix.
+
+## Optional
+
+- [README](README.md): what Anonymizer Studio is, with a short example.
+- [Your first video](docs/tutorials/first-video.md): a clip through the Studio, from Import to Export.
+- [The Studio](docs/reference/studio.md): the four screens, their keys and their settings.
+- [Licence and credits](docs/licence-and-credits.md): the licences of the models and libraries, and the credits of the sample files.
+- [Measured results](docs/MEASURED.md): every measurement with its method, kept in the repository.
+- [Changelog](CHANGELOG.md): what changed in each version.

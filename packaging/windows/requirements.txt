@@ -1,0 +1,8 @@
+# What the engine and the local server import. Developed and tested on Linux with Python 3.10.13, numpy 2.2.6,
+# opencv-python-headless 5.0.0, onnxruntime 1.23.2, av 17.1.0 and pillow 12.3.0. The lower bounds below are the major
+# versions of those, not versions anyone checked as the oldest that work. Never installed on Windows.
+numpy>=2.0
+opencv-python-headless>=5.0
+onnxruntime>=1.23
+av>=17
+pillow>=12

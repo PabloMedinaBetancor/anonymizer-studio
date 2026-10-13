@@ -1,0 +1,937 @@
+{
+ "set": "streets",
+ "licence": "mixed",
+ "images": {
+  "street_001.jpg": {
+   "width": 1920,
+   "height": 891,
+   "boxes": []
+  },
+  "street_002.jpg": {
+   "width": 1920,
+   "height": 1282,
+   "boxes": []
+  },
+  "street_003.jpg": {
+   "width": 1920,
+   "height": 1200,
+   "boxes": []
+  },
+  "street_004.jpg": {
+   "width": 1920,
+   "height": 1279,
+   "boxes": []
+  },
+  "street_005.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": [
+    {
+     "box": [
+      420,
+      1203,
+      452,
+      1220
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      458,
+      1203,
+      503,
+      1221
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      1202,
+      1346,
+      1230,
+      1360
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    },
+    {
+     "box": [
+      558,
+      998,
+      638,
+      1021
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    },
+    {
+     "box": [
+      613,
+      1024,
+      652,
+      1043
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    }
+   ]
+  },
+  "street_006.jpg": {
+   "width": 1920,
+   "height": 933,
+   "boxes": []
+  },
+  "street_007.jpg": {
+   "width": 1920,
+   "height": 1257,
+   "boxes": [
+    {
+     "box": [
+      1603,
+      849,
+      1752,
+      888
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    }
+   ]
+  },
+  "street_008.jpg": {
+   "width": 1920,
+   "height": 2482,
+   "boxes": []
+  },
+  "street_009.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": [
+    {
+     "box": [
+      0,
+      1040,
+      44,
+      1066
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    }
+   ]
+  },
+  "street_010.jpg": {
+   "width": 1920,
+   "height": 1920,
+   "boxes": []
+  },
+  "street_011.jpg": {
+   "width": 1920,
+   "height": 1263,
+   "boxes": []
+  },
+  "street_012.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": []
+  },
+  "street_013.jpg": {
+   "width": 1920,
+   "height": 1180,
+   "boxes": []
+  },
+  "street_014.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": []
+  },
+  "street_015.jpg": {
+   "width": 1920,
+   "height": 2560,
+   "boxes": [
+    {
+     "box": [
+      1376,
+      2223,
+      1393,
+      2237
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    }
+   ]
+  },
+  "street_016.jpg": {
+   "width": 1920,
+   "height": 2891,
+   "boxes": []
+  },
+  "street_017.jpg": {
+   "width": 1600,
+   "height": 1107,
+   "boxes": [
+    {
+     "box": [
+      1375,
+      737,
+      1397,
+      750
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    }
+   ]
+  },
+  "street_018.jpg": {
+   "width": 1920,
+   "height": 1200,
+   "boxes": [
+    {
+     "box": [
+      512,
+      935,
+      676,
+      985
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    }
+   ]
+  },
+  "street_019.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": []
+  },
+  "street_020.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": [
+    {
+     "box": [
+      1875,
+      1055,
+      1905,
+      1075
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    }
+   ]
+  },
+  "street_021.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": [
+    {
+     "box": [
+      184,
+      829,
+      204,
+      839
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      1737,
+      823,
+      1747,
+      829
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    },
+    {
+     "box": [
+      1905,
+      805,
+      1920,
+      817
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    }
+   ]
+  },
+  "street_022.jpg": {
+   "width": 1920,
+   "height": 1280,
+   "boxes": [
+    {
+     "box": [
+      272,
+      793,
+      500,
+      935
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    }
+   ]
+  },
+  "street_023.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": [
+    {
+     "box": [
+      560,
+      1108,
+      642,
+      1134
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    }
+   ]
+  },
+  "street_024.jpg": {
+   "width": 1920,
+   "height": 1222,
+   "boxes": []
+  },
+  "street_025.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": []
+  },
+  "street_026.jpg": {
+   "width": 1920,
+   "height": 1446,
+   "boxes": []
+  },
+  "street_027.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": [
+    {
+     "box": [
+      216,
+      706,
+      244,
+      730
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      274,
+      694,
+      306,
+      716
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      121,
+      785,
+      146,
+      812
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      740,
+      842,
+      766,
+      872
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      851,
+      729,
+      871,
+      750
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      868,
+      698,
+      882,
+      713
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    }
+   ]
+  },
+  "street_028.jpg": {
+   "width": 1920,
+   "height": 1280,
+   "boxes": []
+  },
+  "street_029.jpg": {
+   "width": 1920,
+   "height": 1280,
+   "boxes": []
+  },
+  "street_030.jpg": {
+   "width": 1920,
+   "height": 1052,
+   "boxes": [
+    {
+     "box": [
+      395,
+      495,
+      437,
+      516
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    },
+    {
+     "box": [
+      602,
+      493,
+      643,
+      515
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    }
+   ]
+  },
+  "street_031.jpg": {
+   "width": 1920,
+   "height": 1264,
+   "boxes": [
+    {
+     "box": [
+      1221,
+      665,
+      1240,
+      681
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    }
+   ]
+  },
+  "street_032.jpg": {
+   "width": 1920,
+   "height": 1536,
+   "boxes": [
+    {
+     "box": [
+      884,
+      1244,
+      906,
+      1292
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      1178,
+      808,
+      1200,
+      882
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      772,
+      998,
+      855,
+      1032
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    }
+   ]
+  },
+  "street_033.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": []
+  },
+  "street_034.jpg": {
+   "width": 1920,
+   "height": 1280,
+   "boxes": [
+    {
+     "box": [
+      538,
+      1182,
+      592,
+      1197
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    }
+   ]
+  },
+  "street_035.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": []
+  },
+  "street_036.jpg": {
+   "width": 1920,
+   "height": 855,
+   "boxes": []
+  },
+  "street_037.jpg": {
+   "width": 1920,
+   "height": 1541,
+   "boxes": []
+  },
+  "street_038.jpg": {
+   "width": 1920,
+   "height": 1208,
+   "boxes": []
+  },
+  "street_039.jpg": {
+   "width": 1920,
+   "height": 1280,
+   "boxes": []
+  },
+  "street_040.jpg": {
+   "width": 1704,
+   "height": 2304,
+   "boxes": []
+  },
+  "street_041.jpg": {
+   "width": 1920,
+   "height": 1280,
+   "boxes": [
+    {
+     "box": [
+      1386,
+      551,
+      1442,
+      588
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    }
+   ]
+  },
+  "street_042.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": []
+  },
+  "street_043.jpg": {
+   "width": 1920,
+   "height": 1340,
+   "boxes": [
+    {
+     "box": [
+      108,
+      1083,
+      149,
+      1094
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    },
+    {
+     "box": [
+      235,
+      1055,
+      247,
+      1062
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    },
+    {
+     "box": [
+      1806,
+      1157,
+      1830,
+      1172
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    }
+   ]
+  },
+  "street_044.jpg": {
+   "width": 1920,
+   "height": 1277,
+   "boxes": []
+  },
+  "street_045.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": []
+  },
+  "street_046.jpg": {
+   "width": 1920,
+   "height": 1280,
+   "boxes": [
+    {
+     "box": [
+      1017,
+      762,
+      1081,
+      800
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    },
+    {
+     "box": [
+      1678,
+      826,
+      1733,
+      863
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    }
+   ]
+  },
+  "street_047.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": []
+  },
+  "street_048.jpg": {
+   "width": 1780,
+   "height": 1229,
+   "boxes": [
+    {
+     "box": [
+      556,
+      958,
+      784,
+      1018
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    },
+    {
+     "box": [
+      74,
+      729,
+      169,
+      756
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    }
+   ]
+  },
+  "street_049.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": [
+    {
+     "box": [
+      1626,
+      262,
+      1648,
+      335
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    }
+   ]
+  },
+  "street_050.jpg": {
+   "width": 1920,
+   "height": 863,
+   "boxes": [
+    {
+     "box": [
+      818,
+      604,
+      831,
+      611
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    },
+    {
+     "box": [
+      1759,
+      608,
+      1776,
+      616
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    }
+   ]
+  },
+  "street_051.jpg": {
+   "width": 1920,
+   "height": 1617,
+   "boxes": []
+  },
+  "street_052.jpg": {
+   "width": 1920,
+   "height": 1536,
+   "boxes": [
+    {
+     "box": [
+      1812,
+      1446,
+      1848,
+      1469
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    }
+   ]
+  },
+  "street_053.jpg": {
+   "width": 1920,
+   "height": 1278,
+   "boxes": []
+  },
+  "street_054.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": []
+  },
+  "street_055.jpg": {
+   "width": 1920,
+   "height": 1280,
+   "boxes": [
+    {
+     "box": [
+      1643,
+      815,
+      1725,
+      906
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    }
+   ]
+  },
+  "street_056.jpg": {
+   "width": 1600,
+   "height": 1079,
+   "boxes": [
+    {
+     "box": [
+      945,
+      786,
+      967,
+      797
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    }
+   ]
+  },
+  "street_057.jpg": {
+   "width": 1920,
+   "height": 1275,
+   "boxes": []
+  },
+  "street_058.jpg": {
+   "width": 1920,
+   "height": 1277,
+   "boxes": [
+    {
+     "box": [
+      1233,
+      643,
+      1249,
+      651
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      1140,
+      613,
+      1152,
+      620
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      1416,
+      672,
+      1442,
+      686
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    }
+   ]
+  },
+  "street_059.jpg": {
+   "width": 1920,
+   "height": 1445,
+   "boxes": []
+  },
+  "street_060.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": [
+    {
+     "box": [
+      757,
+      798,
+      794,
+      810
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      911,
+      798,
+      944,
+      810
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      1473,
+      797,
+      1510,
+      812
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    },
+    {
+     "box": [
+      1000,
+      935,
+      1041,
+      952
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    },
+    {
+     "box": [
+      594,
+      799,
+      640,
+      812
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    },
+    {
+     "box": [
+      1083,
+      801,
+      1122,
+      816
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    },
+    {
+     "box": [
+      353,
+      796,
+      382,
+      806
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      1899,
+      783,
+      1920,
+      798
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    },
+    {
+     "box": [
+      275,
+      916,
+      291,
+      929
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    }
+   ]
+  }
+ }
+}

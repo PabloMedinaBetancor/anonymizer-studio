@@ -1,0 +1,2 @@
+file,kind,source_url,author,licence,licence_url,downloaded,sha256,used_for,notes
+street-madrid-5s.mp4,video,https://commons.wikimedia.org/wiki/File:Calle_Preciados_Madrid.ogv,OsvaldoGago,CC-BY-SA-3.0,https://creativecommons.org/licenses/by-sa/3.0,2026-10-12,75d2aaa8fc5f725716b1cdc22cbf9cad370a7210a1fa2486c301fa53838565ed,"demo clip: the first 5 s of street-madrid.mp4, faces to review","derived from demo/street-madrid.mp4 (first 5 s, re-encoded H.264 crf 20, no audio)"

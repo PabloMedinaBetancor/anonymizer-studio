@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Anonymizer benchmark</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #0f1114; color: #e6e8eb; font: 22px/1.35 system-ui, "DejaVu Sans", sans-serif; }
+  main { box-sizing: border-box; width: 1600px; height: 1000px; padding: 56px 96px; display: flex; flex-direction: column; }
+  h1 { margin: 0 0 6px; font-size: 40px; font-weight: 700; }
+  .sub { color: #98a1ab; margin: 0 0 28px; font-size: 22px; }
+  table { border-collapse: collapse; width: 100%; }
+  td { padding: 13px 0; border-top: 1px solid #272c33; vertical-align: baseline; }
+  td.v { text-align: right; font: 600 30px ui-monospace, "DejaVu Sans Mono", monospace; color: #b7a6ff; white-space: nowrap; padding-left: 32px; }
+  td small { display: block; color: #98a1ab; font-size: 17px; margin-top: 2px; }
+  .limits { margin-top: auto; color: #98a1ab; font-size: 19px; }
+  .repo { margin-top: 10px; font: 20px ui-monospace, "DejaVu Sans Mono", monospace; color: #e6e8eb; }
+</style></head>
+<body><main>
+  <h1>Measured, not promised</h1>
+  <p class="sub">Public data, named machines, ground truth that is not ours. What it cannot say is written next to each figure in the benchmark card.</p>
+  <table>
+    <tr><td>License plates hidden by default, full size / half / a third of the size, sealed read<small>{results.plates_v2.scales.1.0.plates} plates on {results.plates_v2.photos} sealed photos; text path plus a band search on vehicles; 95-percent interval at full size {results.plates_v2.scales.1.0.hidden.shipped.wilson95} %</small></td>
+        <td class="v">{results.plates_v2.scales.1.0.hidden.shipped.k} of {results.plates_v2.scales.1.0.plates} / {results.plates_v2.scales.0.5.hidden.shipped.pct}% / {results.plates_v2.scales.0.3.hidden.shipped.pct}%</td></tr>
+    <tr><td>Faces in photos hidden by default, careful level, sealed read<small>{results.faces_v2.independent_parts.careful.hidden_by_default} of {results.faces_v2.independent_parts.careful.faces} faces on the independent parts (95-percent interval {results.faces_v2.independent_parts.careful.wilson95} %); only {results.faces_v2.parts.blind.careful.pct}% on the 30 blind real-estate-kind photos; false hidden {results.faces_v2.cells.careful.false_hidden_photos_without_people.per_100_photos} per 100 photos without people; {results.faces_v2.cells.careful.seconds_per_photo_median} s per photo</small></td>
+        <td class="v">{results.faces_v2.independent_parts.careful.pct}%</td></tr>
+  </table>
+  <p class="limits">Default settings, Careful level, on {results.faces_v2.machine}, Linux, one process. Plates in video are not measured; Windows and macOS were not tried.</p>
+</main></body></html>

@@ -1,0 +1,206 @@
+{
+ "what": "The per-part figures of the sealed read (faces_v2.parts) under names the marker syntax can resolve (a hyphen in 'set-a' cannot be): copied field by field from bench/results/sealed-v2.json, nothing recomputed.",
+ "source": "bench/results/sealed-v2.json results.faces_v2.parts",
+ "sealed.parts.blind.careful.pct": 60.26,
+ "sealed.parts.blind.careful.hidden_by_default": 47,
+ "sealed.parts.blind.careful.faces": 78,
+ "sealed.parts.blind.careful.wilson95": [
+  49.16,
+  70.39
+ ],
+ "sealed.parts.blind.control.pct": 60.26,
+ "sealed.parts.blind.control.hidden_by_default": 47,
+ "sealed.parts.blind.control.faces": 78,
+ "sealed.parts.blind.control.wilson95": [
+  49.16,
+  70.39
+ ],
+ "sealed.parts.blind.deep.pct": 62.82,
+ "sealed.parts.blind.deep.hidden_by_default": 49,
+ "sealed.parts.blind.deep.faces": 78,
+ "sealed.parts.blind.deep.wilson95": [
+  51.73,
+  72.71
+ ],
+ "sealed.parts.blind.deep_heavy_only.pct": 44.87,
+ "sealed.parts.blind.deep_heavy_only.hidden_by_default": 35,
+ "sealed.parts.blind.deep_heavy_only.faces": 78,
+ "sealed.parts.blind.deep_heavy_only.wilson95": [
+  34.33,
+  55.89
+ ],
+ "sealed.parts.blind.fast.pct": 58.97,
+ "sealed.parts.blind.fast.hidden_by_default": 46,
+ "sealed.parts.blind.fast.faces": 78,
+ "sealed.parts.blind.fast.wilson95": [
+  47.89,
+  69.22
+ ],
+ "sealed.parts.blind.reference.pct": 28.21,
+ "sealed.parts.blind.reference.hidden_by_default": 22,
+ "sealed.parts.blind.reference.faces": 78,
+ "sealed.parts.blind.reference.wilson95": [
+  19.43,
+  39.03
+ ],
+ "sealed.parts.blind.reference_default.pct": 38.46,
+ "sealed.parts.blind.reference_default.hidden_by_default": 30,
+ "sealed.parts.blind.reference_default.faces": 78,
+ "sealed.parts.blind.reference_default.wilson95": [
+  28.45,
+  49.56
+ ],
+ "sealed.parts.set_a.careful.pct": 97.59,
+ "sealed.parts.set_a.careful.hidden_by_default": 526,
+ "sealed.parts.set_a.careful.faces": 539,
+ "sealed.parts.set_a.careful.wilson95": [
+  95.92,
+  98.59
+ ],
+ "sealed.parts.set_a.control.pct": 97.4,
+ "sealed.parts.set_a.control.hidden_by_default": 525,
+ "sealed.parts.set_a.control.faces": 539,
+ "sealed.parts.set_a.control.wilson95": [
+  95.69,
+  98.45
+ ],
+ "sealed.parts.set_a.deep.pct": 98.33,
+ "sealed.parts.set_a.deep.hidden_by_default": 530,
+ "sealed.parts.set_a.deep.faces": 539,
+ "sealed.parts.set_a.deep.wilson95": [
+  96.86,
+  99.12
+ ],
+ "sealed.parts.set_a.deep_heavy_only.pct": 91.47,
+ "sealed.parts.set_a.deep_heavy_only.hidden_by_default": 493,
+ "sealed.parts.set_a.deep_heavy_only.faces": 539,
+ "sealed.parts.set_a.deep_heavy_only.wilson95": [
+  88.8,
+  93.54
+ ],
+ "sealed.parts.set_a.fast.pct": 94.99,
+ "sealed.parts.set_a.fast.hidden_by_default": 512,
+ "sealed.parts.set_a.fast.faces": 539,
+ "sealed.parts.set_a.fast.wilson95": [
+  92.81,
+  96.53
+ ],
+ "sealed.parts.set_a.reference.pct": 61.22,
+ "sealed.parts.set_a.reference.hidden_by_default": 330,
+ "sealed.parts.set_a.reference.faces": 539,
+ "sealed.parts.set_a.reference.wilson95": [
+  57.05,
+  65.24
+ ],
+ "sealed.parts.set_a.reference_default.pct": 74.77,
+ "sealed.parts.set_a.reference_default.hidden_by_default": 403,
+ "sealed.parts.set_a.reference_default.faces": 539,
+ "sealed.parts.set_a.reference_default.wilson95": [
+  70.93,
+  78.25
+ ],
+ "sealed.parts.set_b.careful.pct": null,
+ "sealed.parts.set_b.careful.hidden_by_default": 0,
+ "sealed.parts.set_b.careful.faces": 0,
+ "sealed.parts.set_b.careful.wilson95": [
+  null,
+  null
+ ],
+ "sealed.parts.set_b.control.pct": null,
+ "sealed.parts.set_b.control.hidden_by_default": 0,
+ "sealed.parts.set_b.control.faces": 0,
+ "sealed.parts.set_b.control.wilson95": [
+  null,
+  null
+ ],
+ "sealed.parts.set_b.deep.pct": null,
+ "sealed.parts.set_b.deep.hidden_by_default": 0,
+ "sealed.parts.set_b.deep.faces": 0,
+ "sealed.parts.set_b.deep.wilson95": [
+  null,
+  null
+ ],
+ "sealed.parts.set_b.deep_heavy_only.pct": null,
+ "sealed.parts.set_b.deep_heavy_only.hidden_by_default": 0,
+ "sealed.parts.set_b.deep_heavy_only.faces": 0,
+ "sealed.parts.set_b.deep_heavy_only.wilson95": [
+  null,
+  null
+ ],
+ "sealed.parts.set_b.fast.pct": null,
+ "sealed.parts.set_b.fast.hidden_by_default": 0,
+ "sealed.parts.set_b.fast.faces": 0,
+ "sealed.parts.set_b.fast.wilson95": [
+  null,
+  null
+ ],
+ "sealed.parts.set_b.reference.pct": null,
+ "sealed.parts.set_b.reference.hidden_by_default": 0,
+ "sealed.parts.set_b.reference.faces": 0,
+ "sealed.parts.set_b.reference.wilson95": [
+  null,
+  null
+ ],
+ "sealed.parts.set_b.reference_default.pct": null,
+ "sealed.parts.set_b.reference_default.hidden_by_default": 0,
+ "sealed.parts.set_b.reference_default.faces": 0,
+ "sealed.parts.set_b.reference_default.wilson95": [
+  null,
+  null
+ ],
+ "sealed.parts.wider.careful.pct": 77.62,
+ "sealed.parts.wider.careful.hidden_by_default": 888,
+ "sealed.parts.wider.careful.faces": 1144,
+ "sealed.parts.wider.careful.wilson95": [
+  75.12,
+  79.94
+ ],
+ "sealed.parts.wider.control.pct": 75.96,
+ "sealed.parts.wider.control.hidden_by_default": 869,
+ "sealed.parts.wider.control.faces": 1144,
+ "sealed.parts.wider.control.wilson95": [
+  73.4,
+  78.35
+ ],
+ "sealed.parts.wider.deep.pct": 82.78,
+ "sealed.parts.wider.deep.hidden_by_default": 947,
+ "sealed.parts.wider.deep.faces": 1144,
+ "sealed.parts.wider.deep.wilson95": [
+  80.48,
+  84.86
+ ],
+ "sealed.parts.wider.deep_heavy_only.pct": 76.49,
+ "sealed.parts.wider.deep_heavy_only.hidden_by_default": 875,
+ "sealed.parts.wider.deep_heavy_only.faces": 1144,
+ "sealed.parts.wider.deep_heavy_only.wilson95": [
+  73.94,
+  78.85
+ ],
+ "sealed.parts.wider.fast.pct": 71.68,
+ "sealed.parts.wider.fast.hidden_by_default": 820,
+ "sealed.parts.wider.fast.faces": 1144,
+ "sealed.parts.wider.fast.wilson95": [
+  69.0,
+  74.21
+ ],
+ "sealed.parts.wider.reference.pct": 37.24,
+ "sealed.parts.wider.reference.hidden_by_default": 426,
+ "sealed.parts.wider.reference.faces": 1144,
+ "sealed.parts.wider.reference.wilson95": [
+  34.48,
+  40.08
+ ],
+ "sealed.parts.wider.reference_default.pct": 54.98,
+ "sealed.parts.wider.reference_default.hidden_by_default": 629,
+ "sealed.parts.wider.reference_default.faces": 1144,
+ "sealed.parts.wider.reference_default.wilson95": [
+  52.09,
+  57.84
+ ],
+ "_publication": {
+  "sealed.parts": {
+   "publishable": true,
+   "why": "a copy of published fields of the sealed read"
+  }
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "what": "peak resident set with every model loaded on one photo with the zones asked for",
+ "date": "2026-10-03T14:23:43",
+ "machine": {
+  "host": "laptop-b",
+  "cpu": "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz",
+  "logical_cpus": 4,
+  "load_1min": 3.07
+ },
+ "threads": 3,
+ "photo": {
+  "name": "Festive-Crowd-and-Cultural-Celebration.jpg",
+  "long_side_px": 2048,
+  "zones_visited": 40,
+  "zones_total": 50
+ },
+ "second_look_seconds": 3.44,
+ "rss_mb_by_stage": {
+  "start": 47.4,
+  "models_built": 97.5,
+  "first_pass_and_plates": 309.9,
+  "after_second_look": 546.5
+ },
+ "peak_rss_mb": 546.1,
+ "limit_mb": 1200,
+ "within_limit": true,
+ "_publication": {
+  "memory": {
+   "publishable": false,
+   "why": "design measurement on a public crowd photo"
+  }
+ }
+}

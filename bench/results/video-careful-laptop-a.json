@@ -1,0 +1,489 @@
+{
+ "what": "VK2 integration run: fast against careful on public clips, real models",
+ "machine": {
+  "host": "laptop-a",
+  "cpu": "Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz",
+  "logical_cpus": 8,
+  "load_1min": 3.26
+ },
+ "seconds_per_clip": 20.0,
+ "clips": {
+  "hkmarch": {
+   "frames_cut": 479,
+   "fast": {
+    "seconds": 71.0,
+    "frames": 479,
+    "fps": 23.976023976023978,
+    "tracks": 71,
+    "by_kind": {
+     "face": 71
+    },
+    "by_verdict": {
+     "check": 17,
+     "blur": 54
+    },
+    "found_by": {
+     "light": 71
+    },
+    "heavy_views": 0,
+    "second": {
+     "calls": 0,
+     "skipped": 0,
+     "k1": 0,
+     "k2": 0,
+     "k3": 0,
+     "k4": 0,
+     "k5": 0,
+     "found_k1": 0,
+     "found_k2": 0,
+     "found_k3": 0,
+     "found_k4": 0
+    },
+    "unchecked_frames": 0,
+    "options": {
+     "faces": true,
+     "plates": true,
+     "thoroughness": "standard",
+     "detection": "fast",
+     "detection_ran": "fast",
+     "heavy_only": false,
+     "unsure": "blur",
+     "max_zones": null,
+     "models": []
+    },
+    "peak_rss_mb": 282.0
+   },
+   "careful": {
+    "seconds": 93.1,
+    "frames": 479,
+    "fps": 23.976023976023978,
+    "tracks": 74,
+    "by_kind": {
+     "face": 74
+    },
+    "by_verdict": {
+     "check": 17,
+     "blur": 57
+    },
+    "found_by": {
+     "light": 74
+    },
+    "heavy_views": 25,
+    "second": {
+     "calls": 120,
+     "skipped": 353,
+     "k1": 31,
+     "k2": 88,
+     "k3": 1,
+     "k4": 0,
+     "k5": 0,
+     "found_k1": 18,
+     "found_k2": 6,
+     "found_k3": 1,
+     "found_k4": 0
+    },
+    "unchecked_frames": 0,
+    "options": {
+     "faces": true,
+     "plates": true,
+     "thoroughness": "standard",
+     "detection": "careful",
+     "detection_ran": "careful",
+     "heavy_only": false,
+     "unsure": "blur",
+     "max_zones": null,
+     "models": [
+      {
+       "name": "retinaface-r34",
+       "sha256": "bd0263dc2a465d32859555cb1741f2d98991eb0053696e8ee33fec583d30e630"
+      }
+     ]
+    },
+    "peak_rss_mb": 503.0
+   }
+  },
+  "tamale": {
+   "frames_cut": 509,
+   "fast": {
+    "seconds": 104.6,
+    "frames": 509,
+    "fps": 30.0,
+    "tracks": 31,
+    "by_kind": {
+     "face": 21,
+     "plate": 10
+    },
+    "by_verdict": {
+     "check": 13,
+     "blur": 18
+    },
+    "found_by": {
+     "light": 31
+    },
+    "heavy_views": 0,
+    "second": {
+     "calls": 0,
+     "skipped": 0,
+     "k1": 0,
+     "k2": 0,
+     "k3": 0,
+     "k4": 0,
+     "k5": 0,
+     "found_k1": 0,
+     "found_k2": 0,
+     "found_k3": 0,
+     "found_k4": 0
+    },
+    "unchecked_frames": 0,
+    "options": {
+     "faces": true,
+     "plates": true,
+     "thoroughness": "standard",
+     "detection": "fast",
+     "detection_ran": "fast",
+     "heavy_only": false,
+     "unsure": "blur",
+     "max_zones": null,
+     "models": []
+    },
+    "peak_rss_mb": 503.0
+   },
+   "careful": {
+    "seconds": 91.4,
+    "frames": 509,
+    "fps": 30.0,
+    "tracks": 35,
+    "by_kind": {
+     "face": 25,
+     "plate": 10
+    },
+    "by_verdict": {
+     "check": 17,
+     "blur": 18
+    },
+    "found_by": {
+     "light": 35
+    },
+    "heavy_views": 18,
+    "second": {
+     "calls": 102,
+     "skipped": 192,
+     "k1": 52,
+     "k2": 44,
+     "k3": 0,
+     "k4": 6,
+     "k5": 0,
+     "found_k1": 13,
+     "found_k2": 5,
+     "found_k3": 0,
+     "found_k4": 0
+    },
+    "unchecked_frames": 0,
+    "options": {
+     "faces": true,
+     "plates": true,
+     "thoroughness": "standard",
+     "detection": "careful",
+     "detection_ran": "careful",
+     "heavy_only": false,
+     "unsure": "blur",
+     "max_zones": null,
+     "models": [
+      {
+       "name": "retinaface-r34",
+       "sha256": "bd0263dc2a465d32859555cb1741f2d98991eb0053696e8ee33fec583d30e630"
+      }
+     ]
+    },
+    "peak_rss_mb": 503.0
+   }
+  },
+  "tbilisi": {
+   "frames_cut": 600,
+   "fast": {
+    "seconds": 133.8,
+    "frames": 600,
+    "fps": 30.0,
+    "tracks": 63,
+    "by_kind": {
+     "face": 42,
+     "plate": 21
+    },
+    "by_verdict": {
+     "check": 19,
+     "blur": 44
+    },
+    "found_by": {
+     "light": 63
+    },
+    "heavy_views": 0,
+    "second": {
+     "calls": 0,
+     "skipped": 0,
+     "k1": 0,
+     "k2": 0,
+     "k3": 0,
+     "k4": 0,
+     "k5": 0,
+     "found_k1": 0,
+     "found_k2": 0,
+     "found_k3": 0,
+     "found_k4": 0
+    },
+    "unchecked_frames": 0,
+    "options": {
+     "faces": true,
+     "plates": true,
+     "thoroughness": "standard",
+     "detection": "fast",
+     "detection_ran": "fast",
+     "heavy_only": false,
+     "unsure": "blur",
+     "max_zones": null,
+     "models": []
+    },
+    "peak_rss_mb": 503.0
+   },
+   "careful": {
+    "seconds": 155.2,
+    "frames": 600,
+    "fps": 30.0,
+    "tracks": 64,
+    "by_kind": {
+     "face": 43,
+     "plate": 21
+    },
+    "by_verdict": {
+     "check": 20,
+     "blur": 44
+    },
+    "found_by": {
+     "light": 63,
+     "second": 1
+    },
+    "heavy_views": 23,
+    "second": {
+     "calls": 119,
+     "skipped": 189,
+     "k1": 27,
+     "k2": 79,
+     "k3": 3,
+     "k4": 10,
+     "k5": 0,
+     "found_k1": 10,
+     "found_k2": 10,
+     "found_k3": 1,
+     "found_k4": 1
+    },
+    "unchecked_frames": 0,
+    "options": {
+     "faces": true,
+     "plates": true,
+     "thoroughness": "standard",
+     "detection": "careful",
+     "detection_ran": "careful",
+     "heavy_only": false,
+     "unsure": "blur",
+     "max_zones": null,
+     "models": [
+      {
+       "name": "retinaface-r34",
+       "sha256": "bd0263dc2a465d32859555cb1741f2d98991eb0053696e8ee33fec583d30e630"
+      }
+     ]
+    },
+    "peak_rss_mb": 505.0
+   }
+  },
+  "teacher": {
+   "frames_cut": 600,
+   "fast": {
+    "seconds": 73.3,
+    "frames": 600,
+    "fps": 30.0,
+    "tracks": 10,
+    "by_kind": {
+     "face": 10
+    },
+    "by_verdict": {
+     "check": 6,
+     "blur": 4
+    },
+    "found_by": {
+     "light": 10
+    },
+    "heavy_views": 0,
+    "second": {
+     "calls": 0,
+     "skipped": 0,
+     "k1": 0,
+     "k2": 0,
+     "k3": 0,
+     "k4": 0,
+     "k5": 0,
+     "found_k1": 0,
+     "found_k2": 0,
+     "found_k3": 0,
+     "found_k4": 0
+    },
+    "unchecked_frames": 0,
+    "options": {
+     "faces": true,
+     "plates": true,
+     "thoroughness": "standard",
+     "detection": "fast",
+     "detection_ran": "fast",
+     "heavy_only": false,
+     "unsure": "blur",
+     "max_zones": null,
+     "models": []
+    },
+    "peak_rss_mb": 505.0
+   },
+   "careful": {
+    "seconds": 85.0,
+    "frames": 600,
+    "fps": 30.0,
+    "tracks": 12,
+    "by_kind": {
+     "face": 12
+    },
+    "by_verdict": {
+     "check": 8,
+     "blur": 4
+    },
+    "found_by": {
+     "light": 12
+    },
+    "heavy_views": 25,
+    "second": {
+     "calls": 98,
+     "skipped": 10,
+     "k1": 21,
+     "k2": 70,
+     "k3": 1,
+     "k4": 6,
+     "k5": 0,
+     "found_k1": 4,
+     "found_k2": 14,
+     "found_k3": 1,
+     "found_k4": 6
+    },
+    "unchecked_frames": 0,
+    "options": {
+     "faces": true,
+     "plates": true,
+     "thoroughness": "standard",
+     "detection": "careful",
+     "detection_ran": "careful",
+     "heavy_only": false,
+     "unsure": "blur",
+     "max_zones": null,
+     "models": [
+      {
+       "name": "retinaface-r34",
+       "sha256": "bd0263dc2a465d32859555cb1741f2d98991eb0053696e8ee33fec583d30e630"
+      }
+     ]
+    },
+    "peak_rss_mb": 505.0
+   }
+  },
+  "vote": {
+   "frames_cut": 500,
+   "fast": {
+    "seconds": 85.5,
+    "frames": 500,
+    "fps": 25.0,
+    "tracks": 178,
+    "by_kind": {
+     "face": 171,
+     "plate": 7
+    },
+    "by_verdict": {
+     "check": 42,
+     "blur": 136
+    },
+    "found_by": {
+     "light": 178
+    },
+    "heavy_views": 0,
+    "second": {
+     "calls": 0,
+     "skipped": 0,
+     "k1": 0,
+     "k2": 0,
+     "k3": 0,
+     "k4": 0,
+     "k5": 0,
+     "found_k1": 0,
+     "found_k2": 0,
+     "found_k3": 0,
+     "found_k4": 0
+    },
+    "unchecked_frames": 0,
+    "options": {
+     "faces": true,
+     "plates": true,
+     "thoroughness": "standard",
+     "detection": "fast",
+     "detection_ran": "fast",
+     "heavy_only": false,
+     "unsure": "blur",
+     "max_zones": null,
+     "models": []
+    },
+    "peak_rss_mb": 505.0
+   },
+   "careful": {
+    "seconds": 92.2,
+    "frames": 500,
+    "fps": 25.0,
+    "tracks": 180,
+    "by_kind": {
+     "face": 173,
+     "plate": 7
+    },
+    "by_verdict": {
+     "check": 41,
+     "blur": 139
+    },
+    "found_by": {
+     "light": 180
+    },
+    "heavy_views": 16,
+    "second": {
+     "calls": 120,
+     "skipped": 447,
+     "k1": 11,
+     "k2": 109,
+     "k3": 0,
+     "k4": 0,
+     "k5": 0,
+     "found_k1": 10,
+     "found_k2": 4,
+     "found_k3": 0,
+     "found_k4": 0
+    },
+    "unchecked_frames": 0,
+    "options": {
+     "faces": true,
+     "plates": true,
+     "thoroughness": "standard",
+     "detection": "careful",
+     "detection_ran": "careful",
+     "heavy_only": false,
+     "unsure": "blur",
+     "max_zones": null,
+     "models": [
+      {
+       "name": "retinaface-r34",
+       "sha256": "bd0263dc2a465d32859555cb1741f2d98991eb0053696e8ee33fec583d30e630"
+      }
+     ]
+    },
+    "peak_rss_mb": 514.0
+   }
+  }
+ }
+}

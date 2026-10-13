@@ -1,0 +1,41 @@
+{
+ "what": "speed and memory of the yolox vehicle and person detector on dev photos (PT1b)",
+ "date": "2026-10-03T15:53:49",
+ "model": "yolox",
+ "machine": {
+  "host": "laptop-a",
+  "cpu": "Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz",
+  "logical_cpus": 8,
+  "load_1min": 7.88
+ },
+ "load_1min_at_end": 7.57,
+ "threads": 4,
+ "python": "3.10.13",
+ "rss_mb_before_first_picture": 88.1,
+ "first_vehicle_call_ms_includes_session_open": 154.1,
+ "vehicle_pass_per_photo": {
+  "n": 11,
+  "wall_ms_median": 212.5,
+  "wall_ms_p95": 370.9,
+  "wall_ms_max": 370.9,
+  "cpu_ms_median": 956.8
+ },
+ "vehicles_found_per_photo_mean": 1.55,
+ "person_pass_per_photo": {
+  "n": 12,
+  "wall_ms_median": 155.8,
+  "wall_ms_p95": 229.7,
+  "wall_ms_max": 229.7,
+  "cpu_ms_median": 704.3
+ },
+ "persons_found_per_photo_mean": 17.5,
+ "peak_rss_mb": 159.6,
+ "run_failures": 0,
+ "caveat": "design measurement on dev photos; the median excludes the first vehicle call; quote it only with its machine and load",
+ "_publication": {
+  "speed": {
+   "publishable": false,
+   "why": "design measurement, not a reserved quiet-machine cell"
+  }
+ }
+}

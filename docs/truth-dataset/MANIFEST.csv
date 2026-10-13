@@ -1,0 +1,13 @@
+file,bytes,sha256,licence_of_labels,source_sha256_recorded_in_the_file
+labels/faces/set-a.json,324927,9978b507aaa40870e9076fe8922a07f7472fd4c8c175e0d7f028bf226ef207ca,CC-BY-4.0,
+labels/faces/set-b.json,17928,0bf3fa0e0162d13bdf815488d2cbf5f3c743cc799f8617e33d61164bb49efdc7,CC-BY-4.0,
+labels/faces/blind-faces-photos.json,13450,f17fe9222e7c96d800ddfef8dc8a84cac424546304e8f61fff586dc8f7a75061,CC-BY-4.0,6eafff209fdd45e4e772c705e88eba9ef210d6a9d14c928c292885aab6b36e0c
+labels/faces/blind-video-frames.json,11228,0acc5b67adfc3d799dcc12d4220847d70a1950244ea018655b80bbb67a1ffd23,CC-BY-4.0,97fa2f60027618a08dc4a50f5d7e9d0a164be24a7b8a8ba697b431a8a53d1e3f
+labels/faces/video.json,6856,23bf337563ac72859e1de0b006a8ae732854670f6267c6f385791c42a879e942,CC-BY-4.0,
+labels/faces/truth-v2-video.json,61974,fe61e88d51c29f7969834c6aa00778ccb567f6b5f58faf5bdaa605a527739bf7,CC-BY-4.0,
+labels/plates/streets.json,12890,2c2c866db87db7852a9f24544968ed003f71d30c1e5733c10e65126d6c316ce9,CC-BY-4.0,
+labels/plates/streets-author.json,7696,0396b3d8f3c0de8598aba2249eaa1207f83bf1a81c57e97b8c91f0a27f3aded8,CC-BY-4.0,
+labels/plates/streets-verifier.json,5815,5fe16b8947f8ca359d48a1cdb2d52e4b1d220351cfa158bdfd61ab86ac795c81,CC-BY-4.0,
+labels/plates/plates-v2.json,29712,d3d9cf59bda53a1c871de0185938eb510eab6221b8b98a1b0af3f5057d7de54d,CC-BY-4.0,
+labels-agpl/plates/openalpr-eu.json,15450,552fbe2d8faaff31e02db9394ac4274f9872c7a9a67e76f574d86b66c188c798,AGPL-3.0,
+split/split-v2.json,78781,ad505219382951f39d634a9243c67e7a8bdbbb8dbc7bf9d08347a43b39d91a40,CC-BY-4.0,

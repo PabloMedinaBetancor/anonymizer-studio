@@ -1,0 +1,130 @@
+{
+ "threshold": 0.5,
+ "rule": "the lowest score cut of the grid 0.2-0.9 whose false-hidden photos without people on dev stay within 3.0 per 100",
+ "grid": [
+  {
+   "threshold": 0.2,
+   "faces": 1141,
+   "hidden": 849,
+   "false_photos_without_people": 24,
+   "photos_without_people": 55,
+   "false_per_100": 43.64
+  },
+  {
+   "threshold": 0.25,
+   "faces": 1141,
+   "hidden": 829,
+   "false_photos_without_people": 17,
+   "photos_without_people": 55,
+   "false_per_100": 30.91
+  },
+  {
+   "threshold": 0.3,
+   "faces": 1141,
+   "hidden": 811,
+   "false_photos_without_people": 12,
+   "photos_without_people": 55,
+   "false_per_100": 21.82
+  },
+  {
+   "threshold": 0.35,
+   "faces": 1141,
+   "hidden": 793,
+   "false_photos_without_people": 8,
+   "photos_without_people": 55,
+   "false_per_100": 14.55
+  },
+  {
+   "threshold": 0.4,
+   "faces": 1141,
+   "hidden": 763,
+   "false_photos_without_people": 3,
+   "photos_without_people": 55,
+   "false_per_100": 5.45
+  },
+  {
+   "threshold": 0.45,
+   "faces": 1141,
+   "hidden": 740,
+   "false_photos_without_people": 3,
+   "photos_without_people": 55,
+   "false_per_100": 5.45
+  },
+  {
+   "threshold": 0.5,
+   "faces": 1141,
+   "hidden": 705,
+   "false_photos_without_people": 1,
+   "photos_without_people": 55,
+   "false_per_100": 1.82
+  },
+  {
+   "threshold": 0.55,
+   "faces": 1141,
+   "hidden": 661,
+   "false_photos_without_people": 1,
+   "photos_without_people": 55,
+   "false_per_100": 1.82
+  },
+  {
+   "threshold": 0.6,
+   "faces": 1141,
+   "hidden": 604,
+   "false_photos_without_people": 1,
+   "photos_without_people": 55,
+   "false_per_100": 1.82
+  },
+  {
+   "threshold": 0.65,
+   "faces": 1141,
+   "hidden": 557,
+   "false_photos_without_people": 0,
+   "photos_without_people": 55,
+   "false_per_100": 0.0
+  },
+  {
+   "threshold": 0.7,
+   "faces": 1141,
+   "hidden": 487,
+   "false_photos_without_people": 0,
+   "photos_without_people": 55,
+   "false_per_100": 0.0
+  },
+  {
+   "threshold": 0.75,
+   "faces": 1141,
+   "hidden": 390,
+   "false_photos_without_people": 0,
+   "photos_without_people": 55,
+   "false_per_100": 0.0
+  },
+  {
+   "threshold": 0.8,
+   "faces": 1141,
+   "hidden": 294,
+   "false_photos_without_people": 0,
+   "photos_without_people": 55,
+   "false_per_100": 0.0
+  },
+  {
+   "threshold": 0.85,
+   "faces": 1141,
+   "hidden": 175,
+   "false_photos_without_people": 0,
+   "photos_without_people": 55,
+   "false_per_100": 0.0
+  },
+  {
+   "threshold": 0.9,
+   "faces": 1141,
+   "hidden": 63,
+   "false_photos_without_people": 0,
+   "photos_without_people": 55,
+   "false_per_100": 0.0
+  }
+ ],
+ "mask_scale": 1.3,
+ "dev_photos": 155,
+ "dev_photos_without_people": 55,
+ "note": "chosen on the dev part only (RM1); the sealed read uses this cut and deface's default 0.20 side by side"
+}

@@ -1,0 +1,41 @@
+{
+ "what": "speed and memory of the rfdetr vehicle and person detector on dev photos (PT1b)",
+ "date": "2026-10-03T15:54:36",
+ "model": "rfdetr",
+ "machine": {
+  "host": "laptop-a",
+  "cpu": "Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz",
+  "logical_cpus": 8,
+  "load_1min": 7.57
+ },
+ "load_1min_at_end": 7.84,
+ "threads": 4,
+ "python": "3.10.13",
+ "rss_mb_before_first_picture": 48.4,
+ "first_vehicle_call_ms_includes_session_open": 2412.3,
+ "vehicle_pass_per_photo": {
+  "n": 11,
+  "wall_ms_median": 1816.7,
+  "wall_ms_p95": 2536.0,
+  "wall_ms_max": 2536.0,
+  "cpu_ms_median": 7347.2
+ },
+ "vehicles_found_per_photo_mean": 1.36,
+ "person_pass_per_photo": {
+  "n": 12,
+  "wall_ms_median": 1897.2,
+  "wall_ms_p95": 2268.9,
+  "wall_ms_max": 2268.9,
+  "cpu_ms_median": 7643.8
+ },
+ "persons_found_per_photo_mean": 20.33,
+ "peak_rss_mb": 435.7,
+ "run_failures": 0,
+ "caveat": "design measurement on dev photos; the median excludes the first vehicle call; quote it only with its machine and load",
+ "_publication": {
+  "speed": {
+   "publishable": false,
+   "why": "design measurement, not a reserved quiet-machine cell"
+  }
+ }
+}

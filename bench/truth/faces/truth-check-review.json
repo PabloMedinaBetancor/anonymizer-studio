@@ -1,0 +1,11 @@
+{
+ "about": "Visual review (crops, one by one) of the boxes that the author and the blind verifier (a blind verifier, 15 photos, no detector) did not pair; 03/10/2026. verdict: author_missed = a real face the author did not label (added to set-a by bench/truth_check_faces.py --merge); verifier_missed = a real face only the author labelled; framed_portrait = a face in a picture frame, ambiguous (kept as the author labelled it, see R6).",
+ "items": [
+  {"image": "set-a/People-Travelling-on-a-bus.jpg", "only_in": "verifier", "box": [800, 1085, 912, 1170], "verdict": "author_missed", "note": "man in profile behind the bus window, clear face"},
+  {"image": "set-a/Jordan-Petra-Native-people-in-front-of-the-monument-Pharaoh-s-Treasury.jpg", "only_in": "author", "box": [1025, 697, 1053, 729], "verdict": "verifier_missed", "note": "small real face of a rider in a keffiyeh"},
+  {"image": "set-a/Woman-holding-dog-in-living-room-AM-79400-1.jpg", "only_in": "author", "box": [558, 122, 580, 150], "verdict": "framed_portrait", "note": "oval portrait on the wall"},
+  {"image": "set-a/Woman-holding-dog-in-living-room-AM-79400-1.jpg", "only_in": "author", "box": [459, 176, 477, 197], "verdict": "framed_portrait", "note": "oval portrait on the wall"},
+  {"image": "set-a/Woman-holding-dog-in-living-room-AM-79400-1.jpg", "only_in": "author", "box": [329, 223, 339, 239], "verdict": "framed_portrait", "note": "face inside a framed photograph"},
+  {"image": "set-a/Woman-holding-dog-in-living-room-AM-79400-1.jpg", "only_in": "author", "box": [316, 232, 328, 247], "verdict": "framed_portrait", "note": "face inside a framed photograph"}
+ ]
+}

@@ -1,0 +1,227 @@
+{
+ "by": "blind labelling pass, 2026-10-04",
+ "faces": {
+  "blind/blind-004.jpg#1": {
+   "primary": "profile",
+   "tags": [
+    "profile"
+   ]
+  },
+  "blind/blind-010.jpg#2": {
+   "primary": "small",
+   "tags": [
+    "small",
+    "blur"
+   ]
+  },
+  "blind/blind-010.jpg#3": {
+   "primary": "small",
+   "tags": [
+    "small",
+    "blur"
+   ]
+  },
+  "blind/blind-010.jpg#4": {
+   "primary": "profile",
+   "tags": [
+    "profile"
+   ]
+  },
+  "blind/blind-028.jpg#0": {
+   "primary": "dark",
+   "tags": [
+    "dark",
+    "small"
+   ]
+  },
+  "blind/blind-028.jpg#15": {
+   "primary": "profile",
+   "tags": [
+    "profile",
+    "dark"
+   ]
+  },
+  "blind/blind-028.jpg#16": {
+   "primary": "profile",
+   "tags": [
+    "profile",
+    "dark"
+   ]
+  },
+  "blind/blind-028.jpg#17": {
+   "primary": "occluded",
+   "tags": [
+    "occluded",
+    "dark"
+   ]
+  },
+  "blind/blind-028.jpg#20": {
+   "primary": "occluded",
+   "tags": [
+    "occluded",
+    "dark"
+   ]
+  },
+  "blind/blind-028.jpg#21": {
+   "primary": "profile",
+   "tags": [
+    "profile",
+    "dark"
+   ]
+  },
+  "blind/blind-028.jpg#23": {
+   "primary": "profile",
+   "tags": [
+    "profile",
+    "occluded",
+    "dark"
+   ]
+  },
+  "blind/blind-028.jpg#3": {
+   "primary": "occluded",
+   "tags": [
+    "occluded",
+    "dark"
+   ]
+  },
+  "blind/blind-028.jpg#31": {
+   "primary": "dark",
+   "tags": [
+    "dark",
+    "profile"
+   ]
+  },
+  "blind/blind-028.jpg#32": {
+   "primary": "occluded",
+   "tags": [
+    "occluded",
+    "dark"
+   ]
+  },
+  "blind/blind-028.jpg#33": {
+   "primary": "occluded",
+   "tags": [
+    "occluded",
+    "dark"
+   ]
+  },
+  "blind/blind-028.jpg#34": {
+   "primary": "occluded",
+   "tags": [
+    "occluded",
+    "dark"
+   ]
+  },
+  "blind/blind-028.jpg#35": {
+   "primary": "profile",
+   "tags": [
+    "profile",
+    "dark"
+   ]
+  },
+  "blind/blind-028.jpg#38": {
+   "primary": "profile",
+   "tags": [
+    "profile",
+    "occluded",
+    "dark"
+   ]
+  },
+  "blind/blind-028.jpg#39": {
+   "primary": "profile",
+   "tags": [
+    "profile",
+    "dark"
+   ]
+  },
+  "blind/blind-028.jpg#40": {
+   "primary": "dark",
+   "tags": [
+    "dark",
+    "occluded"
+   ]
+  },
+  "blind/blind-028.jpg#43": {
+   "primary": "occluded",
+   "tags": [
+    "occluded",
+    "dark"
+   ]
+  },
+  "blind/blind-028.jpg#7": {
+   "primary": "dark",
+   "tags": [
+    "dark"
+   ]
+  },
+  "blind/blind-028.jpg#8": {
+   "primary": "dark",
+   "tags": [
+    "dark",
+    "profile"
+   ]
+  },
+  "blind/blind-028.jpg#9": {
+   "primary": "dark",
+   "tags": [
+    "dark",
+    "profile"
+   ]
+  },
+  "blind/blind-030.jpg#1": {
+   "primary": "small",
+   "tags": [
+    "small"
+   ]
+  },
+  "blind/blind-030.jpg#12": {
+   "primary": "profile",
+   "tags": [
+    "profile",
+    "blur"
+   ]
+  },
+  "blind/blind-030.jpg#18": {
+   "primary": "occluded",
+   "tags": [
+    "occluded",
+    "profile"
+   ]
+  },
+  "blind/blind-030.jpg#19": {
+   "primary": "profile",
+   "tags": [
+    "profile"
+   ]
+  },
+  "blind/blind-030.jpg#2": {
+   "primary": "profile",
+   "tags": [
+    "profile",
+    "small"
+   ]
+  },
+  "blind/blind-030.jpg#20": {
+   "primary": "occluded",
+   "tags": [
+    "occluded",
+    "profile"
+   ]
+  },
+  "blind/blind-030.jpg#7": {
+   "primary": "blur",
+   "tags": [
+    "blur",
+    "profile"
+   ]
+  },
+  "blind/blind-030.jpg#8": {
+   "primary": "profile",
+   "tags": [
+    "profile",
+    "occluded"
+   ]
+  }
+ },
+ "what": "tags of the faces of the 30 blind photos that at least one of fast, careful or deep left unhidden (32 faces), made by looking at each face in its photo, enlarged, with its labelled box drawn (crops were not kept and are not published). Judgements, not measurements: the main cause is the one that most plausibly kept the detector from the face, the others are also visible."
+}

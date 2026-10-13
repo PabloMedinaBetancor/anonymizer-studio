@@ -1,0 +1,423 @@
+{
+ "set": "streets",
+ "licence": "mixed",
+ "images": {
+  "street_001.jpg": {
+   "width": 1920,
+   "height": 891,
+   "boxes": []
+  },
+  "street_002.jpg": {
+   "width": 1920,
+   "height": 1282,
+   "boxes": []
+  },
+  "street_003.jpg": {
+   "width": 1920,
+   "height": 1200,
+   "boxes": []
+  },
+  "street_005.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": [
+    {
+     "box": [
+      558,
+      998,
+      638,
+      1021
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    },
+    {
+     "box": [
+      613,
+      1024,
+      652,
+      1043
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    }
+   ]
+  },
+  "street_006.jpg": {
+   "width": 1920,
+   "height": 933,
+   "boxes": []
+  },
+  "street_007.jpg": {
+   "width": 1920,
+   "height": 1257,
+   "boxes": [
+    {
+     "box": [
+      1604,
+      852,
+      1752,
+      888
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    }
+   ]
+  },
+  "street_010.jpg": {
+   "width": 1920,
+   "height": 1920,
+   "boxes": []
+  },
+  "street_011.jpg": {
+   "width": 1920,
+   "height": 1263,
+   "boxes": []
+  },
+  "street_013.jpg": {
+   "width": 1920,
+   "height": 1180,
+   "boxes": []
+  },
+  "street_022.jpg": {
+   "width": 1920,
+   "height": 1280,
+   "boxes": [
+    {
+     "box": [
+      268,
+      794,
+      508,
+      932
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    }
+   ]
+  },
+  "street_023.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": [
+    {
+     "box": [
+      560,
+      1110,
+      646,
+      1133
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    }
+   ]
+  },
+  "street_024.jpg": {
+   "width": 1920,
+   "height": 1222,
+   "boxes": []
+  },
+  "street_025.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": []
+  },
+  "street_026.jpg": {
+   "width": 1920,
+   "height": 1446,
+   "boxes": []
+  },
+  "street_027.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": [
+    {
+     "box": [
+      216,
+      706,
+      244,
+      730
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      274,
+      694,
+      306,
+      716
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      121,
+      785,
+      146,
+      812
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      740,
+      842,
+      766,
+      872
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      851,
+      729,
+      871,
+      750
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      868,
+      698,
+      882,
+      713
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    }
+   ]
+  },
+  "street_030.jpg": {
+   "width": 1920,
+   "height": 1052,
+   "boxes": []
+  },
+  "street_031.jpg": {
+   "width": 1920,
+   "height": 1264,
+   "boxes": [
+    {
+     "box": [
+      1218,
+      662,
+      1247,
+      681
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    }
+   ]
+  },
+  "street_032.jpg": {
+   "width": 1920,
+   "height": 1536,
+   "boxes": [
+    {
+     "box": [
+      872,
+      1238,
+      908,
+      1302
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      1178,
+      808,
+      1200,
+      882
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    },
+    {
+     "box": [
+      772,
+      998,
+      855,
+      1032
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    }
+   ]
+  },
+  "street_034.jpg": {
+   "width": 1920,
+   "height": 1280,
+   "boxes": [
+    {
+     "box": [
+      535,
+      1180,
+      618,
+      1198
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    }
+   ]
+  },
+  "street_036.jpg": {
+   "width": 1920,
+   "height": 855,
+   "boxes": []
+  },
+  "street_040.jpg": {
+   "width": 1704,
+   "height": 2304,
+   "boxes": []
+  },
+  "street_041.jpg": {
+   "width": 1920,
+   "height": 1280,
+   "boxes": [
+    {
+     "box": [
+      1386,
+      551,
+      1442,
+      588
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    }
+   ]
+  },
+  "street_043.jpg": {
+   "width": 1920,
+   "height": 1340,
+   "boxes": [
+    {
+     "box": [
+      107,
+      1083,
+      149,
+      1093
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    }
+   ]
+  },
+  "street_046.jpg": {
+   "width": 1920,
+   "height": 1280,
+   "boxes": [
+    {
+     "box": [
+      1024,
+      770,
+      1071,
+      795
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    },
+    {
+     "box": [
+      1680,
+      829,
+      1731,
+      863
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    }
+   ]
+  },
+  "street_049.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": [
+    {
+     "box": [
+      1626,
+      258,
+      1646,
+      336
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": false
+    }
+   ]
+  },
+  "street_050.jpg": {
+   "width": 1920,
+   "height": 863,
+   "boxes": []
+  },
+  "street_051.jpg": {
+   "width": 1920,
+   "height": 1617,
+   "boxes": []
+  },
+  "street_055.jpg": {
+   "width": 1920,
+   "height": 1280,
+   "boxes": [
+    {
+     "box": [
+      1643,
+      800,
+      1726,
+      906
+     ],
+     "kind": "plate",
+     "readable": true,
+     "ignore": false
+    }
+   ]
+  },
+  "street_059.jpg": {
+   "width": 1920,
+   "height": 1445,
+   "boxes": []
+  },
+  "street_060.jpg": {
+   "width": 1920,
+   "height": 1440,
+   "boxes": [
+    {
+     "box": [
+      911,
+      799,
+      958,
+      813
+     ],
+     "kind": "plate",
+     "readable": false,
+     "ignore": true
+    }
+   ]
+  }
+ }
+}

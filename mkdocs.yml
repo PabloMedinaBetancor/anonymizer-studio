@@ -1,0 +1,90 @@
+site_name: Anonymizer Studio
+site_description: Offline blurring of faces and licence plates in photos and video, with a review step for what the engine is not sure about
+docs_dir: docs
+site_dir: site
+use_directory_urls: true
+strict: true
+
+# The full measurements, the misses, the privacy audit table, the protocol of the local server and the change history stay in
+# the repository, out of the site and the manuals; the home page names them once.
+exclude_docs: |
+  README.template.md
+  accuracy.template.md
+  MEASURED*.md
+  MISSES.md
+  PRIVACY-PATHS.md
+  release-notes.md
+  UI-PROTOCOL.md
+  truth-dataset/
+  media/benchmark.template.html
+
+theme:
+  name: material
+  font: false
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+plugins:
+  - search
+
+extra:
+  generator: false
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: false
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+
+# The navigation. Each page also belongs to one of the two PDF manuals: see manuals.yml.
+nav:
+  - Home: index.md
+  - Getting started: getting-started.md
+  - Tutorials:
+      - Your first video: tutorials/first-video.md
+      - Photos in Python: tutorials/photos-in-python.md
+  - Concepts:
+      - How it works: concepts/how-it-works.md
+      - Privacy: concepts/privacy.md
+  - How-to guides:
+      - Review a video in code: how-to/video-review-in-code.md
+      - Progress, cancel and errors: how-to/progress-and-errors.md
+      - Work with AI assistants: how-to/ai-assistants.md
+  - Reference:
+      - Overview: reference/index.md
+      - The Studio: reference/studio.md
+      - Command line: reference/command-line.md
+      - Functions: reference/functions.md
+      - Anonymizer and Analysis: reference/anonymizer.md
+      - Options: reference/options.md
+      - Data types and events: reference/data-types.md
+      - Errors and codes: reference/errors.md
+      - Files written: reference/files-written.md
+  - Accuracy and limits: accuracy.md
+  - Help:
+      - FAQ and troubleshooting: faq.md
+      - Licence and credits: licence-and-credits.md

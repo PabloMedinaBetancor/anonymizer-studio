@@ -1,0 +1,202 @@
+{
+ "what": "SL9: median ms per photo, careful against fast, end to end through the public API, faces and plates, dev photos only",
+ "date": "2026-10-03T17:05:38",
+ "tree": "",
+ "tree_commit": "",
+ "machine": {
+  "host": "laptop-b",
+  "cpu": "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz",
+  "logical_cpus": 4,
+  "load_1min": 0.0
+ },
+ "load_1min_at_end": 3.11,
+ "threads": 3,
+ "python": "3.10.13",
+ "photos": 24,
+ "fast_ms_median": 2126.5,
+ "careful_ms_median": 3204.1,
+ "ratio_of_medians": 1.51,
+ "ratio_median_of_photos": 1.49,
+ "ratio_worst_photo": 1.92,
+ "bar": 3.0,
+ "met": true,
+ "zones_visited_median_careful": 6.0,
+ "peak_rss_mb": 726.8,
+ "per_photo": [
+  {
+   "photo": "blind-001.jpg",
+   "fast_ms": 2060.7,
+   "fast_zones_visited": 0,
+   "careful_ms": 2623.2,
+   "careful_zones_visited": 2
+  },
+  {
+   "photo": "blind-002.jpg",
+   "fast_ms": 1892.3,
+   "fast_zones_visited": 0,
+   "careful_ms": 2281.3,
+   "careful_zones_visited": 0
+  },
+  {
+   "photo": "blind-003.jpg",
+   "fast_ms": 1985.2,
+   "fast_zones_visited": 0,
+   "careful_ms": 2545.5,
+   "careful_zones_visited": 1
+  },
+  {
+   "photo": "blind-004.jpg",
+   "fast_ms": 3202.8,
+   "fast_zones_visited": 0,
+   "careful_ms": 4561.3,
+   "careful_zones_visited": 6
+  },
+  {
+   "photo": "blind-005.jpg",
+   "fast_ms": 2513.0,
+   "fast_zones_visited": 0,
+   "careful_ms": 2969.0,
+   "careful_zones_visited": 0
+  },
+  {
+   "photo": "blind-006.jpg",
+   "fast_ms": 2010.6,
+   "fast_zones_visited": 0,
+   "careful_ms": 3685.3,
+   "careful_zones_visited": 30
+  },
+  {
+   "photo": "blind-007.jpg",
+   "fast_ms": 2224.7,
+   "fast_zones_visited": 0,
+   "careful_ms": 2757.5,
+   "careful_zones_visited": 1
+  },
+  {
+   "photo": "blind-008.jpg",
+   "fast_ms": 3359.9,
+   "fast_zones_visited": 0,
+   "careful_ms": 4047.1,
+   "careful_zones_visited": 2
+  },
+  {
+   "photo": "blind-009.jpg",
+   "fast_ms": 3021.7,
+   "fast_zones_visited": 0,
+   "careful_ms": 3509.9,
+   "careful_zones_visited": 0
+  },
+  {
+   "photo": "blind-010.jpg",
+   "fast_ms": 1978.5,
+   "fast_zones_visited": 0,
+   "careful_ms": 2343.7,
+   "careful_zones_visited": 0
+  },
+  {
+   "photo": "blind-011.jpg",
+   "fast_ms": 1986.1,
+   "fast_zones_visited": 0,
+   "careful_ms": 2924.8,
+   "careful_zones_visited": 16
+  },
+  {
+   "photo": "blind-012.jpg",
+   "fast_ms": 2019.6,
+   "fast_zones_visited": 0,
+   "careful_ms": 2518.3,
+   "careful_zones_visited": 1
+  },
+  {
+   "photo": "A-boy-and-the-crowd-during-the-Rock-March-iauliai-Lithuania-1987.jpg",
+   "fast_ms": 2187.1,
+   "fast_zones_visited": 0,
+   "careful_ms": 3281.4,
+   "careful_zones_visited": 10
+  },
+  {
+   "photo": "Anarchist-crowd-15948053412.jpg",
+   "fast_ms": 2390.5,
+   "fast_zones_visited": 0,
+   "careful_ms": 4251.1,
+   "careful_zones_visited": 20
+  },
+  {
+   "photo": "Arthur-Avenue-41---terrace-of-Noya-Cafe.jpg",
+   "fast_ms": 2087.9,
+   "fast_zones_visited": 0,
+   "careful_ms": 3126.8,
+   "careful_zones_visited": 7
+  },
+  {
+   "photo": "Busy-crowd-on-Market-Place-at-St-Albans-Market.jpg",
+   "fast_ms": 2287.2,
+   "fast_zones_visited": 0,
+   "careful_ms": 3789.1,
+   "careful_zones_visited": 19
+  },
+  {
+   "photo": "Children-Playing-at-Baoqing-Park-20160405.jpg",
+   "fast_ms": 2422.5,
+   "fast_zones_visited": 0,
+   "careful_ms": 3719.8,
+   "careful_zones_visited": 16
+  },
+  {
+   "photo": "Children-Playing-at-Xinzhong-Park-20141009.jpg",
+   "fast_ms": 2083.0,
+   "fast_zones_visited": 0,
+   "careful_ms": 3334.8,
+   "careful_zones_visited": 15
+  },
+  {
+   "photo": "Class-photo-Fortepan-76916.jpg",
+   "fast_ms": 2165.0,
+   "fast_zones_visited": 0,
+   "careful_ms": 2757.6,
+   "careful_zones_visited": 3
+  },
+  {
+   "photo": "Conference---10th-anniversary-of-Slovene-Wikipedia-in-Ljubljana-group-.jpg",
+   "fast_ms": 1965.1,
+   "fast_zones_visited": 0,
+   "careful_ms": 3056.6,
+   "careful_zones_visited": 6
+  },
+  {
+   "photo": "Crowds-at-Walking-Street-Market-on-Th-Talad-Gao---Lampang---Thailand-3.jpg",
+   "fast_ms": 2364.9,
+   "fast_zones_visited": 0,
+   "careful_ms": 4542.2,
+   "careful_zones_visited": 30
+  },
+  {
+   "photo": "DFC-4167-A-vendor-hands-a-plastic-cup-of-iced-drink-to-a-customer-at-a.jpg",
+   "fast_ms": 1952.4,
+   "fast_zones_visited": 0,
+   "careful_ms": 3734.6,
+   "careful_zones_visited": 5
+  },
+  {
+   "photo": "Demonstration-on-Aleksanterinkatu-in-March-2025-picture-4.jpg",
+   "fast_ms": 2257.7,
+   "fast_zones_visited": 0,
+   "careful_ms": 3965.4,
+   "careful_zones_visited": 20
+  },
+  {
+   "photo": "Dublin-Marathon-2007-1800169159.jpg",
+   "fast_ms": 1740.4,
+   "fast_zones_visited": 0,
+   "careful_ms": 2809.7,
+   "careful_zones_visited": 13
+  }
+ ],
+ "caveat": "dev photos only; the two modes alternate photo by photo in one process; quote it only with its machine and load",
+ "_publication": {
+  "speed": {
+   "publishable": false,
+   "why": "design measurement, not a reserved quiet-machine cell"
+  }
+ }
+}

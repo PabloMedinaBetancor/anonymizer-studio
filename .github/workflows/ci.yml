@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: ubuntu / Python 3.10
+    # Linux with Python 3.10 is the tested combination; Windows and other Python versions have not been run, so they
+    # are not in this matrix.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e . pytest==9.1.1 ruff==0.16.10
+      - name: Fetch the models
+        run: python scripts/fetch_models.py
+      - name: Lint
+        run: |
+          python -m ruff check .
+          python -m ruff format --check src tests bench scripts
+      - name: Tests
+        run: python -m pytest -q

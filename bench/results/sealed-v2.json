@@ -1,0 +1,5869 @@
+{
+ "failed": [],
+ "freeze_time": "2026-10-04 00:33:01",
+ "keys": 204,
+ "read": 1,
+ "results": {
+  "faces_v2": {
+   "careful_over_control": {
+    "blurred_with_certainty": {
+     "ci95_per_1000": [
+      49.6,
+      105.9
+     ],
+     "gain_per_1000": 73.3,
+     "gained": 129,
+     "lost": 0,
+     "mcnemar_p": 0.0,
+     "n": 1761
+    },
+    "hidden_by_default": {
+     "ci95_per_1000": [
+      3.5,
+      22.6
+     ],
+     "gain_per_1000": 11.4,
+     "gained": 36,
+     "lost": 16,
+     "mcnemar_p": 0.00779,
+     "n": 1761
+    }
+   },
+   "careful_over_fast": {
+    "blurred_with_certainty": {
+     "ci95_per_1000": [
+      49.6,
+      105.9
+     ],
+     "gain_per_1000": 73.3,
+     "gained": 129,
+     "lost": 0,
+     "mcnemar_p": 0.0,
+     "n": 1761
+    },
+    "hidden_by_default": {
+     "ci95_per_1000": [
+      28.8,
+      75.9
+     ],
+     "gain_per_1000": 47.1,
+     "gained": 83,
+     "lost": 0,
+     "mcnemar_p": 0.0,
+     "n": 1761
+    }
+   },
+   "careful_over_reference": {
+    "blurred_with_certainty": {
+     "ci95_per_1000": [
+      163.7,
+      325.7
+     ],
+     "gain_per_1000": 257.8,
+     "gained": 469,
+     "lost": 15,
+     "mcnemar_p": 0.0,
+     "n": 1761
+    },
+    "hidden_by_default": {
+     "ci95_per_1000": [
+      249.4,
+      486.9
+     ],
+     "gain_per_1000": 387.8,
+     "gained": 690,
+     "lost": 7,
+     "mcnemar_p": 0.0,
+     "n": 1761
+    }
+   },
+   "cells": {
+    "careful": {
+     "blurred_with_certainty_pct": 69.96,
+     "faces": 1761,
+     "false_hidden_events_in_photos_with_people": 51,
+     "false_hidden_photos_without_people": {
+      "events": 16,
+      "per_100_photos": 20.0,
+      "photos": 40,
+      "photos_affected": 8,
+      "wilson95_per_100": [
+       10.5,
+       34.76
+      ]
+     },
+     "hidden_by_default": 1461,
+     "hidden_by_default_bootstrap_by_photo95": [
+      77.65,
+      88.75
+     ],
+     "hidden_by_default_ellipse_pct": 75.24,
+     "hidden_by_default_pct": 82.96,
+     "hidden_by_default_wilson95": [
+      81.14,
+      84.65
+     ],
+     "seconds_by_photo": [
+      1.116,
+      0.877,
+      1.151,
+      0.795,
+      0.573,
+      0.585,
+      0.781,
+      0.824,
+      0.753,
+      0.408,
+      1.005,
+      0.67,
+      0.556,
+      0.589,
+      0.807,
+      1.324,
+      0.561,
+      0.879,
+      0.642,
+      0.899,
+      0.743,
+      0.753,
+      0.867,
+      0.596,
+      0.479,
+      0.869,
+      0.642,
+      1.338,
+      0.584,
+      1.528,
+      1.37,
+      0.844,
+      1.854,
+      1.415,
+      0.92,
+      0.429,
+      1.159,
+      0.936,
+      1.09,
+      0.7,
+      0.73,
+      0.678,
+      1.411,
+      1.41,
+      1.163,
+      0.881,
+      1.129,
+      1.41,
+      1.656,
+      0.18,
+      0.648,
+      0.525,
+      0.374,
+      0.642,
+      0.231,
+      0.848,
+      0.922,
+      1.354,
+      0.964,
+      0.51,
+      0.765,
+      0.768,
+      1.1,
+      1.104,
+      0.562,
+      0.711,
+      0.371,
+      0.231,
+      0.81,
+      0.212,
+      0.201,
+      0.351,
+      0.347,
+      0.192,
+      0.11,
+      0.401,
+      0.096,
+      0.468,
+      0.159,
+      0.266,
+      0.436,
+      0.34,
+      1.112,
+      0.37,
+      0.57,
+      0.667,
+      0.644,
+      1.421,
+      0.684,
+      0.316,
+      0.44,
+      0.37,
+      0.375,
+      0.261,
+      2.853,
+      0.554,
+      0.139,
+      0.114,
+      0.163,
+      0.423,
+      0.503,
+      0.396,
+      0.484,
+      0.511,
+      0.509,
+      0.523,
+      0.208,
+      0.128,
+      0.358,
+      0.689,
+      0.692,
+      1.686,
+      0.74,
+      0.264,
+      0.316,
+      0.61,
+      0.784,
+      0.749,
+      0.596,
+      0.302,
+      0.448,
+      0.359,
+      0.552,
+      0.47,
+      0.238,
+      0.536,
+      0.271,
+      0.253,
+      0.277,
+      0.185,
+      0.181,
+      0.178,
+      0.181,
+      0.947,
+      0.395,
+      0.461,
+      0.612,
+      0.158,
+      0.333,
+      0.193,
+      0.482,
+      0.105,
+      0.524,
+      0.338,
+      0.409,
+      0.416,
+      0.431,
+      0.33,
+      0.191,
+      0.299,
+      0.73,
+      0.634,
+      0.861
+     ],
+     "seconds_per_photo_mean": 0.64,
+     "seconds_per_photo_median": 0.56
+    },
+    "control": {
+     "blurred_with_certainty_pct": 62.63,
+     "faces": 1761,
+     "false_hidden_events_in_photos_with_people": 52,
+     "false_hidden_photos_without_people": {
+      "events": 22,
+      "per_100_photos": 22.5,
+      "photos": 40,
+      "photos_affected": 9,
+      "wilson95_per_100": [
+       12.32,
+       37.5
+      ]
+     },
+     "hidden_by_default": 1441,
+     "hidden_by_default_bootstrap_by_photo95": [
+      75.94,
+      87.65
+     ],
+     "hidden_by_default_ellipse_pct": 73.94,
+     "hidden_by_default_pct": 81.83,
+     "hidden_by_default_wilson95": [
+      79.96,
+      83.56
+     ],
+     "seconds_by_photo": [
+      0.886,
+      0.774,
+      0.557,
+      0.572,
+      0.423,
+      0.551,
+      0.538,
+      0.535,
+      0.549,
+      0.279,
+      0.821,
+      0.58,
+      0.556,
+      0.556,
+      0.821,
+      0.949,
+      0.516,
+      0.568,
+      0.545,
+      0.782,
+      0.603,
+      0.66,
+      0.796,
+      0.544,
+      0.45,
+      0.799,
+      0.555,
+      0.776,
+      0.79,
+      0.822,
+      0.863,
+      0.611,
+      1.389,
+      0.851,
+      0.464,
+      0.345,
+      0.728,
+      0.477,
+      0.79,
+      0.73,
+      0.571,
+      0.756,
+      0.909,
+      1.01,
+      0.932,
+      0.709,
+      0.766,
+      1.103,
+      1.665,
+      0.229,
+      0.833,
+      0.627,
+      0.276,
+      0.666,
+      0.23,
+      1.025,
+      1.185,
+      1.189,
+      1.174,
+      0.549,
+      0.607,
+      0.859,
+      0.77,
+      0.723,
+      0.662,
+      0.623,
+      0.387,
+      0.286,
+      0.451,
+      0.262,
+      0.146,
+      0.184,
+      0.351,
+      0.196,
+      0.144,
+      0.292,
+      0.103,
+      0.4,
+      0.171,
+      0.279,
+      0.346,
+      0.23,
+      0.444,
+      0.21,
+      0.304,
+      0.266,
+      0.266,
+      0.532,
+      0.287,
+      0.207,
+      0.284,
+      0.342,
+      0.263,
+      0.17,
+      2.316,
+      0.262,
+      0.128,
+      0.114,
+      0.168,
+      0.259,
+      0.175,
+      0.207,
+      0.275,
+      0.178,
+      0.374,
+      0.14,
+      0.255,
+      0.093,
+      0.329,
+      0.304,
+      0.343,
+      0.388,
+      0.171,
+      0.156,
+      0.296,
+      0.174,
+      0.173,
+      0.34,
+      0.174,
+      0.199,
+      0.195,
+      0.231,
+      0.223,
+      0.369,
+      0.135,
+      0.348,
+      0.095,
+      0.183,
+      0.186,
+      0.155,
+      0.154,
+      0.1,
+      0.169,
+      0.423,
+      0.4,
+      0.377,
+      0.378,
+      0.13,
+      0.202,
+      0.088,
+      0.338,
+      0.081,
+      0.307,
+      0.164,
+      0.17,
+      0.197,
+      0.35,
+      0.138,
+      0.123,
+      0.172,
+      0.373,
+      0.327,
+      0.273
+     ],
+     "seconds_per_photo_mean": 0.46,
+     "seconds_per_photo_median": 0.35
+    },
+    "deep": {
+     "blurred_with_certainty_pct": 66.16,
+     "faces": 1761,
+     "false_hidden_events_in_photos_with_people": 151,
+     "false_hidden_photos_without_people": {
+      "events": 31,
+      "per_100_photos": 22.5,
+      "photos": 40,
+      "photos_affected": 9,
+      "wilson95_per_100": [
+       12.32,
+       37.5
+      ]
+     },
+     "hidden_by_default": 1526,
+     "hidden_by_default_bootstrap_by_photo95": [
+      81.34,
+      91.18
+     ],
+     "hidden_by_default_ellipse_pct": 78.53,
+     "hidden_by_default_pct": 86.66,
+     "hidden_by_default_wilson95": [
+      84.99,
+      88.16
+     ],
+     "seconds_by_photo": [
+      7.735,
+      7.858,
+      4.845,
+      4.415,
+      3.336,
+      4.872,
+      5.123,
+      4.955,
+      4.762,
+      2.965,
+      7.543,
+      5.262,
+      4.794,
+      4.873,
+      7.337,
+      8.463,
+      4.951,
+      4.752,
+      6.62,
+      11.441,
+      4.861,
+      6.508,
+      7.186,
+      4.772,
+      3.329,
+      7.355,
+      5.143,
+      5.578,
+      5.342,
+      8.437,
+      5.826,
+      5.119,
+      5.544,
+      4.878,
+      3.09,
+      3.031,
+      4.752,
+      3.134,
+      4.812,
+      4.887,
+      6.473,
+      7.412,
+      7.461,
+      9.287,
+      4.819,
+      5.284,
+      4.977,
+      5.064,
+      5.998,
+      2.56,
+      5.321,
+      5.026,
+      2.521,
+      5.124,
+      2.409,
+      12.737,
+      12.918,
+      8.664,
+      8.409,
+      4.934,
+      5.236,
+      7.296,
+      4.872,
+      4.762,
+      4.76,
+      4.767,
+      3.871,
+      2.341,
+      1.184,
+      2.35,
+      1.08,
+      2.338,
+      2.981,
+      2.377,
+      1.138,
+      2.477,
+      0.899,
+      3.039,
+      2.334,
+      2.971,
+      3.031,
+      2.511,
+      2.69,
+      2.458,
+      2.474,
+      2.502,
+      2.517,
+      2.769,
+      2.549,
+      2.462,
+      2.596,
+      3.12,
+      2.452,
+      2.327,
+      6.955,
+      2.35,
+      1.095,
+      1.01,
+      2.453,
+      3.984,
+      3.521,
+      3.648,
+      2.435,
+      1.245,
+      3.086,
+      1.184,
+      2.386,
+      1.405,
+      4.623,
+      4.587,
+      4.591,
+      3.9,
+      3.591,
+      3.589,
+      3.619,
+      3.591,
+      3.592,
+      4.539,
+      3.582,
+      3.604,
+      3.608,
+      3.669,
+      3.608,
+      4.575,
+      1.728,
+      4.613,
+      1.169,
+      3.588,
+      2.461,
+      3.606,
+      3.641,
+      1.312,
+      3.571,
+      4.461,
+      4.531,
+      4.576,
+      4.517,
+      1.717,
+      3.634,
+      1.273,
+      4.576,
+      1.003,
+      4.59,
+      3.566,
+      3.582,
+      3.597,
+      5.179,
+      2.201,
+      1.335,
+      3.818,
+      6.034,
+      4.646,
+      3.685
+     ],
+     "seconds_per_photo_mean": 4.22,
+     "seconds_per_photo_median": 3.82
+    },
+    "deep_heavy_only": {
+     "blurred_with_certainty_pct": 48.32,
+     "faces": 1761,
+     "false_hidden_events_in_photos_with_people": 146,
+     "false_hidden_photos_without_people": {
+      "events": 27,
+      "per_100_photos": 22.5,
+      "photos": 40,
+      "photos_affected": 9,
+      "wilson95_per_100": [
+       12.32,
+       37.5
+      ]
+     },
+     "hidden_by_default": 1403,
+     "hidden_by_default_bootstrap_by_photo95": [
+      74.04,
+      86.48
+     ],
+     "hidden_by_default_ellipse_pct": 67.4,
+     "hidden_by_default_pct": 79.67,
+     "hidden_by_default_wilson95": [
+      77.73,
+      81.48
+     ],
+     "seconds_by_photo": [
+      12.75,
+      12.119,
+      7.611,
+      6.655,
+      4.447,
+      4.832,
+      8.467,
+      4.815,
+      4.774,
+      3.222,
+      7.381,
+      4.801,
+      4.898,
+      4.748,
+      7.167,
+      8.362,
+      4.726,
+      4.803,
+      4.769,
+      7.288,
+      4.78,
+      4.78,
+      8.182,
+      5.697,
+      3.053,
+      7.415,
+      5.153,
+      5.643,
+      4.398,
+      7.42,
+      7.687,
+      7.333,
+      7.814,
+      4.831,
+      3.123,
+      3.035,
+      4.769,
+      3.123,
+      4.813,
+      5.106,
+      2.936,
+      4.787,
+      4.848,
+      4.977,
+      7.371,
+      7.948,
+      7.509,
+      7.439,
+      5.79,
+      2.368,
+      4.921,
+      4.961,
+      2.442,
+      4.907,
+      2.32,
+      7.228,
+      10.152,
+      8.538,
+      8.497,
+      4.922,
+      4.978,
+      10.976,
+      5.146,
+      4.92,
+      4.96,
+      5.151,
+      4.138,
+      2.523,
+      1.333,
+      2.595,
+      1.118,
+      2.506,
+      3.18,
+      2.555,
+      1.222,
+      2.538,
+      0.971,
+      3.043,
+      2.347,
+      3.027,
+      3.036,
+      2.383,
+      2.555,
+      2.375,
+      3.684,
+      3.666,
+      3.671,
+      2.896,
+      2.413,
+      2.385,
+      2.457,
+      3.017,
+      2.352,
+      2.372,
+      5.759,
+      2.372,
+      1.01,
+      0.992,
+      2.432,
+      2.582,
+      2.404,
+      2.443,
+      2.367,
+      1.191,
+      3.006,
+      1.781,
+      3.628,
+      1.39,
+      4.641,
+      4.62,
+      4.583,
+      3.893,
+      3.703,
+      3.588,
+      3.628,
+      3.628,
+      3.619,
+      2.974,
+      2.343,
+      2.425,
+      2.447,
+      2.488,
+      2.405,
+      3.061,
+      1.128,
+      3.128,
+      0.776,
+      2.395,
+      2.403,
+      2.328,
+      2.343,
+      0.881,
+      2.368,
+      4.559,
+      4.603,
+      4.61,
+      3.078,
+      1.148,
+      2.393,
+      0.83,
+      3.022,
+      0.668,
+      3.11,
+      2.409,
+      2.349,
+      2.422,
+      3.051,
+      1.084,
+      1.052,
+      2.386,
+      3.092,
+      3.188,
+      2.501
+     ],
+     "seconds_per_photo_mean": 4.03,
+     "seconds_per_photo_median": 3.19
+    },
+    "fast": {
+     "blurred_with_certainty_pct": 62.63,
+     "faces": 1761,
+     "false_hidden_events_in_photos_with_people": 23,
+     "false_hidden_photos_without_people": {
+      "events": 8,
+      "per_100_photos": 7.5,
+      "photos": 40,
+      "photos_affected": 3,
+      "wilson95_per_100": [
+       2.58,
+       19.86
+      ]
+     },
+     "hidden_by_default": 1378,
+     "hidden_by_default_bootstrap_by_photo95": [
+      71.33,
+      84.12
+     ],
+     "hidden_by_default_ellipse_pct": 70.81,
+     "hidden_by_default_pct": 78.25,
+     "hidden_by_default_wilson95": [
+      76.26,
+      80.12
+     ],
+     "seconds_by_photo": [
+      0.656,
+      0.544,
+      0.357,
+      0.372,
+      0.279,
+      0.37,
+      0.347,
+      0.396,
+      0.411,
+      0.204,
+      0.553,
+      0.381,
+      0.389,
+      0.404,
+      0.534,
+      0.6,
+      0.378,
+      0.375,
+      0.371,
+      0.572,
+      0.433,
+      0.417,
+      0.576,
+      0.382,
+      0.292,
+      0.559,
+      0.377,
+      0.548,
+      0.365,
+      0.487,
+      0.632,
+      0.455,
+      0.744,
+      0.475,
+      0.314,
+      0.276,
+      0.385,
+      0.294,
+      0.441,
+      0.39,
+      0.293,
+      0.39,
+      0.429,
+      0.541,
+      0.493,
+      0.383,
+      0.394,
+      0.483,
+      0.933,
+      0.111,
+      0.491,
+      0.37,
+      0.161,
+      0.347,
+      0.149,
+      0.557,
+      0.651,
+      0.61,
+      0.61,
+      0.373,
+      0.39,
+      0.576,
+      0.465,
+      0.391,
+      0.412,
+      0.398,
+      0.302,
+      0.177,
+      0.203,
+      0.142,
+      0.087,
+      0.113,
+      0.216,
+      0.151,
+      0.082,
+      0.199,
+      0.06,
+      0.261,
+      0.124,
+      0.217,
+      0.234,
+      0.143,
+      0.238,
+      0.139,
+      0.165,
+      0.211,
+      0.171,
+      0.328,
+      0.161,
+      0.136,
+      0.174,
+      0.214,
+      0.136,
+      0.101,
+      1.818,
+      0.148,
+      0.077,
+      0.081,
+      0.125,
+      0.173,
+      0.153,
+      0.111,
+      0.117,
+      0.114,
+      0.231,
+      0.085,
+      0.124,
+      0.065,
+      0.208,
+      0.211,
+      0.241,
+      0.271,
+      0.122,
+      0.126,
+      0.145,
+      0.116,
+      0.149,
+      0.226,
+      0.114,
+      0.146,
+      0.155,
+      0.172,
+      0.121,
+      0.281,
+      0.125,
+      0.32,
+      0.051,
+      0.144,
+      0.147,
+      0.133,
+      0.137,
+      0.065,
+      0.146,
+      0.257,
+      0.262,
+      0.275,
+      0.224,
+      0.081,
+      0.17,
+      0.058,
+      0.232,
+      0.05,
+      0.272,
+      0.136,
+      0.117,
+      0.223,
+      0.361,
+      0.121,
+      0.103,
+      0.216,
+      0.237,
+      0.23,
+      0.239
+     ],
+     "seconds_per_photo_mean": 0.29,
+     "seconds_per_photo_median": 0.24
+    },
+    "reference": {
+     "blurred_with_certainty_pct": 44.18,
+     "faces": 1761,
+     "false_hidden_events_in_photos_with_people": 8,
+     "false_hidden_photos_without_people": {
+      "events": 5,
+      "per_100_photos": 7.5,
+      "photos": 40,
+      "photos_affected": 3,
+      "wilson95_per_100": [
+       2.58,
+       19.86
+      ]
+     },
+     "hidden_by_default": 778,
+     "hidden_by_default_bootstrap_by_photo95": [
+      32.25,
+      61.37
+     ],
+     "hidden_by_default_ellipse_pct": 36.23,
+     "hidden_by_default_pct": 44.18,
+     "hidden_by_default_wilson95": [
+      41.88,
+      46.51
+     ],
+     "seconds_by_photo": [
+      1.062,
+      0.913,
+      0.448,
+      0.34,
+      0.298,
+      0.349,
+      0.371,
+      0.445,
+      0.423,
+      0.182,
+      0.907,
+      0.437,
+      0.426,
+      0.443,
+      0.848,
+      1.114,
+      0.377,
+      0.385,
+      0.376,
+      0.852,
+      0.428,
+      0.49,
+      0.869,
+      0.451,
+      0.336,
+      0.898,
+      0.431,
+      0.476,
+      0.495,
+      0.402,
+      0.419,
+      0.395,
+      0.562,
+      0.446,
+      0.177,
+      0.2,
+      0.402,
+      0.196,
+      0.444,
+      0.474,
+      0.291,
+      0.405,
+      0.409,
+      0.45,
+      0.453,
+      0.396,
+      0.374,
+      0.424,
+      0.619,
+      0.096,
+      0.422,
+      0.42,
+      0.141,
+      0.432,
+      0.136,
+      0.851,
+      0.943,
+      1.149,
+      1.012,
+      0.38,
+      0.419,
+      0.773,
+      0.419,
+      0.426,
+      0.415,
+      0.38,
+      0.28,
+      0.115,
+      0.087,
+      0.105,
+      0.085,
+      0.103,
+      0.252,
+      0.101,
+      0.088,
+      0.113,
+      0.068,
+      0.257,
+      0.117,
+      0.216,
+      0.219,
+      0.109,
+      0.127,
+      0.117,
+      0.105,
+      0.119,
+      0.114,
+      0.158,
+      0.108,
+      0.108,
+      0.107,
+      0.22,
+      0.116,
+      0.118,
+      0.301,
+      0.109,
+      0.072,
+      0.071,
+      0.1,
+      0.107,
+      0.102,
+      0.125,
+      0.105,
+      0.095,
+      0.241,
+      0.088,
+      0.128,
+      0.067,
+      0.218,
+      0.246,
+      0.254,
+      0.114,
+      0.103,
+      0.159,
+      0.171,
+      0.104,
+      0.109,
+      0.246,
+      0.114,
+      0.162,
+      0.116,
+      0.108,
+      0.103,
+      0.245,
+      0.09,
+      0.224,
+      0.058,
+      0.116,
+      0.12,
+      0.098,
+      0.117,
+      0.064,
+      0.099,
+      0.31,
+      0.278,
+      0.249,
+      0.245,
+      0.089,
+      0.13,
+      0.069,
+      0.249,
+      0.054,
+      0.242,
+      0.098,
+      0.11,
+      0.165,
+      0.249,
+      0.083,
+      0.08,
+      0.116,
+      0.247,
+      0.243,
+      0.113
+     ],
+     "seconds_per_photo_mean": 0.3,
+     "seconds_per_photo_median": 0.24,
+     "threshold": 0.5
+    },
+    "reference_default": {
+     "blurred_with_certainty_pct": 60.31,
+     "faces": 1761,
+     "false_hidden_events_in_photos_with_people": 414,
+     "false_hidden_photos_without_people": {
+      "events": 82,
+      "per_100_photos": 52.5,
+      "photos": 40,
+      "photos_affected": 21,
+      "wilson95_per_100": [
+       37.5,
+       67.06
+      ]
+     },
+     "hidden_by_default": 1062,
+     "hidden_by_default_bootstrap_by_photo95": [
+      52.29,
+      72.11
+     ],
+     "hidden_by_default_ellipse_pct": 46.11,
+     "hidden_by_default_pct": 60.31,
+     "hidden_by_default_wilson95": [
+      58.0,
+      62.57
+     ],
+     "seconds_by_photo": [],
+     "seconds_per_photo_mean": null,
+     "seconds_per_photo_median": null,
+     "threshold": 0.2
+    }
+   },
+   "deep_heavy_only_vs_deep": {
+    "blurred_with_certainty": {
+     "ci95_per_1000": [
+      -232.2,
+      -105.3
+     ],
+     "gain_per_1000": -178.3,
+     "gained": 8,
+     "lost": 322,
+     "mcnemar_p": 0.0,
+     "n": 1761
+    },
+    "hidden_by_default": {
+     "ci95_per_1000": [
+      -99.2,
+      -33.2
+     ],
+     "gain_per_1000": -69.8,
+     "gained": 14,
+     "lost": 137,
+     "mcnemar_p": 0.0,
+     "n": 1761
+    }
+   },
+   "deep_over_careful": {
+    "blurred_with_certainty": {
+     "ci95_per_1000": [
+      -64.1,
+      -20.3
+     ],
+     "gain_per_1000": -38.0,
+     "gained": 14,
+     "lost": 81,
+     "mcnemar_p": 0.0,
+     "n": 1761
+    },
+    "hidden_by_default": {
+     "ci95_per_1000": [
+      15.5,
+      54.4
+     ],
+     "gain_per_1000": 36.9,
+     "gained": 78,
+     "lost": 13,
+     "mcnemar_p": 0.0,
+     "n": 1761
+    }
+   },
+   "independent_parts": {
+    "careful": {
+     "bootstrap_by_photo95": [
+      70.93,
+      80.81
+     ],
+     "faces": 1222,
+     "hidden_by_default": 935,
+     "pct": 76.51,
+     "wilson95": [
+      74.06,
+      78.81
+     ]
+    },
+    "control": {
+     "bootstrap_by_photo95": [
+      69.05,
+      79.16
+     ],
+     "faces": 1222,
+     "hidden_by_default": 916,
+     "pct": 74.96,
+     "wilson95": [
+      72.45,
+      77.31
+     ]
+    },
+    "deep": {
+     "bootstrap_by_photo95": [
+      75.35,
+      85.87
+     ],
+     "faces": 1222,
+     "hidden_by_default": 996,
+     "pct": 81.51,
+     "wilson95": [
+      79.23,
+      83.58
+     ]
+    },
+    "deep_heavy_only": {
+     "bootstrap_by_photo95": [
+      69.48,
+      80.06
+     ],
+     "faces": 1222,
+     "hidden_by_default": 910,
+     "pct": 74.47,
+     "wilson95": [
+      71.95,
+      76.83
+     ]
+    },
+    "fast": {
+     "bootstrap_by_photo95": [
+      62.6,
+      76.28
+     ],
+     "faces": 1222,
+     "hidden_by_default": 866,
+     "pct": 70.87,
+     "wilson95": [
+      68.26,
+      73.35
+     ]
+    },
+    "reference": {
+     "bootstrap_by_photo95": [
+      26.88,
+      53.23
+     ],
+     "faces": 1222,
+     "hidden_by_default": 448,
+     "pct": 36.66,
+     "wilson95": [
+      34.01,
+      39.4
+     ]
+    },
+    "reference_default": {
+     "bootstrap_by_photo95": [
+      48.33,
+      64.18
+     ],
+     "faces": 1222,
+     "hidden_by_default": 659,
+     "pct": 53.93,
+     "wilson95": [
+      51.13,
+      56.71
+     ]
+    }
+   },
+   "load_at_end": [
+    3.701171875,
+    4.0380859375,
+    3.7197265625
+   ],
+   "machine": {
+    "cpu": "Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz",
+    "host": "laptop-a",
+    "load_1min": 1.09,
+    "logical_cpus": 8,
+    "power_profile": "balanced"
+   },
+   "modes": [
+    "fast",
+    "control",
+    "careful",
+    "deep_heavy_only",
+    "deep",
+    "reference",
+    "reference_default"
+   ],
+   "parts": {
+    "blind": {
+     "careful": {
+      "bootstrap_by_photo95": [
+       42.86,
+       71.88
+      ],
+      "faces": 78,
+      "hidden_by_default": 47,
+      "pct": 60.26,
+      "wilson95": [
+       49.16,
+       70.39
+      ]
+     },
+     "control": {
+      "bootstrap_by_photo95": [
+       42.86,
+       71.88
+      ],
+      "faces": 78,
+      "hidden_by_default": 47,
+      "pct": 60.26,
+      "wilson95": [
+       49.16,
+       70.39
+      ]
+     },
+     "deep": {
+      "bootstrap_by_photo95": [
+       42.86,
+       78.12
+      ],
+      "faces": 78,
+      "hidden_by_default": 49,
+      "pct": 62.82,
+      "wilson95": [
+       51.73,
+       72.71
+      ]
+     },
+     "deep_heavy_only": {
+      "bootstrap_by_photo95": [
+       32.32,
+       68.75
+      ],
+      "faces": 78,
+      "hidden_by_default": 35,
+      "pct": 44.87,
+      "wilson95": [
+       34.33,
+       55.89
+      ]
+     },
+     "fast": {
+      "bootstrap_by_photo95": [
+       42.86,
+       71.88
+      ],
+      "faces": 78,
+      "hidden_by_default": 46,
+      "pct": 58.97,
+      "wilson95": [
+       47.89,
+       69.22
+      ]
+     },
+     "reference": {
+      "bootstrap_by_photo95": [
+       16.36,
+       46.34
+      ],
+      "faces": 78,
+      "hidden_by_default": 22,
+      "pct": 28.21,
+      "wilson95": [
+       19.43,
+       39.03
+      ]
+     },
+     "reference_default": {
+      "bootstrap_by_photo95": [
+       18.75,
+       52.94
+      ],
+      "faces": 78,
+      "hidden_by_default": 30,
+      "pct": 38.46,
+      "wilson95": [
+       28.45,
+       49.56
+      ]
+     }
+    },
+    "set-a": {
+     "careful": {
+      "bootstrap_by_photo95": [
+       94.48,
+       99.12
+      ],
+      "faces": 539,
+      "hidden_by_default": 526,
+      "pct": 97.59,
+      "wilson95": [
+       95.92,
+       98.59
+      ]
+     },
+     "control": {
+      "bootstrap_by_photo95": [
+       93.85,
+       99.35
+      ],
+      "faces": 539,
+      "hidden_by_default": 525,
+      "pct": 97.4,
+      "wilson95": [
+       95.69,
+       98.45
+      ]
+     },
+     "deep": {
+      "bootstrap_by_photo95": [
+       95.53,
+       99.59
+      ],
+      "faces": 539,
+      "hidden_by_default": 530,
+      "pct": 98.33,
+      "wilson95": [
+       96.86,
+       99.12
+      ]
+     },
+     "deep_heavy_only": {
+      "bootstrap_by_photo95": [
+       85.28,
+       95.65
+      ],
+      "faces": 539,
+      "hidden_by_default": 493,
+      "pct": 91.47,
+      "wilson95": [
+       88.8,
+       93.54
+      ]
+     },
+     "fast": {
+      "bootstrap_by_photo95": [
+       90.26,
+       97.79
+      ],
+      "faces": 539,
+      "hidden_by_default": 512,
+      "pct": 94.99,
+      "wilson95": [
+       92.81,
+       96.53
+      ]
+     },
+     "reference": {
+      "bootstrap_by_photo95": [
+       40.0,
+       79.57
+      ],
+      "faces": 539,
+      "hidden_by_default": 330,
+      "pct": 61.22,
+      "wilson95": [
+       57.05,
+       65.24
+      ]
+     },
+     "reference_default": {
+      "bootstrap_by_photo95": [
+       60.67,
+       87.25
+      ],
+      "faces": 539,
+      "hidden_by_default": 403,
+      "pct": 74.77,
+      "wilson95": [
+       70.93,
+       78.25
+      ]
+     }
+    },
+    "set-b": {
+     "careful": {
+      "bootstrap_by_photo95": [
+       null,
+       null
+      ],
+      "faces": 0,
+      "hidden_by_default": 0,
+      "pct": null,
+      "wilson95": [
+       null,
+       null
+      ]
+     },
+     "control": {
+      "bootstrap_by_photo95": [
+       null,
+       null
+      ],
+      "faces": 0,
+      "hidden_by_default": 0,
+      "pct": null,
+      "wilson95": [
+       null,
+       null
+      ]
+     },
+     "deep": {
+      "bootstrap_by_photo95": [
+       null,
+       null
+      ],
+      "faces": 0,
+      "hidden_by_default": 0,
+      "pct": null,
+      "wilson95": [
+       null,
+       null
+      ]
+     },
+     "deep_heavy_only": {
+      "bootstrap_by_photo95": [
+       null,
+       null
+      ],
+      "faces": 0,
+      "hidden_by_default": 0,
+      "pct": null,
+      "wilson95": [
+       null,
+       null
+      ]
+     },
+     "fast": {
+      "bootstrap_by_photo95": [
+       null,
+       null
+      ],
+      "faces": 0,
+      "hidden_by_default": 0,
+      "pct": null,
+      "wilson95": [
+       null,
+       null
+      ]
+     },
+     "reference": {
+      "bootstrap_by_photo95": [
+       null,
+       null
+      ],
+      "faces": 0,
+      "hidden_by_default": 0,
+      "pct": null,
+      "wilson95": [
+       null,
+       null
+      ]
+     },
+     "reference_default": {
+      "bootstrap_by_photo95": [
+       null,
+       null
+      ],
+      "faces": 0,
+      "hidden_by_default": 0,
+      "pct": null,
+      "wilson95": [
+       null,
+       null
+      ]
+     }
+    },
+    "wider": {
+     "careful": {
+      "bootstrap_by_photo95": [
+       71.33,
+       82.06
+      ],
+      "faces": 1144,
+      "hidden_by_default": 888,
+      "pct": 77.62,
+      "wilson95": [
+       75.12,
+       79.94
+      ]
+     },
+     "control": {
+      "bootstrap_by_photo95": [
+       68.94,
+       80.32
+      ],
+      "faces": 1144,
+      "hidden_by_default": 869,
+      "pct": 75.96,
+      "wilson95": [
+       73.4,
+       78.35
+      ]
+     },
+     "deep": {
+      "bootstrap_by_photo95": [
+       76.18,
+       86.77
+      ],
+      "faces": 1144,
+      "hidden_by_default": 947,
+      "pct": 82.78,
+      "wilson95": [
+       80.48,
+       84.86
+      ]
+     },
+     "deep_heavy_only": {
+      "bootstrap_by_photo95": [
+       72.44,
+       82.29
+      ],
+      "faces": 1144,
+      "hidden_by_default": 875,
+      "pct": 76.49,
+      "wilson95": [
+       73.94,
+       78.85
+      ]
+     },
+     "fast": {
+      "bootstrap_by_photo95": [
+       62.2,
+       77.32
+      ],
+      "faces": 1144,
+      "hidden_by_default": 820,
+      "pct": 71.68,
+      "wilson95": [
+       69.0,
+       74.21
+      ]
+     },
+     "reference": {
+      "bootstrap_by_photo95": [
+       26.67,
+       55.37
+      ],
+      "faces": 1144,
+      "hidden_by_default": 426,
+      "pct": 37.24,
+      "wilson95": [
+       34.48,
+       40.08
+      ]
+     },
+     "reference_default": {
+      "bootstrap_by_photo95": [
+       48.33,
+       66.08
+      ],
+      "faces": 1144,
+      "hidden_by_default": 629,
+      "pct": 54.98,
+      "wilson95": [
+       52.09,
+       57.84
+      ]
+     }
+    }
+   },
+   "photos": 153,
+   "reference_over_careful": {
+    "blurred_with_certainty": {
+     "ci95_per_1000": [
+      -325.8,
+      -165.7
+     ],
+     "gain_per_1000": -257.8,
+     "gained": 15,
+     "lost": 469,
+     "mcnemar_p": 0.0,
+     "n": 1761
+    },
+    "hidden_by_default": {
+     "ci95_per_1000": [
+      -488.5,
+      -249.6
+     ],
+     "gain_per_1000": -387.8,
+     "gained": 7,
+     "lost": 690,
+     "mcnemar_p": 0.0,
+     "n": 1761
+    }
+   },
+   "speed": {
+    "bootstrap95": [
+     1.855,
+     2.251
+    ],
+    "claim_3x_holds": true,
+    "median_ratio": 2.054,
+    "photos": 153,
+    "ratio_of_medians": 2.361
+   },
+   "started": "2026-10-04 00:33:58"
+  },
+  "plates_v2": {
+   "analysis_options": {
+    "detection": "careful",
+    "detection_ran": "fast",
+    "faces": false,
+    "heavy_only": false,
+    "max_zones": null,
+    "models": [
+     {
+      "name": "PP-OCRv6_det_small",
+      "sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f"
+     }
+    ],
+    "plate_band": true,
+    "plate_path": "text",
+    "plates": true,
+    "thoroughness": "standard",
+    "unsure": "blur",
+    "vehicle_model": "rfdetr"
+   },
+   "machine": {
+    "cpu": "Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz",
+    "host": "laptop-a",
+    "load_1min": 3.7,
+    "logical_cpus": 8,
+    "power_profile": "balanced"
+   },
+   "options": "Anonymizer(Options(faces=False)), defaults",
+   "photos": 34,
+   "rows": {
+    "0.3": [
+     {
+      "band_share": 0.07104885057471265,
+      "bands": 2,
+      "both_share": 0.07607758620689656,
+      "photo": "blind-013.jpg",
+      "plates": [
+       {
+        "box": [
+         119.7,
+         267.6,
+         144.9,
+         277.5
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.498,
+       "bands_added": 2,
+       "vehicles_too_small": 2,
+       "zones_skipped": 0,
+       "zones_visited": 2
+      },
+      "text_share": 0.008261494252873564,
+      "vehicles_searched": 2
+     },
+     {
+      "band_share": 0.033407149636191076,
+      "bands": 4,
+      "both_share": 0.11477380575767163,
+      "photo": "blind-014.jpg",
+      "plates": [
+       {
+        "box": [
+         486.6,
+         313.8,
+         495.9,
+         320.4
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 4,
+       "vehicles_too_small": 17,
+       "zones_skipped": 0,
+       "zones_visited": 4
+      },
+      "text_share": 0.11477380575767163,
+      "vehicles_searched": 4
+     },
+     {
+      "band_share": 0.17209743751977222,
+      "bands": 5,
+      "both_share": 0.20816197405884213,
+      "photo": "blind-019.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.492,
+       "bands_added": 5,
+       "vehicles_too_small": 13,
+       "zones_skipped": 0,
+       "zones_visited": 5
+      },
+      "text_share": 0.0591584941474217,
+      "vehicles_searched": 5
+     },
+     {
+      "band_share": 0.07577796467619849,
+      "bands": 4,
+      "both_share": 0.11404541631623213,
+      "photo": "blind-020.jpg",
+      "plates": [
+       {
+        "box": [
+         217.8,
+         283.2,
+         242.1,
+         288.9
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         141.3,
+         267.6,
+         155.7,
+         271.2
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": false
+       },
+       {
+        "box": [
+         463.2,
+         273.6,
+         493.8,
+         280.2
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         338.1,
+         242.4,
+         347.7,
+         245.1
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": false,
+        "text_alone": false
+       },
+       {
+        "box": [
+         296.1,
+         246.9,
+         305.1,
+         250.2
+        ],
+        "p0": true,
+        "readable": false,
+        "shipped": false,
+        "text_alone": false
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 4,
+       "vehicles_too_small": 7,
+       "zones_skipped": 0,
+       "zones_visited": 4
+      },
+      "text_share": 0.06181665264928511,
+      "vehicles_searched": 4
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-025.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     },
+     {
+      "band_share": 0.07863490934944899,
+      "bands": 4,
+      "both_share": 0.13338073231425523,
+      "photo": "blind-029.jpg",
+      "plates": [
+       {
+        "box": [
+         86.4,
+         218.1,
+         104.7,
+         223.2
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         247.2,
+         218.4,
+         258.0,
+         222.6
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": false
+       },
+       {
+        "box": [
+         527.4,
+         240.6,
+         540.9,
+         249.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 4,
+       "vehicles_too_small": 2,
+       "zones_skipped": 0,
+       "zones_visited": 4
+      },
+      "text_share": 0.06946320654105936,
+      "vehicles_searched": 4
+     },
+     {
+      "band_share": 0.12434691745036573,
+      "bands": 8,
+      "both_share": 0.1772901428073842,
+      "photo": "blind-032.jpg",
+      "plates": [
+       {
+        "box": [
+         5.4,
+         321.6,
+         16.2,
+         326.7
+        ],
+        "p0": false,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         63.0,
+         329.4,
+         74.7,
+         334.5
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         128.4,
+         318.9,
+         142.2,
+         324.3
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         219.3,
+         336.6,
+         234.6,
+         342.3
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         305.7,
+         324.0,
+         323.1,
+         329.7
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         404.7,
+         336.9,
+         424.2,
+         343.5
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         534.6,
+         352.8,
+         557.4,
+         360.3
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         215.7,
+         291.6,
+         222.3,
+         294.3
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         419.4,
+         300.0,
+         429.0,
+         302.4
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": false,
+        "text_alone": false
+       },
+       {
+        "box": [
+         475.2,
+         302.1,
+         485.4,
+         304.8
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": false,
+        "text_alone": false
+       },
+       {
+        "box": [
+         401.4,
+         285.3,
+         407.1,
+         287.4
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": false,
+        "text_alone": false
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.51,
+       "bands_added": 8,
+       "vehicles_too_small": 9,
+       "zones_skipped": 0,
+       "zones_visited": 8
+      },
+      "text_share": 0.10101010101010101,
+      "vehicles_searched": 8
+     },
+     {
+      "band_share": 0.15138772077375945,
+      "bands": 1,
+      "both_share": 0.6305298570227081,
+      "photo": "blind-033.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 1,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 1
+      },
+      "text_share": 0.6305298570227081,
+      "vehicles_searched": 1
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-037.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 1,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     },
+     {
+      "band_share": 0.042454919329326164,
+      "bands": 4,
+      "both_share": 0.049351471053464095,
+      "photo": "blind-042.jpg",
+      "plates": [
+       {
+        "box": [
+         46.8,
+         243.6,
+         62.7,
+         248.4
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": false
+       },
+       {
+        "box": [
+         156.0,
+         230.4,
+         167.4,
+         233.7
+        ],
+        "p0": false,
+        "readable": true,
+        "shipped": false,
+        "text_alone": false
+       },
+       {
+        "box": [
+         345.3,
+         221.1,
+         352.8,
+         223.2
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": false,
+        "text_alone": false
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 4,
+       "vehicles_too_small": 14,
+       "zones_skipped": 0,
+       "zones_visited": 4
+      },
+      "text_share": 0.019550775071180006,
+      "vehicles_searched": 4
+     },
+     {
+      "band_share": 0.08731414109459032,
+      "bands": 2,
+      "both_share": 0.09427396393546346,
+      "photo": "blind-046.jpg",
+      "plates": [
+       {
+        "box": [
+         9.3,
+         334.2,
+         32.1,
+         345.3
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         234.0,
+         326.7,
+         256.5,
+         334.8
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 2,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 2
+      },
+      "text_share": 0.02847200253084467,
+      "vehicles_searched": 2
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.8127257799671592,
+      "photo": "blind-048.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 1
+      },
+      "text_share": 0.8127257799671592,
+      "vehicles_searched": 1
+     },
+     {
+      "band_share": 0.2244859221765264,
+      "bands": 5,
+      "both_share": 0.2856058209427396,
+      "photo": "blind-050.jpg",
+      "plates": [
+       {
+        "box": [
+         300.6,
+         192.3,
+         346.2,
+         207.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         402.6,
+         183.0,
+         447.3,
+         194.4
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         556.8,
+         147.3,
+         576.0,
+         154.2
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": false,
+        "text_alone": false
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 5,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 5
+      },
+      "text_share": 0.12787092692186017,
+      "vehicles_searched": 5
+     },
+     {
+      "band_share": 0.014077497333807323,
+      "bands": 1,
+      "both_share": 0.051475293281194455,
+      "photo": "blind-056.jpg",
+      "plates": [
+       {
+        "box": [
+         126.0,
+         339.6,
+         159.0,
+         347.4
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         311.1,
+         186.3,
+         315.3,
+         188.7
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": false,
+        "text_alone": false
+       },
+       {
+        "box": [
+         334.8,
+         212.1,
+         341.1,
+         215.4
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": false,
+        "text_alone": false
+       },
+       {
+        "box": [
+         206.4,
+         232.8,
+         221.4,
+         236.4
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": false,
+        "text_alone": false
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 1,
+       "vehicles_too_small": 17,
+       "zones_skipped": 0,
+       "zones_visited": 1
+      },
+      "text_share": 0.051475293281194455,
+      "vehicles_searched": 1
+     },
+     {
+      "band_share": 0.1255298956026574,
+      "bands": 4,
+      "both_share": 0.15286301803226826,
+      "photo": "blind-057.jpg",
+      "plates": [
+       {
+        "box": [
+         304.2,
+         208.2,
+         330.9,
+         215.1
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": false
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 4,
+       "vehicles_too_small": 6,
+       "zones_skipped": 0,
+       "zones_visited": 4
+      },
+      "text_share": 0.05105979120531477,
+      "vehicles_searched": 4
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-061.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-065.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     },
+     {
+      "band_share": 0.1809456096693921,
+      "bands": 5,
+      "both_share": 0.22979025950942056,
+      "photo": "blind-066.jpg",
+      "plates": [
+       {
+        "box": [
+         43.5,
+         234.6,
+         64.2,
+         243.6
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         335.4,
+         270.9,
+         384.3,
+         295.8
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 5,
+       "vehicles_too_small": 5,
+       "zones_skipped": 0,
+       "zones_visited": 5
+      },
+      "text_share": 0.06697476004265908,
+      "vehicles_searched": 5
+     },
+     {
+      "band_share": 0.019487503954444797,
+      "bands": 4,
+      "both_share": 0.13584308763049668,
+      "photo": "blind-068.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 4,
+       "vehicles_too_small": 8,
+       "zones_skipped": 0,
+       "zones_visited": 5
+      },
+      "text_share": 0.11635558367605188,
+      "vehicles_searched": 5
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-070.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 1
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 1
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-072.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     },
+     {
+      "band_share": 0.1890011890606421,
+      "bands": 2,
+      "both_share": 0.1890011890606421,
+      "photo": "blind-073.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 2,
+       "vehicles_too_small": 4,
+       "zones_skipped": 0,
+       "zones_visited": 2
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 2
+     },
+     {
+      "band_share": 0.181651376146789,
+      "bands": 2,
+      "both_share": 0.22151217968997153,
+      "photo": "blind-077.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 2,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 2
+      },
+      "text_share": 0.07554571338184118,
+      "vehicles_searched": 2
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-078.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     },
+     {
+      "band_share": 0.10632183908045977,
+      "bands": 6,
+      "both_share": 0.1973419540229885,
+      "photo": "blind-080.jpg",
+      "plates": [
+       {
+        "box": [
+         30.0,
+         299.1,
+         54.6,
+         318.6
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": false,
+        "text_alone": false
+       },
+       {
+        "box": [
+         107.1,
+         297.9,
+         124.5,
+         312.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         197.7,
+         272.7,
+         207.0,
+         279.9
+        ],
+        "p0": false,
+        "readable": true,
+        "shipped": false,
+        "text_alone": false
+       },
+       {
+        "box": [
+         219.6,
+         267.3,
+         225.6,
+         276.9
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": false,
+        "text_alone": false
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.502,
+       "bands_added": 6,
+       "vehicles_too_small": 10,
+       "zones_skipped": 0,
+       "zones_visited": 6
+      },
+      "text_share": 0.1930316091954023,
+      "vehicles_searched": 6
+     },
+     {
+      "band_share": 0.04177718832891247,
+      "bands": 1,
+      "both_share": 0.048342175066313,
+      "photo": "blind-086.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 1,
+       "vehicles_too_small": 1,
+       "zones_skipped": 0,
+       "zones_visited": 1
+      },
+      "text_share": 0.009217506631299735,
+      "vehicles_searched": 1
+     },
+     {
+      "band_share": 0.11289655172413793,
+      "bands": 8,
+      "both_share": 0.20110344827586207,
+      "photo": "blind-088.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 8,
+       "vehicles_too_small": 15,
+       "zones_skipped": 0,
+       "zones_visited": 8
+      },
+      "text_share": 0.14475862068965517,
+      "vehicles_searched": 8
+     },
+     {
+      "band_share": 0.03992337164750958,
+      "bands": 2,
+      "both_share": 0.11747126436781609,
+      "photo": "blind-089.jpg",
+      "plates": [
+       {
+        "box": [
+         395.4,
+         244.8,
+         405.0,
+         250.2
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 2,
+       "vehicles_too_small": 7,
+       "zones_skipped": 0,
+       "zones_visited": 2
+      },
+      "text_share": 0.11647509578544062,
+      "vehicles_searched": 2
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-099.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 27,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.09911126910771419,
+      "photo": "blind-100.jpg",
+      "plates": [
+       {
+        "box": [
+         221.4,
+         264.6,
+         314.4,
+         328.8
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 1
+      },
+      "text_share": 0.09911126910771419,
+      "vehicles_searched": 1
+     },
+     {
+      "band_share": 0.16570705472951597,
+      "bands": 7,
+      "both_share": 0.24340398608035432,
+      "photo": "blind-101.jpg",
+      "plates": [
+       {
+        "box": [
+         205.2,
+         267.6,
+         226.8,
+         273.0
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": false,
+        "text_alone": false
+       },
+       {
+        "box": [
+         40.2,
+         267.6,
+         52.8,
+         271.2
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": false,
+        "text_alone": false
+       },
+       {
+        "box": [
+         138.0,
+         262.8,
+         153.9,
+         268.8
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.497,
+       "bands_added": 7,
+       "vehicles_too_small": 10,
+       "zones_skipped": 0,
+       "zones_visited": 7
+      },
+      "text_share": 0.1432458082885163,
+      "vehicles_searched": 7
+     },
+     {
+      "band_share": 0.0351264367816092,
+      "bands": 2,
+      "both_share": 0.0351264367816092,
+      "photo": "blind-103.jpg",
+      "plates": [
+       {
+        "box": [
+         495.3,
+         240.0,
+         507.6,
+         245.1
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": false
+       },
+       {
+        "box": [
+         549.0,
+         237.9,
+         558.9,
+         242.1
+        ],
+        "p0": true,
+        "readable": false,
+        "shipped": true,
+        "text_alone": false
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 2,
+       "vehicles_too_small": 1,
+       "zones_skipped": 0,
+       "zones_visited": 2
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 2
+     },
+     {
+      "band_share": 0.03896196231781017,
+      "bands": 2,
+      "both_share": 0.06683256309989336,
+      "photo": "blind-104.jpg",
+      "plates": [
+       {
+        "box": [
+         62.7,
+         301.2,
+         92.4,
+         307.8
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         279.3,
+         271.8,
+         289.2,
+         275.4
+        ],
+        "p0": false,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         338.4,
+         272.1,
+         345.9,
+         275.1
+        ],
+        "p0": false,
+        "readable": true,
+        "shipped": false,
+        "text_alone": false
+       },
+       {
+        "box": [
+         377.1,
+         270.6,
+         384.0,
+         273.6
+        ],
+        "p0": false,
+        "readable": true,
+        "shipped": false,
+        "text_alone": false
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 2,
+       "vehicles_too_small": 14,
+       "zones_skipped": 0,
+       "zones_visited": 2
+      },
+      "text_share": 0.04856025595449698,
+      "vehicles_searched": 2
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-108.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 3,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     }
+    ],
+    "0.5": [
+     {
+      "band_share": 0.07007261410788382,
+      "bands": 2,
+      "both_share": 0.07007261410788382,
+      "photo": "blind-013.jpg",
+      "plates": [
+       {
+        "box": [
+         199.5,
+         446.0,
+         241.5,
+         462.5
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.498,
+       "bands_added": 2,
+       "vehicles_too_small": 3,
+       "zones_skipped": 0,
+       "zones_visited": 2
+      },
+      "text_share": 0.0020228215767634857,
+      "vehicles_searched": 2
+     },
+     {
+      "band_share": 0.04967790742990762,
+      "bands": 10,
+      "both_share": 0.12361018775360491,
+      "photo": "blind-014.jpg",
+      "plates": [
+       {
+        "box": [
+         811.0,
+         523.0,
+         826.5,
+         534.0
+        ],
+        "p0": true,
+        "readable": false,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 10,
+       "vehicles_too_small": 8,
+       "zones_skipped": 0,
+       "zones_visited": 10
+      },
+      "text_share": 0.11446321725774283,
+      "vehicles_searched": 10
+     },
+     {
+      "band_share": 0.13910731069897525,
+      "bands": 13,
+      "both_share": 0.16489764104445107,
+      "photo": "blind-019.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.499,
+       "bands_added": 13,
+       "vehicles_too_small": 3,
+       "zones_skipped": 0,
+       "zones_visited": 14
+      },
+      "text_share": 0.04983838059650168,
+      "vehicles_searched": 14
+     },
+     {
+      "band_share": 0.07966194776665853,
+      "bands": 6,
+      "both_share": 0.09717476202099097,
+      "photo": "blind-020.jpg",
+      "plates": [
+       {
+        "box": [
+         363.0,
+         472.0,
+         403.5,
+         481.5
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         235.5,
+         446.0,
+         259.5,
+         452.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         772.0,
+         456.0,
+         823.0,
+         467.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         563.5,
+         404.0,
+         579.5,
+         408.5
+        ],
+        "p0": true,
+        "readable": false,
+        "shipped": false,
+        "text_alone": false
+       },
+       {
+        "box": [
+         493.5,
+         411.5,
+         508.5,
+         417.0
+        ],
+        "p0": true,
+        "readable": false,
+        "shipped": true,
+        "text_alone": false
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 6,
+       "vehicles_too_small": 5,
+       "zones_skipped": 0,
+       "zones_visited": 6
+      },
+      "text_share": 0.025872589699780325,
+      "vehicles_searched": 6
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-025.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     },
+     {
+      "band_share": 0.03072085770985284,
+      "bands": 3,
+      "both_share": 0.06077162959717533,
+      "photo": "blind-029.jpg",
+      "plates": [
+       {
+        "box": [
+         144.0,
+         363.5,
+         174.5,
+         372.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         412.0,
+         364.0,
+         430.0,
+         371.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         879.0,
+         401.0,
+         901.5,
+         415.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 3,
+       "vehicles_too_small": 2,
+       "zones_skipped": 0,
+       "zones_visited": 4
+      },
+      "text_share": 0.047447230741475735,
+      "vehicles_searched": 4
+     },
+     {
+      "band_share": 0.13179932101093927,
+      "bands": 11,
+      "both_share": 0.1387149503332076,
+      "photo": "blind-032.jpg",
+      "plates": [
+       {
+        "box": [
+         9.0,
+         536.0,
+         27.0,
+         544.5
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         105.0,
+         549.0,
+         124.5,
+         557.5
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         214.0,
+         531.5,
+         237.0,
+         540.5
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         365.5,
+         561.0,
+         391.0,
+         570.5
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         509.5,
+         540.0,
+         538.5,
+         549.5
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         674.5,
+         561.5,
+         707.0,
+         572.5
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         891.0,
+         588.0,
+         929.0,
+         600.5
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         359.5,
+         486.0,
+         370.5,
+         490.5
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": false,
+        "text_alone": false
+       },
+       {
+        "box": [
+         699.0,
+         500.0,
+         715.0,
+         504.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": false,
+        "text_alone": false
+       },
+       {
+        "box": [
+         792.0,
+         503.5,
+         809.0,
+         508.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         669.0,
+         475.5,
+         678.5,
+         479.0
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.51,
+       "bands_added": 11,
+       "vehicles_too_small": 7,
+       "zones_skipped": 0,
+       "zones_visited": 11
+      },
+      "text_share": 0.02560040236388784,
+      "vehicles_searched": 11
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.09098120576031242,
+      "photo": "blind-033.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 1
+      },
+      "text_share": 0.09098120576031242,
+      "vehicles_searched": 1
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-037.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     },
+     {
+      "band_share": 0.05183283280988515,
+      "bands": 11,
+      "both_share": 0.071043763325004,
+      "photo": "blind-042.jpg",
+      "plates": [
+       {
+        "box": [
+         78.0,
+         406.0,
+         104.5,
+         414.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         260.0,
+         384.0,
+         279.0,
+         389.5
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": false,
+        "text_alone": false
+       },
+       {
+        "box": [
+         575.5,
+         368.5,
+         588.0,
+         372.0
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": false,
+        "text_alone": false
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 11,
+       "vehicles_too_small": 7,
+       "zones_skipped": 0,
+       "zones_visited": 11
+      },
+      "text_share": 0.038376011554067994,
+      "vehicles_searched": 11
+     },
+     {
+      "band_share": 0.08608239150867701,
+      "bands": 2,
+      "both_share": 0.0908736617684143,
+      "photo": "blind-046.jpg",
+      "plates": [
+       {
+        "box": [
+         15.5,
+         557.0,
+         53.5,
+         575.5
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         390.0,
+         544.5,
+         427.5,
+         558.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 2,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 2
+      },
+      "text_share": 0.007496389353751633,
+      "vehicles_searched": 2
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.6885595732068761,
+      "photo": "blind-048.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 1
+      },
+      "text_share": 0.6885595732068761,
+      "vehicles_searched": 1
+     },
+     {
+      "band_share": 0.12879117856078495,
+      "bands": 4,
+      "both_share": 0.1345223630820018,
+      "photo": "blind-050.jpg",
+      "plates": [
+       {
+        "box": [
+         501.0,
+         320.5,
+         577.0,
+         345.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         671.0,
+         305.0,
+         745.5,
+         324.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         928.0,
+         245.5,
+         960.0,
+         257.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 4,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 5
+      },
+      "text_share": 0.021205382728502326,
+      "vehicles_searched": 5
+     },
+     {
+      "band_share": 0.038478389732223395,
+      "bands": 6,
+      "both_share": 0.07770418288188449,
+      "photo": "blind-056.jpg",
+      "plates": [
+       {
+        "box": [
+         210.0,
+         566.0,
+         265.0,
+         579.0
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         518.5,
+         310.5,
+         525.5,
+         314.5
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": false,
+        "text_alone": false
+       },
+       {
+        "box": [
+         558.0,
+         353.5,
+         568.5,
+         359.0
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": false,
+        "text_alone": false
+       },
+       {
+        "box": [
+         344.0,
+         388.0,
+         369.0,
+         394.0
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": true,
+        "text_alone": false
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 6,
+       "vehicles_too_small": 13,
+       "zones_skipped": 0,
+       "zones_visited": 6
+      },
+      "text_share": 0.06564263807633824,
+      "vehicles_searched": 6
+     },
+     {
+      "band_share": 0.036954677792806215,
+      "bands": 3,
+      "both_share": 0.04566607826505582,
+      "photo": "blind-057.jpg",
+      "plates": [
+       {
+        "box": [
+         507.0,
+         347.0,
+         551.5,
+         358.5
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 3,
+       "vehicles_too_small": 7,
+       "zones_skipped": 0,
+       "zones_visited": 4
+      },
+      "text_share": 0.016414112468765046,
+      "vehicles_searched": 4
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-061.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-065.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     },
+     {
+      "band_share": 0.17888714208396692,
+      "bands": 5,
+      "both_share": 0.21605113270276538,
+      "photo": "blind-066.jpg",
+      "plates": [
+       {
+        "box": [
+         72.5,
+         391.0,
+         107.0,
+         406.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         559.0,
+         451.5,
+         640.5,
+         493.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 5,
+       "vehicles_too_small": 5,
+       "zones_skipped": 0,
+       "zones_visited": 5
+      },
+      "text_share": 0.0504626169428623,
+      "vehicles_searched": 5
+     },
+     {
+      "band_share": 0.0332408702230577,
+      "bands": 8,
+      "both_share": 0.06224066390041494,
+      "photo": "blind-068.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 8,
+       "vehicles_too_small": 4,
+       "zones_skipped": 0,
+       "zones_visited": 9
+      },
+      "text_share": 0.047018637812062995,
+      "vehicles_searched": 9
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.006494677972217211,
+      "photo": "blind-070.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 1
+      },
+      "text_share": 0.006494677972217211,
+      "vehicles_searched": 1
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-072.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     },
+     {
+      "band_share": 0.03225392479787826,
+      "bands": 4,
+      "both_share": 0.05952431877486418,
+      "photo": "blind-073.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 4,
+       "vehicles_too_small": 1,
+       "zones_skipped": 0,
+       "zones_visited": 5
+      },
+      "text_share": 0.04827394447533901,
+      "vehicles_searched": 5
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.046674766740789984,
+      "photo": "blind-077.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 2
+      },
+      "text_share": 0.046674766740789984,
+      "vehicles_searched": 2
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-078.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     },
+     {
+      "band_share": 0.10433091286307054,
+      "bands": 11,
+      "both_share": 0.21068464730290457,
+      "photo": "blind-080.jpg",
+      "plates": [
+       {
+        "box": [
+         50.0,
+         498.5,
+         91.0,
+         531.0
+        ],
+        "p0": false,
+        "readable": true,
+        "shipped": true,
+        "text_alone": false
+       },
+       {
+        "box": [
+         178.5,
+         496.5,
+         207.5,
+         520.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         329.5,
+         454.5,
+         345.0,
+         466.5
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         366.0,
+         445.5,
+         376.0,
+         461.5
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 11,
+       "vehicles_too_small": 2,
+       "zones_skipped": 0,
+       "zones_visited": 12
+      },
+      "text_share": 0.17987551867219917,
+      "vehicles_searched": 12
+     },
+     {
+      "band_share": 0.039347546143940475,
+      "bands": 1,
+      "both_share": 0.04342538274431249,
+      "photo": "blind-086.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 1,
+       "vehicles_too_small": 1,
+       "zones_skipped": 0,
+       "zones_visited": 1
+      },
+      "text_share": 0.00462631754662088,
+      "vehicles_searched": 1
+     },
+     {
+      "band_share": 0.13720441933709943,
+      "bands": 15,
+      "both_share": 0.1948457731340299,
+      "photo": "blind-088.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 15,
+       "vehicles_too_small": 8,
+       "zones_skipped": 0,
+       "zones_visited": 15
+      },
+      "text_share": 0.08126281057841324,
+      "vehicles_searched": 15
+     },
+     {
+      "band_share": 0.04500264557631792,
+      "bands": 3,
+      "both_share": 0.10554457099891393,
+      "photo": "blind-089.jpg",
+      "plates": [
+       {
+        "box": [
+         659.0,
+         408.0,
+         675.0,
+         417.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 3,
+       "vehicles_too_small": 9,
+       "zones_skipped": 0,
+       "zones_visited": 3
+      },
+      "text_share": 0.10025341836308446,
+      "vehicles_searched": 3
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-099.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 26,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0948429164196799,
+      "photo": "blind-100.jpg",
+      "plates": [
+       {
+        "box": [
+         369.0,
+         441.0,
+         524.0,
+         548.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 1
+      },
+      "text_share": 0.0948429164196799,
+      "vehicles_searched": 1
+     },
+     {
+      "band_share": 0.14341716145893033,
+      "bands": 15,
+      "both_share": 0.19243025148437679,
+      "photo": "blind-101.jpg",
+      "plates": [
+       {
+        "box": [
+         342.0,
+         446.0,
+         378.0,
+         455.0
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         67.0,
+         446.0,
+         88.0,
+         452.0
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": true,
+        "text_alone": false
+       },
+       {
+        "box": [
+         230.0,
+         438.0,
+         256.5,
+         448.0
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": true,
+        "text_alone": false
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.502,
+       "bands_added": 15,
+       "vehicles_too_small": 1,
+       "zones_skipped": 0,
+       "zones_visited": 16
+      },
+      "text_share": 0.10284037504871507,
+      "vehicles_searched": 16
+     },
+     {
+      "band_share": 0.03269709543568465,
+      "bands": 2,
+      "both_share": 0.0667551867219917,
+      "photo": "blind-103.jpg",
+      "plates": [
+       {
+        "box": [
+         825.5,
+         400.0,
+         846.0,
+         408.5
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         915.0,
+         396.5,
+         931.5,
+         403.5
+        ],
+        "p0": true,
+        "readable": false,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 2,
+       "vehicles_too_small": 1,
+       "zones_skipped": 0,
+       "zones_visited": 2
+      },
+      "text_share": 0.05928630705394191,
+      "vehicles_searched": 2
+     },
+     {
+      "band_share": 0.05932836782557151,
+      "bands": 9,
+      "both_share": 0.08783278781474704,
+      "photo": "blind-104.jpg",
+      "plates": [
+       {
+        "box": [
+         104.5,
+         502.0,
+         154.0,
+         513.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": false
+       },
+       {
+        "box": [
+         465.5,
+         453.0,
+         482.0,
+         459.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         564.0,
+         453.5,
+         576.5,
+         458.5
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         628.5,
+         451.0,
+         640.0,
+         456.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 9,
+       "vehicles_too_small": 9,
+       "zones_skipped": 0,
+       "zones_visited": 9
+      },
+      "text_share": 0.056312981624184945,
+      "vehicles_searched": 9
+     },
+     {
+      "band_share": 0.004401549712294537,
+      "bands": 1,
+      "both_share": 0.012493982256252723,
+      "photo": "blind-108.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 1,
+       "vehicles_too_small": 3,
+       "zones_skipped": 0,
+       "zones_visited": 1
+      },
+      "text_share": 0.012493982256252723,
+      "vehicles_searched": 1
+     }
+    ],
+    "1.0": [
+     {
+      "band_share": 0.02313539501039501,
+      "bands": 5,
+      "both_share": 0.035986226611226614,
+      "photo": "blind-013.jpg",
+      "plates": [
+       {
+        "box": [
+         399.0,
+         892.0,
+         483.0,
+         925.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.508,
+       "bands_added": 5,
+       "vehicles_too_small": 9,
+       "zones_skipped": 0,
+       "zones_visited": 7
+      },
+      "text_share": 0.020276767151767152,
+      "vehicles_searched": 7
+     },
+     {
+      "band_share": 0.07243680927891454,
+      "bands": 20,
+      "both_share": 0.14326109616968344,
+      "photo": "blind-014.jpg",
+      "plates": [
+       {
+        "box": [
+         1622.0,
+         1046.0,
+         1653.0,
+         1068.0
+        ],
+        "p0": true,
+        "readable": false,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 20,
+       "vehicles_too_small": 9,
+       "zones_skipped": 0,
+       "zones_visited": 20
+      },
+      "text_share": 0.12665211557178316,
+      "vehicles_searched": 20
+     },
+     {
+      "band_share": 0.1117535605070231,
+      "bands": 26,
+      "both_share": 0.13683980165974627,
+      "photo": "blind-019.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.507,
+       "bands_added": 26,
+       "vehicles_too_small": 8,
+       "zones_skipped": 0,
+       "zones_visited": 29
+      },
+      "text_share": 0.05579903363836882,
+      "vehicles_searched": 29
+     },
+     {
+      "band_share": 0.09128430161640494,
+      "bands": 15,
+      "both_share": 0.11193623370745141,
+      "photo": "blind-020.jpg",
+      "plates": [
+       {
+        "box": [
+         726.0,
+         944.0,
+         807.0,
+         963.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         471.0,
+         892.0,
+         519.0,
+         904.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         1544.0,
+         912.0,
+         1646.0,
+         934.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         1127.0,
+         808.0,
+         1159.0,
+         817.0
+        ],
+        "p0": true,
+        "readable": false,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         987.0,
+         823.0,
+         1017.0,
+         834.0
+        ],
+        "p0": true,
+        "readable": false,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 15,
+       "vehicles_too_small": 1,
+       "zones_skipped": 0,
+       "zones_visited": 15
+      },
+      "text_share": 0.0386034629577065,
+      "vehicles_searched": 15
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-025.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     },
+     {
+      "band_share": 0.030135815182544153,
+      "bands": 4,
+      "both_share": 0.055601971489821954,
+      "photo": "blind-029.jpg",
+      "plates": [
+       {
+        "box": [
+         288.0,
+         727.0,
+         349.0,
+         744.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         824.0,
+         728.0,
+         860.0,
+         742.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         1758.0,
+         802.0,
+         1803.0,
+         830.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 4,
+       "vehicles_too_small": 2,
+       "zones_skipped": 0,
+       "zones_visited": 5
+      },
+      "text_share": 0.03433267919249228,
+      "vehicles_searched": 5
+     },
+     {
+      "band_share": 0.13930577760364996,
+      "bands": 32,
+      "both_share": 0.18711018711018712,
+      "photo": "blind-032.jpg",
+      "plates": [
+       {
+        "box": [
+         18.0,
+         1072.0,
+         54.0,
+         1089.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         210.0,
+         1098.0,
+         249.0,
+         1115.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         428.0,
+         1063.0,
+         474.0,
+         1081.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         731.0,
+         1122.0,
+         782.0,
+         1141.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         1019.0,
+         1080.0,
+         1077.0,
+         1099.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         1349.0,
+         1123.0,
+         1414.0,
+         1145.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         1782.0,
+         1176.0,
+         1858.0,
+         1201.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         719.0,
+         972.0,
+         741.0,
+         981.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         1398.0,
+         1000.0,
+         1430.0,
+         1008.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         1584.0,
+         1007.0,
+         1618.0,
+         1016.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         1338.0,
+         951.0,
+         1357.0,
+         958.0
+        ],
+        "p0": true,
+        "readable": false,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 32,
+       "vehicles_too_small": 6,
+       "zones_skipped": 0,
+       "zones_visited": 35
+      },
+      "text_share": 0.0774602051197796,
+      "vehicles_searched": 35
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.003283442397833542,
+      "photo": "blind-033.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 2
+      },
+      "text_share": 0.003283442397833542,
+      "vehicles_searched": 2
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-037.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 10,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     },
+     {
+      "band_share": 0.06167322233804228,
+      "bands": 21,
+      "both_share": 0.07552939685903674,
+      "photo": "blind-042.jpg",
+      "plates": [
+       {
+        "box": [
+         156.0,
+         812.0,
+         209.0,
+         828.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         520.0,
+         768.0,
+         558.0,
+         779.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         1151.0,
+         737.0,
+         1176.0,
+         744.0
+        ],
+        "p0": true,
+        "readable": false,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 21,
+       "vehicles_too_small": 11,
+       "zones_skipped": 0,
+       "zones_visited": 21
+      },
+      "text_share": 0.02590402036385416,
+      "vehicles_searched": 21
+     },
+     {
+      "band_share": 0.02702702702702703,
+      "bands": 5,
+      "both_share": 0.051894425855644695,
+      "photo": "blind-046.jpg",
+      "plates": [
+       {
+        "box": [
+         31.0,
+         1114.0,
+         107.0,
+         1151.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         780.0,
+         1089.0,
+         855.0,
+         1116.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 5,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 8
+      },
+      "text_share": 0.02618621178177965,
+      "vehicles_searched": 8
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.6864196614196614,
+      "photo": "blind-048.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 4
+      },
+      "text_share": 0.6864196614196614,
+      "vehicles_searched": 4
+     },
+     {
+      "band_share": 0.0637982964852771,
+      "bands": 4,
+      "both_share": 0.08180671615574663,
+      "photo": "blind-050.jpg",
+      "plates": [
+       {
+        "box": [
+         1002.0,
+         641.0,
+         1154.0,
+         690.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         1342.0,
+         610.0,
+         1491.0,
+         648.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         1856.0,
+         491.0,
+         1920.0,
+         514.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 4,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 9
+      },
+      "text_share": 0.027654758956698014,
+      "vehicles_searched": 9
+     },
+     {
+      "band_share": 0.049397348462769025,
+      "bands": 17,
+      "both_share": 0.09313411182570061,
+      "photo": "blind-056.jpg",
+      "plates": [
+       {
+        "box": [
+         420.0,
+         1132.0,
+         530.0,
+         1158.0
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": true,
+        "text_alone": false
+       },
+       {
+        "box": [
+         1037.0,
+         621.0,
+         1051.0,
+         629.0
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         1116.0,
+         707.0,
+         1137.0,
+         718.0
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         688.0,
+         776.0,
+         738.0,
+         788.0
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": true,
+        "text_alone": false
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 17,
+       "vehicles_too_small": 13,
+       "zones_skipped": 0,
+       "zones_visited": 17
+      },
+      "text_share": 0.07317957785247504,
+      "vehicles_searched": 17
+     },
+     {
+      "band_share": 0.045375228200712964,
+      "bands": 7,
+      "both_share": 0.06078057601603308,
+      "photo": "blind-057.jpg",
+      "plates": [
+       {
+        "box": [
+         1014.0,
+         694.0,
+         1103.0,
+         717.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 7,
+       "vehicles_too_small": 3,
+       "zones_skipped": 0,
+       "zones_visited": 9
+      },
+      "text_share": 0.027245869351132507,
+      "vehicles_searched": 9
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-061.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-065.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     },
+     {
+      "band_share": 0.04211760286526642,
+      "bands": 8,
+      "both_share": 0.08112641757501571,
+      "photo": "blind-066.jpg",
+      "plates": [
+       {
+        "box": [
+         145.0,
+         782.0,
+         214.0,
+         812.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         1118.0,
+         903.0,
+         1281.0,
+         986.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 8,
+       "vehicles_too_small": 4,
+       "zones_skipped": 0,
+       "zones_visited": 11
+      },
+      "text_share": 0.04355541738719309,
+      "vehicles_searched": 11
+     },
+     {
+      "band_share": 0.0431464918999545,
+      "bands": 18,
+      "both_share": 0.09174100586842969,
+      "photo": "blind-068.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 18,
+       "vehicles_too_small": 8,
+       "zones_skipped": 0,
+       "zones_visited": 22
+      },
+      "text_share": 0.06691967910804476,
+      "vehicles_searched": 22
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.015038762702314103,
+      "photo": "blind-070.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 3
+      },
+      "text_share": 0.015038762702314103,
+      "vehicles_searched": 3
+     },
+     {
+      "band_share": 0.0,
+      "bands": 0,
+      "both_share": 0.0,
+      "photo": "blind-072.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.0,
+       "bands_added": 0,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 0
+      },
+      "text_share": 0.0,
+      "vehicles_searched": 0
+     },
+     {
+      "band_share": 0.029245703664308315,
+      "bands": 4,
+      "both_share": 0.06224113200857387,
+      "photo": "blind-073.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 4,
+       "vehicles_too_small": 1,
+       "zones_skipped": 0,
+       "zones_visited": 8
+      },
+      "text_share": 0.05255523860175023,
+      "vehicles_searched": 8
+     },
+     {
+      "band_share": 0.011834762527283302,
+      "bands": 2,
+      "both_share": 0.3405704873848918,
+      "photo": "blind-077.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 2,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 7
+      },
+      "text_share": 0.3400464176087445,
+      "vehicles_searched": 7
+     },
+     {
+      "band_share": 0.0034343009026553332,
+      "bands": 1,
+      "both_share": 0.008131792941919524,
+      "photo": "blind-078.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 1,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 2
+      },
+      "text_share": 0.006204110634490381,
+      "vehicles_searched": 2
+     },
+     {
+      "band_share": 0.10532094594594595,
+      "bands": 22,
+      "both_share": 0.12844984407484408,
+      "photo": "blind-080.jpg",
+      "plates": [
+       {
+        "box": [
+         100.0,
+         997.0,
+         182.0,
+         1062.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": false
+       },
+       {
+        "box": [
+         357.0,
+         993.0,
+         415.0,
+         1040.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": false
+       },
+       {
+        "box": [
+         659.0,
+         909.0,
+         690.0,
+         933.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         732.0,
+         891.0,
+         752.0,
+         923.0
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": true,
+        "text_alone": false
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.508,
+       "bands_added": 22,
+       "vehicles_too_small": 3,
+       "zones_skipped": 0,
+       "zones_visited": 24
+      },
+      "text_share": 0.055314449064449066,
+      "vehicles_searched": 24
+     },
+     {
+      "band_share": 0.01210254812560288,
+      "bands": 2,
+      "both_share": 0.01718921315463102,
+      "photo": "blind-086.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 2,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 3
+      },
+      "text_share": 0.00708777942207337,
+      "vehicles_searched": 3
+     },
+     {
+      "band_share": 0.1596448162713223,
+      "bands": 33,
+      "both_share": 0.2866956391052777,
+      "photo": "blind-088.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 33,
+       "vehicles_too_small": 5,
+       "zones_skipped": 0,
+       "zones_visited": 33
+      },
+      "text_share": 0.2188901134684267,
+      "vehicles_searched": 33
+     },
+     {
+      "band_share": 0.02005748650043952,
+      "bands": 8,
+      "both_share": 0.054409856423279244,
+      "photo": "blind-089.jpg",
+      "plates": [
+       {
+        "box": [
+         1318.0,
+         816.0,
+         1350.0,
+         834.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 8,
+       "vehicles_too_small": 11,
+       "zones_skipped": 0,
+       "zones_visited": 9
+      },
+      "text_share": 0.044140423335054205,
+      "vehicles_searched": 9
+     },
+     {
+      "band_share": 0.016564754800048917,
+      "bands": 16,
+      "both_share": 0.024397700868289105,
+      "photo": "blind-099.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.505,
+       "bands_added": 16,
+       "vehicles_too_small": 21,
+       "zones_skipped": 0,
+       "zones_visited": 16
+      },
+      "text_share": 0.017610370551547024,
+      "vehicles_searched": 16
+     },
+     {
+      "band_share": 0.005803071223631971,
+      "bands": 1,
+      "both_share": 0.08237640947921322,
+      "photo": "blind-100.jpg",
+      "plates": [
+       {
+        "box": [
+         738.0,
+         882.0,
+         1048.0,
+         1096.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 1,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 4
+      },
+      "text_share": 0.07657333825558124,
+      "vehicles_searched": 4
+     },
+     {
+      "band_share": 0.15809630214062348,
+      "bands": 30,
+      "both_share": 0.20214119937111627,
+      "photo": "blind-101.jpg",
+      "plates": [
+       {
+        "box": [
+         684.0,
+         892.0,
+         756.0,
+         910.0
+        ],
+        "p0": true,
+        "readable": false,
+        "shipped": true,
+        "text_alone": false
+       },
+       {
+        "box": [
+         134.0,
+         892.0,
+         176.0,
+         904.0
+        ],
+        "p0": true,
+        "readable": false,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         460.0,
+         876.0,
+         513.0,
+         896.0
+        ],
+        "p0": false,
+        "readable": false,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.505,
+       "bands_added": 30,
+       "vehicles_too_small": 3,
+       "zones_skipped": 0,
+       "zones_visited": 32
+      },
+      "text_share": 0.07131956162427076,
+      "vehicles_searched": 32
+     },
+     {
+      "band_share": 0.02632016632016632,
+      "bands": 3,
+      "both_share": 0.027584199584199585,
+      "photo": "blind-103.jpg",
+      "plates": [
+       {
+        "box": [
+         1651.0,
+         800.0,
+         1692.0,
+         817.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         1830.0,
+         793.0,
+         1863.0,
+         807.0
+        ],
+        "p0": true,
+        "readable": false,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 3,
+       "vehicles_too_small": 0,
+       "zones_skipped": 0,
+       "zones_visited": 4
+      },
+      "text_share": 0.004548856548856549,
+      "vehicles_searched": 4
+     },
+     {
+      "band_share": 0.05106468149946411,
+      "bands": 19,
+      "both_share": 0.06324815020467195,
+      "photo": "blind-104.jpg",
+      "plates": [
+       {
+        "box": [
+         209.0,
+         1004.0,
+         308.0,
+         1026.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         931.0,
+         906.0,
+         964.0,
+         918.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       },
+       {
+        "box": [
+         1128.0,
+         907.0,
+         1153.0,
+         917.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": false
+       },
+       {
+        "box": [
+         1257.0,
+         902.0,
+         1280.0,
+         912.0
+        ],
+        "p0": true,
+        "readable": true,
+        "shipped": true,
+        "text_alone": true
+       }
+      ],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 19,
+       "vehicles_too_small": 3,
+       "zones_skipped": 0,
+       "zones_visited": 20
+      },
+      "text_share": 0.0291383117470074,
+      "vehicles_searched": 20
+     },
+     {
+      "band_share": 0.007325458849004555,
+      "bands": 3,
+      "both_share": 0.010078264925910355,
+      "photo": "blind-108.jpg",
+      "plates": [],
+      "summary": {
+       "band_area_share": 0.512,
+       "bands_added": 3,
+       "vehicles_too_small": 3,
+       "zones_skipped": 0,
+       "zones_visited": 3
+      },
+      "text_share": 0.007331217857533647,
+      "vehicles_searched": 3
+     }
+    ]
+   },
+   "scales": {
+    "0.3": {
+     "cost": {
+      "band_share_of_picture_max": 0.22449,
+      "band_share_of_picture_mean_all_photos": 0.06801,
+      "band_share_of_picture_mean_banded_photos": 0.10054,
+      "bands_on_photos_without_a_searchable_vehicle": 0,
+      "photos": 34,
+      "photos_with_a_band": 23,
+      "photos_without_a_searchable_vehicle": 8,
+      "text_share_of_picture_mean_all_photos": 0.09263
+     },
+     "difference_shipped_minus_p0_points": 0.0,
+     "hidden": {
+      "p0": {
+       "bootstrap_by_photo95": [
+        45.1,
+        81.82
+       ],
+       "k": 33,
+       "pct": 64.71,
+       "wilson95": [
+        50.99,
+        76.37
+       ]
+      },
+      "shipped": {
+       "bootstrap_by_photo95": [
+        51.11,
+        78.0
+       ],
+       "k": 33,
+       "pct": 64.71,
+       "wilson95": [
+        50.99,
+        76.37
+       ]
+      },
+      "text_alone": {
+       "bootstrap_by_photo95": [
+        37.78,
+        67.35
+       ],
+       "k": 27,
+       "pct": 52.94,
+       "wilson95": [
+        39.52,
+        65.95
+       ]
+      }
+     },
+     "plates": 51,
+     "readable": {
+      "p0": [
+       31,
+       37
+      ],
+      "shipped": [
+       29,
+       37
+      ],
+      "text_alone": [
+       24,
+       37
+      ]
+     },
+     "shipped_vs_p0": {
+      "ci95_per_1000": [
+       -98.0,
+       125.0
+      ],
+      "gain_per_1000": 0.0,
+      "gained": 5,
+      "lost": 5,
+      "mcnemar_p": 1.0,
+      "n": 51
+     },
+     "shipped_vs_text_alone": {
+      "ci95_per_1000": [
+       27.4,
+       244.4
+      ],
+      "gain_per_1000": 117.6,
+      "gained": 6,
+      "lost": 0,
+      "mcnemar_p": 0.03125,
+      "n": 51
+     }
+    },
+    "0.5": {
+     "cost": {
+      "band_share_of_picture_max": 0.17889,
+      "band_share_of_picture_mean_all_photos": 0.04863,
+      "band_share_of_picture_mean_banded_photos": 0.07515,
+      "bands_on_photos_without_a_searchable_vehicle": 0,
+      "photos": 34,
+      "photos_with_a_band": 22,
+      "photos_without_a_searchable_vehicle": 7,
+      "text_share_of_picture_mean_all_photos": 0.06131
+     },
+     "difference_shipped_minus_p0_points": 7.84,
+     "hidden": {
+      "p0": {
+       "bootstrap_by_photo95": [
+        58.33,
+        94.74
+       ],
+       "k": 40,
+       "pct": 78.43,
+       "wilson95": [
+        65.37,
+        87.51
+       ]
+      },
+      "shipped": {
+       "bootstrap_by_photo95": [
+        76.92,
+        96.97
+       ],
+       "k": 44,
+       "pct": 86.27,
+       "wilson95": [
+        74.28,
+        93.19
+       ]
+      },
+      "text_alone": {
+       "bootstrap_by_photo95": [
+        61.54,
+        87.5
+       ],
+       "k": 38,
+       "pct": 74.51,
+       "wilson95": [
+        61.13,
+        84.45
+       ]
+      }
+     },
+     "plates": 51,
+     "readable": {
+      "p0": [
+       36,
+       37
+      ],
+      "shipped": [
+       34,
+       37
+      ],
+      "text_alone": [
+       32,
+       37
+      ]
+     },
+     "shipped_vs_p0": {
+      "ci95_per_1000": [
+       -68.2,
+       258.1
+      ],
+      "gain_per_1000": 78.4,
+      "gained": 8,
+      "lost": 4,
+      "mcnemar_p": 0.3877,
+      "n": 51
+     },
+     "shipped_vs_text_alone": {
+      "ci95_per_1000": [
+       38.5,
+       217.4
+      ],
+      "gain_per_1000": 117.6,
+      "gained": 6,
+      "lost": 0,
+      "mcnemar_p": 0.03125,
+      "n": 51
+     }
+    },
+    "1.0": {
+     "cost": {
+      "band_share_of_picture_max": 0.15964,
+      "band_share_of_picture_mean_all_photos": 0.04139,
+      "band_share_of_picture_mean_banded_photos": 0.05413,
+      "bands_on_photos_without_a_searchable_vehicle": 0,
+      "photos": 34,
+      "photos_with_a_band": 26,
+      "photos_without_a_searchable_vehicle": 5,
+      "text_share_of_picture_mean_all_photos": 0.06704
+     },
+     "difference_shipped_minus_p0_points": 11.76,
+     "hidden": {
+      "p0": {
+       "bootstrap_by_photo95": [
+        69.77,
+        100.0
+       ],
+       "k": 45,
+       "pct": 88.24,
+       "wilson95": [
+        76.62,
+        94.5
+       ]
+      },
+      "shipped": {
+       "bootstrap_by_photo95": [
+        100.0,
+        100.0
+       ],
+       "k": 51,
+       "pct": 100.0,
+       "wilson95": [
+        93.0,
+        100.0
+       ]
+      },
+      "text_alone": {
+       "bootstrap_by_photo95": [
+        71.15,
+        97.83
+       ],
+       "k": 44,
+       "pct": 86.27,
+       "wilson95": [
+        74.28,
+        93.19
+       ]
+      }
+     },
+     "plates": 51,
+     "readable": {
+      "p0": [
+       37,
+       37
+      ],
+      "shipped": [
+       37,
+       37
+      ],
+      "text_alone": [
+       34,
+       37
+      ]
+     },
+     "shipped_vs_p0": {
+      "ci95_per_1000": [
+       0.0,
+       302.3
+      ],
+      "gain_per_1000": 117.6,
+      "gained": 6,
+      "lost": 0,
+      "mcnemar_p": 0.03125,
+      "n": 51
+     },
+     "shipped_vs_text_alone": {
+      "ci95_per_1000": [
+       20.4,
+       288.5
+      ],
+      "gain_per_1000": 137.3,
+      "gained": 7,
+      "lost": 0,
+      "mcnemar_p": 0.01562,
+      "n": 51
+     }
+    }
+   },
+   "started": "2026-10-04 01:02:22"
+  },
+  "video_v2": {
+   "careful_over_fast": {
+    "covered_50": {
+     "ci95_per_1000": [
+      -10.5,
+      60.6
+     ],
+     "gain_per_1000": 7.3,
+     "gained": 3,
+     "lost": 2,
+     "mcnemar_p": 1.0,
+     "n": 137
+    },
+    "covered_80": {
+     "ci95_per_1000": [
+      -10.5,
+      60.6
+     ],
+     "gain_per_1000": 7.3,
+     "gained": 2,
+     "lost": 1,
+     "mcnemar_p": 1.0,
+     "n": 137
+    },
+    "gain_points_80": 0.73,
+    "rule": "VK8: careful over fast in video needs at least +10 points covered >= 80 % with paired exact McNemar p < 0.05",
+    "vk8_holds": false
+   },
+   "cells": {
+    "careful": {
+     "covered_50_pct": 85.4,
+     "covered_80_bootstrap_by_clip95": [
+      81.05,
+      90.91
+     ],
+     "covered_80_pct": 83.94,
+     "covered_80_wilson95": [
+      76.88,
+      89.15
+     ],
+     "faces": 137,
+     "hits": {
+      "blurred_or_listed_50": 120,
+      "blurred_or_listed_80": 118,
+      "covered_50": 117,
+      "covered_80": 115
+     }
+    },
+    "fast": {
+     "covered_50_pct": 84.67,
+     "covered_80_bootstrap_by_clip95": [
+      82.11,
+      88.89
+     ],
+     "covered_80_pct": 83.21,
+     "covered_80_wilson95": [
+      76.07,
+      88.54
+     ],
+     "faces": 137,
+     "hits": {
+      "blurred_or_listed_50": 121,
+      "blurred_or_listed_80": 119,
+      "covered_50": 116,
+      "covered_80": 114
+     }
+    }
+   },
+   "clips": [
+    "brexit",
+    "mxcruce",
+    "yonge"
+   ],
+   "errors": [],
+   "machine": {
+    "cpu": "Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz",
+    "host": "laptop-a",
+    "load_1min": 2.96,
+    "logical_cpus": 8,
+    "power_profile": "balanced"
+   },
+   "modes": [
+    "fast",
+    "careful"
+   ],
+   "per_clip": {
+    "brexit": {
+     "labelled_frames": 5,
+     "modes": {
+      "careful": {
+       "blurred_or_listed_80": 30,
+       "covered_50": 30,
+       "covered_80": 30,
+       "faces": 33,
+       "frames": 1278,
+       "heavy_views": 52,
+       "ignored_boxes_blurred": 6,
+       "ms_per_frame": 74.8,
+       "second": {
+        "calls": 111,
+        "found_k1": 21,
+        "found_k2": 14,
+        "found_k3": 2,
+        "found_k4": 14,
+        "k1": 31,
+        "k2": 58,
+        "k3": 2,
+        "k4": 20,
+        "k5": 0,
+        "skipped": 512
+       },
+       "seconds": 95.6,
+       "tracks": 113,
+       "unchecked_frames": 0
+      },
+      "fast": {
+       "blurred_or_listed_80": 30,
+       "covered_50": 28,
+       "covered_80": 28,
+       "faces": 33,
+       "frames": 1278,
+       "heavy_views": 0,
+       "ignored_boxes_blurred": 4,
+       "ms_per_frame": 47.0,
+       "second": {
+        "calls": 0,
+        "found_k1": 0,
+        "found_k2": 0,
+        "found_k3": 0,
+        "found_k4": 0,
+        "k1": 0,
+        "k2": 0,
+        "k3": 0,
+        "k4": 0,
+        "k5": 0,
+        "skipped": 0
+       },
+       "seconds": 60.1,
+       "tracks": 113,
+       "unchecked_frames": 0
+      }
+     }
+    },
+    "mxcruce": {
+     "labelled_frames": 8,
+     "modes": {
+      "careful": {
+       "blurred_or_listed_80": 80,
+       "covered_50": 79,
+       "covered_80": 77,
+       "faces": 95,
+       "frames": 1903,
+       "heavy_views": 36,
+       "ignored_boxes_blurred": 66,
+       "ms_per_frame": 282.1,
+       "second": {
+        "calls": 192,
+        "found_k1": 9,
+        "found_k2": 25,
+        "found_k3": 0,
+        "found_k4": 0,
+        "k1": 9,
+        "k2": 183,
+        "k3": 0,
+        "k4": 0,
+        "k5": 0,
+        "skipped": 4941
+       },
+       "seconds": 536.8,
+       "tracks": 912,
+       "unchecked_frames": 0
+      },
+      "fast": {
+       "blurred_or_listed_80": 81,
+       "covered_50": 80,
+       "covered_80": 78,
+       "faces": 95,
+       "frames": 1903,
+       "heavy_views": 0,
+       "ignored_boxes_blurred": 64,
+       "ms_per_frame": 253.4,
+       "second": {
+        "calls": 0,
+        "found_k1": 0,
+        "found_k2": 0,
+        "found_k3": 0,
+        "found_k4": 0,
+        "k1": 0,
+        "k2": 0,
+        "k3": 0,
+        "k4": 0,
+        "k5": 0,
+        "skipped": 0
+       },
+       "seconds": 482.2,
+       "tracks": 907,
+       "unchecked_frames": 0
+      }
+     }
+    },
+    "yonge": {
+     "labelled_frames": 4,
+     "modes": {
+      "careful": {
+       "blurred_or_listed_80": 8,
+       "covered_50": 8,
+       "covered_80": 8,
+       "faces": 9,
+       "frames": 480,
+       "heavy_views": 25,
+       "ignored_boxes_blurred": 10,
+       "ms_per_frame": 126.9,
+       "second": {
+        "calls": 120,
+        "found_k1": 8,
+        "found_k2": 10,
+        "found_k3": 3,
+        "found_k4": 0,
+        "k1": 11,
+        "k2": 105,
+        "k3": 4,
+        "k4": 0,
+        "k5": 0,
+        "skipped": 1216
+       },
+       "seconds": 60.9,
+       "tracks": 300,
+       "unchecked_frames": 0
+      },
+      "fast": {
+       "blurred_or_listed_80": 8,
+       "covered_50": 8,
+       "covered_80": 8,
+       "faces": 9,
+       "frames": 480,
+       "heavy_views": 0,
+       "ignored_boxes_blurred": 10,
+       "ms_per_frame": 93.0,
+       "second": {
+        "calls": 0,
+        "found_k1": 0,
+        "found_k2": 0,
+        "found_k3": 0,
+        "found_k4": 0,
+        "k1": 0,
+        "k2": 0,
+        "k3": 0,
+        "k4": 0,
+        "k5": 0,
+        "skipped": 0
+       },
+       "seconds": 44.6,
+       "tracks": 299,
+       "unchecked_frames": 0
+      }
+     }
+    }
+   }
+  }
+ },
+ "split_sha256": "ad505219382951f39d634a9243c67e7a8bdbbb8dbc7bf9d08347a43b39d91a40"
+}

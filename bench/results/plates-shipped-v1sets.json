@@ -1,0 +1,51 @@
+{
+ "what": "The plate path AS SHIPPED (text path + band, RF-DETR nano, careful, every option at its default, Anonymizer(Options(faces=False))) on the two v1 plate sets, by the same rule as the sealed read (a plate counts as hidden by default when the blurred plate zones with the photo margin cover >= 95 % of its box). NOT out-of-sample for the band: it was fitted on these two sets. Replaces the v1 YOLOv9-t figures of plates.json for the shipped product.",
+ "machine": {
+  "cpu": "Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz",
+  "load_1min_at_end": 5.1,
+  "power_profile": "balanced",
+  "date": "2026-10-03 22:39"
+ },
+ "product": "v2 b8ba75d, frozen code (src and models unchanged to the sealed read)",
+ "caveat": "in-sample for the band (fitted on v1 sets only); the sealed plate photos are the out-of-sample figure (sealed-v2.json plates_v2)",
+ "plates.shipped.eu.hidden_full_count": "107/108",
+ "plates.shipped.eu.hidden_full_pct": 99.07,
+ "plates.shipped.eu.hidden_full_n": 108,
+ "plates.shipped.eu.hidden_full_ci95_pct": [
+  94.94,
+  99.84
+ ],
+ "plates.shipped.eu.hidden_half_count": "108/108",
+ "plates.shipped.eu.hidden_half_pct": 100.0,
+ "plates.shipped.eu.hidden_half_n": 108,
+ "plates.shipped.eu.hidden_half_ci95_pct": [
+  96.57,
+  100.0
+ ],
+ "plates.shipped.eu.hidden_30_count": "108/108",
+ "plates.shipped.eu.hidden_30_pct": 100.0,
+ "plates.shipped.eu.hidden_30_n": 108,
+ "plates.shipped.eu.hidden_30_ci95_pct": [
+  96.57,
+  100.0
+ ],
+ "plates.shipped.streets.readable_hidden_count": "16/16",
+ "plates.shipped.streets.readable_hidden_pct": 100.0,
+ "plates.shipped.streets.readable_n": 16,
+ "plates.shipped.streets.readable_hidden_ci95_pct": [
+  80.64,
+  100.0
+ ],
+ "plates.shipped.streets.all_hidden_count": "36/38",
+ "plates.shipped.streets.all_n": 38,
+ "bar_pt4": {
+  "eu_each_size_at_least": "105/108",
+  "street_readable_at_least": "14/16"
+ },
+ "_publication": {
+  "plates.shipped": {
+   "publishable": true,
+   "why": "the shipped path on the v1 plate sets with the in-sample caveat stated beside it; the sealed read is the headline"
+  }
+ }
+}

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anonymizer-studio"
+version = "2.2.0"
+description = "Offline face and licence-plate blurring for video and photos, with a review step and a privacy report."
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=2.0",
+    "opencv-python-headless>=5.0",
+    "onnxruntime>=1.23",
+    "av>=17",
+    "pillow>=12",
+]
+
+[project.urls]
+Homepage = "https://github.com/PabloMedinaBetancor/anonymizer-studio"
+Issues = "https://github.com/PabloMedinaBetancor/anonymizer-studio/issues"
+
+[project.optional-dependencies]
+window = ["pywebview>=5"]
+
+[project.scripts]
+anonymizer-studio = "anonymizer.ui.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"anonymizer.ui" = ["static/**/*", "i18n/*.json"]
+anonymizer = ["py.typed"]

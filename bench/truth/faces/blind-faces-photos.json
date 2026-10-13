@@ -1,0 +1,1066 @@
+{
+ "images": {
+  "blind-001.jpg": {
+   "boxes": [],
+   "height": 2560,
+   "width": 1920
+  },
+  "blind-002.jpg": {
+   "boxes": [],
+   "height": 2560,
+   "width": 1920
+  },
+  "blind-003.jpg": {
+   "boxes": [],
+   "height": 1293,
+   "width": 1920
+  },
+  "blind-004.jpg": {
+   "boxes": [
+    {
+     "box": [
+      292,
+      774,
+      317,
+      811
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1004,
+      753,
+      1037,
+      789
+     ],
+     "ignore": false,
+     "note": ""
+    }
+   ],
+   "height": 1200,
+   "width": 1920
+  },
+  "blind-005.jpg": {
+   "boxes": [
+    {
+     "box": [
+      90,
+      495,
+      180,
+      562
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      643,
+      404,
+      664,
+      441
+     ],
+     "ignore": true,
+     "note": "face in a printed mural poster"
+    },
+    {
+     "box": [
+      586,
+      419,
+      600,
+      434
+     ],
+     "ignore": true,
+     "note": "face in a printed mural poster"
+    }
+   ],
+   "height": 1016,
+   "width": 1920
+  },
+  "blind-006.jpg": {
+   "boxes": [
+    {
+     "box": [
+      1456,
+      886,
+      1476,
+      912
+     ],
+     "ignore": true,
+     "note": "head turned down under a cap, face mostly hidden"
+    }
+   ],
+   "height": 1228,
+   "width": 1920
+  },
+  "blind-007.jpg": {
+   "boxes": [],
+   "height": 1280,
+   "width": 1920
+  },
+  "blind-008.jpg": {
+   "boxes": [],
+   "height": 1440,
+   "width": 1920
+  },
+  "blind-009.jpg": {
+   "boxes": [],
+   "height": 1440,
+   "width": 1920
+  },
+  "blind-010.jpg": {
+   "boxes": [
+    {
+     "box": [
+      64,
+      718,
+      98,
+      751
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      230,
+      723,
+      254,
+      749
+     ],
+     "ignore": true,
+     "note": "dark, looking down"
+    },
+    {
+     "box": [
+      387,
+      756,
+      404,
+      776
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      456,
+      765,
+      473,
+      786
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      576,
+      739,
+      601,
+      778
+     ],
+     "ignore": false,
+     "note": ""
+    }
+   ],
+   "height": 960,
+   "width": 1280
+  },
+  "blind-011.jpg": {
+   "boxes": [],
+   "height": 2560,
+   "width": 1920
+  },
+  "blind-012.jpg": {
+   "boxes": [],
+   "height": 1370,
+   "width": 1920
+  },
+  "blind-013.jpg": {
+   "boxes": [],
+   "height": 1440,
+   "width": 1920
+  },
+  "blind-014.jpg": {
+   "boxes": [],
+   "height": 1280,
+   "width": 1920
+  },
+  "blind-015.jpg": {
+   "boxes": [],
+   "height": 2560,
+   "width": 1920
+  },
+  "blind-016.jpg": {
+   "boxes": [],
+   "height": 2880,
+   "width": 1920
+  },
+  "blind-017.jpg": {
+   "boxes": [],
+   "height": 1280,
+   "width": 1920
+  },
+  "blind-018.jpg": {
+   "boxes": [
+    {
+     "box": [
+      654,
+      578,
+      665,
+      594
+     ],
+     "ignore": true,
+     "note": "tiny, about 14 px high"
+    }
+   ],
+   "height": 1280,
+   "width": 1920
+  },
+  "blind-019.jpg": {
+   "boxes": [
+    {
+     "box": [
+      981,
+      571,
+      1010,
+      610
+     ],
+     "ignore": false,
+     "note": ""
+    }
+   ],
+   "height": 1275,
+   "width": 1920
+  },
+  "blind-020.jpg": {
+   "boxes": [
+    {
+     "box": [
+      1065,
+      55,
+      1100,
+      109
+     ],
+     "ignore": true,
+     "note": "stucco relief (cherub) on the wall"
+    }
+   ],
+   "height": 2560,
+   "width": 1920
+  },
+  "blind-021.jpg": {
+   "boxes": [],
+   "height": 1440,
+   "width": 1920
+  },
+  "blind-022.jpg": {
+   "boxes": [],
+   "height": 1536,
+   "width": 1920
+  },
+  "blind-023.jpg": {
+   "boxes": [],
+   "height": 2560,
+   "width": 1920
+  },
+  "blind-024.jpg": {
+   "boxes": [],
+   "height": 1440,
+   "width": 1920
+  },
+  "blind-025.jpg": {
+   "boxes": [],
+   "height": 1080,
+   "width": 1920
+  },
+  "blind-026.jpg": {
+   "boxes": [],
+   "height": 2560,
+   "width": 1920
+  },
+  "blind-027.jpg": {
+   "boxes": [],
+   "height": 1440,
+   "width": 1920
+  },
+  "blind-028.jpg": {
+   "boxes": [
+    {
+     "box": [
+      759,
+      878,
+      784,
+      899
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      900,
+      885,
+      922,
+      906
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      937,
+      885,
+      960,
+      909
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1364,
+      872,
+      1386,
+      897
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1271,
+      893,
+      1289,
+      914
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      54,
+      1318,
+      77,
+      1343
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      89,
+      1319,
+      106,
+      1344
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      444,
+      1293,
+      472,
+      1326
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      624,
+      1296,
+      652,
+      1330
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      699,
+      1278,
+      725,
+      1309
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      850,
+      1306,
+      867,
+      1324
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      910,
+      1299,
+      927,
+      1322
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      30,
+      929,
+      50,
+      951
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      73,
+      932,
+      94,
+      956
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      112,
+      937,
+      135,
+      962
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      150,
+      937,
+      171,
+      962
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      372,
+      905,
+      395,
+      929
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      399,
+      925,
+      417,
+      948
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      440,
+      897,
+      462,
+      920
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      495,
+      913,
+      512,
+      940
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      529,
+      938,
+      554,
+      961
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      565,
+      922,
+      591,
+      950
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      254,
+      921,
+      277,
+      948
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      205,
+      575,
+      220,
+      597
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      286,
+      555,
+      306,
+      578
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      731,
+      530,
+      752,
+      552
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      777,
+      515,
+      799,
+      542
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      891,
+      544,
+      908,
+      568
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1003,
+      518,
+      1018,
+      540
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      123,
+      218,
+      148,
+      247
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      188,
+      240,
+      209,
+      272
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      269,
+      240,
+      293,
+      271
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      389,
+      196,
+      408,
+      226
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      418,
+      217,
+      436,
+      242
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      451,
+      196,
+      470,
+      220
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      546,
+      200,
+      566,
+      226
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      752,
+      170,
+      775,
+      200
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      808,
+      166,
+      830,
+      193
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      851,
+      184,
+      876,
+      208
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      925,
+      142,
+      947,
+      171
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      985,
+      184,
+      1008,
+      210
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1289,
+      141,
+      1312,
+      175
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1329,
+      144,
+      1350,
+      169
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1580,
+      138,
+      1602,
+      166
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      811,
+      1291,
+      838,
+      1311
+     ],
+     "ignore": true,
+     "note": "hand over the face, partly hidden"
+    },
+    {
+     "box": [
+      196,
+      929,
+      215,
+      956
+     ],
+     "ignore": true,
+     "note": "hand over the face"
+    },
+    {
+     "box": [
+      23,
+      591,
+      48,
+      621
+     ],
+     "ignore": true,
+     "note": "camera in front of the face"
+    },
+    {
+     "box": [
+      161,
+      597,
+      178,
+      614
+     ],
+     "ignore": true,
+     "note": "head bent down, face hidden"
+    },
+    {
+     "box": [
+      618,
+      196,
+      642,
+      222
+     ],
+     "ignore": true,
+     "note": "face looking down, hidden by hair"
+    }
+   ],
+   "height": 1440,
+   "width": 1920
+  },
+  "blind-029.jpg": {
+   "boxes": [],
+   "height": 1440,
+   "width": 1920
+  },
+  "blind-030.jpg": {
+   "boxes": [
+    {
+     "box": [
+      800,
+      318,
+      832,
+      359
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1086,
+      211,
+      1113,
+      248
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1300,
+      368,
+      1331,
+      402
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1426,
+      322,
+      1450,
+      345
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1455,
+      293,
+      1478,
+      318
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1669,
+      300,
+      1693,
+      327
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      967,
+      186,
+      990,
+      210
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1262,
+      170,
+      1290,
+      199
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1323,
+      427,
+      1363,
+      462
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1486,
+      440,
+      1510,
+      469
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1517,
+      445,
+      1538,
+      484
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1766,
+      306,
+      1797,
+      352
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1736,
+      312,
+      1757,
+      338
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1744,
+      336,
+      1768,
+      364
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1803,
+      370,
+      1826,
+      402
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1824,
+      365,
+      1852,
+      413
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1871,
+      432,
+      1901,
+      468
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1387,
+      560,
+      1409,
+      598
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1320,
+      662,
+      1362,
+      730
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1172,
+      760,
+      1192,
+      803
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1399,
+      765,
+      1420,
+      805
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1201,
+      458,
+      1226,
+      494
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1121,
+      505,
+      1149,
+      539
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1172,
+      512,
+      1195,
+      549
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1657,
+      905,
+      1708,
+      972
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1287,
+      462,
+      1315,
+      504
+     ],
+     "ignore": false,
+     "note": ""
+    },
+    {
+     "box": [
+      1900,
+      392,
+      1920,
+      455
+     ],
+     "ignore": true,
+     "note": "face cut by the right frame edge"
+    }
+   ],
+   "height": 1280,
+   "width": 1920
+  }
+ },
+ "licence": "public Commons photos (CC0, CC BY, CC BY-SA); labelled by hand with no proposals by anon-ciego",
+ "set": "blind",
+ "source_sha256": "6eafff209fdd45e4e772c705e88eba9ef210d6a9d14c928c292885aab6b36e0c"
+}

@@ -1,0 +1,701 @@
+{
+ "what": "cells C0 (light only), C1 (control: YuNet zoomed) and C2 (heavy model on the zones) on the photos of one split, replayed from a recorded run",
+ "date": "2026-10-03T14:16:35",
+ "photos": {
+  "with_people": 100,
+  "without_people": 55,
+  "split": "dev"
+ },
+ "max_zones": {
+  "max_zones": 30,
+  "zones_per_photo": {
+   "median": 2,
+   "p95": 30,
+   "max": 164,
+   "n": 155
+  }
+ },
+ "cap_used": 30,
+ "cells": {
+  "C0": {
+   "faces": 1144,
+   "blur_pct": 65.12,
+   "hidden_default_pct": 82.17,
+   "hidden_default_ci95_pct": [
+    79.84,
+    84.28
+   ],
+   "false_hidden_without_people": {
+    "photos": 55,
+    "events": 0,
+    "photos_affected": 0,
+    "photos_affected_per_100": 0.0
+   },
+   "false_hidden_events_in_photos_with_people": 18,
+   "second_look": {
+    "zones_total": 1113,
+    "zones_visited": 0,
+    "zones_skipped": 1113,
+    "confirmed": 0,
+    "added": 0,
+    "seconds": 0.0,
+    "max_call_s": 0.0
+   },
+   "by_source": {
+    "set-a": {
+     "photos": 36,
+     "faces": 626,
+     "hidden_default_pct": 94.73,
+     "hidden_default_ci95_pct": [
+      92.69,
+      96.22
+     ],
+     "false_hidden_events": 4
+    },
+    "set-b": {
+     "photos": 55,
+     "faces": 0,
+     "hidden_default_pct": null,
+     "hidden_default_ci95_pct": [
+      null,
+      null
+     ],
+     "false_hidden_events": 0
+    },
+    "wider": {
+     "photos": 64,
+     "faces": 518,
+     "hidden_default_pct": 66.99,
+     "hidden_default_ci95_pct": [
+      62.83,
+      70.9
+     ],
+     "false_hidden_events": 14
+    }
+   }
+  },
+  "retinaface-r34": {
+   "faces": 1144,
+   "blur_pct": 75.7,
+   "hidden_default_pct": 84.97,
+   "hidden_default_ci95_pct": [
+    82.78,
+    86.92
+   ],
+   "false_hidden_without_people": {
+    "photos": 55,
+    "events": 1,
+    "photos_affected": 1,
+    "photos_affected_per_100": 1.82
+   },
+   "false_hidden_events_in_photos_with_people": 34,
+   "second_look": {
+    "zones_total": 1113,
+    "zones_visited": 871,
+    "zones_skipped": 242,
+    "confirmed": 128,
+    "added": 114,
+    "seconds": 89.43429999999995,
+    "max_call_s": 1.7493
+   },
+   "thresholds": {
+    "h_hi": 0.98,
+    "h_lo": 0.75,
+    "h_hi_study": {
+     "h_hi": 0.98,
+     "table": [
+      {
+       "cut": 0.5,
+       "n": 508,
+       "precision": 0.813
+      },
+      {
+       "cut": 0.54,
+       "n": 482,
+       "precision": 0.8402
+      },
+      {
+       "cut": 0.58,
+       "n": 468,
+       "precision": 0.8462
+      },
+      {
+       "cut": 0.62,
+       "n": 451,
+       "precision": 0.8603
+      },
+      {
+       "cut": 0.66,
+       "n": 431,
+       "precision": 0.877
+      },
+      {
+       "cut": 0.7,
+       "n": 419,
+       "precision": 0.8831
+      },
+      {
+       "cut": 0.74,
+       "n": 409,
+       "precision": 0.8875
+      },
+      {
+       "cut": 0.78,
+       "n": 393,
+       "precision": 0.9008
+      },
+      {
+       "cut": 0.82,
+       "n": 379,
+       "precision": 0.9077
+      },
+      {
+       "cut": 0.86,
+       "n": 362,
+       "precision": 0.9116
+      },
+      {
+       "cut": 0.9,
+       "n": 340,
+       "precision": 0.9353
+      },
+      {
+       "cut": 0.94,
+       "n": 301,
+       "precision": 0.9601
+      },
+      {
+       "cut": 0.98,
+       "n": 222,
+       "precision": 0.982
+      }
+     ],
+     "rule": "precision >= 0.98, n >= 20"
+    },
+    "h_lo_study": {
+     "h_lo": 0.75,
+     "table": [
+      {
+       "cut": 0.5,
+       "photos_affected": 4,
+       "extra_per_100": 7.27
+      },
+      {
+       "cut": 0.54,
+       "photos_affected": 4,
+       "extra_per_100": 7.27
+      },
+      {
+       "cut": 0.58,
+       "photos_affected": 4,
+       "extra_per_100": 7.27
+      },
+      {
+       "cut": 0.62,
+       "photos_affected": 3,
+       "extra_per_100": 5.45
+      },
+      {
+       "cut": 0.66,
+       "photos_affected": 2,
+       "extra_per_100": 3.64
+      },
+      {
+       "cut": 0.7,
+       "photos_affected": 2,
+       "extra_per_100": 3.64
+      },
+      {
+       "cut": 0.74,
+       "photos_affected": 2,
+       "extra_per_100": 3.64
+      },
+      {
+       "cut": 0.78,
+       "photos_affected": 1,
+       "extra_per_100": 1.82
+      },
+      {
+       "cut": 0.82,
+       "photos_affected": 1,
+       "extra_per_100": 1.82
+      },
+      {
+       "cut": 0.86,
+       "photos_affected": 1,
+       "extra_per_100": 1.82
+      },
+      {
+       "cut": 0.9,
+       "photos_affected": 1,
+       "extra_per_100": 1.82
+      },
+      {
+       "cut": 0.94,
+       "photos_affected": 1,
+       "extra_per_100": 1.82
+      },
+      {
+       "cut": 0.98,
+       "photos_affected": 0,
+       "extra_per_100": 0.0
+      }
+     ],
+     "rule": "extra false hidden photos <= 2.0 per 100"
+    }
+   },
+   "second_look_ms_per_photo": 577.0,
+   "slowest_call_s": 1.749,
+   "slowest_model_run_s": 0.8839,
+   "paired_over_C0": {
+    "blur_or_check": {
+     "n": 1144,
+     "gained": 32,
+     "lost": 0,
+     "mcnemar_p": 0.0,
+     "gain_per_1000": 28.0,
+     "ci95_per_1000": [
+      15.8,
+      47.9
+     ]
+    },
+    "blur": {
+     "n": 1144,
+     "gained": 121,
+     "lost": 0,
+     "mcnemar_p": 0.0,
+     "gain_per_1000": 105.8,
+     "ci95_per_1000": [
+      82.1,
+      128.7
+     ]
+    }
+   },
+   "veto_study": {
+    "doubtful_zones_with_nothing_found": 37,
+    "real_faces": 14,
+    "real_pct": 37.84,
+    "upper95_pct": 53.9,
+    "veto_allowed": false,
+    "rule": "n >= 100, share <= 1 %, upper 95 % bound <= 3 %"
+   },
+   "by_source": {
+    "set-a": {
+     "photos": 36,
+     "faces": 626,
+     "hidden_default_pct": 96.33,
+     "hidden_default_ci95_pct": [
+      94.55,
+      97.54
+     ],
+     "false_hidden_events": 13
+    },
+    "set-b": {
+     "photos": 55,
+     "faces": 0,
+     "hidden_default_pct": null,
+     "hidden_default_ci95_pct": [
+      null,
+      null
+     ],
+     "false_hidden_events": 1
+    },
+    "wider": {
+     "photos": 64,
+     "faces": 518,
+     "hidden_default_pct": 71.24,
+     "hidden_default_ci95_pct": [
+      67.19,
+      74.97
+     ],
+     "false_hidden_events": 21
+    }
+   },
+   "cap_study": [
+    {
+     "cap": 10,
+     "hidden_default_pct": 84.53,
+     "false_hidden_photos_per_100": 1.82,
+     "zones_skipped": 557,
+     "second_look_ms_per_photo": 404.0
+    },
+    {
+     "cap": 20,
+     "hidden_default_pct": 84.79,
+     "false_hidden_photos_per_100": 1.82,
+     "zones_skipped": 348,
+     "second_look_ms_per_photo": 520.5
+    },
+    {
+     "cap": 30,
+     "hidden_default_pct": 84.97,
+     "false_hidden_photos_per_100": 1.82,
+     "zones_skipped": 242,
+     "second_look_ms_per_photo": 577.0
+    },
+    {
+     "cap": 40,
+     "hidden_default_pct": 85.05,
+     "false_hidden_photos_per_100": 1.82,
+     "zones_skipped": 198,
+     "second_look_ms_per_photo": 595.8
+    },
+    {
+     "cap": 60,
+     "hidden_default_pct": 85.31,
+     "false_hidden_photos_per_100": 1.82,
+     "zones_skipped": 120,
+     "second_look_ms_per_photo": 630.9
+    },
+    {
+     "cap": 100,
+     "hidden_default_pct": 86.19,
+     "false_hidden_photos_per_100": 1.82,
+     "zones_skipped": 64,
+     "second_look_ms_per_photo": 654.4
+    },
+    {
+     "cap": "all",
+     "hidden_default_pct": 86.89,
+     "false_hidden_photos_per_100": 1.82,
+     "zones_skipped": 0,
+     "second_look_ms_per_photo": 678.2
+    }
+   ],
+   "paired_over_C1": {
+    "blur_or_check": {
+     "n": 1144,
+     "gained": 19,
+     "lost": 1,
+     "mcnemar_p": 4e-05,
+     "gain_per_1000": 15.7,
+     "ci95_per_1000": [
+      7.3,
+      28.2
+     ]
+    }
+   }
+  },
+  "yunet-zoomed": {
+   "faces": 1144,
+   "blur_pct": 66.17,
+   "hidden_default_pct": 83.39,
+   "hidden_default_ci95_pct": [
+    81.12,
+    85.44
+   ],
+   "false_hidden_without_people": {
+    "photos": 55,
+    "events": 1,
+    "photos_affected": 1,
+    "photos_affected_per_100": 1.82
+   },
+   "false_hidden_events_in_photos_with_people": 31,
+   "second_look": {
+    "zones_total": 1113,
+    "zones_visited": 871,
+    "zones_skipped": 242,
+    "confirmed": 15,
+    "added": 64,
+    "seconds": 6.289300000000002,
+    "max_call_s": 0.0985
+   },
+   "thresholds": {
+    "h_hi": 0.87,
+    "h_lo": 0.69,
+    "h_hi_study": {
+     "h_hi": 0.87,
+     "table": [
+      {
+       "cut": 0.5,
+       "n": 496,
+       "precision": 0.7278
+      },
+      {
+       "cut": 0.54,
+       "n": 456,
+       "precision": 0.7566
+      },
+      {
+       "cut": 0.58,
+       "n": 413,
+       "precision": 0.7821
+      },
+      {
+       "cut": 0.62,
+       "n": 373,
+       "precision": 0.815
+      },
+      {
+       "cut": 0.66,
+       "n": 335,
+       "precision": 0.8448
+      },
+      {
+       "cut": 0.7,
+       "n": 295,
+       "precision": 0.8746
+      },
+      {
+       "cut": 0.74,
+       "n": 252,
+       "precision": 0.9008
+      },
+      {
+       "cut": 0.78,
+       "n": 201,
+       "precision": 0.9055
+      },
+      {
+       "cut": 0.82,
+       "n": 139,
+       "precision": 0.9353
+      },
+      {
+       "cut": 0.86,
+       "n": 78,
+       "precision": 0.9744
+      },
+      {
+       "cut": 0.9,
+       "n": 29,
+       "precision": 1.0
+      },
+      {
+       "cut": 0.94,
+       "n": 1,
+       "precision": 1.0
+      },
+      {
+       "cut": 0.98,
+       "n": 0,
+       "precision": null
+      }
+     ],
+     "rule": "precision >= 0.98, n >= 20"
+    },
+    "h_lo_study": {
+     "h_lo": 0.69,
+     "table": [
+      {
+       "cut": 0.5,
+       "photos_affected": 6,
+       "extra_per_100": 10.91
+      },
+      {
+       "cut": 0.53,
+       "photos_affected": 6,
+       "extra_per_100": 10.91
+      },
+      {
+       "cut": 0.56,
+       "photos_affected": 5,
+       "extra_per_100": 9.09
+      },
+      {
+       "cut": 0.59,
+       "photos_affected": 2,
+       "extra_per_100": 3.64
+      },
+      {
+       "cut": 0.62,
+       "photos_affected": 2,
+       "extra_per_100": 3.64
+      },
+      {
+       "cut": 0.65,
+       "photos_affected": 2,
+       "extra_per_100": 3.64
+      },
+      {
+       "cut": 0.68,
+       "photos_affected": 2,
+       "extra_per_100": 3.64
+      },
+      {
+       "cut": 0.71,
+       "photos_affected": 1,
+       "extra_per_100": 1.82
+      },
+      {
+       "cut": 0.74,
+       "photos_affected": 1,
+       "extra_per_100": 1.82
+      },
+      {
+       "cut": 0.77,
+       "photos_affected": 1,
+       "extra_per_100": 1.82
+      },
+      {
+       "cut": 0.8,
+       "photos_affected": 1,
+       "extra_per_100": 1.82
+      },
+      {
+       "cut": 0.83,
+       "photos_affected": 1,
+       "extra_per_100": 1.82
+      },
+      {
+       "cut": 0.86,
+       "photos_affected": 0,
+       "extra_per_100": 0.0
+      }
+     ],
+     "rule": "extra false hidden photos <= 2.0 per 100"
+    }
+   },
+   "second_look_ms_per_photo": 40.6,
+   "slowest_call_s": 0.099,
+   "slowest_model_run_s": 0.0291,
+   "paired_over_C0": {
+    "blur_or_check": {
+     "n": 1144,
+     "gained": 14,
+     "lost": 0,
+     "mcnemar_p": 0.00012,
+     "gain_per_1000": 12.2,
+     "ci95_per_1000": [
+      5.1,
+      24.8
+     ]
+    },
+    "blur": {
+     "n": 1144,
+     "gained": 12,
+     "lost": 0,
+     "mcnemar_p": 0.00049,
+     "gain_per_1000": 10.5,
+     "ci95_per_1000": [
+      5.5,
+      17.5
+     ]
+    }
+   },
+   "veto_study": {
+    "doubtful_zones_with_nothing_found": 99,
+    "real_faces": 68,
+    "real_pct": 68.69,
+    "upper95_pct": 76.98,
+    "veto_allowed": false,
+    "rule": "n >= 100, share <= 1 %, upper 95 % bound <= 3 %"
+   },
+   "by_source": {
+    "set-a": {
+     "photos": 36,
+     "faces": 626,
+     "hidden_default_pct": 95.37,
+     "hidden_default_ci95_pct": [
+      93.43,
+      96.76
+     ],
+     "false_hidden_events": 14
+    },
+    "set-b": {
+     "photos": 55,
+     "faces": 0,
+     "hidden_default_pct": null,
+     "hidden_default_ci95_pct": [
+      null,
+      null
+     ],
+     "false_hidden_events": 1
+    },
+    "wider": {
+     "photos": 64,
+     "faces": 518,
+     "hidden_default_pct": 68.92,
+     "hidden_default_ci95_pct": [
+      64.81,
+      72.75
+     ],
+     "false_hidden_events": 17
+    }
+   },
+   "cap_study": [
+    {
+     "cap": 10,
+     "hidden_default_pct": 83.04,
+     "false_hidden_photos_per_100": 1.82,
+     "zones_skipped": 557,
+     "second_look_ms_per_photo": 28.4
+    },
+    {
+     "cap": 20,
+     "hidden_default_pct": 83.39,
+     "false_hidden_photos_per_100": 1.82,
+     "zones_skipped": 348,
+     "second_look_ms_per_photo": 36.5
+    },
+    {
+     "cap": 30,
+     "hidden_default_pct": 83.39,
+     "false_hidden_photos_per_100": 1.82,
+     "zones_skipped": 242,
+     "second_look_ms_per_photo": 40.6
+    },
+    {
+     "cap": 40,
+     "hidden_default_pct": 83.48,
+     "false_hidden_photos_per_100": 1.82,
+     "zones_skipped": 198,
+     "second_look_ms_per_photo": 42.0
+    },
+    {
+     "cap": 60,
+     "hidden_default_pct": 83.74,
+     "false_hidden_photos_per_100": 1.82,
+     "zones_skipped": 120,
+     "second_look_ms_per_photo": 44.8
+    },
+    {
+     "cap": 100,
+     "hidden_default_pct": 84.27,
+     "false_hidden_photos_per_100": 1.82,
+     "zones_skipped": 64,
+     "second_look_ms_per_photo": 46.5
+    },
+    {
+     "cap": "all",
+     "hidden_default_pct": 84.79,
+     "false_hidden_photos_per_100": 1.82,
+     "zones_skipped": 0,
+     "second_look_ms_per_photo": 48.3
+    }
+   ]
+  }
+ },
+ "target_side_px": 320,
+ "recorded_on": {
+  "host": "laptop-a",
+  "cpu": "Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz",
+  "logical_cpus": 8,
+  "load_1min": 7.64
+ },
+ "truth_sha256": {
+  "bench/truth/faces/set-a.json": "9978b507aaa40870e9076fe8922a07f7472fd4c8c175e0d7f028bf226ef207ca",
+  "bench/truth/faces/set-b.json": "0bf3fa0e0162d13bdf815488d2cbf5f3c743cc799f8617e33d61164bb49efdc7"
+ },
+ "truth_dir": "bench/truth/faces",
+ "adjudicated_faces_added": 10,
+ "caveat": "the truth is v1 (YuNet proposals) unless a v2 truth was given: an optimistic bound that favours the control; the faces of one photo are not independent",
+ "_publication": {
+  "cells": {
+   "publishable": false,
+   "why": "dev numbers choose thresholds; the published ones come from the single sealed read"
+  }
+ },
+ "raw_records_sha256": {
+  "cells-raw-dev-320-ab.json": "1b97455d7d4520ed75515a36b2db366a042932cdc8f3e7aca7fcc1e176317b6a",
+  "cells-raw-dev-320-wider.json": "bf6782c4bcc14c5e80d6827b7b3b3ecbf0b0d8eb38aff7896e5fed34d10d4b12"
+ },
+ "split": {
+  "file": "bench/truth/split-v2-parts.json (branch v2-anon-medidor 93b59c6)",
+  "part": "dev",
+  "sha256": "526df42102c7d7f247f55e789dc695a378b0dcf3e3ffe37c65b62f56134ffe76"
+ },
+ "wider": "WIDER FACE validation subset (150 images, CC BY-NC-ND 4.0, test data not distributed): the 64 of its dev part; boxes flagged invalid or under 10 px high are ignore",
+ "adjudication": "photos-truth-v2-additions.json (sha256 f5ac2cf22b326ce8): 10 entries added to the dev photos: 3 faces judged real and 7 face-like boxes marked ignore by B on their crops (03/10 11:20 and 14:13)",
+ "reproduces": "the laptop-B run of the same photos (cells-dev-t320.json) gave the same constants and paired counts before the 7 ignore boxes were added"
+}

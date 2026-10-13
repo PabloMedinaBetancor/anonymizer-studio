@@ -1,0 +1,2474 @@
+# docs/index.md
+
+# Anonymizer Studio
+
+Anonymizer Studio blurs faces and licence plates in photos and videos on your own computer, and gives a person the chance to check what the detectors were not sure about before anything is published. It writes the result at the original resolution, with a privacy report of every item found and what was done with it.
+
+It is for people who publish footage of places where strangers walk by and cars are parked, such as estate agents and street and drone videographers. It has a local web application, the Studio, and a Python API that does everything the Studio does.
+
+![The Review screen of the Studio on a street clip, with the items found outlined on the picture and a timeline of them.](assets/first-video-decided.png)
+
+Footage: "Calle Preciados Madrid" by OsvaldoGago, CC BY-SA 3.0, cut and re-encoded ([Licence and credits](licence-and-credits.md)).
+
+**Read the limits first.** A face or a plate that the detectors do not find is neither blurred nor listed, and the report does not say what was missed. [Accuracy and limits](accuracy.md) says how often that happens, with the condition of every figure. The product was tried on Linux only.
+
+## Where to go
+
+Start with [Getting started](getting-started.md), then [Your first video](tutorials/first-video.md). [How it works](concepts/how-it-works.md) and [Privacy](concepts/privacy.md) say what it blurs and why, and [FAQ and troubleshooting](faq.md) helps when something goes wrong. Code readers, people or AI assistants, start at `AGENTS.md` in the repository root, then [Photos in Python](tutorials/photos-in-python.md) and the [reference](reference/index.md).
+
+More in the repository: `CHANGELOG.md` and `docs/release-notes.md` (what changed), `docs/MEASURED.md` (every measurement), `docs/MISSES.md` (the missed faces) and `docs/PRIVACY-PATHS.md` (the privacy audit). This documentation is for version 2.2.0.
+
+# docs/getting-started.md
+
+# Getting started
+
+This page installs Anonymizer Studio, fetches its detection models and takes one photo through the Studio. If you write code, do the first two steps, then go to [Photos in Python](tutorials/photos-in-python.md).
+
+You need Python 3.10 or later, a network connection for the downloads and, for the PDF report, a Chrome, Edge or Chromium already on the computer. The Studio was run on Ubuntu 22.04 with Python 3.10, in Chrome and Firefox 157. **Windows, macOS and Safari were not tried**, and the files in `packaging/windows/` never ran on a Windows machine.
+
+## Install
+
+Clone the repository (`git clone https://github.com/PabloMedinaBetancor/anonymizer-studio.git`) and, from its folder, in a virtual environment:
+
+```console
+$ python3 -m venv .venv && .venv/bin/pip install -U pip
+$ .venv/bin/pip install .
+$ source .venv/bin/activate
+```
+
+Upgrade pip first, as above: the pip of Ubuntu 22.04 (22.0.2) stops with "Failed building wheel for UNKNOWN". On Ubuntu and Debian `python3 -m venv` stops with "ensurepip is not available" until you run `sudo apt install python3-venv`. Without `sudo`, install for your own user: `python3 -m pip install --user -U pip`, then `python3 -m pip install --user .`. The `anonymizer-studio` command is then on the `PATH` from your next login; until then start the Studio with `python3 -m anonymizer.ui`. `anonymizer-studio --version` prints the version and loads no model, so it is a quick check that the install worked.
+
+`pip install ".[window]"` adds an optional window of its own for the Studio, instead of a browser tab.
+
+## Fetch the models
+
+```console
+$ python3 scripts/fetch_models.py
+```
+
+The models are not in the package. The script downloads them from GitHub and ModelScope into `models/` and checks each against its SHA-256. It is the only time the product uses the network.
+
+The models are looked for in this order: the folder given with `models_dir=` or `--models`, the folder named by `ANONYMIZER_MODELS`, `models/` in the current folder, and `models/` of the source tree. After `pip install .`, start from the checkout or set `ANONYMIZER_MODELS`. A missing or changed model is a `ModelLoadError` at the first analysis, and it names the folders it looked in.
+
+### A computer with no network
+
+Copy the whole `models/` folder (the `.onnx` files and `SHA256SUMS`) and point `ANONYMIZER_MODELS` at it. For the packages, build wheels on a connected computer with the same operating system, architecture and Python version, copy the folder, and install from it:
+
+```console
+$ python3 -m pip wheel -w wheels .
+$ python3 -m pip install --no-index --find-links wheels anonymizer-studio
+```
+
+`python3 examples/offline_check.py FOLDER` then analyses the sample photo with every network connection refused, and exits with 0 when that works. These steps ran on Ubuntu 22.04, not on a computer that was physically offline.
+
+## Blur a first photo
+
+```console
+$ anonymizer-studio
+```
+
+It prints an address and opens it in your browser. Open the address it prints, not a bookmark: the address carries the session. The Studio stops by itself after ten minutes without a page open.
+
+1. **Import.** Press **Import** and choose `demo/street-westminster.jpg`, a photo of a pedestrian crossing in London (credit on [Licence and credits](licence-and-credits.md)). Leave the settings as they are and press **Analyze 1 clip**.
+2. **Analyze.** The clip shows its progress. Nothing is written yet. When it is analysed, click its card.
+3. **Review.** The items are drawn on the picture, and the ones the detectors are not sure about are badged **Not sure**. `N` jumps to the next one and `B` blurs or unblurs it. **Add missed area** covers a face or a plate that has no box.
+4. **Export.** Press **Render 1 clip**. The photo and its reports go to a folder named `anonymized` next to the original. A file is never replaced: the Studio adds `-2` to a name that is taken.
+
+Before you publish, look at the result in **Anonymized**: every face and plate you can see should be blurred, and the **Not sure** items left visible should be neither. A face or a plate the detectors did not find has no box and is not listed.
+
+Next: [Your first video](tutorials/first-video.md) takes a clip through the same screens, with pictures.
+
+# docs/tutorials/first-video.md
+
+# Your first video
+
+This tutorial takes a short street clip through the four screens of the Studio, from **Import** to the privacy report. You make one decision on the way and end with a blurred file and a report you can read. You need the Studio installed with its models ([Getting started](../getting-started.md)), and no code.
+
+The clip is `examples/data/street-madrid-5s.mp4`, the first 5 seconds of `demo/street-madrid.mp4`, a 15-second clip of a pedestrian street in Madrid. It has no audio and no plates. Its credit is on [Licence and credits](../licence-and-credits.md). The screenshots come from one real run with the default settings, on a copy of the clip in `/tmp/studio-demo/Videos`.
+
+## Import
+
+Start the Studio, press **Import**, browse to `examples/data` and choose the clip. The clip is listed with a preview, and the settings are on the right. Leave them as they are: **Faces** and **License plates** on, **Careful**, gaps filled by following the camera, Gaussian blur. Press **Analyze 1 clip**.
+
+## Analyze
+
+The Studio reads the clip and shows its progress. Boxes with a dashed outline and a "FACE?" label are things the detectors are not sure about. Nothing is written yet. When the analysis ends, a banner says how many places the second look left unchecked: a video has more places than it can visit, and the others keep the first pass's result. Click the clip's card to open it in **Review**.
+
+## Review
+
+Review shows the clip with its items drawn on it, and a timeline with one bar per item. Here the detectors found five faces: two they were sure about and three they were not. The Studio calls those **Not sure** and draws them with a striped bar. Press `N` to jump to the first of them.
+
+![The Review screen with Face number 2 selected: a crop of a person seen from behind, its reason, and the Blur this item switch off.](../assets/first-video-review.png)
+
+The panel on the right shows a crop of the item, the reason the detectors give, and the switch **Blur this item**. Face 2 was left visible because it is not placed like a face, and the crop shows a pedestrian's back: there is nothing to hide, so leave it. Press `N` again for face 3, a head in a crowd that lasts three frames. You cannot tell from the crop whether it faces the camera, and a blur costs nothing, so press `B` to blur it. The timeline marks the item as decided.
+
+Many of the people far down the street are too small for the detectors and have no box. **Add missed area** lets you draw one over each, and choose whether it follows the camera or stays where you drew it.
+
+## Export
+
+Open **Export**. The output goes to a folder named `anonymized` next to the clip, as `street-madrid-5s_anonymized.mp4`, with the three privacy reports. Leave the comparison video off: it shows the original without any blur, so it is for checking, not for publishing. Press **Render 1 clip**. Rendering draws the blur from the analysis you already have, so it is much quicker. The screen lists the files it wrote, and a banner says that one doubtful item stays visible: face 2. Rendering again replaces nothing; the Studio adds `-2` to the names.
+
+## Read the report
+
+Open `street-madrid-5s_anonymized.report.pdf`.
+
+![The privacy report: a summary line and a table with one row for each of the five items.](../assets/first-video-report.png)
+
+The summary line counts the items, the blurred ones and the ones left visible. The table has one row per item, with the times it is seen from and to, its length in frames and the detectors' certainty. Face 2's row is tinted, because it is left visible. Face 3's reason ends with "You chose to blur it", because you overruled the detectors. The rows are numbered from 1 in time order; the CSV and JSON reports give the engine's own `item_id`, which can skip numbers, so the fifth row of this PDF is `item_id` 6.
+
+## What you still check yourself
+
+The report lists what was found and what was done. It does not list what the detectors missed. Before you publish the clip:
+
+1. Play the output from start to end and look for faces that are not blurred. In this clip, the people far down the street are not blurred.
+2. If that matters for your use, add an area over each one in **Review** and export again.
+3. Look at every item the report says was left visible, and decide that none of them is a face or a plate.
+
+Next: [How it works](../concepts/how-it-works.md) explains what the Studio blurs and why, and [The Studio](../reference/studio.md) lists every control.
+
+# docs/tutorials/photos-in-python.md
+
+# Photos in Python
+
+This tutorial anonymises one photo with the Python API, then a folder of photos with a CSV of what was found in each. Install first ([Getting started](../getting-started.md)), and run every block from the repository root. The samples are `demo/street-westminster.jpg`, a photo of a pedestrian crossing in London, and `demo/street-taipei.jpg`, a photo of dense traffic in Taipei ([Licence and credits](../licence-and-credits.md)). Code readers, people or AI assistants, also have `AGENTS.md` in the repository root.
+
+## One photo
+
+`anonymize_image` analyses a photo and writes the anonymised copy in one call. This block writes `anonymized/westminster.jpg` under the current folder.
+
+```python
+import os
+
+import anonymizer
+
+os.makedirs("anonymized", exist_ok=True)
+result = anonymizer.anonymize_image("demo/street-westminster.jpg", "anonymized/westminster.jpg")
+summary = result.report.summary()
+print("written:", result.output)
+print("items:", summary["items"], "blurred:", summary["blurred"])
+print("doubtful items left visible:", result.visible_check)
+print("warnings:", list(result.warnings))
+```
+
+```text
+# output
+written: anonymized/westminster.jpg
+items: 26 blurred: 22
+doubtful items left visible: 4
+warnings: ['warning.review.check_left_visible']
+```
+
+Read the last two lines before you publish: `visible_check` counts the doubtful items that stay visible under the default rule ([How it works](../concepts/how-it-works.md#doubtful-items)), and they may be plates. The first call also loads the models, so it is slower than the next. A second run of the block raises `OutputExists`: a file is never replaced.
+
+## A folder of photos
+
+For more than one file, make one `Anonymizer`: `anonymize_image` loads the models again at every call. For each file, `analyze` finds the items and `render` writes the output. This block builds a folder `photos/` with the two sample photos and a file that is not a photo, anonymises it into `anonymized/`, and writes `anonymized/summary.csv`.
+
+```python
+import csv
+import os
+import shutil
+
+import anonymizer
+
+os.makedirs("photos", exist_ok=True)
+for name in ("street-westminster.jpg", "street-taipei.jpg"):
+    shutil.copy(os.path.join("demo", name), "photos")
+with open("photos/scan.heic", "wb") as f:
+    f.write(b"this is not a photo")
+os.makedirs("anonymized", exist_ok=True)
+
+FIELDS = ["file", "face_items", "plate_items", "doubtful", "left_visible", "note"]
+rows = []
+with anonymizer.Anonymizer() as anon:
+    for name in sorted(os.listdir("photos")):
+        try:
+            analysis = anon.analyze(os.path.abspath(os.path.join("photos", name)))
+            result = anon.render(analysis, os.path.join("anonymized", name))
+        except anonymizer.ModelLoadError:
+            raise  # the models are missing: every file would fail
+        except anonymizer.AnonymizerError as error:
+            print(f"{name}: not processed ({error.code})")
+            rows.append({"file": name, "note": error.code})  # the other columns stay empty
+            continue
+        kinds = [row.kind for row in result.report.rows]
+        rows.append(
+            {
+                "file": name,
+                "face_items": kinds.count("face"),
+                "plate_items": kinds.count("plate"),
+                "doubtful": result.report.summary()["doubtful"],
+                "left_visible": result.visible_check,
+                "note": "; ".join(result.warnings),
+            }
+        )
+
+with open("anonymized/summary.csv", "w", newline="", encoding="utf-8") as f:
+    writer = csv.DictWriter(f, fieldnames=FIELDS, restval="")
+    writer.writeheader()
+    writer.writerows(rows)
+with open("anonymized/summary.csv", encoding="utf-8") as f:
+    print(f.read())
+```
+
+```text
+# output
+scan.heic: not processed (error.media.unsupported)
+file,face_items,plate_items,doubtful,left_visible,note
+scan.heic,,,,,error.media.unsupported
+street-taipei.jpg,0,17,17,17,warning.review.check_left_visible
+street-westminster.jpg,24,2,17,4,warning.review.check_left_visible
+```
+
+A file that fails raises an `AnonymizerError`: the block records its `code`, writes nothing for it and goes on. Only `ModelLoadError`, a missing model, and `ValueError`, a bad option, end the run, because every file would fail. `scan.heic` is text with a photo's name, so it is `UnsupportedMedia`. The path given to `analyze` is absolute, so a saved analysis still finds the original from another folder. The counts are the report's rows, doubtful items included.
+
+**Read the last two columns before you publish.** None of the Taipei photo's doubtful items is placed like a plate, so nothing in it is blurred, and every call succeeds. `Options(unsure="blur")` blurs every doubtful item instead. To run the folder again, write to a new folder, or skip a photo whose output exists, as `examples/batch_photos.py` does.
+
+Next: [Review a video in code](../how-to/video-review-in-code.md), or [Progress, cancel and errors](../how-to/progress-and-errors.md).
+
+# docs/concepts/how-it-works.md
+
+# How it works
+
+What Anonymizer Studio looks for, how hard it looks, what it does with what it is not sure about, how the blur is drawn and what the report records. Read it before you trust a result or change a setting.
+
+## The default rule
+
+By default the Studio blurs the plate itself and the face itself, with a tight margin and a soft edge. What the detectors are not sure about is listed in Review and blurred only when it is placed like a plate or a face. A plate or a face the detectors do not find is neither blurred nor listed.
+
+Everything found is an item: a `face`, a `plate`, or a `manual` area that a person drew with **Add missed area**. A sure item has the verdict `blur`. A doubtful item, one the detectors found but are not sure about, has the verdict `check`; the Studio's legend and badge call it **Not sure**.
+
+## What is found
+
+**Faces** are found in two steps. A light face model looks at the whole picture, on every second frame of a video by default. At the **Careful** level a second look then visits the places that first pass doubted or dropped, and the heads of people with no face found, enlarges each one and runs a heavier face model on it.
+
+**Plates** are read as text on vehicles. A vehicle detector finds cars, motorcycles, buses and trucks, a text detector finds the writing on each, and a plate reader reads it. A text region is blurred by default when it is sure, small next to the vehicle, low on it and shaped like a plate. The reader takes out a region that reads as a word, such as a taxi sign, and brings in one that reads as a plate even if its position was rejected.
+
+A doubtful item is **placed** when it is plate-sized or face-sized and where such a thing can be: low on a vehicle, or on a person. In a video a doubtful plate is never placed, so by default it is listed and left visible: review the plates of a video yourself.
+
+Some things are never searched: a plate on something the vehicle detector does not take for a vehicle, and a vehicle below a minimum size, which the report only counts (`vehicles_too_small`). A small, blurred or distant face or plate can also score too low to be listed.
+
+## Detection levels
+
+The **Analyze** screen offers **Fast** and **Careful** (`detection="fast"` and `"careful"` in the Python API); Careful is the default. **Fast** runs the first pass only. **Careful** adds the second look, with RetinaFace for faces, and costs time, on a video much more than on a photo. The second look can only raise a decision: it confirms a doubtful item, brings back a dropped candidate or adds a missed head. It has a budget, 30 zones per photo by default (`max_zones`), and what the budget leaves out keeps the first pass's result and is counted, shown as a warning and written in the report.
+
+`detection="deep"`, the heavy model over the whole picture in tiles, is experimental and in the Python API only: the Studio does not offer it, and no measured figure covers it. A model that fails is never silent: the file is not exported as clean (`IncompleteAnalysis`), and Careful without the heavy model's file is a `ModelLoadError`, never a quiet drop to Fast.
+
+## Doubtful items
+
+The usual doubtful items are text on a vehicle that is not shaped or placed like a plate, or reads as a word, and faces that the second look found or checked without confirming. **Review** shows the reason of each in plain words. Version 2.1 blurred them all, with wide margins: on a car park that put a blob over the side of every car and one over a bare wall, and the person reviewing lost sight of the real plates. The narrower rule of 2.2 has a cost too: a small, blurred or distant plate that the text detector scores low can be listed instead of blurred.
+
+![How a doubtful item is decided: the unsure option, then the placed test, then a person's decision.](../assets/doubtful-decision.svg)
+
+`Options.unsure` decides what happens to a doubtful item before anyone reviews it:
+
+| `unsure` | A doubtful item is |
+|---|---|
+| `"placed"` (default) | blurred if it is placed like a plate or a face, otherwise left visible |
+| `"blur"` | blurred; a person can turn it off |
+| `"keep"` | left visible; a person can turn it on |
+
+The 2.1 settings are `Options(unsure="blur", fit="loose", plate_band=True)`, and the v1 settings are `Options(detection="fast", unsure="keep", fit="loose")`. The Studio applies `"placed"`, and **Review** has **Blur all doubtful** and **Keep all doubtful visible** for a whole clip. A person's decision always wins, and the report records it. When doubtful items stay visible, the export says so: the Studio in a banner, the Python API in `Result.visible_check` and the warning `warning.review.check_left_visible`. It is not an error: a person has something left to look at.
+
+## Blur and fit
+
+The look of the blur is read when the file is written, so you can change it without analysing again.
+
+| Setting | Values, default first | Studio control |
+|---|---|---|
+| `blur` | `"gaussian"`, `"pixelate"`, `"solid"` | **Style** |
+| `strength` | 1.0 to 2.0 | **Strength** |
+| `extra_margin` | 0.0 to 0.5 of the box, each side | **Extra margin** |
+| `gap_fill` | `"camera"`, `"straight"`, `"hold"` | **Fill gaps between detections** |
+| `remove_gps` | `True`, `False` | **Remove GPS and location from photos** |
+
+`"gaussian"` turns the area into blocks about the size of a character and smooths them over an opaque core, so the soft edge never lets the original through. A strength below 1.0 is refused: at 0.8 the Gaussian blur already left more of a text than the repository's test allows. The blur covers the box plus a margin on each side: 6% of a face's width and 10% of its height, as an ellipse, and 15% and 25% of a plate's, as a rectangle, the smallest plate margin that hid nearly every readable plate of the development photos. That is the tight fit of 2.2, which the Studio always uses; `fit="loose"` gives 2.1's. Between two detections of a video, `gap_fill` moves the box with the camera, along a straight line, or holds it.
+
+## The report
+
+**Export** writes the privacy report next to the output, as PDF, CSV and JSON: `clip_anonymized.mp4` gets `clip_anonymized.report.pdf`, `.report.csv` and `.report.json`. It has one row per item, the ones left visible included. The PDF opens with "N items: X blurred, Y left visible", and numbers the rows from 1 in time order, while the CSV and JSON give the engine's `item_id`, which can skip numbers. A plate band has no real certainty: its score is the constant 1.0, and the PDF shows a dash. The PDF is printed by a Chrome, Edge or Chromium already on the computer; without one, the CSV and JSON are still written.
+
+The report does not say what the detectors missed, and the PDF and the CSV do not say which classes were searched (the JSON does, under `options`). It does not record the blur settings: keep them with the files if you must show them later. And "left visible" does not mean safe to publish: a doubtful item left visible may be a plate.
+
+Next: [Privacy](privacy.md), or [The Studio](../reference/studio.md) for every control.
+
+# docs/concepts/privacy.md
+
+# Privacy
+
+What leaves your computer, what Anonymizer Studio promises about your files, and what it does not: read it before you let it touch your footage.
+
+## Nothing leaves the computer
+
+The Studio and the Python API open no network connection, and a test watches for one. The only network use is `scripts/fetch_models.py`, which downloads the models once. The Studio listens on `127.0.0.1` only and loads nothing from outside; its work folder is deleted when it stops, and the PDF report is printed by a local browser with its network cut.
+
+## What is promised about your files
+
+- **Originals are only read**, and **an output never replaces a file**: the Python API raises `OutputExists`, the Studio adds `-2`. Only `Report.to_csv` and `Report.to_json` replace a file of the same name.
+- **A half-written file is never under the final name**: the output is written under a hidden name, checked, then renamed. Only a process killed outright can leave the hidden file.
+- **A file that changed is not exported** (`SourceChanged`), and **a frame or photo the detectors failed on is never exported as clean** (`IncompleteAnalysis`).
+- **A photo keeps only its resolution, orientation, EXIF version, colour space, pixel size and colour profile**, and the GPS if you keep the location. The rest goes, maker notes (which can hold an unblurred preview) included, and the file is checked from its bytes. Padding bytes in a JPEG's last scan stay unless it is compressed again, and the AVIF check was tried on hand-built files and one real file only. A video carries no container metadata.
+- **Files it cannot process are refused and listed**, never passed through.
+
+Each promise has a row, with the tests that fail if it breaks, in the audit table `docs/PRIVACY-PATHS.md` in the repository: a record of what was looked for, not a proof that no other path exists.
+
+## What is not promised
+
+- **A miss is silent**: what is not found is neither blurred nor listed ([Accuracy and limits](../accuracy.md)).
+- **Only faces and plates are looked for**: cover a house number or a screen with **Add missed area**.
+- **A doubtful item that is not placed stays visible** ([How it works](how-it-works.md#doubtful-items)).
+- **The comparison video shows the original, unblurred.** Never publish it.
+
+# docs/how-to/video-review-in-code.md
+
+# Review a video in code
+
+What a person does in **Review** can be done in code: analyse a video, decide on the items the detectors were not sure about, add an area they missed, render, and save the analysis so that it can be rendered again without running a detector. The same steps, with a command line, are `examples/review_video.py`.
+
+The clip is `examples/data/street-madrid-5s.mp4`, the first 5 seconds of `demo/street-madrid.mp4`, a 15-second clip of a pedestrian street in Madrid ([Licence and credits](../licence-and-credits.md)). Run the blocks from the repository root, in order. The first is the long one, because it runs the detectors.
+
+## Analyse and decide
+
+`analyze` writes nothing and returns an `Analysis`. Its `items` are in order of appearance; each has a `verdict`, `"blur"` for a sure item and `"check"` for a doubtful one, and `blur` says whether it will be blurred. Give `analyze` an absolute path when the analysis will be saved and loaded from another folder.
+
+<!-- docs-test: real-only - it decides on the doubtful items the real detectors find in the clip -->
+```python
+import os
+
+import anonymizer
+
+anon = anonymizer.Anonymizer()
+analysis = anon.analyze(os.path.abspath("examples/data/street-madrid-5s.mp4"))
+for item in analysis.items:
+    state = "blurred" if item.blur else "visible"
+    print(item.item_id, item.kind, item.verdict, state, item.decided_by, item.reason)
+```
+
+```text
+# output
+1 face blur blurred engine face.reason.seen_often
+2 face check visible engine face.reason.low_verify
+3 face check visible engine face.reason.low_verify
+4 face blur blurred engine face.reason.seen_often
+6 face check blurred engine face.reason.second_found
+```
+
+The ids are the engine's own and can skip a number, as here; the Studio and the PDF report number the items from 1 in time order. `reason` is a key, listed with its English sentence on [Errors and codes](../reference/errors.md#reasons).
+
+A decision is `set_blur(item_id, True or False)`, and it marks the item `decided_by="person"`. This block blurs every doubtful item that is still visible, the cautious choice, then adds an area over a shop sign, which stands for anything the detectors do not look for, such as a name on a door. `add_area(frame_from, frame_to, box, follow)` takes pixel coordinates of the source at `frame_from`; `follow="camera"` moves the area with the camera, and `"fixed"` keeps it in place.
+
+<!-- docs-test: real-only - it decides on the doubtful items the real detectors find in the clip -->
+```python
+for item in analysis.items:
+    if item.verdict == "check" and not item.blur:
+        analysis.set_blur(item.item_id, True)
+
+area = analysis.add_area(0, analysis.frames - 1, (755, 210, 860, 242), follow="camera")
+print("added area", area.item_id, area.kind, "blurred:", area.blur)
+print(analysis.summary()["blurred"], "of", analysis.summary()["items"], "items will be blurred")
+```
+
+```text
+# output
+added area 7 manual blurred: True
+6 of 6 items will be blurred
+```
+
+An added area has the kind `manual` and the verdict `blur`; `analysis.remove_area(area.item_id)` removes it. A detected item cannot be removed: turn it off with `set_blur`.
+
+## Look, render and save
+
+`preview` draws one frame with the current decisions and returns JPEG bytes, without running a detector. Its views are `"original"`, `"anonymized"`, `"boxes"` and `"split"`.
+
+<!-- docs-test: real-only - it uses the analysis made by the real detectors in the first block -->
+```python
+os.makedirs("reviewed", exist_ok=True)
+for view in ("anonymized", "boxes"):
+    with open(f"reviewed/frame-{view}.jpg", "wb") as f:
+        f.write(analysis.preview(60, view=view))
+print(sorted(os.listdir("reviewed")))
+```
+
+```text
+# output
+['frame-anonymized.jpg', 'frame-boxes.jpg']
+```
+
+`render` writes the video from the analysis, with no detector, and never replaces a file. `save` writes the analysis as JSON, with a folder of item crops beside it, and replaces both if they exist.
+
+<!-- docs-test: real-only - it uses the analysis made by the real detectors in the first block -->
+```python
+result = anon.render(analysis, "reviewed/reviewed.mp4")
+analysis.save("reviewed/review.analysis.json")
+anon.close()
+print("written:", result.output)
+print("doubtful items left visible:", result.visible_check)
+print(sorted(os.listdir("reviewed")))
+```
+
+```text
+# output
+written: reviewed/reviewed.mp4
+doubtful items left visible: 0
+['frame-anonymized.jpg', 'frame-boxes.jpg', 'review.analysis.json', 'review.analysis.thumbs', 'reviewed.mp4']
+```
+
+## Render again from the saved file
+
+Load the analysis and render it, in this process or another one. The new `Anonymizer` loads no model, because `render` needs none, and it takes the decisions in the file and nothing else.
+
+<!-- docs-test: real-only - it uses the analysis made by the real detectors in the first block -->
+```python
+with anonymizer.Anonymizer() as anon:
+    again = anon.render(anonymizer.load_analysis("reviewed/review.analysis.json"), "reviewed/again.mp4")
+print("written:", again.output)
+```
+
+```text
+# output
+written: reviewed/again.mp4
+```
+
+An analysis saved by 2.1 loads in 2.2 and keeps the decisions made under 2.1's rule: analyse again to get the 2.2 defaults. A file from before 2.1 is refused with `error.analysis.version`. If the original changed or moved since the analysis, `render` raises `SourceChanged` or `FileNotFoundError`.
+
+## Compare side by side
+
+`compare_video(original, anonymized, target, captions=("Original", "Anonymized"))` writes one video twice as wide as the clip, with the original on the left and the anonymised clip on the right, to check the blur by eye on a moving shot. **Never publish it**: its left half shows every face and plate. The two videos must have the same size and length.
+
+<!-- docs-test: real-only - it uses the video rendered from the real analysis above -->
+```python
+side = anonymizer.compare_video("examples/data/street-madrid-5s.mp4", "reviewed/reviewed.mp4", "reviewed/side-by-side.mp4")
+info = anonymizer.media_info(side)
+print("written:", side)
+print("size:", info.width, "x", info.height, "frames:", info.frames)
+```
+
+```text
+# output
+written: reviewed/side-by-side.mp4
+size: 1920 x 540 frames: 121
+```
+
+![A frame of the comparison video: the original street on the left, the anonymized street on the right, each with its caption.](../assets/compare-side-by-side.jpg)
+
+Like `render`, it never replaces a file and can be stopped with a `CancelToken`. In the Studio the same video is the switch **Comparison video** on **Export**.
+
+The decisions are only as good as your review: a face or a plate that the detectors did not find has no item. Look at a `preview` or at the output, and add an area for what you see.
+
+# docs/how-to/progress-and-errors.md
+
+# Progress, cancel and errors
+
+A job sends events while it runs, can be stopped from another thread, and ends with an error that says whether it concerns one file or the whole run. This page shows all three, for scripts and programs that run without a person watching. The same steps, with a command line, are `examples/progress_and_cancel.py` and `examples/handle_errors.py`.
+
+## Read the events
+
+Every call that does work takes `on_event`, a function that receives typed events: `Started`, `Progress`, `ItemFound`, `Analyzed`, `Rendered`, `JobWarning` and `Finished`. The handler runs in the thread that runs the call, so keep it short; an exception in it stops the call. To hand events to another thread, put them in a queue.
+
+This block anonymises the sample photo with a handler that records each kind of event as it arrives, once for each run of the same kind. It writes `anonymized/westminster-events.jpg` under the current folder.
+
+```python
+import os
+
+import anonymizer
+
+os.makedirs("anonymized", exist_ok=True)
+events = []
+
+
+def on_event(event):
+    name = type(event).__name__
+    if isinstance(event, anonymizer.Finished):
+        name = f"Finished({event.status})"
+    if not events or events[-1] != name:
+        events.append(name)
+
+
+result = anonymizer.anonymize_image("demo/street-westminster.jpg", "anonymized/westminster-events.jpg", on_event=on_event)
+print(", ".join(events))
+```
+
+```text
+# output
+Started, Progress, ItemFound, Analyzed, JobWarning, Rendered, Finished(done)
+```
+
+`Progress` has a `phase` (`"analyze"`, `"render"` or `"compare"`) and a `fraction` from 0 to 1 that never goes back within a phase. `ItemFound` arrives once for each item, after the analysis and not live. `JobWarning` is sent for each warning of the result, and `Finished` has the `status` `"done"` or `"stopped"`. `event_json` turns an event into a dict for JSON. The fields of each event are on [Data types and events](../reference/data-types.md#event).
+
+## Cancel from another thread
+
+A `CancelToken` is the one object meant to be shared between threads. Pass it as `cancel` and call `token.cancel()` from anywhere: the job stops at the next frame or two. This block cancels a video's analysis after three seconds.
+
+<!-- docs-test: real-only - it cancels a real analysis, which needs a clip that takes time -->
+```python
+import threading
+
+events.clear()
+token = anonymizer.CancelToken()
+threading.Timer(3.0, token.cancel).start()
+os.makedirs("stopped", exist_ok=True)
+
+try:
+    anonymizer.anonymize_video(
+        "examples/data/street-madrid-5s.mp4", "stopped/never.mp4", on_event=on_event, cancel=token
+    )
+except anonymizer.Cancelled:
+    events.append("Cancelled raised")
+
+print(", ".join(events))
+print("files in stopped/:", os.listdir("stopped"))
+```
+
+```text
+# output
+Started, Finished(stopped), Cancelled raised
+files in stopped/: []
+```
+
+The stop arrives twice: first the event `Finished("stopped")`, for a display, then the exception `Cancelled`, for the control flow. Nothing is left under the output name. A token stays cancelled for ever, so make a new one for each job; `pause()` and `resume()` hold the work between frames. A photo cannot be broken off in its first pass: `anonymize_image` has no `cancel` argument, and `Anonymizer.analyze` honours one on a photo only between the heavy calls of the second look.
+
+## Errors: one file or the whole run
+
+The Python API's own errors are `AnonymizerError`s with a `code`, and most concern one file: `UnsupportedMedia` (not a photo or video it processes, empty, cut short, or damaged), `OutputExists`, `SourceChanged`, `IncompleteAnalysis`, `Cancelled`, and `AnonymizerError` itself for a missing source or an output that failed its final check. Record those for the file and go on.
+
+Two errors end a run, because every file would fail the same way: `ModelLoadError` (a model is missing or changed) and `ValueError`, a bad option, which is not an `AnonymizerError`. `ModelLoadError` is a subclass of `AnonymizerError`, so catch it first. Some errors are Python's own, such as `FileNotFoundError` when the folder of an output is missing. The full map is [Which error to catch](../reference/index.md#which-error-to-catch).
+
+This block makes files that fail in `errors-demo/` under the current folder and prints the class and the code of each outcome.
+
+```python
+import shutil
+
+folder = "errors-demo"
+os.makedirs(folder)
+photo = os.path.join(folder, "photo.jpg")
+shutil.copy("demo/street-westminster.jpg", photo)
+with open(os.path.join(folder, "scan.heic"), "wb") as f:
+    f.write(b"this is not a photo")
+with open("demo/street-westminster.jpg", "rb") as f:
+    cut = f.read(20000)
+with open(os.path.join(folder, "cut.jpg"), "wb") as f:
+    f.write(cut)
+
+options = anonymizer.Options(detection="fast")
+outcomes = {}
+
+
+def attempt(label, call):
+    try:
+        call()
+    except Exception as error:  # here, to see the class and the code
+        outcomes[label] = (type(error).__name__, getattr(error, "code", None))
+    else:
+        outcomes[label] = ("no error", None)
+
+
+with anonymizer.Anonymizer(options) as anon:
+    analysis = anon.analyze(os.path.abspath(photo))
+    anon.render(analysis, os.path.join(folder, "out.jpg"))
+    attempt("same name again", lambda: anon.render(analysis, os.path.join(folder, "out.jpg")))
+    attempt("folder missing", lambda: anon.render(analysis, os.path.join(folder, "no-such-folder", "x.jpg")))
+    attempt("not a photo", lambda: anon.analyze(os.path.join(folder, "scan.heic")))
+    attempt("cut short", lambda: anon.analyze(os.path.join(folder, "cut.jpg")))
+    attempt("source missing", lambda: anon.analyze(os.path.join(folder, "missing.jpg")))
+    with open(photo, "ab") as f:
+        f.write(b"changed")
+    attempt("source changed", lambda: anon.render(analysis, os.path.join(folder, "late.jpg")))
+attempt("model folder missing", lambda: anonymizer.Anonymizer(options, models_dir="none").analyze(os.path.abspath(photo)))
+attempt("bad option", lambda: anonymizer.Options(strength=0.5))
+
+for label, (name, code) in outcomes.items():
+    print(f"{label:22s} {name} {code or ''}".rstrip())
+```
+
+```text
+# output
+same name again        OutputExists error.output.exists
+folder missing         FileNotFoundError
+not a photo            UnsupportedMedia error.media.unsupported
+cut short              UnsupportedMedia error.media.unsupported
+source missing         AnonymizerError error.source.missing
+source changed         SourceChanged error.source.changed
+model folder missing   ModelLoadError error.model.load
+bad option             ValueError
+```
+
+A photo cut short is `error.media.unsupported` at `analyze`, like a file that is no photo at all; `error.media.damaged` is for a file that decoded at first and stopped later, such as a video partway through. Catch the class, and branch on `.code` only if you must tell them apart. In a command-line tool, give each cause its own exit code, and put `except anonymizer.UnsupportedMedia` before `except anonymizer.AnonymizerError`, because the first matching clause wins: `examples/handle_errors.py` does it.
+
+# docs/how-to/ai-assistants.md
+
+# Work with AI assistants
+
+An assistant that writes code against Anonymizer Studio from memory gets a few things wrong, always the same few, and some of them fail without an error: a photo comes out with its plates still visible and the call succeeds. This page is for the person who reads what the assistant wrote: which files to give it, how the usual mistakes show, and how to check the code. The rules for the assistant itself are in `AGENTS.md`, at the root of the repository.
+
+## Give the assistant the right files
+
+- `AGENTS.md` is written for a coding assistant that has nothing else: the common tasks as whole scripts, the fields, the error codes and the mistakes. Many assistants look for it on their own inside the repository; if yours does not, name it in your request. For a project outside the repository, copy it into the project.
+- `llms.txt` is an index of the documentation, one line per page.
+- `llms-full.txt` is every page of the documentation as one plain file. Attach it when the assistant cannot read the repository.
+
+## The mistakes, and how they show
+
+| The assistant writes | What happens | What it should do |
+|---|---|---|
+| `anonymize_image` in a loop over a folder | It works, and loads the models again for every file | One `Anonymizer`, and `analyze` then `render` for each file |
+| No look at the `Result` | Doubtful items that are not placed like a plate or a face stay visible, with no error | Read `visible_check` and `warnings`; `Options(unsure="blur")` or `set_blur` if that is the policy |
+| An output name that exists, or in a folder that does not | `OutputExists`, or `FileNotFoundError`; nothing is overwritten | Make the folder first, and a new name or folder for each run |
+| `out.png` for a JPEG | A JPEG named `out.png` | The extension of the original; `.mp4` for a video |
+| `analyze` again "to apply" a decision | The new analysis replaces the decisions | `set_blur` or `add_area`, then `render` the same analysis |
+| A relative path, then `load_analysis` from another folder | `FileNotFoundError` on the original | An absolute path to `analyze` |
+| One `Anonymizer` shared between threads | Not safe | One per thread; a `CancelToken` is the one object to share |
+| `analysis.preview(0)` after changing `extra_margin` | The preview ignores the change | `options=anon.options`: the default is `Options()` |
+| `from anonymizer.contract import ModelLoadError` | It catches nothing the API raises | `anonymizer.ModelLoadError` |
+| A claim that the report proves nothing is left | The report lists what was found, not what was missed | Look at the output; `Analysis.add_area` for what is missed |
+
+## Check the code you were given
+
+1. It imports only `anonymizer`, and no name outside `anonymizer.__all__`.
+2. It makes one `Anonymizer` for a batch, in a `with` block, and creates the output folder.
+3. In a batch, it lets `ModelLoadError` and `ValueError` stop the run and records any other `AnonymizerError` for its file.
+4. It reads `visible_check` or `warnings`, or sets `unsure` on purpose.
+5. It does not turn a doubtful item off on its own authority. A blur that was not needed costs a little; an item left visible by mistake publishes a face or a plate.
+6. It never publishes the comparison video, which shows the original.
+7. It runs: ask for the output of one run on a sample photo before you trust a long job.
+
+A request that works names the files, the policy and the limits, and what to read first:
+
+```text
+Read AGENTS.md in this repository first. Write a script that anonymises every photo in
+./incoming into ./outgoing with one Anonymizer. Blur every doubtful item (unsure="blur").
+Skip files that are not photos and print their error code at the end. Do not use
+anonymize_image in a loop, do not import from anonymizer.engine, and print how many
+doubtful items each photo had.
+```
+
+# docs/reference/index.md
+
+# Reference
+
+The reference of the Python API of Anonymizer Studio (`import anonymizer`), the files it writes and the commands you run. It describes exactly what is there. To learn the Python API by doing, start with [Photos in Python](../tutorials/photos-in-python.md). Coding assistants start at `AGENTS.md` in the repository root.
+
+## What is public
+
+The names in `anonymizer.__all__` are the public API. Everything else in the package is internal and may change: `anonymizer.engine`, `anonymizer.classes`, `anonymizer.contract`, `anonymizer.ui` and the routes the Studio's page talks to. `from anonymizer import *` gives exactly the public names. `anonymizer.contract.ModelLoadError` is not [`anonymizer.ModelLoadError`](errors.md#modelloaderror): catching the internal one catches nothing that a public call raises.
+
+Each entry gives the signature with the annotations of the code, a summary, the parameters with their type, default and valid values, what it returns and raises, and links to related names. Frames count from 0, and a photo is frame 0. A box is `(x0, y0, x1, y1)` in pixels of the original, from the top left. The examples run from the repository root on the sample files in `demo/` and `examples/data/`.
+
+| Page | What is in it |
+|---|---|
+| [Functions](functions.md) | `anonymize_image`, `anonymize_video`, `compare_video`, `media_info`, `frame_jpeg`, `thumbnail_jpeg`, `load_analysis`, `event_json` and the extension constants |
+| [Anonymizer and Analysis](anonymizer.md) | The class that loads the detectors once (`analyze`, `render`, `estimate`), and what `analyze` returns, with the calls that decide (`set_blur`, `add_area`, `preview`, `boxes`, `save`) |
+| [Options and CancelToken](options.md) | Every setting, what it changes and when it is read; stopping a job from another thread |
+| [Data types and events](data-types.md) | `Item`, `Report`, `ReportRow`, `Result`, `BoxInfo`, `MediaInfo`, `Estimate`, and the seven events |
+| [Errors and codes](errors.md) | `AnonymizerError` and its six subclasses, and every reason, warning and error key with its English sentence |
+| [Files written](files-written.md) | The output, the saved analysis and the report, field by field |
+| [Command line](command-line.md) | The Studio's start command, the model scripts and the environment variables |
+| [The Studio](studio.md) | The four screens, their controls, keys and settings |
+
+The pages from Functions to Errors and codes are generated from the docstrings of the code by `scripts/api_docs.py`, so they cannot drift from it.
+
+## Which error to catch
+
+| You catch | It means |
+|---|---|
+| [`UnsupportedMedia`](errors.md#unsupportedmedia) | The file is not a photo or a video the API takes, is damaged, or stops decoding partway |
+| [`ModelLoadError`](errors.md#modelloaderror) | A detection model is missing, changed or could not run, at the first call that needs it |
+| [`OutputExists`](errors.md#outputexists) | The target exists. `render` and `compare_video` check first; `anonymize_*` find it after the analysis |
+| [`SourceChanged`](errors.md#sourcechanged) | The original is no longer the file that was analysed |
+| [`IncompleteAnalysis`](errors.md#incompleteanalysis) | Part of the file could not be checked, so it is not delivered as clean |
+| [`Cancelled`](errors.md#cancelled) | The job was stopped through its `CancelToken` |
+| [`AnonymizerError`](errors.md#anonymizererror) | Another code, such as `error.source.missing`, `error.analysis.version` or `error.output.check_failed`: the class lists them all |
+| `FileNotFoundError`, `NotADirectoryError` | The folder of a target is missing or is a file (checked before a long analysis), a file to read is missing, or a loaded analysis names a relative source not found from the current folder |
+| `ValueError` | A value is not valid: an `Options` field, a frame or a box, a view name, the captions of `compare_video` |
+| `KeyError` | No item has that number (`Analysis.item`, `set_blur`, `remove_area`) |
+| `json.JSONDecodeError` | `load_analysis` was given a file that is not JSON |
+| `dataclasses.FrozenInstanceError` | You assigned to a field of `Options` |
+
+In a batch, let `ModelLoadError` and `ValueError` end the run, and record any other `AnonymizerError` for its file and go on. Put `except anonymizer.ModelLoadError: raise` before `except anonymizer.AnonymizerError`, because `ModelLoadError` is a subclass.
+
+## Threads and processes
+
+- An `Anonymizer` is not safe to share between threads: give each thread its own. [`CancelToken`](options.md#canceltoken) is the one object meant to be used from another thread.
+- `analyze` and `render` run in the thread that calls them, and so does an event handler; an exception in the handler comes out of the call.
+- ONNX Runtime uses the threads you set with `Anonymizer(threads=...)`; 0 lets the runtime decide.
+- The Python API runs in your process and starts no server. The Studio runs the engine in a worker process. The only network use of the product is [`scripts/fetch_models.py`](command-line.md#scriptsfetch_modelspy), once.
+
+# docs/reference/studio.md
+
+# The Studio
+
+Every screen, control, key and setting of the Studio, in the interface's own words. To learn it by doing, follow [Your first video](../tutorials/first-video.md).
+
+The Studio is a page served by a program on your computer, with four screens: **Import**, **Analyze**, **Review** and **Export**, in the tabs at the top.
+
+## Starting and stopping
+
+`anonymizer-studio`, or `python3 -m anonymizer.ui`, prints an address and opens it in your browser ([Command line](command-line.md) has the options). Open the printed address: it carries a session, and a bookmark of an earlier start is refused. The Studio stops by itself after ten minutes without a page open, or six hours while clips are loaded, and at once on Ctrl+C or a closed terminal. Anything not exported is then gone.
+
+## Import
+
+**Import** browses this computer for photos, videos or whole folders, or takes them dropped on the screen; a dropped file is uploaded as a copy, so its output goes to your default destination. Every file is a "clip" here, a photo too. HEIC, RAW, GIF and other formats it cannot process are refused at once, with the reason.
+
+- **Faces**, **License plates**: what to look for. At least one must be on.
+- **Detection**: **Fast**, "The light models only, as in version 1.", or **Careful**, "Recommended. Also looks again, with a heavier model, at the places the light models doubted." After a clip has been analysed both ways on this computer, **Careful** shows "N× slower".
+- **Fill gaps between detections**: **Follow camera motion**, **Straight line** or **Hold last box**.
+- **Style**: **Gaussian blur**, **Pixelate** or **Solid box**. **Strength**: ×1.0 to ×2.0; 1.0 is the floor. **Extra margin**: +0% to +50% of the box on each side.
+- **Remove GPS and location from photos**: on by default. Other metadata is dropped anyway.
+
+The settings are kept between sessions. **Analyze N clips** starts the analysis. Changing a detection setting after an analysis asks "Analyze again and discard your review?", because a new analysis replaces the decisions and the added areas.
+
+## Analyze
+
+Each clip card shows its progress, then "Analyzed" with its item count. **Pause**, **Resume** and **Stop** act on the work; a photo in Careful says "Stopping..." until its first pass ends. A dashed "FACE?" or "PLATE?" box marks an item the detectors are not sure about. A banner at the end says if the second look left places unchecked; a clip with frames that could not be checked cannot be exported as clean. Click an analysed card to open it in **Review**.
+
+## Review
+
+**View** switches between **Original**, **Anonymized**, **Split** and **Boxes** (every item outlined, dashed when left visible). Items are numbered from 1 in time order, as in the PDF report. A video has a timeline with one bar per item, striped for a **Not sure** item; a photo has a list.
+
+- **Next item to check** (`N`; `Shift+N` goes back) selects the next **Not sure** item that has no decision.
+- **Blur all doubtful** and **Keep all doubtful visible** decide every **Not sure** item of the clip, after a confirmation. **Only items to check** and **Only second-look finds** filter the list.
+- **Add missed area**: drag a box over what the detectors missed, then choose how long it lasts and whether it **Follows the camera** or **Stays in place**. It is blurred until you turn it off or remove it (`Delete` or `Backspace`, after asking; `Escape` stops drawing).
+
+The panel on the right shows the selected item: a crop, its reason in plain words, its **Certainty** (a dash for a plate band), the **Second look score** if the heavy model looked at it, and the switch **Blur this item** (`B`). `Space` plays or pauses, `.` and `,` select the next and previous item of any kind, and `Left` and `Right` move one frame, ten with `Shift`.
+
+## Export
+
+**Export** draws the blur from the analysis, without running the detectors again; each doubtful item with no decision of yours goes out as marked.
+
+- **Save to**: by default a folder named `anonymized` next to each original, created when missing.
+- **File name**: a pattern, `{name}_anonymized` by default; `{index}` and `{index:03d}` number the files. A name that exists gets `-2`: "Nothing is ever overwritten."
+- **Privacy reports**: **PDF**, **CSV** and **JSON**, next to the output. **Comparison video**: the original, unblurred, beside the result: "do not publish it".
+
+## Settings, languages and demo mode
+
+The settings are kept in `settings.json`, in `$XDG_CONFIG_HOME/anonymizer-studio/` or else `~/.config/anonymizer-studio/`: the **Import** controls, `language`, `default_destination` (for uploaded files, `~/Anonymizer`) and `threads`. The Studio speaks the seven interface languages: English, Spanish, French, German, Italian, Portuguese and Simplified Chinese. It follows your browser until you choose one with the language button, and the PDF report is in the language of the page. `--demo` starts it for shared use, with nothing saved; one program is one session.
+
+# docs/reference/command-line.md
+
+# Command line
+
+The command that starts the Studio, the scripts that fetch the detection models, and the environment variables the product reads. Every option below was run once against version 2.2.0.
+
+## `python3 -m anonymizer.ui`
+
+Starts the Studio, the local web application, on this computer only. `anonymizer-studio` is the same command, installed as a console script.
+
+```console
+$ python3 -m anonymizer.ui [--version] [--demo] [--port PORT] [--no-browser] [--models MODELS] [--engine {process,thread}]
+```
+
+| Option | Default | What it does |
+|---|---|---|
+| `--version` | | Prints `Anonymizer Studio 2.2.0` and ends with exit code 0. |
+| `--port PORT` | a free port | The port to listen on, from 0 to 65535; 0 takes a free one. |
+| `--no-browser` | off | Prints the address and does not open it in your browser, or in the optional window. |
+| `--models MODELS` | see below | The models folder. Without it: `ANONYMIZER_MODELS`, then `./models`, then the `models` folder of the source tree. |
+| `--engine {process,thread}` | `process` | `process` runs the engine in a worker process that can be killed, for Stop and the silence limit; `thread` is for tests. |
+| `--demo` | off | Demo mode, below. |
+| `-h`, `--help` | | Prints the options and ends. |
+
+It prints the address, `Anonymizer Studio: http://127.0.0.1:<port>/?t=<token>`, with a token that changes at every start, and the stopping rule. If no model file is where it will look, a third line on standard error says where it looked.
+
+It ends with exit code 0 on Ctrl+C, `SIGTERM` and `SIGHUP` (a closed terminal, `kill`), the idle stop and the end of its own window, and deletes its work folder in each case. It ends with exit code 2 when the port is taken or an option has a bad value. It listens on `127.0.0.1` only ([Privacy](../concepts/privacy.md)).
+
+**Demo mode** (`--demo`) shows the Studio without keeping anything: no settings file, files uploaded and not browsed, results as downloads. The limits are 10 photos, 10 clips in all, 20 seconds and 720p per video, and 100 MB per upload, and the deep level is refused. One process is one session: start one process for each person. Behind a reverse proxy that ends TLS, the proxy must send `Host: 127.0.0.1:<port>` to the Studio, and `X-Forwarded-Proto: https` makes the cookie `Secure`.
+
+## `scripts/fetch_models.py`
+
+Downloads the six detection models from GitHub and ModelScope and checks each against `models/SHA256SUMS`. This is the only network use of the product, and it happens once. It uses the standard library only.
+
+```console
+$ python3 scripts/fetch_models.py [--models MODELS] [--only NAME [NAME ...]]
+```
+
+| Option | Default | What it does |
+|---|---|---|
+| `--models MODELS` | the `models/` folder of the checkout | The folder for the `.onnx` files. After fetching into another folder, set `ANONYMIZER_MODELS` to it, or pass `--models` to the Studio. |
+| `--only NAME [NAME ...]` | every model | Fetch only these files. A name that is not in `SHA256SUMS` is refused. |
+| `-h`, `--help` | | Prints the options and ends. |
+
+A file that is already there and matches its SHA-256 is left alone, and a download that does not match is discarded. The script ends with 0 when every wanted model is there and matches, and with 1 when a download failed or did not match: it says which, and a second run fetches only the missing models.
+
+`scripts/fetch_reference_plate_model.py [--models MODELS]` downloads the v1 plate model that only `Options(plate_path="yolo")` and the benchmark's plate comparison need. The product does not ship it, because its licence is not settled ([Licence and credits](../licence-and-credits.md)); `--help` prints the usage without downloading anything.
+
+## Environment variables
+
+| Variable | Read by | What it does |
+|---|---|---|
+| `ANONYMIZER_MODELS` | the Python API, the Studio | The models folder, when `models_dir` and `--models` are not given. |
+| `XDG_CONFIG_HOME` | the Studio | The folder that holds `anonymizer-studio/settings.json`; `~/.config` when it is not set. |
+| `APPDATA` | the Studio on Windows | The folder that holds `AnonymizerStudio\settings.json`. |
+| `OPENCV_LOG_LEVEL` | OpenCV | `import anonymizer` sets it to `ERROR` unless you have set it. |
+| `DISPLAY`, `WAYLAND_DISPLAY` | the Studio | Whether there is a screen for the window or the browser. |
+| `PROGRAMFILES`, `LOCALAPPDATA` | the Studio on Windows | Where to look for Chrome or Edge, which print the PDF report. |
+
+# docs/reference/functions.md
+
+<!-- Generated by scripts/api_docs.py from the docstrings of the Python API and from src/anonymizer/ui/i18n/en.json. Edit the code, not this page. -->
+
+# Functions and constants
+
+The functions of the Python API that work on one file and keep nothing between calls, and the three constants that say which extensions are taken. [`anonymize_image`](#anonymize_image) and [`anonymize_video`](#anonymize_video) do everything in one call; [`media_info`](#media_info), [`frame_jpeg`](#frame_jpeg), [`thumbnail_jpeg`](#thumbnail_jpeg) and [`load_analysis`](#load_analysis) read; [`compare_video`](#compare_video) writes a video for checking; [`event_json`](#event_json) turns an event into JSON. Each call that analyses loads the models and frees them again, so for more than one file use [`Anonymizer`](anonymizer.md#anonymizer).
+
+## anonymize_image { #anonymize_image }
+
+```text
+anonymize_image(
+    source: str,
+    target: str,
+    options: Optional[Options] = None,
+    on_event: Optional[EventHandler] = None,
+) -> Result
+```
+
+Analyse and render a photo in one call, with the automatic decisions. Nothing is reviewed.
+
+It checks that `source` is a photo and that the folder of `target` exists, then does what
+`with Anonymizer(options) as anon: anon.render(anon.analyze(source), target)` does. It loads the models at every call:
+for many files, use one [`Anonymizer`](anonymizer.md#anonymizer). The photo keeps the **format of the original**, so give `target` its extension.
+With the default options the doubtful items that are not placed stay visible: read [`Result.visible_check`](data-types.md#result). It takes no
+[`CancelToken`](options.md#canceltoken).
+
+**Parameters**
+
+- `source` (`str`, required): The original photo.
+- `target` (`str`, required): Where to write the output. It must not exist, and its folder must.
+- `options` (`Optional[`[`Options`](options.md#options)`]`, default `None`): The [`Options`](options.md#options). None means the defaults.
+- `on_event` (`Optional[EventHandler]`, default `None`): A function that takes an [`Event`](data-types.md#event).
+
+**Returns:** The [`Result`](data-types.md#result).
+
+**Raises**
+
+- [`UnsupportedMedia`](errors.md#unsupportedmedia) (`error.media.unsupported`): `source` is not a photo, or it cannot be opened.
+- `FileNotFoundError` (builtin): The folder of `target` does not exist.
+- `NotADirectoryError` (builtin): The folder of `target` is a file.
+- [`OutputExists`](errors.md#outputexists) (`error.output.exists`): `target` exists. It is found after the analysis: test `os.path.exists(target)` first.
+- [`ModelLoadError`](errors.md#modelloaderror), [`IncompleteAnalysis`](errors.md#incompleteanalysis), [`AnonymizerError`](errors.md#anonymizererror) (`error.model.load`, `error.analysis.incomplete`, others): As for [`Anonymizer.analyze`](anonymizer.md#anonymizer-analyze) and [`Anonymizer.render`](anonymizer.md#anonymizer-render).
+
+**Example**
+
+```python
+import os
+
+import anonymizer
+
+os.makedirs("out", exist_ok=True)
+result = anonymizer.anonymize_image("demo/street-westminster.jpg", "out/westminster-oneshot.jpg")
+print(result.output, result.visible_check, result.warnings)  # out/westminster-oneshot.jpg 4 ['warning.review.check_left_visible']
+```
+
+**See also:** [`anonymize_video`](#anonymize_video), [`Anonymizer`](anonymizer.md#anonymizer), [`Result`](data-types.md#result)
+
+## anonymize_video { #anonymize_video }
+
+```text
+anonymize_video(
+    source: str,
+    target: str,
+    options: Optional[Options] = None,
+    on_event: Optional[EventHandler] = None,
+    cancel: Optional[CancelToken] = None,
+) -> Result
+```
+
+Analyse and render a video in one call, with the automatic decisions. Nothing is reviewed.
+
+It checks that `source` is a video and that the folder of `target` exists, then does what
+`with Anonymizer(options) as anon: anon.render(anon.analyze(source), target)` does. It loads the models at every call:
+for many files, use one [`Anonymizer`](anonymizer.md#anonymizer). With the default options the doubtful items that are not placed stay visible:
+read [`Result.visible_check`](data-types.md#result).
+
+**Parameters**
+
+- `source` (`str`, required): The original video.
+- `target` (`str`, required): Where to write the output, an MP4. It must not exist, and its folder must.
+- `options` (`Optional[`[`Options`](options.md#options)`]`, default `None`): The [`Options`](options.md#options). None means the defaults.
+- `on_event` (`Optional[EventHandler]`, default `None`): A function that takes an [`Event`](data-types.md#event); it gets the events of the analysis, then those of the render.
+- `cancel` (`Optional[`[`CancelToken`](options.md#canceltoken)`]`, default `None`): A [`CancelToken`](options.md#canceltoken).
+
+**Returns:** The [`Result`](data-types.md#result).
+
+**Raises**
+
+- [`UnsupportedMedia`](errors.md#unsupportedmedia) (`error.media.unsupported`): `source` is not a video, or it cannot be opened.
+- `FileNotFoundError` (builtin): The folder of `target` does not exist.
+- `NotADirectoryError` (builtin): The folder of `target` is a file.
+- [`OutputExists`](errors.md#outputexists) (`error.output.exists`): `target` exists. It is found after the analysis: test `os.path.exists(target)` first.
+- [`SourceChanged`](errors.md#sourcechanged), [`IncompleteAnalysis`](errors.md#incompleteanalysis), [`ModelLoadError`](errors.md#modelloaderror), [`Cancelled`](errors.md#cancelled) (`error.source.changed`, `error.analysis.incomplete`, `error.model.load`, `error.cancelled`): As for [`Anonymizer.analyze`](anonymizer.md#anonymizer-analyze) and [`Anonymizer.render`](anonymizer.md#anonymizer-render).
+
+**See also:** [`anonymize_image`](#anonymize_image), [`Anonymizer`](anonymizer.md#anonymizer)
+
+## compare_video { #compare_video }
+
+```text
+compare_video(
+    original: str,
+    anonymized: str,
+    target: str,
+    captions: Tuple[str, str] = ('Original', 'Anonymized'),
+    on_event: Optional[EventHandler] = None,
+    cancel: Optional[CancelToken] = None,
+) -> str
+```
+
+Write a video with the original on the left and the anonymised video on the right, for checking.
+
+**It shows the original, unblurred: never publish it.** The output is as long as the original, has its audio, and
+carries a caption over each side. The two videos must have the same size and length. [`Progress`](data-types.md#progress) events have the phase
+`"compare"`.
+
+**Parameters**
+
+- `original` (`str`, required): The original video.
+- `anonymized` (`str`, required): The anonymised video made from it.
+- `target` (`str`, required): Where to write the comparison video. It must not exist.
+- `captions` (`Tuple[str, str]`, default `('Original', 'Anonymized')`): Two non-empty ASCII texts, one for each side.
+- `on_event` (`Optional[EventHandler]`, default `None`): A function that takes an [`Event`](data-types.md#event).
+- `cancel` (`Optional[`[`CancelToken`](options.md#canceltoken)`]`, default `None`): A [`CancelToken`](options.md#canceltoken).
+
+**Returns:** `target`.
+
+**Raises**
+
+- [`UnsupportedMedia`](errors.md#unsupportedmedia) (`error.media.unsupported`): Either input is not a video.
+- [`AnonymizerError`](errors.md#anonymizererror) (`error.output.check_failed`): The two videos differ in size or length.
+- `ValueError` (builtin): The captions are not two non-empty ASCII texts.
+- [`OutputExists`](errors.md#outputexists) (`error.output.exists`): `target` exists.
+- `FileNotFoundError` (builtin): The folder of `target` does not exist.
+- [`Cancelled`](errors.md#cancelled) (`error.cancelled`): The job was cancelled.
+
+**See also:** [`anonymize_video`](#anonymize_video)
+
+## media_info { #media_info }
+
+```text
+media_info(path: str) -> MediaInfo
+```
+
+Read what a file is, without analysing it: size, length, codec, audio and location.
+
+Use it to check a file before the long work, or to see that a render removed the location.
+
+**Parameters**
+
+- `path` (`str`, required): A photo or a video. The kind is told from the extension.
+
+**Returns:** The [`MediaInfo`](data-types.md#mediainfo).
+
+**Raises**
+
+- [`UnsupportedMedia`](errors.md#unsupportedmedia) (`error.media.unsupported`): The extension is not supported, or the file is empty, damaged or cannot be opened.
+- `FileNotFoundError` (builtin): The file does not exist.
+
+**Example**
+
+```python
+import anonymizer
+
+info = anonymizer.media_info("demo/street-hongkong.mp4")
+print(info.width, info.height, info.fps, info.has_gps)  # 960 540 29.97002997002997 True
+```
+
+## frame_jpeg { #frame_jpeg }
+
+```text
+frame_jpeg(path: str, frame: int = 0, width: int = 960) -> bytes
+```
+
+One frame of a photo or video as it is, unblurred, as JPEG bytes.
+
+**Parameters**
+
+- `path` (`str`, required): A photo or a video.
+- `frame` (`int`, default `0`): The frame. A photo is frame 0.
+- `width` (`int`, default `960`): The most pixels wide the JPEG is; a smaller picture is not enlarged.
+
+**Returns:** The JPEG bytes.
+
+**Raises**
+
+- [`UnsupportedMedia`](errors.md#unsupportedmedia) (`error.media.unsupported`): The extension is not supported.
+- `ValueError` (builtin): The frame does not exist or could not be read.
+
+## thumbnail_jpeg { #thumbnail_jpeg }
+
+```text
+thumbnail_jpeg(path: str, width: int = 240) -> bytes
+```
+
+A small JPEG of a file, to show it in a list: the photo, or the frame at a tenth of a video's length.
+
+**Parameters**
+
+- `path` (`str`, required): A photo or a video.
+- `width` (`int`, default `240`): The most pixels wide the JPEG is.
+
+**Returns:** The JPEG bytes. A video whose frame at a tenth cannot be read gives its first frame.
+
+**Raises**
+
+- [`UnsupportedMedia`](errors.md#unsupportedmedia) (`error.media.unsupported`): The extension is not supported, the file cannot be opened, or no frame can be read.
+- `FileNotFoundError` (builtin): The file does not exist.
+
+## load_analysis { #load_analysis }
+
+```text
+load_analysis(path: str) -> Analysis
+```
+
+Read an analysis that [`Analysis.save`](anonymizer.md#analysis-save) wrote. Nothing is analysed, and the original is not opened.
+
+Whether the original is still there is found out by [`Anonymizer.render`](anonymizer.md#anonymizer-render) or [`Analysis.preview`](anonymizer.md#analysis-preview). A file edited by hand
+renders as edited.
+
+**Parameters**
+
+- `path` (`str`, required): The JSON file that [`Analysis.save`](anonymizer.md#analysis-save) wrote.
+
+**Returns:** The [`Analysis`](anonymizer.md#analysis), with its items, decisions and added areas.
+
+**Raises**
+
+- [`AnonymizerError`](errors.md#anonymizererror) (`error.analysis.version`): The file has another format version (it has been 3 since 2.1, so only older files are refused); `params["version"]` is the one found.
+- `FileNotFoundError` (builtin): There is no such file.
+- `json.JSONDecodeError` (builtin): The file is not JSON.
+- `KeyError` (builtin): The file claims the right version but lacks a field.
+
+**See also:** [`Analysis.save`](anonymizer.md#analysis-save), [`Anonymizer.render`](anonymizer.md#anonymizer-render)
+
+## event_json { #event_json }
+
+```text
+event_json(event: Event) -> dict
+```
+
+Turn an event into a JSON-ready dict, the message the Studio's page receives.
+
+The dict has `"type"` (such as `"job.finished"`), `"v"` (the message version, 1) and the event's fields. An [`ItemFound`](data-types.md#itemfound)
+carries its item as a plain dict.
+
+**Example**
+
+```python
+import json
+
+import anonymizer
+
+event = anonymizer.Finished("street.jpg", "done")
+print(json.dumps(anonymizer.event_json(event)))
+# {"type": "job.finished", "v": 1, "clip_id": "street.jpg", "status": "done"}
+```
+
+## PHOTO_EXTENSIONS { #photo_extensions }
+
+Constant, a tuple of strings.
+
+```text
+PHOTO_EXTENSIONS = (
+    '.jpg', '.jpeg', '.jfif', '.jpe', '.mpo', '.png', '.webp', '.bmp', '.tif', '.tiff', '.avif',
+)
+```
+
+Extensions the API takes as photos: a tuple of lower-case strings with the dot, such as `".jpg"` and `".avif"`. The kind of a file is told from its extension only, never from its content. Test with `os.path.splitext(name)[1].lower()`.
+
+## VIDEO_EXTENSIONS { #video_extensions }
+
+Constant, a tuple of strings.
+
+```text
+VIDEO_EXTENSIONS = (
+    '.mp4', '.mov', '.m4v', '.mkv', '.avi', '.webm', '.3gp', '.mts', '.m2ts', '.ts', '.m2t', '.wmv',
+    '.ogv', '.mpg', '.mpeg', '.flv',
+)
+```
+
+Extensions the API takes as videos: a tuple of lower-case strings with the dot, such as `".mp4"` and `".mkv"`. The kind of a file is told from its extension only. Videos are decoded by PyAV, which carries FFmpeg.
+
+## UNSUPPORTED_EXTENSIONS { #unsupported_extensions }
+
+Constant, a tuple of strings.
+
+```text
+UNSUPPORTED_EXTENSIONS = (
+    '.heic', '.heif', '.dng', '.cr2', '.cr3', '.nef', '.arw', '.raf', '.orf', '.rw2', '.gif',
+    '.jp2', '.j2k', '.psd', '.svg',
+)
+```
+
+Extensions that are known and refused: HEIC and HEIF, camera RAW, GIF, JPEG 2000, PSD and SVG. A tuple of lower-case strings with the dot. A file with one of them raises [`UnsupportedMedia`](errors.md#unsupportedmedia) at once and is never skipped silently, so that nobody believes it was blurred. Convert it to a supported format first.
+
+# docs/reference/anonymizer.md
+
+<!-- Generated by scripts/api_docs.py from the docstrings of the Python API and from src/anonymizer/ui/i18n/en.json. Edit the code, not this page. -->
+
+# Anonymizer and Analysis
+
+[`Anonymizer`](#anonymizer) finds faces and plates and writes the anonymised copies. It loads the detectors once, so it is the class to use for more than one file and for any review step. An [`Analysis`](#analysis) is what [`Anonymizer.analyze`](#anonymizer-analyze) found in one file, with the decisions made on it. [`Anonymizer.render`](#anonymizer-render) needs nothing else, so you can decide, save the analysis, and render later or elsewhere.
+
+## Anonymizer { #anonymizer }
+
+```text
+Anonymizer(
+    options: Optional[Options] = None,
+    *,
+    models_dir: Optional[str] = None,
+    threads: int = 0,
+    modules: Optional[Sequence[ClassModule]] = None,
+    persons: Optional[Callable] = None,
+    demo: bool = False,
+    calibration_ms: Optional[float] = None,
+    light_ms: Optional[float] = None,
+)
+```
+
+Finds faces and plates in photos and videos, and writes the anonymised copies. Detectors are loaded once.
+
+Make one, use it in a `with` block, and call [`analyze`](#anonymizer-analyze) and [`render`](#anonymizer-render) for each file: [`analyze`](#anonymizer-analyze) writes nothing, and
+[`render`](#anonymizer-render) writes the output without running a detector. The models load at the first call that needs them, from
+`models_dir`, else `ANONYMIZER_MODELS`, else `./models`, else the `models` folder next to the source tree, and are
+checked against that folder's `SHA256SUMS`.
+
+Each argument below is kept as an attribute of the same name; [`calibrate`](#anonymizer-calibrate) sets `calibration_ms`. An `Anonymizer` is not
+safe to share between threads: give each thread its own. [`analyze`](#anonymizer-analyze), [`render`](#anonymizer-render) and the event handlers run in the calling
+thread. [`CancelToken`](options.md#canceltoken) is the one object meant to be used from another thread.
+
+**Parameters**
+
+- `options` (`Optional[`[`Options`](options.md#options)`]`, default `None`): The [`Options`](options.md#options). None means the defaults. Kept as the attribute `options`; assign a new one between calls to change the settings read at render.
+- `models_dir` (`Optional[str]`, default `None`): The folder with the model files. None means the search above.
+- `threads` (`int`, default `0`): ONNX Runtime threads per model. 0 lets the runtime decide.
+- `modules` (`Optional[Sequence[ClassModule]]`, default `None`): Detectors of your own instead of the built-in ones, for tests; [`close`](#anonymizer-close) does not free them.
+- `persons` (`Optional[Callable]`, default `None`): A function that returns the persons in a BGR image, for tests. None means the built-in person finder.
+- `demo` (`bool`, default `False`): True refuses `detection="deep"` (code `error.demo.deep`), as the Studio's demo mode does.
+- `calibration_ms` (`Optional[float]`, default `None`): A stored time of one heavy call on this machine, in milliseconds, for [`estimate`](#anonymizer-estimate).
+- `light_ms` (`Optional[float]`, default `None`): A stored result of [`calibrate_light`](#anonymizer-calibrate_light): the time of the light first pass of a photo, in milliseconds.
+
+**Example**
+
+```python
+import os
+
+import anonymizer
+
+os.makedirs("out", exist_ok=True)
+with anonymizer.Anonymizer() as anon:
+    for path in ["demo/street-westminster.jpg", "demo/street-taipei.jpg"]:
+        analysis = anon.analyze(os.path.abspath(path))
+        result = anon.render(analysis, os.path.join("out", os.path.basename(path)))
+        print(path, len(analysis.items), "items,", result.visible_check, "doubtful left visible")
+```
+
+**See also:** [`Options`](options.md#options), [`Analysis`](#analysis), [`anonymize_image`](functions.md#anonymize_image)
+
+### `Anonymizer.close` { #anonymizer-close }
+
+```text
+close()
+```
+
+Free the detectors this [`Anonymizer`](#anonymizer) loaded. It can be used again: the models then load again.
+
+### `Anonymizer.modules` { #anonymizer-modules }
+
+```text
+modules() -> List[ClassModule]
+```
+
+The detectors in use, loading them now if this is the first call: a way to find a missing model early.
+
+**Returns:** The list of detectors.
+
+**Raises**
+
+- [`ModelLoadError`](errors.md#modelloaderror) (`error.model.load`): A model file is missing, not listed in `SHA256SUMS`, changed, or its runtime failed.
+
+### `Anonymizer.calibrate` { #anonymizer-calibrate }
+
+```text
+calibrate() -> float
+```
+
+Time one call of the heavy model on this machine, keep it for [`estimate`](#anonymizer-estimate), and return it.
+
+The median of three runs on a 640 pixel picture, stored in `calibration_ms`. It loads the models.
+
+**Returns:** The time in milliseconds.
+
+**Raises**
+
+- [`ModelLoadError`](errors.md#modelloaderror) (`error.model.load`): No detector in use has a heavy model (always the case with `detection="fast"`).
+
+### `Anonymizer.calibrate_light` { #anonymizer-calibrate_light }
+
+```text
+calibrate_light(width: int, height: int) -> float
+```
+
+Time the light first pass of a photo of this size on this machine, keep it, and return it.
+
+It loads the models. `light_ms`, when set, replaces it for every size.
+
+**Parameters**
+
+- `width` (`int`, required): The photo's width in pixels.
+- `height` (`int`, required): The photo's height in pixels.
+
+**Returns:** The time in milliseconds.
+
+### `Anonymizer.estimate` { #anonymizer-estimate }
+
+```text
+estimate(path: str) -> Estimate
+```
+
+What analysing a file is expected to cost with the options in force.
+
+It may time this machine first ([`calibrate`](#anonymizer-calibrate), [`calibrate_light`](#anonymizer-calibrate_light)), and so load the models. A video's estimate counts only
+the heavy calls of its key frames.
+
+**Parameters**
+
+- `path` (`str`, required): A photo or a video.
+
+**Returns:** The [`Estimate`](data-types.md#estimate).
+
+**Raises**
+
+- [`UnsupportedMedia`](errors.md#unsupportedmedia) (`error.media.unsupported`): The extension is not supported or the file cannot be opened.
+- [`AnonymizerError`](errors.md#anonymizererror): The file is not there (`error.source.missing`), a picture is over the deep level's tile limit (`error.deep.too_large`), a clip over its work limit (`error.deep.too_much_work`), or the deep level is asked for in demo mode (`error.demo.deep`).
+- [`ModelLoadError`](errors.md#modelloaderror) (`error.model.load`): A model could not be loaded, or no detector in use has the heavy model the estimate needs.
+
+### `Anonymizer.analyze` { #anonymizer-analyze }
+
+```text
+analyze(
+    path: str,
+    on_event: Optional[EventHandler] = None,
+    cancel: Optional[CancelToken] = None,
+) -> Analysis
+```
+
+Find the faces and plates in a photo or a video. Nothing is written, and the file is only read.
+
+It checks the file before it loads the models at their first use. A photo's first pass cannot be broken off: a cancel
+is honoured only between the heavy calls of the second look.
+
+**Parameters**
+
+- `path` (`str`, required): A photo or a video. Use an absolute path if the analysis will be saved and loaded from another folder.
+- `on_event` (`Optional[EventHandler]`, default `None`): A function that takes an [`Event`](data-types.md#event). It runs in this thread, and an exception in it stops the call.
+- `cancel` (`Optional[`[`CancelToken`](options.md#canceltoken)`]`, default `None`): A [`CancelToken`](options.md#canceltoken).
+
+**Returns:** The [`Analysis`](#analysis).
+
+**Raises**
+
+- [`UnsupportedMedia`](errors.md#unsupportedmedia): The extension is not supported or the file cannot be opened (`error.media.unsupported`), a video stops decoding partway (`error.media.damaged`), or a photo holds several images (`error.photo.several_images`).
+- [`AnonymizerError`](errors.md#anonymizererror): The file is not there (`error.source.missing`), or a deep or demo code of [`Anonymizer.estimate`](#anonymizer-estimate).
+- [`ModelLoadError`](errors.md#modelloaderror) (`error.model.load`): A model could not be loaded.
+- [`IncompleteAnalysis`](errors.md#incompleteanalysis) (`error.analysis.incomplete`): A photo's model run or the person finder failed.
+- [`Cancelled`](errors.md#cancelled) (`error.cancelled`): The job was cancelled.
+
+### `Anonymizer.render` { #anonymizer-render }
+
+```text
+render(
+    analysis: Analysis,
+    target: str,
+    on_event: Optional[EventHandler] = None,
+    cancel: Optional[CancelToken] = None,
+) -> Result
+```
+
+Write the anonymised file from an analysis and its decisions. No detector runs.
+
+It checks that `target` does not exist, that its folder does and that the original is the file that was analysed, then
+writes a hidden partial file, checks it and renames it to `target` when it is whole; if anything fails, nothing is left
+under that name. A photo keeps the **format of the original** whatever the name of `target` says, and a video is an MP4
+(the reference page "Files written" has what each keeps). Doubtful items left visible are counted in
+[`Result.visible_check`](data-types.md#result).
+
+**Parameters**
+
+- `analysis` ([`Analysis`](#analysis), required): An [`Analysis`](#analysis) from [`analyze`](#anonymizer-analyze) or [`load_analysis`](functions.md#load_analysis). A relative [`Analysis.source`](#analysis) is looked for from the current folder.
+- `target` (`str`, required): Where to write the output. It must not exist, and its folder must.
+- `on_event` (`Optional[EventHandler]`, default `None`): A function that takes an [`Event`](data-types.md#event).
+- `cancel` (`Optional[`[`CancelToken`](options.md#canceltoken)`]`, default `None`): A [`CancelToken`](options.md#canceltoken).
+
+**Returns:** The [`Result`](data-types.md#result).
+
+**Raises**
+
+- [`OutputExists`](errors.md#outputexists) (`error.output.exists`): `target` exists, or appeared while writing.
+- `FileNotFoundError` (builtin): The folder of `target` does not exist, or a loaded analysis's relative source is not found.
+- `NotADirectoryError` (builtin): The folder of `target` is a file.
+- [`SourceChanged`](errors.md#sourcechanged) (`error.source.changed`): The original differs from the one analysed.
+- [`IncompleteAnalysis`](errors.md#incompleteanalysis) (`error.analysis.incomplete`): A video has [`Analysis.unchecked_frames`](#analysis-unchecked_frames).
+- [`UnsupportedMedia`](errors.md#unsupportedmedia): The original stopped decoding partway (`error.media.damaged`).
+- [`AnonymizerError`](errors.md#anonymizererror): A written file failed its final check and was discarded (`error.output.check_failed`, `error.photo.metadata_not_removed`, `error.photo.gps_not_removed`), or a photo does not fit in free memory (`error.photo.not_enough_memory`).
+- [`Cancelled`](errors.md#cancelled) (`error.cancelled`): The job was cancelled.
+
+## Analysis { #analysis }
+
+What [`Anonymizer.analyze`](#anonymizer-analyze) found in one file, with the decisions made on it.
+
+It holds the items, the decisions, the added areas and what [`Anonymizer.render`](#anonymizer-render) needs, so no detector runs again.
+[`Anonymizer.analyze`](#anonymizer-analyze) and [`load_analysis`](functions.md#load_analysis) return it. Decide with [`set_blur`](#analysis-set_blur), [`add_area`](#analysis-add_area) and [`remove_area`](#analysis-remove_area), look with
+[`preview`](#analysis-preview) and [`boxes`](#analysis-boxes), and keep it with [`save`](#analysis-save). Calling `analyze` again makes a new analysis without your decisions.
+
+**Attributes**
+
+- `source`: The path of the original **as you gave it to `analyze`**. A relative one is resolved against the current folder, so analyse an absolute path when the analysis will be loaded from somewhere else.
+- `media`: `"photo"` or `"video"`.
+- `fingerprint`: The original's size, modification time and a hash of its content, which `render` compares.
+- `frames`: The exact number of frames the decoder gave. 1 for a photo.
+- `fps`: The frame rate. 0.0 for a photo.
+- `width`: The width in pixels, as displayed.
+- `height`: The height in pixels, as displayed.
+- `options`: What the analysis was made with (see [`Report.options`](data-types.md#report)).
+- `second`: The second look's counts: `zones_visited`, `zones_skipped`, `confirmed`, `added`, `vehicles_too_small` (vehicles under the text path's minimum size, never searched), `bands_added` and `band_area_share`. All 0 on a video at `detection="fast"`. On a photo at Fast, `zones_visited`, `zones_skipped` and `vehicles_too_small` count the vehicles the text path looked into, left out or found too small, and the others are 0.
+
+**Example**
+
+```python
+import os
+
+import anonymizer
+
+os.makedirs("out", exist_ok=True)
+with anonymizer.Anonymizer() as anon:
+    analysis = anon.analyze(os.path.abspath("demo/street-westminster.jpg"))
+    for item in analysis.items:
+        if item.verdict == "check":
+            analysis.set_blur(item.item_id, True)  # blur every doubtful item
+    analysis.save("out/westminster.analysis.json")
+    result = anon.render(analysis, "out/westminster-checked.jpg")
+print(result.visible_check)  # 0
+```
+
+**See also:** [`Anonymizer`](#anonymizer), [`load_analysis`](functions.md#load_analysis), [`Item`](data-types.md#item)
+
+### `Analysis.items` { #analysis-items }
+
+Property of type `List[`[`Item`](data-types.md#item)`]`.
+
+Every item, in order of appearance (by first frame, then by number). A list that is built at each access.
+
+### `Analysis.unchecked_frames` { #analysis-unchecked_frames }
+
+Property of type `List[int]`.
+
+The frames of a video on which a detector failed. `render` refuses a video that has any.
+
+Always empty for a photo, whose failed model run already raised [`IncompleteAnalysis`](errors.md#incompleteanalysis) at `analyze`.
+
+### `Analysis.item` { #analysis-item }
+
+```text
+item(item_id: int) -> Item
+```
+
+The item with this number, itself and not a copy.
+
+**Parameters**
+
+- `item_id` (`int`, required): An [`Item.item_id`](data-types.md#item) of this analysis.
+
+**Returns:** The [`Item`](data-types.md#item).
+
+**Raises**
+
+- `KeyError` (builtin): The analysis has no such item.
+
+### `Analysis.thumbnail` { #analysis-thumbnail }
+
+```text
+thumbnail(item_id: int)
+```
+
+A small crop of an item, to show it to a person, as a numpy array in BGR order.
+
+**Parameters**
+
+- `item_id` (`int`, required): An [`Item.item_id`](data-types.md#item) of this analysis.
+
+**Returns:** The crop, or None for an added area, an item without a saved crop, or an unknown item.
+
+### `Analysis.thumbnail_jpeg` { #analysis-thumbnail_jpeg }
+
+```text
+thumbnail_jpeg(item_id: int) -> Optional[bytes]
+```
+
+[`thumbnail`](#analysis-thumbnail) as JPEG bytes, or None when the item has no crop.
+
+**Parameters**
+
+- `item_id` (`int`, required): An [`Item.item_id`](data-types.md#item) of this analysis.
+
+**Returns:** The JPEG bytes, or None.
+
+### `Analysis.boxes` { #analysis-boxes }
+
+```text
+boxes(
+    frame_from: int,
+    frame_to: int,
+    options: Optional[Options] = None,
+    only_blurred: bool = True,
+) -> Dict[int, List[BoxInfo]]
+```
+
+The final boxes of a span of frames, margins included, as `render` would blur them. No detector runs.
+
+**Parameters**
+
+- `frame_from` (`int`, required): The first frame.
+- `frame_to` (`int`, required): The last frame, from `frame_from` to `frames - 1`.
+- `options` (`Optional[`[`Options`](options.md#options)`]`, default `None`): The settings to take the margins and gap filling from. None means [`Options()`](options.md#options), **not** the options of your [`Anonymizer`](#anonymizer): pass those if you changed `extra_margin`, `gap_fill` or `fit`.
+- `only_blurred` (`bool`, default `True`): True lists only the blurred items; False lists the ones left visible too.
+
+**Returns:** A dict that maps each frame number to a list of [`BoxInfo`](data-types.md#boxinfo). A photo has the one key 0.
+
+**Raises**
+
+- `ValueError` (builtin): The frames are out of range, or `frame_from` is after `frame_to`.
+
+**Example**
+
+```python
+import anonymizer
+
+with anonymizer.Anonymizer() as anon:
+    analysis = anon.analyze("demo/street-westminster.jpg")
+    for box in analysis.boxes(0, 0, only_blurred=False)[0]:
+        print(box.item_id, box.kind, [round(v, 1) for v in box.box], box.blur)  # first line: 0 face [191.4, 335.2, 202.9, 351.7] True
+```
+
+### `Analysis.preview` { #analysis-preview }
+
+```text
+preview(
+    frame: int,
+    view: str = 'anonymized',
+    width: int = 960,
+    options: Optional[Options] = None,
+) -> bytes
+```
+
+One frame as JPEG bytes, with the current decisions drawn on it. No detector runs.
+
+**Parameters**
+
+- `frame` (`int`, required): The frame.
+- `view` (`str`, default `'anonymized'`): `"anonymized"` (the blur of the current decisions), `"original"`, `"boxes"` (every item outlined, dashed when it is left visible) or `"split"` (the original on the left, the anonymised frame on the right).
+- `width` (`int`, default `960`): The most pixels wide the JPEG is.
+- `options` (`Optional[`[`Options`](options.md#options)`]`, default `None`): The blur settings to draw with. None means [`Options()`](options.md#options), **not** the options of your [`Anonymizer`](#anonymizer).
+
+**Returns:** The JPEG bytes.
+
+**Raises**
+
+- `ValueError` (builtin): `view` is not one of the four names, or the frame is out of range or could not be read.
+- [`SourceChanged`](errors.md#sourcechanged) (`error.source.changed`): The original changed after the analysis.
+- `FileNotFoundError` (builtin): The original is not found from the current folder (a loaded analysis whose [`source`](#analysis) is relative).
+
+### `Analysis.report` { #analysis-report }
+
+```text
+report(clip: Optional[str] = None) -> Report
+```
+
+The privacy report of the current decisions, as [`Anonymizer.render`](#anonymizer-render) would return it.
+
+It is built at each call. `clip` is the name to put in the `clip` column of every row; None means the original's base
+name.
+
+### `Analysis.set_blur` { #analysis-set_blur }
+
+```text
+set_blur(item_id: int, blur: bool)
+```
+
+Decide an item: `blur` True blurs it, False leaves it visible.
+
+The item then counts as a person's decision (`decided_by` becomes `"person"`), and the report records it. Verdicts,
+reasons and scores do not change. Raises `KeyError` when the analysis has no item with that number.
+
+### `Analysis.summary` { #analysis-summary }
+
+```text
+summary() -> dict
+```
+
+The dict that [`Report.summary`](data-types.md#report-summary) returns for the current decisions, with the second look's counts.
+
+### `Analysis.add_area` { #analysis-add_area }
+
+```text
+add_area(
+    frame_from: int,
+    frame_to: int,
+    box: Tuple[float, float, float, float],
+    follow: str = 'camera',
+) -> Item
+```
+
+Blur an area the detectors missed.
+
+The new item has kind `"manual"`, verdict `"blur"`, reason `manual.reason.added`, `decided_by` `"person"`, and the
+number after the highest one in use.
+
+**Parameters**
+
+- `frame_from` (`int`, required): The first frame the area is on.
+- `frame_to` (`int`, required): The last frame; in a video the area is carried from `frame_from` to here.
+- `box` (`Tuple[float, float, float, float]`, required): `(x0, y0, x1, y1)` as the thing appears at `frame_from`. Only the part inside the picture is kept.
+- `follow` (`str`, default `'camera'`): `"camera"` carries the area with the camera's motion, and stays put at a change of shot until the new shot moves; `"fixed"` keeps it still. These are not the `gap_fill` names.
+
+**Returns:** The new [`Item`](data-types.md#item).
+
+**Raises**
+
+- `ValueError` (builtin): The box is not finite, under a pixel or outside the picture, or `follow` or a frame is not valid.
+
+### `Analysis.remove_area` { #analysis-remove_area }
+
+```text
+remove_area(item_id: int)
+```
+
+Remove an area added with [`add_area`](#analysis-add_area); a detected item is turned off with [`set_blur`](#analysis-set_blur) instead.
+
+**Parameters**
+
+- `item_id` (`int`, required): The number of an added area.
+
+**Raises**
+
+- `KeyError` (builtin): The item is not an added area.
+
+### `Analysis.save` { #analysis-save }
+
+```text
+save(path: str)
+```
+
+Write the analysis, its decisions and its thumbnails, so that [`load_analysis`](functions.md#load_analysis) can read them back.
+
+It replaces an existing file, and writes the item crops to a folder beside it: the path without `.json`, plus `.thumbs`.
+
+**Parameters**
+
+- `path` (`str`, required): Where to write the JSON. The folder must exist.
+
+**Raises**
+
+- `OSError` (builtin): The file or the folder cannot be written.
+
+# docs/reference/options.md
+
+<!-- Generated by scripts/api_docs.py from the docstrings of the Python API and from src/anonymizer/ui/i18n/en.json. Edit the code, not this page. -->
+
+# Options and CancelToken
+
+[`Options`](#options) holds the settings of an analysis and of a render. Its defaults are the behaviour of the Studio. [`CancelToken`](#canceltoken) stops, pauses and resumes a running job from another thread.
+
+## Options { #options }
+
+Frozen dataclass. What to look for, how hard to look, and how to hide what is found.
+
+`Options()` is the default behaviour of the Python API and of the Studio. It is a frozen dataclass: each field is checked
+when it is made, and you change one by making a copy with `dataclasses.replace`.
+
+**Which fields act when.** `faces`, `plates`, `detection`, `plate_path`, `vehicle_model`, `plate_band` and `fit` are
+read once, when an [`Anonymizer`](anonymizer.md#anonymizer) loads its detectors: make a new [`Anonymizer`](anonymizer.md#anonymizer) to change them. `thoroughness`, `unsure`,
+`max_zones`, `heavy_only` and `gap_fill` are read by each `analyze`. `blur`, `strength`, `extra_margin`, `remove_gps`,
+`gap_fill` and the soft edge of `fit` are read by each `render`, `preview` and `boxes`, so you can assign a new
+`Options` to `Anonymizer.options` between an analysis and its render.
+
+"The 2.1 settings" are `Options(unsure="blur", fit="loose", plate_band=True)`, and "the v1 settings"
+`Options(detection="fast", unsure="keep", fit="loose")`.
+
+**Attributes**
+
+- `faces` (`bool`, default `True`): Look for faces. A class left out is not blurred, and only the JSON report says it was not searched.
+- `plates` (`bool`, default `True`): Look for licence plates. At least one of `faces` and `plates` must be True.
+- `thoroughness` (`str`, default `'standard'`): `"standard"` (every second frame of a video) or `"maximum"` (every frame, at a larger size): slower, not repeatable bit for bit, no better in the measurements, and not in the Studio.
+- `gap_fill` (`str`, default `'camera'`): `"camera"`, `"straight"` or `"hold"`, for videos: how a box is placed on the frames between two detections. `"camera"` follows the camera's estimated motion and stops at a change of shot, `"straight"` draws a line between the two boxes, `"hold"` keeps the last box.
+- `blur` (`str`, default `'gaussian'`): `"gaussian"` (blocks about the size of a character, then smoothed), `"pixelate"` (large blocks cut from the blurred content) or `"solid"` (the average colour). None of them can be undone.
+- `strength` (`float`, default `1.0`): From 1.0 to 2.0; a larger value blurs more. 1.0 is the floor, the weakest strength at which the tests for residual detail pass.
+- `extra_margin` (`float`, default `0.0`): From 0.0 to 0.5: added to every margin, as a fraction of the box on each side.
+- `remove_gps` (`bool`, default `True`): Photos: True drops the GPS block. Other metadata is dropped in every case, and a video never carries the container's metadata.
+- `detection` (`str`, default `'careful'`): `"fast"` (the light models only), `"careful"` (adds the second look with the heavy model) or `"deep"` (the heavy model over the whole picture in tiles: experimental, refused over its work limit and in demo mode).
+- `heavy_only` (`bool`, default `False`): Deep only: leave the light models' items out of the result.
+- `unsure` (`str`, default `'placed'`): What happens to a doubtful item before anyone decides: `"placed"` blurs it only when it is placed like a plate or a face, `"blur"` blurs them all (2.1), `"keep"` leaves them all visible (v1).
+- `max_zones` (`Optional[int]`, default `None`): The most zones the second look visits in one photo: None for the built-in cap of 30, 0 for no heavy call. Zones beyond it keep the first pass's result and are counted in `Analysis.second["zones_skipped"]`.
+- `plate_path` (`str`, default `'text'`): `"text"` (a vehicle detector, a text detector inside each vehicle, and a plate reader) or `"yolo"` (the v1 plate model, kept for comparison; its weights are not shipped, so it raises [`ModelLoadError`](errors.md#modelloaderror)).
+- `vehicle_model` (`str`, default `'rfdetr'`): The vehicle detector of the text path: `"rfdetr"` (RF-DETR nano) or `"yolox"` (YOLOX-nano).
+- `plate_band` (`Optional[bool]`, default `None`): Photos: True also blurs where a plate usually sits on a vehicle narrower than 400 pixels with no text found there. Off, because in 2.1 it blurred bare walls and car sides. Needs `plate_path="text"`.
+- `fit` (`str`, default `'tight'`): `"tight"` (small margins and a soft edge close to the box) or `"loose"` (the 2.1 margins and a wide soft edge).
+
+**Raises**
+
+- `ValueError` (builtin): A field has a value it does not accept, or two fields do not go together. The message names the field.
+
+**Example**
+
+```python
+from dataclasses import replace
+
+import anonymizer
+
+v1 = anonymizer.Options(detection="fast", unsure="keep", fit="loose")
+print(replace(v1, blur="pixelate", strength=1.5).kinds())  # ['face', 'plate']
+```
+
+**See also:** [`Anonymizer`](anonymizer.md#anonymizer), [`Item`](data-types.md#item)
+
+### `Options.profile` { #options-profile }
+
+Property of type `dict`.
+
+The numbers of the soft edge that [`fit`](#options) selects, as a dict. The engine reads it; you rarely need it.
+
+### `Options.kinds` { #options-kinds }
+
+```text
+kinds() -> List[str]
+```
+
+The classes to look for, in detection order: `"face"` and `"plate"`, less the one whose option is False.
+
+## CancelToken { #canceltoken }
+
+```text
+CancelToken()
+```
+
+A request to stop a running job, to pause it, and to continue it. Safe to use from another thread.
+
+Pass it as `cancel=` and call [`cancel()`](#canceltoken-cancel) from any thread: a video stops within a frame or two, the call raises
+[`Cancelled`](errors.md#cancelled), and nothing is written. A token stays cancelled, so make a new one for each job. A photo's first pass
+cannot be broken off, and [`anonymize_image`](functions.md#anonymize_image) takes no token.
+
+**Example**
+
+```python
+import threading
+
+import anonymizer
+
+token = anonymizer.CancelToken()
+threading.Timer(1.0, token.cancel).start()
+with anonymizer.Anonymizer() as anon:
+    try:
+        anon.analyze("examples/data/street-madrid-5s.mp4", cancel=token)
+    except anonymizer.Cancelled:
+        print("stopped", token.cancelled)  # stopped True
+```
+
+**See also:** [`Cancelled`](errors.md#cancelled), [`Finished`](data-types.md#finished)
+
+### `CancelToken.cancel` { #canceltoken-cancel }
+
+```text
+cancel()
+```
+
+Ask the job that holds this token to stop, and release it if it is paused. It does not wait.
+
+### `CancelToken.cancelled` { #canceltoken-cancelled }
+
+Property of type `bool`.
+
+Whether [`cancel()`](#canceltoken-cancel) has been called. Once True it stays True.
+
+### `CancelToken.pause` { #canceltoken-pause }
+
+```text
+pause()
+```
+
+Hold the job after the current frame, until [`resume()`](#canceltoken-resume) or [`cancel()`](#canceltoken-cancel). Nothing done so far is lost.
+
+### `CancelToken.resume` { #canceltoken-resume }
+
+```text
+resume()
+```
+
+Let a paused job go on. It does nothing when the job is not paused.
+
+### `CancelToken.paused` { #canceltoken-paused }
+
+Property of type `bool`.
+
+Whether the job is held by [`pause()`](#canceltoken-pause) and not yet released by [`resume()`](#canceltoken-resume).
+
+# docs/reference/data-types.md
+
+<!-- Generated by scripts/api_docs.py from the docstrings of the Python API and from src/anonymizer/ui/i18n/en.json. Edit the code, not this page. -->
+
+# Data types and events
+
+The plain dataclasses the API returns: the items of an analysis, the privacy report and the result of a render, the boxes, the facts about a file and the cost estimate; then the events that `analyze`, `render` and [`compare_video`](functions.md#compare_video) send to an `on_event` function while they run. They hold data and have no behaviour beyond what is listed. Use `dataclasses.asdict` to turn any of them into a dict.
+
+## Item { #item }
+
+Dataclass. One thing the analysis found in a file, or an area a person added: a face, a plate or an added area.
+
+[`Analysis.items`](anonymizer.md#analysis-items) lists them. Decide through [`Analysis.set_blur`](anonymizer.md#analysis-set_blur) and [`Analysis.add_area`](anonymizer.md#analysis-add_area), which also record that a person
+decided. In a video an item spans frames and its box moves; [`Analysis.boxes`](anonymizer.md#analysis-boxes) gives the boxes frame by frame.
+
+**Attributes**
+
+- `item_id` (`int`, required): The engine's number of the item, stable for the analysis. It can skip numbers; the Studio and the PDF report number the items 1 to n in time order instead.
+- `kind` (`str`, required): `"face"`, `"plate"` or `"manual"` (an added area).
+- `verdict` (`str`, required): `"blur"` when the detectors are sure, `"check"` when they are not (a doubtful item; **Not sure** in the Studio).
+- `reason` (`str`, required): The key of the sentence that says why, such as `plate.reason.vehicle_text`. The reference page "Errors and codes" lists every key with the Studio's English sentence.
+- `first_frame` (`int`, required): The first frame of the item; 0 for a photo. Divide by [`Analysis.fps`](anonymizer.md#analysis) for seconds.
+- `last_frame` (`int`, required): The last frame of the item; 0 for a photo.
+- `max_score` (`float`, required): The best certainty any detector gave, rounded to 3 places; 1.0, and not a certainty, for an added area and a plate band.
+- `blur` (`bool`, required): Whether the item is blurred in the output.
+- `params` (`dict`, default `{}`): The numbers behind the verdict, such as `score` and `placed`; plates found by text also carry `plate_like`, `read_conf` and `read_digits`. The keys depend on the module that judged it: use `params.get`.
+- `found_by` (`str`, default `'light'`): `"light"` (the first pass), `"second"` (the second look), `"deep"` or `"manual"`.
+- `second_score` (`Optional[float]`, default `None`): The heavy model's score when the second look checked this item, otherwise None.
+- `decided_by` (`str`, default `'engine'`): `"engine"`, or `"person"` once a person decided it or added it.
+
+**See also:** [`Analysis`](anonymizer.md#analysis), [`ReportRow`](#reportrow)
+
+## BoxInfo { #boxinfo }
+
+Dataclass. A box on one frame, margins included: where an item is blurred, or would be.
+
+[`Analysis.boxes`](anonymizer.md#analysis-boxes) returns them. The coordinates are in pixels of the original (a video's can be numpy floats: use
+`float()` before writing JSON).
+
+**Attributes**
+
+- `item_id` (`int`, required): The item the box belongs to.
+- `kind` (`str`, required): `"face"`, `"plate"` or `"manual"`.
+- `box` (`Tuple[float, float, float, float]`, required): `(x0, y0, x1, y1)` in pixels: a video's rounded to 1 place, a photo's as the engine computed them.
+- `shape` (`str`, required): `"ellipse"` for a face, `"rect"` for a plate and for an added area.
+- `blur` (`bool`, required): Whether the item is blurred in the output.
+
+**See also:** [`Analysis.boxes`](anonymizer.md#analysis-boxes)
+
+## MediaInfo { #mediainfo }
+
+Dataclass. What a file is, read from its header without analysing it. [`media_info`](functions.md#media_info) returns it.
+
+**Attributes**
+
+- `media` (`str`, required): `"photo"` or `"video"`, from the extension.
+- `width` (`int`, required): The width in pixels, as displayed (a photo's orientation is applied).
+- `height` (`int`, required): The height in pixels, as displayed.
+- `frames` (`int`, required): 1 for a photo; for a video the container's count, which can differ by one from [`Analysis.frames`](anonymizer.md#analysis).
+- `fps` (`float`, required): The frame rate. 0.0 for a photo.
+- `duration_s` (`float`, required): The length in seconds. 0.0 for a photo.
+- `codec` (`str`, required): A photo's format name in lower case, such as `jpeg`; a video's codec, such as `h264`.
+- `has_audio` (`bool`, required): Whether the file has an audio track.
+- `has_gps` (`bool`, required): Whether the file carries a location (a photo's GPS block, a video's location key).
+- `size_bytes` (`int`, required): The file's size in bytes.
+
+## Estimate { #estimate }
+
+Dataclass. What [`Anonymizer.estimate`](anonymizer.md#anonymizer-estimate) expects an analysis to cost, with the options in force.
+
+A guess from timings of this machine. It does not cover the light pass of a video, and under load the real time can be
+several times the estimate.
+
+**Attributes**
+
+- `seconds` (`float`, required): Seconds of work expected: the light pass of a photo plus the heavy model's calls; for a video only the heavy calls (0.0 with `detection="fast"`).
+- `zones_expected` (`int`, required): For a photo, the zones the second look is expected to visit; for a video, the heavy calls it may make or the whole-frame sweeps of the deep level.
+- `tiles` (`int`, required): The full-resolution tiles of a deep sweep. 0 at the other levels.
+
+## Result { #result }
+
+Dataclass. What [`Anonymizer.render`](anonymizer.md#anonymizer-render), [`anonymize_image`](functions.md#anonymize_image) and [`anonymize_video`](functions.md#anonymize_video) return.
+
+Always read `warnings` and `visible_check`. With the default settings, doubtful items that are not placed like a plate
+or a face stay visible, and the call still succeeds: `demo/street-taipei.jpg` comes out with nothing blurred, and only
+these two fields say so.
+
+**Attributes**
+
+- `output` (`str`, required): The path of the output, as you gave it.
+- `report` ([`Report`](#report), required): The [`Report`](#report) of the analysis as it was rendered.
+- `warnings` (`List[str]`, required): The warning codes of the render, then `warning.review.check_left_visible` when doubtful items stay visible.
+- `seconds` (`float`, required): How long the render took, rounded to 2 places.
+- `visible_check` (`int`, default `0`): How many doubtful items stay visible in this output.
+
+## Report { #report }
+
+Dataclass. The privacy report: one row for each item, the items left visible and the added areas included.
+
+[`Result.report`](#result) and [`Analysis.report`](anonymizer.md#analysis-report) give one. **It does not say what the detectors missed**, and the PDF and CSV
+reports do not say which classes were searched; the JSON report's `options` does.
+
+**Attributes**
+
+- `rows` (`List[`[`ReportRow`](#reportrow)`]`, required): The [`ReportRow`](#reportrow) list, in time order.
+- `options` (`dict`, default `{}`): What the analysis was made with: `faces`, `plates`, `thoroughness`, `detection` (asked for), `detection_ran` (what ran), `heavy_only`, `unsure`, `max_zones`, `plate_path`, `vehicle_model`, `plate_band`, and `models`, the name and SHA-256 of each heavy or text model loaded. Not the blur settings.
+- `second` (`dict`, default `{}`): The second look's counts (see [`Analysis.second`](anonymizer.md#analysis)).
+
+**See also:** [`ReportRow`](#reportrow), [`Result`](#result)
+
+### `Report.summary` { #report-summary }
+
+```text
+summary() -> dict
+```
+
+Count what happened to the items, and what the second look did.
+
+**Returns:** A dict: `items` (the rows) and `blurred`; for the doubtful items, `doubtful`, `blurred_by_default` (no person touched it), `confirmed_by_person`, `turned_off_by_person` and `left_visible_by_default`; then the keys of [`second`](#report).
+
+### `Report.to_csv` { #report-to_csv }
+
+```text
+to_csv(path: str)
+```
+
+Write the rows as a CSV file with a header line. An existing file at `path` is replaced.
+
+The file is UTF-8 with a byte-order mark (read it with `encoding="utf-8-sig"`), and a text that starts like a formula
+gets a `'` in front. The reference page "Files written" has the whole format.
+
+**Parameters**
+
+- `path` (`str`, required): Where to write the file. The folder must exist.
+
+**Raises**
+
+- `OSError` (builtin): The file cannot be written.
+
+### `Report.to_json` { #report-to_json }
+
+```text
+to_json(path: str)
+```
+
+Write the report as a JSON file. An existing file at `path` is replaced.
+
+The file is an object with `"version"` (2: the version of the report file), `"options"`, `"summary"` (what [`summary`](#report-summary)
+returns) and `"items"` (one object per row, with the keys of [`ReportRow`](#reportrow)).
+
+**Parameters**
+
+- `path` (`str`, required): Where to write the file. The folder must exist.
+
+**Raises**
+
+- `OSError` (builtin): The file cannot be written.
+
+## ReportRow { #reportrow }
+
+Dataclass. One line of the privacy report: one item, with what was found and what was done.
+
+The CSV report has these fields as its 14 columns, in this order, and the JSON report has them as the keys of each row.
+
+**Attributes**
+
+- `clip` (`str`, required): The base name of the file.
+- `item_id` (`int`, required): The item's number (see [`Item.item_id`](#item)).
+- `kind` (`str`, required): `"face"`, `"plate"` or `"manual"`.
+- `verdict` (`str`, required): `"blur"` or `"check"`.
+- `blurred` (`bool`, required): Whether the item is blurred in the output.
+- `reason` (`str`, required): The key of the reason (see [`Item.reason`](#item)).
+- `first_s` (`float`, required): Seconds from the start of a video to the item's first frame, rounded to 3 places. 0.0 for a photo.
+- `last_s` (`float`, required): Seconds from the start to its last frame. 0.0 for a photo.
+- `frames` (`int`, required): How many frames the item spans. 1 for a photo.
+- `max_score` (`float`, required): The best certainty (see [`Item.max_score`](#item)).
+- `found_by` (`str`, default `'light'`): `"light"`, `"second"`, `"deep"` or `"manual"`.
+- `decision` (`str`, default `'blurred'`): `"blurred"` or `"left visible"`: what the output shows.
+- `decided_by` (`str`, default `'engine'`): `"engine"` or `"person"`.
+- `plate_like` (`Optional[bool]`, default `None`): For a plate found by text, whether the region is shaped like a plate; False means it is listed because it may still be one. None otherwise.
+
+## Event { #event }
+
+Type alias.
+
+```text
+Event = Union[Started, Progress, ItemFound, Analyzed, Rendered, JobWarning, Finished]
+```
+
+An event sent to the handler you pass as `on_event`: one of [`Started`](#started), [`Progress`](#progress), [`ItemFound`](#itemfound), [`Analyzed`](#analyzed), [`Rendered`](#rendered), [`JobWarning`](#jobwarning) and [`Finished`](#finished), each a dataclass whose first field is `clip_id`.
+
+The handler runs in the thread that runs the call, so keep it quick; an exception in it stops the call. A video's
+analysis sends [`Started`](#started), [`Progress`](#progress) (many), [`ItemFound`](#itemfound) (one per item) and [`Analyzed`](#analyzed); a render sends [`Progress`](#progress),
+[`JobWarning`](#jobwarning) (zero or more), [`Rendered`](#rendered) and `Finished("done")`. A cancelled job sends `Finished("stopped")`, then raises
+[`Cancelled`](errors.md#cancelled).
+
+## Started { #started }
+
+Dataclass. Sent when the analysis of a file starts.
+
+For a video it comes before the work. For a photo it comes before the heavy stage, or after the whole analysis when only
+the light models run, so such a photo sends no [`Progress`](#progress) at all.
+
+**Attributes**
+
+- `clip_id` (`str`, required): The base name of the file, such as `street-madrid.mp4`. Every event has it first.
+- `media` (`str`, required): `"photo"` or `"video"`.
+- `frames` (`int`, required): The number of frames (1 for a photo); for a video the container's count, which can differ by one from [`Analysis.frames`](anonymizer.md#analysis).
+- `width` (`int`, required): The width in pixels, as displayed.
+- `height` (`int`, required): The height in pixels, as displayed.
+- `fps` (`float`, required): The frame rate. 0.0 for a photo.
+- `type` (`str`, class attribute, `'job.started'`): The type of its JSON message.
+
+## Progress { #progress }
+
+Dataclass. How far a phase has got. Sent many times; `fraction` never goes back within a phase.
+
+[`anonymize_video`](functions.md#anonymize_video) sends a sequence for the phase `"analyze"`, then one for `"render"`; [`compare_video`](functions.md#compare_video) sends
+`"compare"`. A photo's render sends none.
+
+**Attributes**
+
+- `clip_id` (`str`, required): The base name of the file.
+- `phase` (`str`, required): `"analyze"`, `"render"` or `"compare"`.
+- `fraction` (`float`, required): From 0 to 1, rounded to 4 places.
+- `frame` (`int`, required): The frame the work is at.
+- `frames` (`int`, required): The number of frames.
+- `live` (`Optional[list]`, default `None`): While a video is analysed, the boxes in view at `frame` (`kind`, `box`, `score`, `state`), for a display. Otherwise None.
+- `found` (`Optional[dict]`, default `None`): While a video is analysed, the things seen at least twice so far, by kind. Otherwise None.
+- `stage` (`Optional[str]`, default `None`): For a photo with a heavy model: `"first"`, `"second"` or `"deep"`. Otherwise None.
+- `zones` (`Optional[dict]`, default `None`): During the `"second"` stage, `done` and `total`. Otherwise None.
+- `type` (`str`, class attribute, `'clip.progress'`): The type of its JSON message.
+
+## ItemFound { #itemfound }
+
+Dataclass. Sent once for each item, in time order, after the analysis has ended and before [`Analyzed`](#analyzed).
+
+**Attributes**
+
+- `clip_id` (`str`, required): The base name of the file.
+- `item` ([`Item`](#item), required): The [`Item`](#item).
+- `type` (`str`, class attribute, `'clip.item'`): The type of its JSON message.
+
+## Analyzed { #analyzed }
+
+Dataclass. Sent once, at the end of [`Anonymizer.analyze`](anonymizer.md#anonymizer-analyze), after every [`ItemFound`](#itemfound). The analysis sends no [`Finished`](#finished).
+
+**Attributes**
+
+- `clip_id` (`str`, required): The base name of the file.
+- `items` (`int`, required): How many items were listed.
+- `to_check` (`int`, required): How many of them are doubtful, decided or not.
+- `zones_visited` (`int`, default `0`): How many zones the second look visited. For a photo it also counts the vehicles the plate path looked into; for a video, the heavy looks at key frames.
+- `zones_skipped` (`int`, default `0`): How many zones the budget ([`Options.max_zones`](options.md#options)) left out.
+- `second_added` (`int`, default `0`): How many items the heavy model brought in that the first pass had not found.
+- `type` (`str`, class attribute, `'clip.analyzed'`): The type of its JSON message.
+
+## Rendered { #rendered }
+
+Dataclass. Sent once, after the output was written, checked and given its final name.
+
+**Attributes**
+
+- `clip_id` (`str`, required): The base name of the original.
+- `output` (`str`, required): The path of the output, as given to `render`.
+- `seconds` (`float`, required): How long the render took, rounded to 2 places.
+- `type` (`str`, class attribute, `'clip.rendered'`): The type of its JSON message.
+
+## JobWarning { #jobwarning }
+
+Dataclass. Something the person should know. The work went on.
+
+Sent zero or more times. The codes are listed, with their sentences, at the end of the reference page "Errors and
+codes": the second look's budget, the render's `photo.warning.*` and `video.warning.*`, and
+`warning.review.check_left_visible` when doubtful items stay visible. [`Result.warnings`](#result) keeps the codes of the render.
+
+**Attributes**
+
+- `clip_id` (`str`, required): The base name of the file.
+- `code` (`str`, required): The key of the warning.
+- `params` (`dict`, default `{}`): The values for its sentence, such as `count`. Often empty.
+- `type` (`str`, class attribute, `'job.warning'`): The type of its JSON message.
+
+## Finished { #finished }
+
+Dataclass. Sent when a call ends: by [`Anonymizer.render`](anonymizer.md#anonymizer-render) with status `"done"`, after [`Rendered`](#rendered); by [`Anonymizer.analyze`](anonymizer.md#anonymizer-analyze), [`Anonymizer.render`](anonymizer.md#anonymizer-render) and [`compare_video`](functions.md#compare_video) with status `"stopped"`, immediately before [`Cancelled`](errors.md#cancelled) is raised.
+
+**Attributes**
+
+- `clip_id` (`str`, required): The base name of the file.
+- `status` (`str`, required): `"done"` or `"stopped"`.
+- `type` (`str`, class attribute, `'job.finished'`): The type of its JSON message.
+
+# docs/reference/errors.md
+
+<!-- Generated by scripts/api_docs.py from the docstrings of the Python API and from src/anonymizer/ui/i18n/en.json. Edit the code, not this page. -->
+
+# Errors and codes
+
+[`AnonymizerError`](#anonymizererror) is the base of the errors the API raises about a file. Six subclasses can be caught by class, and every error has a `code` you can read. The page ends with the reasons of the items and the warning codes, each with the English sentence the Studio shows for it. Which error to catch, the builtins included, is on the [reference overview](index.md#which-error-to-catch).
+
+## AnonymizerError { #anonymizererror }
+
+```text
+AnonymizerError(code: Optional[str] = None, params: Optional[dict] = None, detail: str = '')
+```
+
+Exception. The base of the errors the Python API raises for a file, and the class itself for errors that have no subclass.
+
+Every error carries a `code`, the key of the sentence the Studio shows for it, and the `params` that fill that sentence.
+`str(error)` is the English sentence with the parameters filled in, then `detail` in brackets. Six errors have a
+subclass, so that you can catch them by class; the others are raised as `AnonymizerError` itself and told apart by
+`code`: `error.source.missing`, `error.analysis.version`, `error.output.check_failed`, `error.photo.metadata_not_removed`,
+`error.photo.gps_not_removed`, `error.photo.not_enough_memory`, `error.video.no_frames`, `error.deep.too_large`,
+`error.deep.too_much_work` and `error.demo.deep`. Some mistakes raise a builtin instead, such as `ValueError` for a bad
+option.
+
+**Attributes**
+
+- `code`: The error key, such as `error.output.exists`. The constructor's `code=None` means `default_code`.
+- `params`: A dict with the values that fill the placeholders of the sentence, such as `{"name": "x.heic"}` (a copy).
+- `detail`: Technical text for a log, not written for a person and not translated, or an empty string.
+- `default_code`: Class attribute. The code a subclass has when none is given.
+
+**Example**
+
+```python
+import anonymizer
+
+try:
+    anonymizer.media_info("notes.txt")
+except anonymizer.AnonymizerError as error:
+    print(error.code)    # error.media.unsupported
+    print(error.params)  # {'name': 'notes.txt'}
+    print(error)         # notes.txt is not a photo or a video that can be processed. (.txt: not a photo or a video)
+```
+
+## UnsupportedMedia { #unsupportedmedia }
+
+```text
+UnsupportedMedia(code: Optional[str] = None, params: Optional[dict] = None, detail: str = '')
+```
+
+Exception, a subclass of [`AnonymizerError`](errors.md#anonymizererror). The file is not a photo or a video that can be processed.
+
+Raised by [`media_info`](functions.md#media_info), [`frame_jpeg`](functions.md#frame_jpeg), [`thumbnail_jpeg`](functions.md#thumbnail_jpeg), [`compare_video`](functions.md#compare_video), [`anonymize_image`](functions.md#anonymize_image), [`anonymize_video`](functions.md#anonymize_video),
+[`Anonymizer.estimate`](anonymizer.md#anonymizer-estimate) and [`Anonymizer.analyze`](anonymizer.md#anonymizer-analyze) when the extension is not one of [`PHOTO_EXTENSIONS`](functions.md#photo_extensions) or
+[`VIDEO_EXTENSIONS`](functions.md#video_extensions) (HEIC, RAW, GIF, a text file, a folder), or when the file is empty or its header cannot be read;
+the kind is told from the extension only. [`anonymize_image`](functions.md#anonymize_image) also raises it for a video and [`anonymize_video`](functions.md#anonymize_video) for a photo. Two more codes use
+this class: `error.media.damaged`, a file that stops decoding partway, while it is analysed or rendered (nothing is
+written under the target); and `error.photo.several_images`, a photo that holds more than one image, such as an
+animation.
+
+**Attributes**
+
+- `code`: `error.media.unsupported`, `error.media.damaged` or `error.photo.several_images`.
+- `params`: `{"name": ...}`, the file's base name, or `{"count": ...}` for several images.
+- `detail`: What was found, such as `.heic: a format that is not supported`.
+
+## ModelLoadError { #modelloaderror }
+
+```text
+ModelLoadError(code: Optional[str] = None, params: Optional[dict] = None, detail: str = '')
+```
+
+Exception, a subclass of [`AnonymizerError`](errors.md#anonymizererror). A detection model, or the runtime that runs it, could not be loaded.
+
+Raised by the first call that loads the models: a model file that is missing, not listed in the models folder's
+`SHA256SUMS` or changed is refused before any file is touched. This is not `anonymizer.contract.ModelLoadError`, an
+internal class: catching that one catches nothing the public calls raise.
+
+**Attributes**
+
+- `code`: `error.model.load`.
+- `params`: `{"kind": ...}`, the model or runtime that failed (for example `heavy`).
+- `detail`: The folders that were searched and the file that failed.
+
+## OutputExists { #outputexists }
+
+```text
+OutputExists(code: Optional[str] = None, params: Optional[dict] = None, detail: str = '')
+```
+
+Exception, a subclass of [`AnonymizerError`](errors.md#anonymizererror). The target already exists. Nothing is ever overwritten.
+
+Raised by [`Anonymizer.render`](anonymizer.md#anonymizer-render) and [`compare_video`](functions.md#compare_video), which check it first, and by [`anonymize_image`](functions.md#anonymize_image) and
+[`anonymize_video`](functions.md#anonymize_video), which find it only after the whole analysis: in a loop, test `os.path.exists(target)` before the
+call. It is also raised when the target appears while the output is written. [`Report.to_csv`](data-types.md#report-to_csv), [`Report.to_json`](data-types.md#report-to_json) and
+[`Analysis.save`](anonymizer.md#analysis-save) replace an existing file instead.
+
+**Attributes**
+
+- `code`: `error.output.exists`.
+- `params`: `{"path": ...}`, the target.
+- `detail`: An empty string.
+
+## SourceChanged { #sourcechanged }
+
+```text
+SourceChanged(code: Optional[str] = None, params: Optional[dict] = None, detail: str = '')
+```
+
+Exception, a subclass of [`AnonymizerError`](errors.md#anonymizererror). The original is no longer the file that was analysed.
+
+Raised by [`Anonymizer.render`](anonymizer.md#anonymizer-render), which compares the original's size, modification time and a hash of its content with
+the analysis at the start and immediately before the output gets its name, and by [`Analysis.preview`](anonymizer.md#analysis-preview). Analyse it
+again.
+
+**Attributes**
+
+- `code`: `error.source.changed`.
+- `params`: `{"path": ...}`, the original, when raised by [`Anonymizer.render`](anonymizer.md#anonymizer-render).
+- `detail`: An empty string.
+
+## Cancelled { #cancelled }
+
+```text
+Cancelled(code: Optional[str] = None, params: Optional[dict] = None, detail: str = '')
+```
+
+Exception, a subclass of [`AnonymizerError`](errors.md#anonymizererror). The job was stopped through its [`CancelToken`](options.md#canceltoken). Nothing was written.
+
+Raised by [`Anonymizer.analyze`](anonymizer.md#anonymizer-analyze), [`Anonymizer.render`](anonymizer.md#anonymizer-render), [`compare_video`](functions.md#compare_video) and [`anonymize_video`](functions.md#anonymize_video) after [`CancelToken.cancel`](options.md#canceltoken-cancel),
+once a [`Finished`](data-types.md#finished) event with status `"stopped"` has been sent. Nothing is left under the target. A video stops within a
+frame or two; a photo's first pass with the light models cannot be broken off.
+
+**Attributes**
+
+- `code`: `error.cancelled`.
+- `params`: An empty dict.
+- `detail`: An empty string.
+
+## IncompleteAnalysis { #incompleteanalysis }
+
+```text
+IncompleteAnalysis(code: Optional[str] = None, params: Optional[dict] = None, detail: str = '')
+```
+
+Exception, a subclass of [`AnonymizerError`](errors.md#anonymizererror). Part of the file could not be checked, so it is not delivered as clean.
+
+Raised by [`Anonymizer.render`](anonymizer.md#anonymizer-render) for a video whose [`Analysis.unchecked_frames`](anonymizer.md#analysis-unchecked_frames) is not empty, because a detector failed on
+those frames, and by [`Anonymizer.analyze`](anonymizer.md#anonymizer-analyze) for a photo on which a model run or the person finder failed. The Studio
+says "Part of this file could not be checked, so it is not exported as clean."
+
+**Attributes**
+
+- `code`: `error.analysis.incomplete`.
+- `params`: `{"frames": ..., "first": ...}` for a video (how many, and the first), `{"photos": 1}` for a photo.
+- `detail`: The failure underneath, when there is one.
+
+## Reasons for an item { #reasons }
+
+`Item.reason` says why an item has its verdict: `blur` is sure and `check` is doubtful (**Not sure** in the Studio). The sentences are the Studio's, read from its text file. A word in braces, such as `{count}`, is filled from the `params` of the event or the error.
+
+| Reason key | English sentence |
+|---|---|
+| `face.reason.verified` | Confirmed by a second look. |
+| `face.reason.seen_often` | Seen in many frames and never contradicted. |
+| `face.reason.second_confirmed` | A heavier model confirmed this face on a second look. |
+| `face.reason.second_found` | Found by a heavier model on a second look at a suspect area. |
+| `face.reason.low_verify` | A second look found something face-like, but not enough to blur it unasked. Please check. |
+| `face.reason.sweep_only` | A strong first detection that the second look did not confirm. Please check. |
+| `face.reason.weak` | Nothing supports it. |
+| `plate.reason.on_vehicle_confirmed` | On a vehicle, seen often enough or confirmed by a second look. |
+| `plate.reason.on_vehicle_verified` | On a vehicle and confirmed by a second look. |
+| `plate.reason.vehicle_text` | Text on a vehicle (a plate, a number or other writing). Blurred only if it is placed like a plate. Please check. |
+| `plate.reason.unconfirmed` | On a vehicle but not confirmed. Please check. |
+| `plate.reason.off_vehicle` | A plate-like shape that is not on a detected vehicle. Please check. |
+| `plate.reason.position_band` | Where a plate usually sits on a small vehicle; no text was found there. Blurred by default. |
+| `plate.reason.rejected` | Not a plate. |
+| `manual.reason.added` | Area added by you. |
+
+A person's decision adds two more reasons to the PDF report. They do not appear in `Item.reason`:
+
+| Reason key | English sentence |
+|---|---|
+| `report.reason.confirmed` | You chose to blur it. |
+| `report.reason.turned_off` | You chose to leave it visible. |
+
+## Warnings { #warnings }
+
+Sent as [`JobWarning`](data-types.md#jobwarning) events and listed in `Result.warnings` (codes only).
+
+| Warning code | English sentence |
+|---|---|
+| `warning.second_look.zones_skipped` | The second look checks a limited number of places and left {count} places unchecked. Those places keep the result of the first look, which is quicker but less thorough. |
+| `warning.review.check_left_visible` | {count} items the detectors were not sure about stay visible in the output. |
+| `photo.warning.metadata_dropped` | The photo's metadata could not be carried over and was left out. |
+| `photo.warning.resaved_for_metadata` | The photo was saved again to remove its camera and descriptive data (maker notes, previews, comments). |
+| `photo.warning.resaved_trailing_data` | The photo had extra data after the image, so it was saved again without it. |
+| `photo.warning.trailing_data_removed` | Extra data after the image was removed. |
+| `video.warning.converted_to_8bit` | The video was converted to 8-bit standard color. |
+| `video.warning.odd_size_cropped` | One pixel was cropped because the video has an odd size. |
+| `video.warning.audio_reencoded` | The audio could not be copied as it was and was re-encoded. |
+| `video.warning.audio_tracks_lost` | Some audio tracks could not be kept. |
+| `video.warning.extra_video_tracks` | The file has more than one video track. Only the first was anonymized. |
+| `video.warning.source_truncated` | The video seems cut short: the output is shorter than the source says. |
+
+# docs/reference/files-written.md
+
+# Files written
+
+Every file the Python API writes, field by field: the anonymised photo or video, the saved analysis with its thumbnails folder, and the report as CSV and JSON. Read it to write a program that reads these files without importing `anonymizer`, or to know exactly what an export leaves on disk. The original is only ever opened for reading.
+
+| Call | Writes | Where | Replaces a file that exists? |
+|---|---|---|---|
+| [`Anonymizer.render`](anonymizer.md#anonymizer-render), [`anonymize_image`](functions.md#anonymize_image), [`anonymize_video`](functions.md#anonymize_video) | the anonymised photo or video | `target`, after a hidden partial file in the same folder | never: [`OutputExists`](errors.md#outputexists) |
+| [`compare_video`](functions.md#compare_video) | the side-by-side video, which shows the original unblurred: never publish it | `target` | never: [`OutputExists`](errors.md#outputexists) |
+| [`Analysis.save`](anonymizer.md#analysis-save) | the saved analysis (JSON) and its thumbnails folder | `path`, and `path` without `.json` plus `.thumbs` | yes: both are replaced |
+| [`Report.to_csv`](data-types.md#report-to_csv), [`Report.to_json`](data-types.md#report-to_json) | the report | `path` | yes |
+
+The blocks of this page run from the repository root on the sample photo `demo/street-westminster.jpg` ([Licence and credits](../licence-and-credits.md)). The first writes every file the others read, into a folder it creates.
+
+```python
+import os
+
+import anonymizer
+
+os.makedirs("anonymized", exist_ok=True)
+with anonymizer.Anonymizer() as anon:
+    analysis = anon.analyze(os.path.abspath("demo/street-westminster.jpg"))
+    analysis.save("anonymized/westminster.analysis.json")
+    result = anon.render(analysis, "anonymized/westminster.jpg")
+result.report.to_csv("anonymized/westminster.csv")
+result.report.to_json("anonymized/westminster.json")
+print(sorted(os.listdir("anonymized")))
+```
+
+```text
+# output
+['westminster.analysis.json', 'westminster.analysis.thumbs', 'westminster.csv', 'westminster.jpg', 'westminster.json']
+```
+
+## The anonymised photo or video
+
+`render` writes the output to a hidden partial file in the folder of `target`, named `.<name>.anonymizer-partial`, checks it, and renames it to `target` only when it is whole. If the call fails, is stopped, or the original changes meanwhile, the partial file is deleted. A process killed outright (`kill -9`, a power cut) can leave it; the next render of the same target replaces it. The folder of `target` must exist, and `target` must not.
+
+A **photo** is written in the format of the original, at its resolution, whatever the name of `target` says. It keeps its pixel size, resolution, orientation, EXIF version, colour space and colour profile, and the GPS block only when `Options.remove_gps` is False; maker notes (which can hold a preview of the unblurred picture), serial numbers, owner, comments, XMP, IPTC and every other piece of metadata go. A JPEG with nothing to blur keeps its image data byte for byte. PNG, TIFF and lossless WebP are written again with the same pixels. A lossy WebP or an AVIF is saved again when it holds more than the list above, with the warning `photo.warning.resaved_for_metadata`. Every photo is checked from its bytes before it gets its name, and one that still holds what must be removed is not delivered (`error.photo.metadata_not_removed`, `error.photo.gps_not_removed`). Padding bytes hidden inside the last scan of a JPEG cannot be told from picture data, and they are not removed without compressing the photo again.
+
+A **video** is always an MP4 with 8-bit H.264 video. It keeps the length, the frame count, the frame rate and the audio (copied, or re-encoded when it cannot be copied); a rotation flag is applied to the picture. The container's metadata, the location a phone writes included, is not carried over, nor are subtitle, timecode and data tracks. Only the first video track is anonymised. The video is decoded again in full and compared before it gets its name.
+
+## The saved analysis
+
+[`Analysis.save`](anonymizer.md#analysis-save) writes the analysis as JSON through a temporary file that replaces `path` at the end, so a stop halfway leaves the earlier file. [`load_analysis`](functions.md#load_analysis) reads it back. The keys come in this order:
+
+| Key | Holds |
+|---|---|
+| `version` | 3, the version of this file format (not of the Python API). Another version is refused with `error.analysis.version`; a 2.1 analysis is already version 3 and loads |
+| `source` | The path of the original **as it was given to `analyze`**. A relative path is looked up from the current folder at render, so analyse an absolute path when the file will be loaded from somewhere else |
+| `media` | `"photo"` or `"video"` |
+| `fingerprint` | The original's size, modification time and a hash of its content. `render` compares it and refuses a changed original with [`SourceChanged`](errors.md#sourcechanged) |
+| `frames`, `fps`, `width`, `height` | The number of frames (1 for a photo), the frame rate (0.0 for a photo), and the size as displayed |
+| `options` | What the analysis was made with: `faces`, `plates`, `thoroughness`, `detection`, `detection_ran`, `heavy_only`, `unsure`, `max_zones`, `plate_path`, `vehicle_model`, `plate_band`, and `models`, the name and SHA-256 of every heavy or text model loaded. Not the blur style, strength, margin, fit, gap filling or GPS choice |
+| `second` | The second look's counts: `zones_visited`, `zones_skipped`, `confirmed`, `added`, `vehicles_too_small`, `bands_added`, `band_area_share` |
+| `items` | One object per item, with the fields of [`Item`](data-types.md#item), in time order |
+| `areas` | Each added area by its number, as `{"frame_from", "frame_to", "box": [x0, y0, x1, y1], "follow"}` |
+| `zones`, `photo_specs` (a photo) and `video` (a video) | The engine's working data. They are not a contract: read `items` and `second`, which are, and leave these alone |
+
+Editing the file by hand changes what `render` writes. Decide through [`Analysis.set_blur`](anonymizer.md#analysis-set_blur) and [`Analysis.add_area`](anonymizer.md#analysis-add_area), then save again.
+
+`save` also writes a crop of every detected item, `<item_id>.jpg`, in a folder named after the file: the path without `.json`, plus `.thumbs`. The folder is replaced whole, never merged. Deleting it costs the thumbnails and nothing else.
+
+The file is plain JSON, so any program can read it:
+
+```python
+import json
+
+with open("anonymized/westminster.analysis.json", encoding="utf-8") as f:
+    saved = json.load(f)
+
+print(list(saved))
+print(saved["version"], saved["media"], saved["width"], saved["height"])
+print(saved["options"]["detection_ran"], [m["name"] for m in saved["options"]["models"]])
+blurred = [item for item in saved["items"] if item["blur"]]
+print(len(saved["items"]), "items,", len(blurred), "blurred")
+```
+
+```text
+# output
+['version', 'source', 'media', 'fingerprint', 'frames', 'fps', 'width', 'height', 'options', 'second', 'items', 'areas', 'zones', 'photo_specs']
+3 photo 960 720
+careful ['PP-OCRv6_det_small', 'retinaface-r34']
+26 items, 22 blurred
+```
+
+## The report
+
+[`Report.to_csv`](data-types.md#report-to_csv) and [`Report.to_json`](data-types.md#report-to_json) write the privacy report, one row for each item, the items left visible and the added areas included. `Result.report` and [`Analysis.report`](anonymizer.md#analysis-report) give the [`Report`](data-types.md#report). It lists what was found and what was done, not what the detectors missed.
+
+The CSV has one column, and each row of the JSON one key, for each field of [`ReportRow`](data-types.md#reportrow), in this order: `clip`, `item_id`, `kind`, `verdict`, `blurred`, `reason`, `first_s`, `last_s`, `frames`, `max_score`, `found_by`, `decision`, `decided_by` and `plate_like`. `item_id` is the engine's number and can skip numbers, where the PDF report counts 1 to n in time order; `plate_like` is empty in the CSV, and `null` in the JSON, for every item that is not a plate found by text.
+
+**The CSV** is UTF-8 with a byte-order mark, so Excel reads accents when the file is opened by a double click; read it in Python with `encoding="utf-8-sig"`. Lines end with a carriage return and a line feed, and a field with a comma, a semicolon, a tab, a quote or a line break is quoted. A text that starts with `=`, `+`, `-`, `@`, a tab or a carriage return gets a `'` in front, so a spreadsheet does not run it. Booleans are `True` and `False`, and a missing value is an empty field.
+
+```python
+import csv
+
+with open("anonymized/westminster.csv", encoding="utf-8-sig", newline="") as f:
+    rows = list(csv.DictReader(f))
+
+print(list(rows[0]))
+plate = next(row for row in rows if row["kind"] == "plate")
+print(plate)
+doubtful = [row for row in rows if row["verdict"] == "check"]
+print(len(rows), "rows,", len(doubtful), "doubtful,", sum(row["blurred"] == "True" for row in doubtful), "of them blurred")
+```
+
+```text
+# output
+['clip', 'item_id', 'kind', 'verdict', 'blurred', 'reason', 'first_s', 'last_s', 'frames', 'max_score', 'found_by', 'decision', 'decided_by', 'plate_like']
+{'clip': 'street-westminster.jpg', 'item_id': '5', 'kind': 'plate', 'verdict': 'check', 'blurred': 'False', 'reason': 'plate.reason.vehicle_text', 'first_s': '0.0', 'last_s': '0.0', 'frames': '1', 'max_score': '0.763', 'found_by': 'light', 'decision': 'left visible', 'decided_by': 'engine', 'plate_like': 'False'}
+26 rows, 17 doubtful, 13 of them blurred
+```
+
+**The JSON** is an object with `version` (2, the version of the report file), `options` (the same object as in the saved analysis), `summary` (the counts of [`Report.summary`](data-types.md#report-summary)) and `items` (the rows). Booleans are `true` and `false`.
+
+## What the Studio adds
+
+The Studio uses the same calls, so everything above holds for its exports. It also writes its settings in `settings.json` ([The Studio](studio.md#settings-languages-and-demo-mode)), and a work folder in the system's temporary folder with copies of crops and uploaded files, deleted when it stops. Its exports are named by the pattern `{name}_anonymized`, with `-2`, `-3` for a name that exists. Its reports sit next to each output: the output's name without its extension, then `.report.pdf`, `.report.csv` or `.report.json`. When two outputs differ only in their extension, the later report keeps it (`x_anonymized.tif.report.csv`). The PDF and JSON reports say when a comparison video was written; the CSV does not.
+
+# docs/accuracy.md
+
+# Accuracy and limits
+
+How often Anonymizer Studio hides the faces and plates it is meant to blur, what each figure was measured on, and what the product does not do. Read it before you decide whether the Studio fits your footage. The figures are read from the results files by a script; none is typed here.
+
+## The figures
+
+| What was measured | Result | Condition |
+|---|---|---|
+| Faces in photos hidden by default, Careful | 76.51% of 1222 (Wilson interval 74.06-78.81) | 2.1's settings, on photos never used to choose a number: the 30 blind photos of the next row and the sealed half of WIDER FACE |
+| Faces in 30 blind photos of the kind a real-estate agent takes, Careful | 60.26% of 78 (Wilson interval 49.16-70.39) | 2.1's settings. The figure to quote for listing photos. There is no blind figure for the 2.2 defaults |
+| Faces in photos, the 2.2 defaults | 97.1% of 623 faces in 91 photos | The development part, which the rules were fitted on and whose labels started from the detector's own proposals: in-sample and optimistic |
+| Readable plates in photos, the 2.2 defaults | 77.6% of 58 plates in 74 photos | The development part: in-sample |
+| Plates of the OpenALPR EU set, the 2.2 defaults | 105 of 108 hidden | Never used to choose a number; the boxes are OpenALPR's own |
+| Readable plates of 60 street photos, the 2.2 defaults | 8 of 16 hidden | Never used to choose a number. Too few plates for a rate, so none is quoted |
+| Faces in video covered at least 80 percent, Careful | 115 of 137 | Three sealed clips, one of them a crowd that holds most of the faces. In video the second look did not measurably add to Fast (0.73 points, not significant). Plates in video were not measured |
+| Photos without people on which something was hidden, Careful | 20 per 100 (8 of 40 photos); Fast 7.5 | 2.1's settings. This rate is not claimed to be low; the 2.2 defaults trade it for some plates and faces left visible |
+| Seconds per photo for face detection alone, median | Careful 0.56, Fast 0.24 | The 153 sealed face photos, one run on the development laptop (an Intel Core i7-8550U), which was not idle: read them as indicative. With plates a photo takes seconds, and a video much more. The Studio shows an estimate while it analyses, and Careful costs more than Fast |
+
+In the rows with 2.1's settings, `Options(unsure="blur", fit="loose", plate_band=True)`, a face counts as hidden by default when a blur or a doubtful zone covers at least 95 percent of its box with the engine's own margin. The 2.2 defaults blur only the doubtful items that are placed like a plate or a face ([How it works](concepts/how-it-works.md#doubtful-items)).
+
+**Why some faces are missed.** Of the 287 faces Careful misses on the photos never used to choose a number, 58.89% are under 20 px tall and 87.11% under 40 px, mostly people far from the camera; on faces at least 40 px tall it hides 87.91%. On the 30 blind photos, 21 of the 31 faces it misses are turned away or partly covered. The breakdown is in the repository, `docs/MISSES.md`.
+
+Every figure with its method, the comparison with an open reference detector and the earlier measurements are in the repository, `docs/MEASURED.md`. The photos and clips are public, and `bench/SOURCES.csv` lists them.
+
+## Limits
+
+- **A miss is silent.** A face or a plate the detectors do not find is neither blurred nor listed, and nothing in the output or the report says it was there. Play the output and look, and use **Add missed area** for what you find.
+- **Faces that are small, turned, blurred or partly covered** are missed more often than a frontal face in good light. A photograph on a wall or a face on a screen is treated like any other face: **Review** lets you switch it off.
+- **Plates are read as text on the vehicles the vehicle detector finds.** A plate on anything else, on a vehicle too small to be searched, or scored low by the text detector is not blurred. A doubtful plate in a video is left visible by default: review the plates of a video yourself.
+- **The second look has a budget.** On a video it can leave many places unchecked. They keep the first pass's result, and the banner after the analysis says how many.
+- **Tested on Linux only.** The Studio ran on Ubuntu 22.04 with Python 3.10, in Chrome and Firefox 157, and the engine and the tests on two more Ubuntu machines. Windows, macOS and Safari were not tried: `packaging/windows/` never ran on Windows, and neither did the search for a browser to print the PDF report. The optional window ran under a virtual screen only, and ending the Studio with `kill` does not close it. On ARM, only three tests of the privacy audit were run.
+
+Known issues in 2.2.0:
+
+- A photo analysed in Careful shows no progress until its first pass ends, and **Stop** cannot cut that pass short.
+- The progress line of a video does not say whether the second look is running. A photo's does.
+- The interface texts of the seven languages were checked by back-translation only (each translated back to English without its source and found faithful), not by native speakers.
+
+# docs/faq.md
+
+# FAQ and troubleshooting
+
+The questions people ask first, then the problems people meet, each with its cause and what to do.
+
+## Questions
+
+**Does anything leave my computer?** No file, frame or figure. `scripts/fetch_models.py` downloads the models once, and that is the product's only network use ([Privacy](concepts/privacy.md)).
+
+**Does it change my original?** No. The original is only read, and an output never replaces an existing file.
+
+**How do I know it found every face and plate?** You cannot know from the report, which lists what was found, not what was missed. Play the output and look. [Accuracy and limits](accuracy.md) says how often faces and plates were missed in the tests.
+
+**Why is a plate not blurred?** The detectors did not find it (use **Add missed area**), or it is on something not found as a vehicle, or it is **Not sure** and not placed like a plate (press `B`, or **Blur all doubtful**), or it is in a video, where a doubtful plate is left visible by default. [How it works](concepts/how-it-works.md#doubtful-items) has the rule.
+
+**Why is nothing blurred in this photo?** In dense traffic the detectors often list many text regions that they do not judge to be plates, and the default rule leaves them visible. Look at the **Not sure** items in **Review**. **Blur all doubtful**, or `Options(unsure="blur")` in Python, blurs them all, and some things that are not plates with them.
+
+**What format does the output have?** A photo keeps its format and size. A video always comes out as an MP4 with 8-bit H.264 video, with the length, frame rate and size of the original. A `.mov` leaves as `.mp4`. Only the first video track is processed; the sound is copied, or re-encoded when it cannot be, and the export says so. HEIC, RAW and GIF files are refused: export them as JPEG or TIFF first.
+
+**Is the comparison video safe to publish?** No. Its left half is the original, with every face and plate visible.
+
+**Can I use it without the Studio?** Yes. The Python API does everything the Studio does: start with [Photos in Python](tutorials/photos-in-python.md), or give an AI assistant `AGENTS.md` from the repository root.
+
+## Problems
+
+| You see | Cause and fix |
+|---|---|
+| `ensurepip is not available`, or `Failed building wheel for UNKNOWN` | Ubuntu's `venv` without its helper, or its old pip. Run `sudo apt install python3-venv` or use the `--user` install, and upgrade pip first ([Getting started](getting-started.md#install)) |
+| `anonymizer-studio: command not found` after `pip install --user` | The user script folder is not on `PATH` until your next login. Use `python3 -m anonymizer.ui` |
+| `ModuleNotFoundError: numpy` when the Studio starts | It was started with `python3 -s`, which hides a `--user` install. Leave `-s` out |
+| "Anonymizer Studio could not start on port N" | A Studio is already running there. Use its address, or `--port` another port |
+| "This page is not connected to the Studio" or "This request is not allowed" | A bookmark or an old tab. Open the address the Studio printed, and allow cookies for `127.0.0.1` |
+| "The Studio is not running" | It stopped after ten minutes without a page, a closed terminal or `kill`. Start it again and open the new address |
+| `ModelLoadError` | A model is missing, unlisted or changed. Run `python3 scripts/fetch_models.py`, or set `ANONYMIZER_MODELS` ([Getting started](getting-started.md#fetch-the-models)) |
+| `OutputExists` | The output name is taken. Choose another, or delete the old output |
+| `FileNotFoundError`: "The destination folder does not exist" | The Python API does not create it. Make it with `os.makedirs` |
+| `UnsupportedMedia` | A format it does not process, or an empty or cut-short file. Convert it, or copy it again from its source |
+| `SourceChanged` | The original changed or moved after the analysis. Analyse it again |
+| `FileNotFoundError` for the original after `load_analysis` | The analysis keeps a relative path. Analyse an absolute one (`os.path.abspath`) |
+| `IncompleteAnalysis`: "Part of this file could not be checked" | A detector failed on part of the file. Analyse it again, and report it if it keeps failing |
+| A photo named `.png` is a JPEG | The output keeps the original's format. Use its extension |
+| The CSV opens in one column in Excel | A language whose list separator is the semicolon. Use Data > From Text/CSV and choose the comma |
+| "A PDF report needs a Chromium-based browser" | No Chrome, Edge or Chromium is installed. Install one; the CSV and JSON do not need it |
+| **Stop** takes long on a photo | A photo's first pass cannot be broken off. Wait; a video stops within a frame or two |
+| "did not answer for N minutes" | The engine was silent for ten minutes and was stopped, without writing the unfinished file. Free memory and processor time, then export again |
+
+# docs/licence-and-credits.md
+
+# Licence and credits
+
+The models, libraries and sample footage that Anonymizer Studio uses, each with its licence and what the licence asks of you. Read it before you pass the product, its samples or its documentation to someone else. The licence readings here are ours, not legal advice.
+
+## The code
+
+The code of Anonymizer Studio (`src/`, `scripts/`, `tests/`, `bench/`, `examples/`, `packaging/` and the documentation text) is released under the MIT licence (`LICENSE`, Copyright (c) 2026 Pablo Medina). Three things in the repository are not MIT:
+
+- the sample clips and photos in `demo/` and `examples/data/`, and every screenshot, frame or video made from them (`docs/media/demo.mp4`, `docs/media/demo.jpg`, `docs/media/hero.webp`, `docs/media/hero.gif`, `docs/media/hero-still.png`, `docs/screens/`, `docs/assets/first-video-*.png`, `docs/assets/compare-side-by-side.jpg`), under the CC BY-SA licences in the table below;
+- the truth labels in `docs/truth-dataset/labels/`, CC BY 4.0, and the plate labels in `docs/truth-dataset/labels-agpl/` and `bench/truth/plates/openalpr-eu.json`, AGPL-3.0 (`MANIFEST.csv` gives the licence of each file in `docs/truth-dataset/`; the label files in `bench/truth/` carry the licence given there for the same data);
+- the models, which are not in the repository and keep the licences listed below.
+
+## Models
+
+Six models ship with the product as files in the models folder, not in the package. `scripts/fetch_models.py` downloads them, and the product checks each against its SHA-256 when it loads it. `MODELS.md` has the full table with the checksums, and `THIRD-PARTY.md` the licence texts and what each model was trained on.
+
+| Model | Licence | What it does | Source |
+|---|---|---|---|
+| YuNet 2023mar | MIT | The light face model | [OpenCV Zoo](https://github.com/opencv/opencv_zoo/tree/main/models/face_detection_yunet) |
+| RetinaFace ResNet-34 | MIT | The heavy face model | [yakhyo/retinaface-pytorch](https://github.com/yakhyo/retinaface-pytorch) |
+| YOLOX-nano | Apache-2.0 | Vehicles and persons, as context | [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX) |
+| RF-DETR nano | Apache-2.0 | The vehicle detector of the plate path | [RF-DETR](https://github.com/roboflow/rf-detr) |
+| PP-OCRv6 text detector | Apache-2.0 | Finds text on vehicles | [RapidOCR](https://github.com/RapidAI/RapidOCR) build of a [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) model |
+| PP-OCRv5 Latin recogniser | Apache-2.0 | Reads that text | RapidOCR build of a PaddleOCR model |
+
+Apache-2.0 asks you to keep the licence text and notices when you redistribute the files; MIT asks you to keep the copyright notice. YuNet and RetinaFace were both trained on the WIDER FACE training set, whose own terms are for research only. The licence of the models is not in question; the data licence is a risk we state.
+
+A plate model of an earlier version (YOLOv9-t) is not shipped, because it was trained with a GPL-3.0 project and its licence could not be cleared. `plate_path="yolo"` remains as a reference path only, with a file you fetch yourself with `scripts/fetch_reference_plate_model.py`.
+
+## Libraries
+
+ONNX Runtime (MIT) runs the models, OpenCV (`opencv-python-headless`, Apache-2.0) does the image work, NumPy (BSD-3-Clause) the arrays, PyAV (`av`, BSD-3-Clause) the video and Pillow (HPND) the photos; pywebview (BSD-3-Clause) gives the optional window. The wheel of PyAV brings an FFmpeg built with libx264 and libx265, which are GPL, and FFmpeg itself is LGPL version 3 or later. This is the one place where GPL code comes with the product, and the videos the Studio writes are encoded with it. If you redistribute the product, read the terms of PyAV's wheel for your case.
+
+## The footage of the samples
+
+The sample files in `demo/` and `examples/data/` are public footage from Wikimedia Commons, shortened, scaled down and re-encoded for this product; `demo/SOURCES.csv` and `examples/data/SOURCES.csv` give each file's address, SHA-256 and what was done to it.
+
+| File | What it shows | Author | Licence | Original |
+|---|---|---|---|---|
+| `demo/street-madrid.mp4` | A 15-second clip of a pedestrian street in Madrid | OsvaldoGago | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | [Calle Preciados Madrid](https://commons.wikimedia.org/wiki/File:Calle_Preciados_Madrid.ogv) |
+| `examples/data/street-madrid-5s.mp4` | The first 5 seconds of `demo/street-madrid.mp4`, re-encoded | OsvaldoGago | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | the same file |
+| `demo/street-hongkong.mp4` | A 10-second street clip from Hong Kong with nothing to blur | RG72 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Pasejo en Hong Kong Island (2014)](https://commons.wikimedia.org/wiki/File:Pasejo_en_Hong_Kong_Island_(2014).webm) |
+| `demo/street-taipei.jpg` | A photo of dense traffic in Taipei | Syced | [CC0 1.0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [2005 car traffic in Taipei](https://commons.wikimedia.org/wiki/File:2005_car_traffic_in_Taipei.jpg) |
+| `demo/street-westminster.jpg` | A photo of a pedestrian crossing in London | Lewis Clarke | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) | [London, Westminster, Bridge Street Pedestrian Crossing](https://commons.wikimedia.org/wiki/File:London_%2C_Westminster_-_Bridge_Street_Pedestrian_Crossing_-_geograph.org.uk_-_1739851.jpg) |
+
+CC BY-SA means that the footage, and anything you make from it, stays under the same licence, and that you credit the author and say what you changed. If you publish a screenshot, a frame or a clip made with one of these files, credit the author as above and put the result under the same licence.
+
+## The data of the measurements
+
+The accuracy figures were measured on public photos and clips listed with their authors in `bench/SOURCES.csv`. The OpenALPR EU plate photos (AGPL-3.0) and the WIDER FACE validation images (research only) are not redistributed; they stayed on the test machines. The labels, boxes only, are in `docs/truth-dataset/`.
+
+## Support
+
+Questions and bug reports: open an issue on GitHub. Work requests go through the author's Upwork profile.
+
+## Credits
+
+Version 2.2.0. Written by Pablo Medina and built with a team of AI agents he directed.
